@@ -4250,6 +4250,378 @@ body:not(.tab-active) #home { display: block; }
   }
 }
 
+
+
+/* PROJECT WORTH DONATION PAGE */
+.donate-hero-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(2.2rem, 5vw, 3.5rem);
+  margin-bottom: 1.8rem;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top left, rgba(255,210,74,0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.09), transparent 28%),
+    linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  border: 2px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.donate-hero-card h2 {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.7rem);
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+}
+.donate-hero-card p {
+  color: rgba(255,255,255,0.92);
+  font-weight: 650;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.donate-star {
+  position: absolute;
+  color: #ffd24a;
+  opacity: 0.28;
+  pointer-events: none;
+}
+.donate-star-one { top: 1rem; left: 12%; }
+.donate-star-two { top: 2rem; right: 16%; font-size: 0.85rem; }
+.donate-star-three { bottom: 1.2rem; left: 26%; font-size: 0.8rem; }
+.donate-hero-actions {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+.donate-light-btn {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+.donate-secure-note {
+  color: rgba(255,255,255,0.78) !important;
+  font-size: 0.95rem;
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+.donate-choice-shell {
+  margin: 0 auto 1.8rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(200,155,47,0.12), transparent 30%),
+    linear-gradient(135deg, #fffaf4, #ffffff);
+  border: 1px solid rgba(200,155,47,0.35);
+  border-left: 7px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.monthly-shell {
+  background:
+    radial-gradient(circle at top left, rgba(200,155,47,0.14), transparent 30%),
+    linear-gradient(135deg, #ffffff, #fffaf4);
+}
+.donate-choice-heading {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 1.25rem;
+}
+.donate-choice-heading .icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+.donate-choice-heading h3 {
+  color: var(--navy);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 900;
+  margin-bottom: 0.55rem;
+}
+.donate-choice-heading p {
+  color: #334052;
+  font-weight: 650;
+}
+.donate-amount-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.donate-amount-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 13rem;
+  padding: 1.25rem;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(15,49,88,0.12);
+  border-top: 5px solid var(--gold);
+  box-shadow: 0 12px 28px rgba(15,49,88,0.08);
+  color: var(--navy);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.donate-amount-card:hover,
+.donate-amount-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 18px 42px rgba(200,155,47,0.20);
+}
+.donate-amount-card.featured {
+  background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  color: #fff;
+  border: 2px solid var(--gold);
+}
+.donate-label {
+  color: var(--gold-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.donate-amount-card.featured .donate-label { color: var(--gold); }
+.donate-amount-card strong {
+  color: inherit;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  font-weight: 900;
+}
+.donate-amount-card strong span {
+  font-size: 1rem;
+  font-weight: 900;
+  opacity: 0.82;
+}
+.donate-amount-card span:last-child {
+  color: inherit;
+  opacity: 0.86;
+  font-weight: 650;
+  line-height: 1.45;
+}
+.custom-donation-band {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding: 1.25rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #d2a22d 0%, #f4d98e 62%, #fff1c4 100%);
+  border: 1px solid rgba(15,49,88,0.14);
+}
+.custom-donation-band h3,
+.custom-donation-band p {
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.custom-donation-band h3 { font-weight: 900; }
+.custom-donation-band p { font-weight: 700; }
+.donate-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+.donor-readiness-card {
+  margin-top: 1.5rem;
+  padding: 1.7rem;
+  border-radius: 26px;
+  background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  border: 2px solid var(--gold);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.donor-readiness-card h3 {
+  color: var(--gold);
+  font-weight: 900;
+}
+.donor-readiness-card p,
+.donor-readiness-card .press-item p {
+  color: rgba(255,255,255,0.9);
+  font-weight: 650;
+}
+.donor-readiness-card .press-item strong {
+  color: #fff;
+}
+.donate-tax-note {
+  color: var(--gold) !important;
+  font-weight: 900 !important;
+  text-align: center;
+  margin: 1.2rem auto 0 !important;
+}
+@media (max-width: 980px) {
+  .donate-amount-grid,
+  .donate-impact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .donate-amount-grid,
+  .donate-impact-grid,
+  .custom-donation-band {
+    grid-template-columns: 1fr;
+  }
+  .custom-donation-band {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .custom-donation-band .btn {
+    text-align: center;
+  }
+}
+
+
+/* CLEAN DONATE LANDING CARDS */
+.compact-donate-shell {
+  max-width: 980px;
+}
+.donate-path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.donate-path-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 12rem;
+  padding: 1.35rem;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(15,49,88,0.12);
+  border-top: 5px solid var(--gold);
+  box-shadow: 0 12px 28px rgba(15,49,88,0.08);
+  color: var(--navy);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.donate-path-card:hover,
+.donate-path-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 18px 42px rgba(200,155,47,0.20);
+}
+.donate-path-card.featured {
+  background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  color: #fff;
+  border: 2px solid var(--gold);
+}
+.donate-path-card strong {
+  color: inherit;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+.donate-path-card span:last-child {
+  color: inherit;
+  opacity: 0.86;
+  font-weight: 650;
+  line-height: 1.45;
+}
+.donate-path-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(200,155,47,0.16);
+  border: 1px solid rgba(200,155,47,0.32);
+  color: var(--gold-dark);
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+.donate-path-card.featured .donate-path-icon {
+  color: var(--gold);
+  background: rgba(200,155,47,0.14);
+}
+@media (max-width: 900px) {
+  .donate-path-grid { grid-template-columns: 1fr; }
+}
+
+
+/* CLEAN DONATION IMPACT CARDS */
+.donate-support-intro {
+  max-width: 920px;
+  margin: 0 auto 1.4rem;
+  text-align: center;
+  border-left: 7px solid var(--gold);
+  background:
+    radial-gradient(circle at top right, rgba(200,155,47,0.12), transparent 30%),
+    linear-gradient(135deg, #fffaf4, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+.donate-support-intro::after {
+  content: "★";
+  position: absolute;
+  right: 1rem;
+  bottom: -0.45rem;
+  color: var(--gold);
+  opacity: 0.10;
+  font-size: 5rem;
+  pointer-events: none;
+}
+.donate-support-intro .icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+.donate-support-intro h3 {
+  color: var(--navy);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+}
+.donate-support-intro p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #334052;
+  font-weight: 700;
+}
+.donate-impact-grid-expanded {
+  margin-top: 1.2rem;
+  align-items: stretch;
+}
+.donate-impact-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 15rem;
+  border-top: 5px solid var(--gold);
+  background:
+    radial-gradient(circle at top right, rgba(200,155,47,0.10), transparent 32%),
+    linear-gradient(135deg, #ffffff, #fffaf4);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.donate-impact-card::after {
+  content: "★";
+  position: absolute;
+  right: 0.85rem;
+  bottom: -0.4rem;
+  color: var(--gold);
+  opacity: 0.08;
+  font-size: 4.25rem;
+  pointer-events: none;
+}
+.donate-impact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,155,47,0.55);
+  box-shadow: 0 20px 48px rgba(15,49,88,0.16);
+}
+.donate-impact-card .icon,
+.donate-impact-card h3,
+.donate-impact-card p {
+  position: relative;
+  z-index: 1;
+}
+.donate-impact-card h3 {
+  font-weight: 900;
+}
+.donate-impact-card p {
+  color: #334052;
+  font-weight: 650;
+}
+.donate-tax-note-light {
+  color: var(--navy) !important;
+  margin-top: 1.5rem !important;
+}
+
 </style>
 </head>
 <body>
@@ -5168,13 +5540,29 @@ body:not(.tab-active) #home { display: block; }
 <section class="light-gold-section" id="team">
 <div class="container">
 <div class="page-title-banner"><div class="page-kicker">Meet Our Team</div><h2>Meet Our Team</h2><p>The people behind Project Worth are committed to protecting children, strengthening systems, and supporting survivors.</p></div>
+<div style="width:100%; display:flex; justify-content:center; margin:0 auto 3rem auto;">
+  <div class="card" style="max-width:950px; text-align:center;">
+    
+    <div class="icon" style="margin:0 auto 1.5rem auto;">♡</div>
+
+    <h3 style="color:var(--navy); font-weight:900; margin-bottom:1rem;">
+      Survivor-Informed Leadership
+    </h3>
+
+    <p style="max-width:760px; margin:0 auto; color:var(--ink);">
+      Project Worth’s board was intentionally built with women survivors who understand firsthand the importance of prevention, accountability, child protection reform, and survivor advocacy. Our lived experiences help shape the heart behind this mission and strengthen our commitment to building safer systems, stronger protections, and greater awareness for children and survivors.
+    </p>
+
+  </div>
+</div>
 <div class="grid-3">
 <div class="card"><img alt="Kerri Gerhardy" src="kerri.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Kerri Gerhardy (formerly Pingel)</h3><p style="color:var(--gold-dark); font-weight:800;">Founder &amp; President</p><a class="team-email" href="mailto:kerri@projectworthwi.org">kerri@projectworthwi.org</a><p>Leads Project Worth’s vision, advocacy, and mission to strengthen child protection systems and empower survivors.</p></div>
-<div class="card"><img alt="Clarissa Losey" src="clarissa.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Clarissa Losey</h3><p style="color:var(--gold-dark); font-weight:800;">Vice President of Operations and Community Partnerships</p><a class="team-email" href="mailto:clarissa@projectworthwi.org">clarissa@projectworthwi.org</a><p>Oversees day-to-day operations and helps build partnerships that bring Project Worth’s mission into the community.</p></div>
-<div class="card"><img alt="Amy Bahr" src="amy.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Amy Bahr</h3><p style="color:var(--gold-dark); font-weight:800;">Vice President of Survivor Advocacy and Support</p><a class="team-email" href="mailto:amy@projectworthwi.org">amy@projectworthwi.org</a><p>Leads survivor-centered support efforts, helping ensure survivors are heard, believed, and connected to meaningful resources.</p></div>
-<div class="card"><img alt="Anna O’Connor" src="anna.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Anna O’Connor</h3><p style="color:var(--gold-dark); font-weight:800;">Legal and Justice Advocacy Director</p><a class="team-email" href="mailto:anna@projectworthwi.org">anna@projectworthwi.org</a><p>Provides legal insight and justice-focused advocacy to help shape strong, responsible, and effective child protection efforts.</p></div>
-<div class="card"><img alt="Sam Goldstein" src="sam.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Sam Goldstein</h3><p style="color:var(--gold-dark); font-weight:800;">National Policy and Legislative Affairs Director</p><a class="team-email" href="mailto:sam@projectworthwi.org">sam@projectworthwi.org</a><p>Leads legislative strategy and policy work, including efforts connected to SB 333 - “Kerri’s Law,” and broader national child protection goals.</p></div>
-<div class="card"><img alt="Zac Gerhardy" src="zac.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Zac Gerhardy</h3><p style="color:var(--gold-dark); font-weight:800;">Co-Founder &amp; Director of Systems and Technology</p><a class="team-email" href="mailto:zac@projectworthwi.org">zac@projectworthwi.org</a><p>Builds and supports the tools, systems, and technology that help Project Worth grow and operate effectively behind the scenes.</p></div>
+<div class="card"><img alt="Clarissa Losey" src="clarissa.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Clarissa Losey</h3><p style="color:var(--gold-dark); font-weight:800;">Vice President of Operations & Community Partnerships</p><a class="team-email" href="mailto:clarissa@projectworthwi.org">clarissa@projectworthwi.org</a><p>Oversees day-to-day operations and helps build partnerships that bring Project Worth’s mission into the community.</p></div>
+<div class="card"><img alt="Amy Bahr" src="amy.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Amy Bahr</h3><p style="color:var(--gold-dark); font-weight:800;">Vice President of Survivor Advocacy & Support</p><a class="team-email" href="mailto:amy@projectworthwi.org">amy@projectworthwi.org</a><p>Leads survivor-centered support efforts, helping ensure survivors are heard, believed, and connected to meaningful resources.</p></div>
+<div class="card"><img alt="Anna O’Connor" src="anna.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Anna O’Connor</h3><p style="color:var(--gold-dark); font-weight:800;">Director of Legal & Justice Advocacy</p><a class="team-email" href="mailto:anna@projectworthwi.org">anna@projectworthwi.org</a><p>Provides legal insight and justice-focused advocacy to help shape strong, responsible, and effective child protection efforts.</p></div>
+<div class="card"><img alt="Sam Goldstein" src="sam.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Sam Goldstein</h3><p style="color:var(--gold-dark); font-weight:800;">Director of National Policy & Legislative Affairs</p><a class="team-email" href="mailto:sam@projectworthwi.org">sam@projectworthwi.org</a><p>Leads legislative strategy and policy work, including efforts connected to SB 333 - “Kerri’s Law,” and broader national child protection goals.</p></div>
+<div class="card"><img alt="Alicia Hall" src="alicia.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Alicia Hall</h3><p style="color:var(--gold-dark); font-weight:800;">Director of Reporting Reform & Institutional Accountability</p><a class="team-email" href="mailto:alicia@projectworthwi.org">alicia@projectworthwi.org</a><p>Advocates for stronger mandated reporting systems and accountability to better protect children and support survivors.</p></div>
+<div class="card"><img alt="Zac Gerhardy" src="zac.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"/><h3>Zac Gerhardy</h3><p style="color:var(--gold-dark); font-weight:800;">Co-Founder &amp; Director of Systems & Technology</p><a class="team-email" href="mailto:zac@projectworthwi.org">zac@projectworthwi.org</a><p>Builds and supports the tools, systems, and technology that help Project Worth grow and operate effectively behind the scenes.</p></div>
 </div>
 </div>
 </section>
@@ -5238,71 +5626,93 @@ Submit the form here and your message will be sent to info@projectworthwi.org.
 </section>
 <section class="site-bg-white" id="donate">
 <div class="container">
-<div class="subsection-card page-title-banner" style="text-align:center; padding:2.7rem; margin-bottom:1.8rem; position:relative; overflow:hidden;">
-<span style="position:absolute; top:12px; left:14%; color:#ffd24a; opacity:0.45;">★</span>
-<span style="position:absolute; top:30px; right:18%; color:#ffd24a; opacity:0.35; font-size:0.85rem;">★</span>
-<span style="position:absolute; bottom:18px; left:28%; color:#ffd24a; opacity:0.3; font-size:0.8rem;">★</span>
-<div class="eyebrow" style="color:var(--gold);">Support the Mission</div>
-<h2 style="color:#fff; font-size:clamp(2rem, 4vw, 3rem); margin-bottom:0.8rem;">Donate to Project Worth</h2>
-<p style="color:#fff; font-weight:600; max-width:780px; margin:0 auto 1.3rem;">
-            Your support helps Project Worth advance child protection reform, survivor-informed advocacy, prevention education, and awareness efforts across Wisconsin.
-          </p>
-<div style="display:flex; gap:0.85rem; justify-content:center; flex-wrap:wrap; margin-top:1.2rem;">
-<a class="btn btn-primary" href="https://buy.stripe.com/00w7sK0KWaG0etf2racjS00" rel="noopener" target="_blank">Donate Securely</a>
-<a class="btn btn-secondary" href="#involved" style="color:#fff; border-color:#fff;">Other Ways to Help</a>
-</div>
-<p style="color:rgba(255,255,255,0.82); font-weight:650; max-width:720px; margin:1rem auto 0; font-size:0.95rem;">
-            Project Worth does not collect or store payment information on this website. Donations are processed securely through Stripe.
-          </p>
-</div>
-
-<div class="card" style="max-width:980px; margin:0 auto 1.8rem; text-align:center; border-left:6px solid var(--gold); background:linear-gradient(135deg,#fffaf4,#ffffff);">
-<div class="icon" style="margin-left:auto; margin-right:auto;">★</div>
-<div class="eyebrow" style="color:var(--gold-dark);">Your Gift Helps Build the Work</div>
-<h3 style="color:var(--navy); font-weight:900; font-size:clamp(1.6rem, 3vw, 2.3rem);">Every Donation Helps Light the Way</h3>
-<p style="color:#334052; font-weight:650; max-width:760px; margin:0.7rem auto 1.2rem;">
-            Gifts to Project Worth support practical work that helps communities recognize risk earlier, respond with courage, and push systems toward stronger child protection.
-          </p>
-<a class="btn btn-primary" href="https://buy.stripe.com/00w7sK0KWaG0etf2racjS00" rel="noopener" target="_blank">Make a Donation</a>
-<p style="color:var(--navy); font-weight:800; margin:1rem auto 0; font-size:0.98rem;">
-            Registered 501(c)(3): Project Worth is a registered nonprofit organization.
-          </p>
+<div class="donate-hero-card">
+  <span aria-hidden="true" class="donate-star donate-star-one">★</span>
+  <span aria-hidden="true" class="donate-star donate-star-two">★</span>
+  <span aria-hidden="true" class="donate-star donate-star-three">★</span>
+  <div class="eyebrow">Support the Mission</div>
+  <h2>Donate to Project Worth</h2>
+  <p>
+    Your support helps Project Worth advance child protection reform, survivor-informed advocacy, prevention education, and awareness efforts across Wisconsin.
+  </p>
+  <div class="donate-hero-actions">
+    <a class="btn btn-primary" href="donate-options.html">Donate</a>
+    <a class="btn btn-secondary donate-light-btn" href="donate-options.html#monthly-giving">Give Monthly</a>
+  </div>
+  <p class="donate-secure-note">
+    Project Worth does not collect or store payment information on this website. Donations are processed securely through Stripe.
+  </p>
 </div>
 
-<div class="grid-3" style="margin-bottom:1.8rem;">
-<div class="card">
-<div class="icon">★</div>
-<h3>Training &amp; Education</h3>
-<p>Support grooming awareness materials, prevention-focused training, and resources for schools, churches, nonprofits, and community leaders.</p>
+<div class="donate-choice-shell compact-donate-shell">
+  <div class="donate-choice-heading">
+    <div class="icon">★</div>
+    <div class="eyebrow">Choose How You Want to Help</div>
+    <h3>Simple, Secure Giving</h3>
+    <p>Select an option below. Donation amounts appear on the donation page after you choose where you want to give.</p>
+  </div>
+  <div class="donate-path-grid">
+    <a class="donate-path-card" href="donate-options.html#one-time-gifts">
+      <span class="donate-path-icon">★</span>
+      <strong>One-Time Gift</strong>
+      <span>Choose a one-time donation amount that supports advocacy, awareness, and prevention efforts.</span>
+    </a>
+    <a class="donate-path-card featured" href="https://donate.stripe.com/bJe3cualw6pK1Gt7LucjS01" rel="noopener" target="_blank">
+      <span class="donate-path-icon">✦</span>
+      <strong>Choose Your Amount</strong>
+      <span>Give the amount that feels right for you through Project Worth’s secure Stripe checkout.</span>
+    </a>
+    <a class="donate-path-card" href="donate-options.html#monthly-giving">
+      <span class="donate-path-icon">☀</span>
+      <strong>Monthly Support</strong>
+      <span>Become a monthly supporter and help build steady, sustainable mission support.</span>
+    </a>
+  </div>
 </div>
-<div class="card">
-<div class="icon">⚖</div>
-<h3>Advocacy &amp; Policy</h3>
-<p>Help advance survivor-informed policy work, legislative education, and advocacy efforts that strengthen child protection systems.</p>
+
+<div class="donate-support-intro card">
+  <div class="icon">★</div>
+  <h3>Building Toward Sustainable Impact</h3>
+  <p>Project Worth is building toward sustainable impact through community giving, grant funding, and strategic partnerships.</p>
 </div>
-<div class="card">
-<div class="icon">☀</div>
-<h3>Outreach &amp; Awareness</h3>
-<p>Fund outreach tools, awareness campaigns, sticker collections, community events, and materials that help spread prevention and hope.</p>
+
+<div class="donate-impact-grid donate-impact-grid-expanded">
+  <div class="card donate-impact-card">
+    <div class="icon">★</div>
+    <h3>Training &amp; Education</h3>
+    <p>Support grooming awareness materials, prevention-focused training, and resources for schools, churches, nonprofits, and community leaders.</p>
+  </div>
+  <div class="card donate-impact-card">
+    <div class="icon">⚖</div>
+    <h3>Advocacy &amp; Policy</h3>
+    <p>Help advance survivor-informed policy work, legislative education, and advocacy efforts that strengthen child protection systems.</p>
+  </div>
+  <div class="card donate-impact-card">
+    <div class="icon">☀</div>
+    <h3>Outreach &amp; Awareness</h3>
+    <p>Fund outreach tools, awareness campaigns, stickers, community events, and materials that help spread prevention and hope.</p>
+  </div>
+  <div class="card donate-impact-card">
+    <div class="icon">✦</div>
+    <h3>Donor &amp; Grant Readiness</h3>
+    <p>Strengthen the foundation Project Worth needs to pursue grants, steward donors, and build long-term community partnerships.</p>
+  </div>
+  <div class="card donate-impact-card">
+    <div class="icon">♡</div>
+    <h3>What Support Can Fund</h3>
+    <p>Volunteer stipends, survivor-informed advocacy, training materials, outreach resources, and system-strengthening initiatives.</p>
+  </div>
+  <div class="card donate-impact-card">
+    <div class="icon">⚙</div>
+    <h3>Long-Term Vision</h3>
+    <p>Support future work toward a centralized Wisconsin database, improved reporting systems, and stronger child protection infrastructure.</p>
+  </div>
 </div>
-</div>
-<div class="card subsection-card" style="margin-top:1.5rem;">
-<div class="icon">★</div>
-<h3 style="color: var(--gold); font-weight:800; letter-spacing:0.03em;">Donor &amp; Grant Readiness</h3>
-<p style="color: var(--white); font-weight:600;">Project Worth is building toward sustainable impact through community giving, grant funding, and strategic partnerships.</p>
-<div class="grant-list">
-<div class="press-item">
-<p style="color: var(--white); font-weight:700; margin-bottom:0.35rem;">What support can fund</p>
-<p style="color: var(--white);">Volunteer stipends, survivor-informed advocacy, training materials, outreach resources, and system-strengthening initiatives.</p>
-</div>
-<div class="press-item">
-<p style="color: var(--white); font-weight:700; margin-bottom:0.35rem;">Long-term vision</p>
-<p style="color: var(--white);">Support future work toward a centralized Wisconsin database, improved reporting systems, and stronger child protection infrastructure.</p>
-</div>
-</div>
-</div>
+
+<p class="donate-tax-note donate-tax-note-light">Project Worth is a registered 501(c)(3) nonprofit organization.</p>
 </div>
 </section>
+
 </main>
 <footer style="position:relative; overflow:hidden;">
 <span style="position:absolute; top:12px; left:10%; color:#ffd24a; opacity:0.35;">★</span>

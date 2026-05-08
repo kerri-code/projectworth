@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Donate to Project Worth | Donation Options</title>
+<style>
+:root {
+  --navy: #0f3158;
+  --gold: #c89b2f;
+  --gold-dark: #a87d1f;
+  --cream: #faf6ef;
+  --ink: #171717;
+  --muted: #5e6470;
+  --white: #ffffff;
+  --border: #e7dccf;
+  --shadow: 0 14px 36px rgba(15, 49, 88, 0.10);
+  --max: 1160px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(to bottom, #fff, var(--cream));
+  line-height: 1.65;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+p { margin-bottom: 1.1rem; }
+.container { width: min(92%, var(--max)); margin: 0 auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  border-bottom: 2px solid var(--gold);
+  overflow: hidden;
+}
+.header-scene { position: absolute; inset: 0; pointer-events: none; opacity: 0.9; }
+.trail-star {
+  position: absolute;
+  color: #ffd24a;
+  text-shadow: 0 0 4px rgba(255,215,90,0.95), 0 0 10px rgba(255,200,60,0.75);
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.75;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 2;
+}
+.brand { display: flex; align-items: center; gap: 0.9rem; }
+.brand img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; }
+.brand-text strong { display: block; color: var(--white); font-size: 1.05rem; letter-spacing: 0.08em; }
+.brand-text small { color: var(--gold); font-weight: 700; letter-spacing: 0.04em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; }
+.nav-links a { color: var(--white); font-weight: 700; font-size: 0.95rem; }
+.nav-links a:hover { color: var(--gold); }
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.95rem 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition: 0.2s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.btn-primary { background: var(--gold); color: var(--white); box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+.btn-secondary { color: var(--navy); border-color: var(--navy); background: transparent; }
+.btn-secondary:hover { background: rgba(15,49,88,0.06); transform: translateY(-2px); }
+section { padding: 4.5rem 0; }
+.eyebrow {
+  display: inline-block;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  padding: 1.7rem;
+  box-shadow: var(--shadow);
+}
+.icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(15,49,88,0.08), rgba(200,155,47,0.18));
+  display: grid;
+  place-items: center;
+  color: var(--gold-dark);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.donate-hero-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(2.2rem, 5vw, 3.5rem);
+  margin-bottom: 1.8rem;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top left, rgba(255,210,74,0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.09), transparent 28%),
+    linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  border: 2px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.donate-hero-card h1 {
+  color: #fff;
+  font-size: clamp(2.35rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.06;
+  margin-bottom: 0.8rem;
+}
+.donate-hero-card p {
+  color: rgba(255,255,255,0.92);
+  font-weight: 650;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.donate-star { position: absolute; color: #ffd24a; opacity: 0.28; pointer-events: none; }
+.donate-star-one { top: 1rem; left: 12%; }
+.donate-star-two { top: 2rem; right: 16%; font-size: 0.85rem; }
+.donate-star-three { bottom: 1.2rem; left: 26%; font-size: 0.8rem; }
+.donate-hero-actions { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; margin-top: 1.2rem; }
+.donate-light-btn { color: #fff !important; border-color: #fff !important; }
+.donate-secure-note { color: rgba(255,255,255,0.78) !important; font-size: 0.95rem; margin-top: 1rem !important; margin-bottom: 0 !important; }
+.donate-choice-shell {
+  margin: 0 auto 1.8rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border-radius: 30px;
+  background: radial-gradient(circle at top right, rgba(200,155,47,0.12), transparent 30%), linear-gradient(135deg, #fffaf4, #ffffff);
+  border: 1px solid rgba(200,155,47,0.35);
+  border-left: 7px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.monthly-shell { background: radial-gradient(circle at top left, rgba(200,155,47,0.14), transparent 30%), linear-gradient(135deg, #ffffff, #fffaf4); }
+.donate-choice-heading { text-align: center; max-width: 820px; margin: 0 auto 1.25rem; }
+.donate-choice-heading .icon { margin-left: auto; margin-right: auto; }
+.donate-choice-heading h2 { color: var(--navy); font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 900; margin-bottom: 0.55rem; line-height: 1.1; }
+.donate-choice-heading p { color: #334052; font-weight: 650; }
+.donate-amount-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.donate-amount-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 13rem;
+  padding: 1.25rem;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(15,49,88,0.12);
+  border-top: 5px solid var(--gold);
+  box-shadow: 0 12px 28px rgba(15,49,88,0.08);
+  color: var(--navy);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.donate-amount-card:hover, .donate-amount-card:focus-visible { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 18px 42px rgba(200,155,47,0.20); }
+.donate-amount-card.featured { background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%); color: #fff; border: 2px solid var(--gold); }
+.donate-label { color: var(--gold-dark); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.donate-amount-card.featured .donate-label { color: var(--gold); }
+.donate-amount-card strong { color: inherit; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; font-weight: 900; }
+.donate-amount-card strong span { font-size: 1rem; font-weight: 900; opacity: 0.82; }
+.donate-amount-card .gift-copy { color: inherit; opacity: 0.86; font-weight: 650; line-height: 1.45; }
+.custom-donation-band {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding: 1.25rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #d2a22d 0%, #f4d98e 62%, #fff1c4 100%);
+  border: 1px solid rgba(15,49,88,0.14);
+}
+.custom-donation-band h3, .custom-donation-band p { color: var(--navy); margin-bottom: 0.25rem; }
+.custom-donation-band h3 { font-weight: 900; }
+.custom-donation-band p { font-weight: 700; }
+.donate-impact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 1.2rem; }
+.donate-impact-card { position: relative; overflow: hidden; min-height: 15rem; border-top: 5px solid var(--gold); background: radial-gradient(circle at top right, rgba(200,155,47,0.10), transparent 32%), linear-gradient(135deg, #ffffff, #fffaf4); transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease; }
+.donate-impact-card::after { content: "★"; position: absolute; right: 0.85rem; bottom: -0.4rem; color: var(--gold); opacity: 0.08; font-size: 4.25rem; pointer-events: none; }
+.donate-impact-card:hover { transform: translateY(-4px); border-color: rgba(200,155,47,0.55); box-shadow: 0 20px 48px rgba(15,49,88,0.16); }
+.donate-impact-card .icon, .donate-impact-card h3, .donate-impact-card p { position: relative; z-index: 1; }
+.donate-impact-card h3 { color: var(--navy); font-weight: 900; line-height: 1.1; margin-bottom: 0.7rem; }
+.donate-impact-card p { color: #334052; font-weight: 650; }
+.donate-tax-note { color: var(--navy); font-weight: 900; text-align: center; margin: 1.5rem auto 0; }
+.donor-readiness-card {
+  margin-top: 1.5rem;
+  padding: 1.7rem;
+  border-radius: 26px;
+  background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  border: 2px solid var(--gold);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.donor-readiness-card h2 { color: var(--gold); font-weight: 900; margin-bottom: 0.7rem; }
+.donor-readiness-card p { color: rgba(255,255,255,0.9); font-weight: 650; }
+.readiness-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem; }
+.readiness-item { padding: 1rem; border-radius: 18px; border: 1px solid rgba(200,155,47,0.25); background: rgba(255,255,255,0.06); color: #fff; font-weight: 700; }
+footer { background: #081524; color: rgba(255,255,255,0.88); margin-top: 4rem; padding: 2.5rem 0; position: relative; overflow: hidden; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1.5rem; align-items: start; }
+.footer-brand h3, .footer-grid h4 { color: #fff4dc; margin-bottom: 0.7rem; }
+.footer-grid p, .footer-grid a { color: rgba(255,255,255,0.82); }
+.footer-bottom { margin-top: 1.8rem; padding-top: 1.3rem; border-top: 1px solid rgba(255,255,255,0.14); text-align: center; color: rgba(255,255,255,0.68); font-size: 0.95rem; }
+@media (max-width: 980px) {
+  .donate-amount-grid, .donate-impact-grid, .readiness-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .nav { flex-direction: column; align-items: flex-start; }
+  .nav-links { gap: 0.9rem; }
+  .donate-amount-grid, .donate-impact-grid, .readiness-grid, .custom-donation-band { grid-template-columns: 1fr; }
+  .custom-donation-band { flex-direction: column; align-items: stretch; text-align: center; }
+  .custom-donation-band .btn { text-align: center; }
+  section { padding: 3.2rem 0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div aria-hidden="true" class="header-scene">
+    <span class="trail-star" style="left:8%; top:8px; font-size:7px;">★</span>
+    <span class="trail-star" style="left:18%; top:18px; font-size:9px;">★</span>
+    <span class="trail-star" style="left:32%; top:9px; font-size:7px;">★</span>
+    <span class="trail-star" style="left:46%; top:17px; font-size:8px;">★</span>
+    <span class="trail-star" style="left:64%; top:8px; font-size:7px;">★</span>
+    <span class="trail-star" style="left:82%; top:18px; font-size:9px;">★</span>
+  </div>
+  <div class="container nav">
+    <a class="brand" href="index.html#home">
+      <img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" />
+      <div class="brand-text">
+        <strong>PROJECT WORTH</strong>
+        <small>Change Starts Here.</small>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#mission">About Project Worth</a>
+      <a href="index.html#awareness">What is Grooming?</a>
+      <a href="index.html#advocacy">Advocacy</a>
+      <a href="index.html#team">Our Team</a>
+      <a href="index.html#press">Media &amp; Impact</a>
+      <a href="index.html#donate" style="color:var(--gold);">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="donate-hero-card">
+        <span aria-hidden="true" class="donate-star donate-star-one">★</span>
+        <span aria-hidden="true" class="donate-star donate-star-two">★</span>
+        <span aria-hidden="true" class="donate-star donate-star-three">★</span>
+        <div class="eyebrow" style="color:var(--gold);">Support the Mission</div>
+        <h1>Donate to Project Worth</h1>
+        <p>Your support helps Project Worth advance child protection reform, survivor-informed advocacy, prevention education, and awareness efforts across Wisconsin.</p>
+        <div class="donate-hero-actions">
+          <a class="btn btn-primary" href="#one-time-gifts">One-Time Gifts</a>
+          <a class="btn btn-secondary donate-light-btn" href="#monthly-giving">Monthly Support</a>
+        </div>
+        <p class="donate-secure-note">Project Worth does not collect or store payment information on this website. Donations are processed securely through Stripe.</p>
+      </div>
+
+      <div class="donate-choice-shell" id="one-time-gifts">
+        <div class="donate-choice-heading">
+          <div class="icon">★</div>
+          <div class="eyebrow">One-Time Gifts</div>
+          <h2>Choose a Gift Amount</h2>
+          <p>Each option links to Project Worth’s secure Stripe checkout. You can adjust the amount there before completing your donation.</p>
+        </div>
+
+        <div class="donate-amount-grid">
+          <a class="donate-amount-card" href="https://buy.stripe.com/9B6aEW9hs15q4SF4zicjS02" rel="noopener" target="_blank">
+            <span class="donate-label">Seed of Hope</span>
+            <strong>$10</strong>
+            <span class="gift-copy">Helps provide awareness materials, printing, and basic outreach resources.</span>
+          </a>
+          <a class="donate-amount-card" href="https://donate.stripe.com/bJe00ibpA6pK84R0j2cjS06" rel="noopener" target="_blank">
+            <span class="donate-label">Awareness Builder</span>
+            <strong>$25</strong>
+            <span class="gift-copy">Supports education tools, survivor-informed advocacy materials, and community awareness.</span>
+          </a>
+          <a class="donate-amount-card featured" href="https://donate.stripe.com/bJe5kC0KW8xS98V5DmcjS05" rel="noopener" target="_blank">
+            <span class="donate-label">Hope Giver</span>
+            <strong>$50</strong>
+            <span class="gift-copy">Helps Project Worth build prevention resources, outreach tools, and policy education materials.</span>
+          </a>
+          <a class="donate-amount-card" href="https://donate.stripe.com/dRm28q9hs9BW70N1n6cjS04" rel="noopener" target="_blank">
+            <span class="donate-label">Mission Builder</span>
+            <strong>$100</strong>
+            <span class="gift-copy">Strengthens advocacy work, donor readiness, training materials, and long-term mission growth.</span>
+          </a>
+        </div>
+
+        <div class="custom-donation-band">
+          <div>
+            <h3>Want to choose your own amount?</h3>
+            <p>Use Stripe’s secure checkout and enter the donation amount that feels right for you.</p>
+          </div>
+          <a class="btn btn-secondary" href="https://buy.stripe.com/00w7sK0KWaG0etf2racjS00" rel="noopener" target="_blank">Choose Your Amount</a>
+        </div>
+      </div>
+
+      <div class="donate-choice-shell monthly-shell" id="monthly-giving">
+        <div class="donate-choice-heading">
+          <div class="icon">☀</div>
+          <div class="eyebrow">Monthly Giving</div>
+          <h2>Become a Monthly Supporter</h2>
+          <p>Monthly giving helps Project Worth plan ahead, build steady resources, and continue advocacy, awareness, and prevention work over time.</p>
+        </div>
+
+        <div class="donate-amount-grid">
+          <a class="donate-amount-card" href="https://donate.stripe.com/cNifZgeBMeWg3OBgi0cjS07" rel="noopener" target="_blank">
+            <span class="donate-label">Monthly Light</span>
+            <strong>$10<span>/mo</span></strong>
+            <span class="gift-copy">Small steady gifts help keep outreach and awareness moving.</span>
+          </a>
+          <a class="donate-amount-card featured" href="https://donate.stripe.com/5kQ14m1P0g0k1Gt3vecjS08" rel="noopener" target="_blank">
+            <span class="donate-label">Protection Partner</span>
+            <strong>$25<span>/mo</span></strong>
+            <span class="gift-copy">Provides reliable support for prevention education, advocacy tools, and materials.</span>
+          </a>
+          <a class="donate-amount-card" href="https://donate.stripe.com/dRm3cu1P0eWg0Cpgi0cjS09" rel="noopener" target="_blank">
+            <span class="donate-label">Advocacy Champion</span>
+            <strong>$50<span>/mo</span></strong>
+            <span class="gift-copy">Helps build stable support for statewide awareness and reform efforts.</span>
+          </a>
+          <a class="donate-amount-card" href="https://donate.stripe.com/bJeaEW9hs9BW98Vc1KcjS0a" rel="noopener" target="_blank">
+            <span class="donate-label">Systems Changer</span>
+            <strong>$100<span>/mo</span></strong>
+            <span class="gift-copy">Invests in long-term policy education, partnerships, and system-strengthening work.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card" style="text-align:center; border-left:7px solid var(--gold); background:linear-gradient(135deg,#fffaf4,#ffffff);">
+        <div class="icon" style="margin-left:auto; margin-right:auto;">★</div>
+        <div class="eyebrow">Where Your Support Goes</div>
+        <h2 style="color:var(--navy); font-size:clamp(1.7rem,3vw,2.35rem); line-height:1.1; margin-bottom:0.6rem;">Building Toward Sustainable Impact</h2>
+        <p style="max-width:760px; margin-left:auto; margin-right:auto; color:#334052; font-weight:700;">Project Worth is building toward sustainable impact through community giving, grant funding, and strategic partnerships.</p>
+      </div>
+
+      <div class="donate-impact-grid">
+        <div class="card donate-impact-card">
+          <div class="icon">★</div>
+          <h3>Training &amp; Education</h3>
+          <p>Support grooming awareness materials, prevention-focused training, and resources for schools, churches, nonprofits, and community leaders.</p>
+        </div>
+        <div class="card donate-impact-card">
+          <div class="icon">⚖</div>
+          <h3>Advocacy &amp; Policy</h3>
+          <p>Help advance survivor-informed policy work, legislative education, and advocacy efforts that strengthen child protection systems.</p>
+        </div>
+        <div class="card donate-impact-card">
+          <div class="icon">☀</div>
+          <h3>Outreach &amp; Awareness</h3>
+          <p>Fund outreach tools, awareness campaigns, stickers, community events, and materials that help spread prevention and hope.</p>
+        </div>
+        <div class="card donate-impact-card">
+          <div class="icon">✦</div>
+          <h3>Donor &amp; Grant Readiness</h3>
+          <p>Strengthen the foundation Project Worth needs to pursue grants, steward donors, and build long-term community partnerships.</p>
+        </div>
+        <div class="card donate-impact-card">
+          <div class="icon">♡</div>
+          <h3>What Support Can Fund</h3>
+          <p>Volunteer stipends, survivor-informed advocacy, training materials, outreach resources, and system-strengthening initiatives.</p>
+        </div>
+        <div class="card donate-impact-card">
+          <div class="icon">⚙</div>
+          <h3>Long-Term Vision</h3>
+          <p>Support future work toward a centralized Wisconsin database, improved reporting systems, and stronger child protection infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="donor-readiness-card">
+        <h2>Donor Transparency</h2>
+        <p>Project Worth is committed to responsible stewardship, mission-centered spending, and building a strong foundation for future grants, sponsorships, and partnerships.</p>
+        <div class="readiness-grid">
+          <div class="readiness-item">501(c)(3) nonprofit organization</div>
+          <div class="readiness-item">Survivor-informed advocacy and awareness</div>
+          <div class="readiness-item">Focused on prevention, policy, and systems change</div>
+        </div>
+      </div>
+
+      <p class="donate-tax-note">Project Worth is a registered 501(c)(3) nonprofit organization.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span style="position:absolute; top:12px; left:10%; color:#ffd24a; opacity:0.35;">★</span>
+  <span style="position:absolute; top:24px; right:18%; color:#ffd24a; opacity:0.3; font-size:0.85rem;">★</span>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:cover; margin-bottom:0.9rem;" />
+      <h3>Project Worth</h3>
+      <p>Protecting Kids. Changing Systems. Empowering Survivors.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="mailto:info@projectworthwi.org">info@projectworthwi.org</a></p>
+      <p><a href="index.html#involved">Light the Way</a></p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="index.html#home">Home</a></p>
+      <p><a href="index.html#advocacy">Advocacy</a></p>
+      <p><a href="index.html#donate">Donate</a></p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    © 2026 Project Worth. Project Worth focuses on advocacy, awareness, and systems change. It does not provide legal advice, counseling, or direct services.
+  </div>
+</footer>
+</body>
+</html>
