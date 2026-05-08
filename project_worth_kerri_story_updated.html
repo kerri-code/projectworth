@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Worth | Change Starts Here.</title>
+  <style>
+    :root {
+      --navy: #0f3158;
+      --gold: #c89b2f;
+      --gold-dark: #a87d1f;
+      --blush: #f2e5df;
+      --cream: #faf6ef;
+      --ink: #171717;
+      --muted: #5e6470;
+      --white: #ffffff;
+      --border: #e7dccf;
+      --shadow: 0 14px 36px rgba(15, 49, 88, 0.10);
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(to bottom, #fff, var(--cream));
+      line-height: 1.65;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+      border-bottom: 2px solid var(--gold);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .header-scene {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.92;
+    }
+
+    .trail-star {
+      position: absolute;
+      color: #ffd24a;
+      text-shadow:
+        0 0 4px rgba(255,215,90,0.95),
+        0 0 10px rgba(255,200,60,0.75),
+        0 0 18px rgba(255,185,40,0.45);
+      font-weight: 700;
+      line-height: 1;
+      opacity: 0.82;
+      pointer-events:none;
+      z-index: 0;
+    }
+
+    .tiny { font-size:6px; opacity:0.72; }
+    .small { font-size:8px; opacity:0.78; }
+    .med { font-size:10px; opacity:0.84; }
+    .big { font-size:12px; opacity:0.88; }
+
+    .trail-star.gold { color: #ffd978; }
+
+    .s1 { right: 16%; top: 18px; font-size: 16px; }
+    .s2 { right: 21%; top: 26px; font-size: 13px; }
+    .s3 { right: 27%; top: 38px; font-size: 15px; }
+    .s4 { right: 34%; top: 50px; font-size: 12px; }
+    .s5 { right: 42%; top: 60px; font-size: 17px; }
+    .s6 { right: 50%; top: 69px; font-size: 12px; }
+    .s7 { right: 58%; top: 67px; font-size: 15px; }
+    .s8 { right: 66%; top: 57px; font-size: 11px; }
+    .s9 { right: 74%; top: 43px; font-size: 14px; }
+    .s10 { right: 80%; top: 28px; font-size: 11px; }
+    .s11 { right: 85%; top: 18px; font-size: 12px; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1rem 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-text small {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .btn {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.95rem 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      transition: 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      border-color: var(--navy);
+      background: transparent;
+    }
+
+    .btn-secondary:hover { background: rgba(15,49,88,0.06); }
+
+    .hero {
+      padding: 4rem 0 4rem;
+      background:
+        radial-gradient(circle at top right, rgba(200,155,47,0.14), transparent 30%),
+        linear-gradient(135deg, #fff 0%, #fffaf4 55%, #f8efe8 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+    }
+
+    h1, h2, h3 { line-height: 1.1; }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: #334052;
+      font-size: 1.08rem;
+      max-width: 660px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::after,
+    .story-banner-left::after,
+    .story-banner-right::after,
+    .cta-band::after {
+      content: "";
+      position: absolute;
+      background-image: url('PROJECT-WORTH-LOGO.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    .hero-panel::after {
+      right: 1rem;
+      bottom: 1rem;
+      width: 100px;
+      height: 100px;
+      opacity: 0.15;
+    }
+
+    .hero-panel h3 {
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+      font-size: 1.3rem;
+    }
+
+    section { padding: 4.5rem 0; }
+
+    section {
+      scroll-margin-top: 115px;
+    }
+
+    /* tighter grouping for specific sections */
+    #values, #involved { padding-top: 3rem; }
+    #mission { padding-bottom: 3.5rem; }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .grid-3 .card {
+      max-width: 320px;
+    }
+
+    .card, .panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 1.7rem;
+      box-shadow: var(--shadow);
+    }
+
+    .subsection-card {
+      background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+      border: 1px solid rgba(200,155,47,0.28);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle star overlay for all navy sections */
+    .subsection-card::before {
+      content: "★ ★ ★ ★ ★ ★ ★ ★";
+      position: absolute;
+      top: 10px;
+      left: 5%;
+      font-size: 10px;
+      letter-spacing: 18px;
+      color: #ffd24a;
+      opacity: 0.18;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .subsection-card::after {
+      content: "★ ★ ★ ★ ★ ★ ★ ★";
+      position: absolute;
+      bottom: 10px;
+      right: 5%;
+      font-size: 10px;
+      letter-spacing: 18px;
+      color: #ffd24a;
+      opacity: 0.15;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .subsection-card h3 { color: #fff7e8; }
+    .subsection-card p { color: rgba(255,255,255,0.92); }
+
+    .card h3, .panel h3 {
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+      font-size: 1.28rem;
+    }
+
+    .card p, .panel p, .panel li { color: var(--ink); }
+
+    .card .icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(15,49,88,0.08), rgba(200,155,47,0.18));
+      display: grid;
+      place-items: center;
+      color: var(--gold-dark);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .subsection-card .icon {
+      background: rgba(200,155,47,0.14);
+      color: var(--gold);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .story-hero { background: linear-gradient(135deg, #fffaf3 0%, #f7ece4 100%); }
+
+    .story-banner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .story-banner-left {
+      padding: 3.25rem;
+      background:
+        linear-gradient(rgba(255,251,245,0.96), rgba(255,251,245,0.96)),
+        radial-gradient(circle at center, rgba(200,155,47,0.10), transparent 50%);
+      position: relative;
+    }
+
+    .story-banner-left::after {
+      right: 2rem;
+      top: 1rem;
+      width: 100%;
+      height: 100%;
+      opacity: 0.08;
+      background-position: center;
+    }
+
+    .story-banner-left > * { position: relative; z-index: 1; }
+
+    .story-banner-left h2 {
+      font-size: clamp(3.4rem, 7vw, 5.8rem);
+      color: #111111;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.01em;
+    }
+
+    .story-kicker {
+      color: var(--gold-dark);
+      font-style: italic;
+      font-size: 2.15rem;
+      margin-bottom: 1.2rem;
+      font-family: Georgia, serif;
+    }
+
+    .story-banner-left p {
+      color: #445163;
+      max-width: 560px;
+      font-size: 1.08rem;
+    }
+
+    .story-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .story-divider::before,
+    .story-divider::after {
+      content: "";
+      height: 3px;
+      width: 110px;
+      background: var(--gold);
+      display: block;
+    }
+
+    .story-banner-right {
+      background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+      color: var(--white);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      min-height: 430px;
+    }
+
+    .story-banner-right::after {
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: 100px;
+      opacity: 0.08;
+    }
+
+    .story-banner-right blockquote {
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      line-height: 1.45;
+      font-family: Georgia, serif;
+      max-width: 470px;
+      color: #fff8eb;
+      font-style: italic;
+    }
+
+    .story-banner-right blockquote span {
+      display: block;
+      color: var(--gold);
+      font-size: 5rem;
+      line-height: 0.8;
+      margin-bottom: 1rem;
+      font-style: normal;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+      margin-top: 1.6rem;
+    }
+
+    .callout-stat {
+      border-left: 5px solid var(--gold);
+      background: rgba(200,155,47,0.08);
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      margin-top: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .star-section { background: linear-gradient(180deg, #fff 0%, #f7efe8 100%); }
+
+    .star-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .star-visual {
+      min-height: 360px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 50% 45%, rgba(200,155,47,0.16), transparent 35%),
+        linear-gradient(135deg, #fffaf4, #fff);
+      position: relative;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .wisconsin-outline {
+      position: absolute;
+      inset: 50px 80px 40px 80px;
+      border: 4px solid var(--navy);
+      border-radius: 42% 35% 45% 30% / 30% 42% 34% 41%;
+      transform: rotate(-8deg);
+      opacity: 0.12;
+    }
+
+    .big-star {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 8rem;
+      color: var(--gold);
+      text-shadow: 0 10px 35px rgba(200,155,47,0.25);
+    }
+
+    .cta-band {
+      background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 2.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+    }
+
+    .cta-band::after {
+      right: -20px;
+      bottom: -20px;
+      width: 140px;
+      height: 140px;
+      opacity: 0.08;
+    }
+
+    .cta-band h3 {
+      color: #fff7ea;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-band p { color: rgba(255,255,255,0.88); }
+
+    form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .small-note { font-size: 0.92rem; opacity: 0.9; }
+
+    .press-list, .grant-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .press-item {
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid rgba(200,155,47,0.25);
+      background: rgba(255,255,255,0.04);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1rem 1rem;
+      border: 1px solid #d8cdbf;
+      border-radius: 18px;
+      font: inherit;
+      background: #fff;
+    }
+
+    textarea { resize: vertical; min-height: 150px; }
+
+    footer {
+      background: #081524;
+      color: rgba(255,255,255,0.88);
+      margin-top: 4rem;
+      padding: 2.5rem 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .footer-brand h3,
+    .footer-grid h4 {
+      color: #fff4dc;
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-grid p,
+    .footer-grid a { color: rgba(255,255,255,0.82); }
+
+    .footer-bottom {
+      margin-top: 1.8rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      text-align: center;
+      color: rgba(255,255,255,0.68);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .story-banner,
+      .story-grid,
+      .split,
+      .star-wrap,
+      .footer-grid { grid-template-columns: 1fr; }
+      .cta-band { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 0.9rem; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .story-banner-left,
+      .story-banner-right { padding: 2rem; }
+      section { padding: 4rem 0; }
+      .hero { padding-top: 4.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-scene" aria-hidden="true">
+      <span class="trail-star med s1">★</span>
+      <span class="trail-star small s2">★</span>
+      <span class="trail-star med s3">★</span>
+      <span class="trail-star tiny s4">★</span>
+      <span class="trail-star med s5">★</span>
+      <span class="trail-star tiny s6">★</span>
+      <span class="trail-star small s7">★</span>
+      <span class="trail-star tiny s8">★</span>
+      <span class="trail-star small s9">★</span>
+      <span class="trail-star tiny s10">★</span>
+      <span class="trail-star small s11">★</span>
+      <span class="trail-star tiny" style="left:8%; top:4px;">★</span>
+      <span class="trail-star tiny" style="left:16%; top:12px;">★</span>
+      <span class="trail-star tiny" style="left:24%; top:6px;">★</span>
+      <span class="trail-star tiny" style="left:32%; top:14px;">★</span>
+      <span class="trail-star tiny" style="left:40%; top:4px;">★</span>
+      <span class="trail-star tiny" style="left:48%; top:10px;">★</span>
+      <span class="trail-star tiny" style="left:56%; top:6px;">★</span>
+      <span class="trail-star tiny" style="left:64%; top:12px;">★</span>
+      <span class="trail-star tiny" style="left:72%; top:4px;">★</span>
+      <span class="trail-star tiny" style="left:80%; top:10px;">★</span>
+      <span class="trail-star tiny" style="left:88%; top:6px;">★</span>
+    </div>
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <img src="PROJECT-WORTH-LOGO.png" alt="Project Worth Logo" style="width:62px; height:62px; border-radius:50%; object-fit:cover;">
+        <div class="brand-text">
+          <strong>PROJECT WORTH</strong>
+          <small>Change Starts Here.</small>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#mission">About Project Worth</a>
+        <a href="#story">Kerri's Story</a>
+        <a href="#team">Our Team</a>
+        <a href="#press">Media & Impact</a>
+        <a href="#awareness">Awareness</a>
+        <a href="#merch">Shop</a>
+        <a href="#donate">Donate</a>
+        <a href="#involved" style="font-weight:800;">
+          <span style="color: var(--white);">Get Involved:</span>
+          <span style="color: var(--gold);"> Light the Way</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" style="padding-top:5rem; padding-bottom:4rem;">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Protecting Kids. Changing Systems. Empowering Survivors.</div>
+          <h1>Change Starts Here.</h1>
+          <p>Together, we <span style="color: var(--gold); font-weight:800;">light up the darkness</span>.</p>
+          <p>
+            Project Worth was built from lived experience and a belief that children deserve more than silence and systems that miss what should have been prevented. This work is about protecting children, empowering survivors, and building systems that act sooner, communicate clearly, and prevent harm before it continues.
+          </p>
+          <div class="hero-actions">
+            <a href="#mission" class="btn btn-primary">About Project Worth</a>
+            <a href="#involved" class="btn btn-secondary">Join the Movement</a>
+          </div>
+          <p><span style="color: var(--navy); font-weight:800;">We believe every child is worth protecting, every voice matters, and every community has the power to bring light into broken systems.</span></p>
+        </div>
+
+        <div class="hero-panel">
+          <h3>Why Project Worth Exists</h3>
+          <p style="margin-bottom: 20px;">
+            Broken systems are not rare. What matters is what happens next. Project Worth exists to ensure that when patterns are known, they lead to action, not silence.
+          </p>
+          <p>This work is rooted in advocacy, shaped by lived experience, and focused on real systemic change that prioritizes protecting children.</p>
+          <div class="callout-stat">
+            Wisconsin is behind many states in child protection, with outdated systems and gaps that leave known risks untracked and unaddressed.
+          </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="mission">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About Project Worth</h2>
+          <p>Project Worth is a nonprofit focused on protecting children, strengthening systems, and supporting survivor-informed reform.</p>
+        </div>
+
+        <div class="split">
+          <div class="card subsection-card">
+            <div class="icon">★</div>
+            <h3 style="color: var(--gold); font-weight:800; letter-spacing:0.03em;">Our Purpose</h3>
+            <p style="color: var(--white); font-weight:600;">We work to close gaps in child protection by advocating for stronger laws, improving reporting systems, and helping communities recognize risk earlier.</p>
+            <p style="color: var(--white); font-weight:600;">Together, we light up the darkness by turning awareness into action and building systems that protect children first.</p>
+          </div>
+
+          <div class="card subsection-card">
+            <div class="icon">★</div>
+            <h3 style="color: var(--gold); font-weight:800; letter-spacing:0.03em;">Key Focus Areas</h3>
+            <ul style="color: rgba(255,255,255,0.9); font-weight:600; list-style:none; padding-left:0;">
+              <li>★ Stronger reporting and accountability systems</li>
+              <li>★ Survivor-informed policy change</li>
+              <li>★ Community education and prevention</li>
+              <li>★ Partnerships that drive real reform</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+              <div style="margin-top:2.5rem;">
+          <div class="section-heading">
+            <h2>Our Values</h2>
+            <p>What guides Project Worth in every decision, conversation, and action.</p>
+          </div>
+          <div class="grid-3">
+            <div class="card"><h3>Protection First</h3><p>Children deserve systems that act early, consistently, and decisively to keep them safe.</p></div>
+            <div class="card"><h3>Truth & Transparency</h3><p>We bring light to what is hidden, responsibly and factually, so patterns cannot continue unnoticed. We work to build stronger systems together for children, not assign blame.</p></div>
+            <div class="card"><h3>Survivor-Informed</h3><p>Lived experience helps shape stronger systems and better protection.</p></div>
+            <div class="card"><h3>Accountability</h3><p>Systems and institutions must be transparent, responsive, and held accountable when they fail to protect children.</p></div>
+            <div class="card"><h3>System Reform</h3><p>We work to close gaps and build stronger, more effective child protection systems.</p></div>
+            <div class="card"><h3>Nonpartisan</h3><p>Child safety is not political. We work across all parties and perspectives to advance solutions that protect children, focusing on shared responsibility over ideology.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="story-hero" id="story">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:2rem;">
+          <div class="eyebrow" style="letter-spacing:0.18em; font-weight:900;">Kerri’s Story</div>
+          <h2 style="font-size:clamp(3.3rem, 7vw, 5.8rem); font-weight:900; letter-spacing:0.02em; color:var(--navy); margin-bottom:0.4rem;">KERRI’S STORY</h2>
+          <div class="story-kicker" style="font-size:2.1rem; color:var(--gold-dark); margin-bottom:0.6rem;">My why. Our purpose.</div>
+          <div class="story-divider" style="justify-content:center;">★</div>
+        </div>
+
+        <div class="story-banner" style="border-radius:32px;">
+          <div class="story-banner-left" style="padding:2.6rem;">
+            <div style="padding:1.8rem; border-radius:26px; background:linear-gradient(135deg,#fffaf4,#fff); border:1px solid var(--border); box-shadow:0 10px 26px rgba(15,49,88,0.06);">
+              <p>This is not my whole story, but it is the piece that shaped my voice and commitment to change.</p>
+
+              <p>As a minor, I was abused and groomed by an authority figure in a Kenosha private school. I later learned the school had received reports of sexual misconduct involving me during my time as a student, but failed to make a mandated report and failed to notify my parents.</p>
+
+              <p>Years later, while earning my master’s in counseling and serving as a mandated reporter myself, I made the decision to report the abuse I experienced as a child. I believed speaking up would help protect other children.</p>
+
+              <p><strong>I was wrong.</strong></p>
+
+              <p>Instead of clarity, protection, or accountability, I came face to face with the gaps that still exist in reporting, response, and child protection. Because I was an adult at the time of reporting, CPS could not investigate, even though the individual remained in regular contact with minors.</p>
+
+              <p>I also saw some of the darkest behavior from leaders within the school and church where the abuse occurred. People and institutions that maintained a positive public image privately responded with silence, deflection, and self-protection when children deserved courage, honesty, and action.</p>
+
+              <p>Despite years of known concerns and predatory behavior, my 2020 police report resulted in no charges due to jurisdictional limits, and he was never formally asked to step down. He was praised publicly and featured in the school’s 2021 yearbook after I made the police report.</p>
+
+              <p>That reality led me to testify before our state senate and help create Wisconsin Act 200.</p>
+
+              <p>These were not isolated failures. I now know far more about the laws connected to my case than I ever intended to, and I have learned that Wisconsin has significantly fewer protections for child abuse than some neighboring and regional states. I want Wisconsin to lead in child protection legislation instead of playing catch-up.</p>
+
+              <p><strong>My faith never wavered. My trust in systems meant to protect children did.</strong></p>
+
+              <p>Today, I am a wife to my husband Zac, a mom to my cat Ellie, “Auntie Kerri,” and a professional counselor working primarily with children and families. I am also a foster mom, godmother, daughter, and friend.</p>
+
+              <p>This work is deeply personal, but it is bigger than my story.</p>
+
+              <p>It is for every child who deserved protection, every survivor who deserved to be heard, and every person who believes we can do better.</p>
+
+              <p>If you’ve been hurt, you’re not alone.</p>
+
+              <p>Project Worth is about turning silence into action. It is about advocating for stronger child protection systems, pushing for accountability, and building something that helps light the way forward.</p>
+
+              <p><strong>For more on my advocacy and SB 333, please visit the advocacy section or review Wisconsin Act 200.</strong></p>
+            </div>
+          </div>
+
+          <div class="story-banner-right" style="border-left:2px solid var(--gold);">
+            <blockquote><span>“</span>Every time I thought about giving up, I thought about who this could help, and I knew it was worth it to keep going.</blockquote>
+          </div>
+
+          <div class="card" style="margin:0 2.6rem 2.6rem; border-left:6px solid var(--gold); background:linear-gradient(135deg,#fff,#fffaf4); grid-column:1 / -1;">
+            <div class="icon">⚖</div>
+            <h3 style="color:var(--navy); font-weight:800; margin-bottom:0.4rem;">System Gaps in Practice</h3>
+
+            <p>Illinois DCFS logged Kerri’s report of her own child abuse in 2026, which occurred primarily in Wisconsin between 2010–2012, while Kenosha CPS has no record. Kerri’s Illinois residency as a minor meant Wisconsin did not have sole jurisdiction, yet no reports were made to Illinois or federal authorities at the time. <span style="font-weight:700; color:var(--navy);">Illinois offers stronger criminal and civil protections for cases like Kerri’s, even when the abuse occurs out of state.</span></p>
+
+            <p style="font-weight:800; color:var(--navy); margin-bottom:0;">
+              See more in <a href="#awareness" style="color:var(--navy); text-decoration:underline; font-weight:800;">Awareness</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="star-section" id="star">
+      <div class="container star-wrap">
+        <div class="star-visual">
+          <div class="wisconsin-outline"></div>
+          <div class="big-star">★</div>
+        </div>
+
+        <div class="card subsection-card">
+          <div class="icon">★</div>
+          <div class="eyebrow" style="color: var(--gold);">The Meaning Behind the Star</div>
+          <h3 style="color: var(--gold); font-weight:800; letter-spacing:0.03em;">What the Star Symbolizes</h3>
+          <p style="color: var(--white); font-weight:600;">The star in our logo marks Kenosha, Wisconsin, where this mission began. It represents light in places where systems have stayed silent.</p>
+          <p style="color: var(--white); font-weight:600;">For Project Worth, the star is a reminder that change starts locally, and that even one point of light can guide a safer future.</p>
+          <ul style="color: var(--white); font-weight:600; margin-top:1rem; list-style:none; padding-left:0;">
+            <li>★ Hope for children</li>
+            <li>★ Courage for survivors</li>
+            <li>★ Light in dark places</li>
+            <li>★ Change that starts here</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="subsection-card" style="margin-bottom:1.5rem; text-align:center; padding:2.2rem; position:relative; overflow:hidden;">
+          <span style="position:absolute; top:10px; left:15%; color:#ffd24a; opacity:0.5;">★</span>
+          <span style="position:absolute; top:20px; right:20%; color:#ffd24a; opacity:0.4; font-size:0.9rem;">★</span>
+          <span style="position:absolute; bottom:15px; left:25%; color:#ffd24a; opacity:0.35; font-size:0.8rem;">★</span>
+
+          <h3 style="color:#fff; font-weight:800; letter-spacing:0.04em; margin-bottom:0.4rem;">From Pain to Purpose</h3>
+          <div style="color: var(--gold); font-weight:800; font-size:1.1rem; margin-bottom:1rem;">Light Begins Here</div>
+
+          <p style="color:#fff; font-weight:700; max-width:720px; margin:0 auto 1.2rem;">
+            Project Worth began with lived experience and grew into public advocacy to strengthen child protection in Wisconsin. What started as one voice speaking up is now a mission to close systemic gaps, inform policy, and ensure known risks lead to action before harm continues.
+          </p>
+
+          <div style="display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap; margin-top:0.6rem;">
+            <a href="#story" class="btn btn-secondary" style="color:#fff; border-color:#fff;">Read Kerri’s Story</a>
+            <a href="#press" class="btn btn-primary">Media &amp; Impact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container" style="text-align:center; margin-bottom:1rem;">
+        <img src="PROJECT-WORTH-LOGO.png" alt="Project Worth Logo" style="width:90px; height:90px; object-fit:contain; opacity:0.9; margin:0 auto;">
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card" style="max-width:820px; margin:0 auto 1.5rem; text-align:center; border-left:6px solid var(--gold);">
+          <h3 style="color:var(--navy); font-weight:800; margin-bottom:0.4rem;">Your Voice Matters</h3>
+          <p style="color:var(--ink); font-weight:600; max-width:700px; margin:0.5rem auto 0.9rem;">
+            Adult survivors of childhood abuse in Wisconsin can help bring awareness to reporting barriers, systemic gaps, and the changes needed to better protect children.
+          </p>
+          <a href="mailto:info@projectworthwi.org?subject=Share My Story" class="btn btn-primary">Connect or Share Your Story</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="subsection-card" style="margin-bottom:1.5rem; text-align:center; padding:2rem; position:relative; overflow:hidden;">
+          <span style="position:absolute; top:10px; left:12%; color:#ffd24a; opacity:0.4;">★</span>
+          <span style="position:absolute; bottom:12px; right:18%; color:#ffd24a; opacity:0.35;">★</span>
+
+          <h3 style="color: var(--gold); font-weight:800; letter-spacing:0.04em;">Merch Coming Soon</h3>
+          <p style="color:#fff; font-weight:600; max-width:640px; margin:0.5rem auto 1rem;">
+            Sneak peek: Project Worth sticker collection designed to spread awareness, hope, and belonging.
+          </p>
+
+          <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
+            <div style="width:90px; height:90px; border-radius:18px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2);"></div>
+            <div style="width:90px; height:90px; border-radius:18px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2);"></div>
+            <div style="width:90px; height:90px; border-radius:18px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2);"></div>
+            <div style="width:90px; height:90px; border-radius:18px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-band" style="background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%); border:2px solid var(--gold); position:relative; overflow:hidden;">
+          <span style="position:absolute; top:10px; left:15%; color:#ffd24a; opacity:0.4;">★</span>
+          <span style="position:absolute; top:20px; right:20%; color:#ffd24a; opacity:0.35; font-size:0.85rem;">★</span>
+          <span style="position:absolute; bottom:15px; left:30%; color:#ffd24a; opacity:0.3; font-size:0.8rem;">★</span>
+          <div>
+            <h3>Together, We Can Build Better Systems.</h3>
+            <p>Join our movement to protect children, strengthen systems, and bring light to the places where change is long overdue.</p>
+          </div>
+          <a href="#donate" class="btn btn-primary">Donate Coming Soon</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="press">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Media &amp; Impact</h2>
+          <p>Public advocacy, legislative work, and media coverage connected to Project Worth.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:1.5rem; text-align:center;">
+          <h3>Media Inquiries</h3>
+          <p>For interviews, press inquiries, speaking requests, or media opportunities, please contact Project Worth directly.</p>
+          <a href="#involved" class="btn btn-primary">Email Project Worth</a>
+        </div>
+
+        <div class="card" style="margin-bottom:1.5rem; border-left:6px solid var(--gold);">
+          <div class="icon">⚖</div>
+          <h3>SB 333 (&quot;<a href="https://docs.legis.wisconsin.gov/2023/related/lcactmemo/act200.pdf" target="_blank" style="color:var(--navy); text-decoration:underline;">Kerri’s Law</a>&quot;)</h3>
+          <p>Bipartisan legislative leadership led to the passage of SB 333, a child protection bill that was passed unanimously. This legislation reflects a shared commitment across parties to strengthen protections for children and close gaps that allow abuse to go unaddressed.</p>
+          <p style="font-weight:700; color:var(--navy);">This work is not finished. SB 333 represents a foundation for future child protection reforms, ensuring systems continue to evolve, improve, and prioritize prevention.</p>
+        </div>
+
+        <div class="card subsection-card">
+          <div class="icon">★</div>
+          <h3 style="color:var(--gold); font-weight:800;">Featured Coverage</h3>
+          <div class="press-list">
+            <div class="press-item">
+              <p style="color:#fff; font-weight:700; margin-bottom:0.4rem;">Kerri’s Law: A Survivor’s Fight</p>
+              <p style="color:#fff;">Feature on the advocacy behind Kerri’s Law and efforts to protect students from educator abuse.</p>
+              <a href="https://stopsexualassaultinschools.org/kerris-law-a-survivors-fight-to-protect-youth-from-educator-abuse-in-wisconsin/" target="_blank" style="color:var(--gold); text-decoration:underline; font-weight:700;">Read Article</a>
+            </div>
+            <div class="press-item">
+              <p style="color:#fff; font-weight:700; margin-bottom:0.4rem;">Milwaukee Journal Sentinel Coverage</p>
+              <p style="color:#fff;">Coverage of legislation strengthening protections for students.</p>
+              <a href="https://www.jsonline.com/story/news/politics/2024/03/22/tony-evers-signs-measure-criminalizing-teacher-sexual-misconduct/72715439007/" target="_blank" style="color:var(--gold); text-decoration:underline; font-weight:700;">Read Article</a>
+            </div>
+            <div class="press-item">
+              <p style="color:#fff; font-weight:700; margin-bottom:0.4rem;">Wisconsin Public Radio Coverage</p>
+              <p style="color:#fff;">Coverage on bipartisan legislation addressing sexual misconduct and child protection gaps.</p>
+              <a href="https://www.wpr.org/education/sexual-misconduct-against-students-felony-bipartisan-wisconsin-bill-pingel-private-school" target="_blank" style="color:var(--gold); text-decoration:underline; font-weight:700;">Read Article</a>
+            </div>
+            <div class="press-item">
+              <p style="color:#fff; font-weight:700; margin-bottom:0.4rem;">Wisconsin Act 200 Legislative Memo</p>
+              <p style="color:#fff;">Official legislative memo outlining Act 200.</p>
+              <a href="https://docs.legis.wisconsin.gov/2023/related/lcactmemo/act200.pdf" target="_blank" style="color:var(--gold); text-decoration:underline; font-weight:700;">View Document</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awareness">
+      <div class="container">
+        <div class="subsection-card" style="text-align:center; padding:2.6rem; margin-bottom:2rem;">
+          <div class="eyebrow" style="color:var(--gold);">Education. Prevention. Healing.</div>
+          <h2 style="color:#fff; font-size:clamp(2rem, 4vw, 3rem); margin-bottom:0.8rem;">Awareness</h2>
+          <p style="color:#fff; font-weight:600; max-width:780px; margin:0 auto;">Awareness helps communities recognize risk earlier, respond with courage, support healing, and take prevention seriously.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:2.2rem; border-left:6px solid var(--gold); padding:2rem; background:linear-gradient(135deg,#fff,#fffaf4);">
+          <div class="icon">⚖</div>
+          <h3 style="margin-bottom:0.6rem;">Wisconsin Child Protection Gaps</h3>
+          <p>Wisconsin is one of the few states without a centralized reporting system and consistent pathways for adult survivors of childhood abuse. These gaps can allow patterns of risk to go untracked and unaddressed.</p>
+          <p style="font-weight:700; color:var(--navy); margin-bottom:1rem;">Project Worth exists to help close these gaps and build systems that act before harm continues.</p>
+
+          <ul style="margin-left:1.5rem; margin-bottom:1.4rem; line-height:1.7;">
+            <li>No centralized mandated reporting system</li>
+            <li>Limited pathways for adult survivor reports</li>
+            <li>Inconsistent statute of limitations</li>
+            <li>Gaps in tracking patterns of concerning behavior</li>
+          </ul>
+
+          <div class="callout-stat" style="background:rgba(15,49,88,0.06); border-left:5px solid var(--navy); padding:1.2rem;">
+            <p style="margin-bottom:0.8rem;">
+              In this case, Illinois DCFS formally logged and tracked a child abuse report in 2026 that occurred primarily in Wisconsin between 2010–2012. Kenosha Child Protective Services has no record of the report.
+            </p>
+            <p style="margin-bottom:0.8rem;">
+              Due to jurisdictional limitations tied to minor residency, Wisconsin did not have sole jurisdiction, yet no reports were made out of state or to federal authorities where stronger protections existed.
+            </p>
+            <p style="margin-bottom:0; font-weight:700; color:var(--navy);">
+              The report has since been submitted independently to Illinois and federal authorities, where centralized systems allow for documentation, tracking, and a more complete response.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:1.8rem; border-left:6px solid var(--gold);">
+          <div class="icon">★</div>
+          <h3>Grooming Awareness</h3>
+          <p>Grooming and the lack of a protective response can severely impact mental health. It is never “just words.” It is a pattern of predatory behavior involving manipulation, secrecy, boundary violations, and a betrayal of power and trust.</p>
+          <div class="callout-stat">
+            ★ Research shows that psychological abuse can have long-term mental health effects similar to, and sometimes worse than, physical abuse.
+          </div>
+        </div>
+
+        <div class="card subsection-card" style="margin-bottom:1.8rem; border-left:6px solid var(--gold); text-align:center;">
+          <p style="font-weight:900; font-size:1.1rem; line-height:1.6; color:#fff; margin-bottom:0.6rem;">
+            Child sexual abuse is often committed by someone known and trusted by the child or family, which is one reason grooming can be so devastating and so easily minimized.
+          </p>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.75); margin:0;">
+            Source: U.S. Department of Justice, Office of Juvenile Justice and Delinquency Prevention (OJJDP)
+          </p>
+        </div>
+
+        <div style="text-align:center; margin-bottom:1.4rem;">
+          <h3 style="color:var(--navy); font-size:1.7rem; margin-bottom:0.4rem;">Grooming Awareness by Audience</h3>
+          <p style="color:var(--muted); max-width:760px; margin:0 auto;">Different communities play different roles in prevention. These resources are being built to help each group recognize risk and respond sooner.</p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom:2rem;">
+          <div class="card"><div class="icon">🎓</div><h3>For Educators</h3><p>Understand behavioral patterns, strengthen reporting practices, and create safer classroom environments.</p><strong style="color:var(--gold-dark);">Coming Soon</strong></div>
+          <div class="card"><div class="icon">🤝</div><h3>For Nonprofits</h3><p>Build stronger safeguards within youth programs and organizations.</p><strong style="color:var(--gold-dark);">Coming Soon</strong></div>
+          <div class="card"><div class="icon">⚖</div><h3>For Legislators</h3><p>Support policies that reflect real-world grooming patterns and prioritize prevention.</p><strong style="color:var(--gold-dark);">Coming Soon</strong></div>
+          <div class="card"><div class="icon">♡</div><h3>For Parents</h3><p>Learn warning signs, build open communication, and help children feel safe speaking up.</p><strong style="color:var(--gold-dark);">Coming Soon</strong></div>
+          <div class="card"><div class="icon">★</div><h3>For Kids</h3><p>Age-appropriate awareness about boundaries, trusted adults, and asking for help.</p><strong style="color:var(--gold-dark);">Coming Soon</strong></div>
+          <div class="card"><div class="icon">✦</div><h3>For Churches</h3><p>Support safe, informed ministries by recognizing grooming behaviors and strengthening safeguards.</p><strong style="color:var(--gold-dark);">Coming Soon</strong></div>
+        </div>
+
+        <div class="card" style="margin:2rem auto 1.5rem; max-width:820px; border-left:6px solid var(--gold);">
+          <p style="font-style:italic; font-weight:600; color:var(--ink); margin-bottom:0; text-align:center;">Grooming and the lack of a protective response severely impacted my mental health. It was never “just words,” but a betrayal of power and trust involving manipulation, secrecy, and boundary violations. The semicolon and sunflower symbolize survival and healing for me, and the support I received in college saved my life. Today, I want to raise awareness of how deeply grooming and institutional inaction can harm a person, and why early recognition, protective intervention, and accountability matter.</p>
+        </div>
+
+        <div class="card" style="text-align:center; padding:2.3rem; background:linear-gradient(135deg,#fffaf4,#fff);">
+          <div class="icon" style="margin-left:auto; margin-right:auto;">☀</div>
+          <h3 style="color:var(--gold); font-weight:800;">What the Sunflower and Semicolon Represent</h3>
+          <p style="font-weight:600; max-width:760px; margin:0.6rem auto 1rem;">The sunflower symbolizes strength, resilience, light, and hope for those who have walked through darkness. It reflects healing, growth, and the ability to keep reaching toward light.</p>
+          <p style="font-weight:600; max-width:760px; margin:0 auto 1rem;">The semicolon ( ; ) is a recognized symbol of suicide awareness, survival, and the choice to continue. Just as a writer uses a semicolon when a sentence could have ended but did not, it represents the choice to keep going when a person could have ended their life.</p>
+          <p style="color:var(--gold); font-weight:800;">Together, these symbols reflect survival, healing, and the truth that a person’s story is still being written.</p>
+          <p style="color:var(--navy); font-weight:700;">Shop our sunflower and semicolon sticker collection on the merch store <a href="#merch" style="color:var(--navy); font-weight:800;">shop</a>.</p>
+
+          <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-top:1.5rem;">
+            <div style="width:120px; height:120px; border-radius:50%; background:rgba(200,155,47,0.12); border:2px dashed var(--gold);"></div>
+            <div style="width:120px; height:120px; border-radius:50%; background:rgba(200,155,47,0.12); border:2px dashed var(--gold);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Meet Our Team</h2>
+          <p>The people behind Project Worth are committed to protecting children, strengthening systems, and supporting survivors.</p>
+          <p style="margin-top:0.6rem; color:var(--muted);">Our board is intentionally composed of women leading survivor-informed work. Zac, co-founder, supports systems and technology behind the scenes.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><img src="kerri.jpg" alt="Kerri Gerhardy" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"><h3>Kerri Gerhardy</h3><p style="color:var(--gold-dark); font-weight:800;">Founder &amp; President</p><p>Leads Project Worth’s vision, advocacy, and mission to strengthen child protection systems and empower survivors.</p></div>
+          <div class="card"><img src="clarissa.jpg" alt="Clarissa Losey" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"><h3>Clarissa Losey</h3><p style="color:var(--gold-dark); font-weight:800;">Vice President of Operations and Community Partnerships</p><p>Oversees day-to-day operations and helps build partnerships that bring Project Worth’s mission into the community.</p></div>
+          <div class="card"><img src="amy.jpg" alt="Amy Bahr" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"><h3>Amy Bahr</h3><p style="color:var(--gold-dark); font-weight:800;">Vice President of Survivor Advocacy and Support</p><p>Leads survivor-centered support efforts, helping ensure survivors are heard, believed, and connected to meaningful resources.</p></div>
+          <div class="card"><img src="anna.jpg" alt="Anna O’Connor" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"><h3>Anna O’Connor</h3><p style="color:var(--gold-dark); font-weight:800;">Legal and Justice Advocacy Director</p><p>Provides legal insight and justice-focused advocacy to help shape strong, responsible, and effective child protection efforts.</p></div>
+          <div class="card"><img src="sam.jpg" alt="Sam Goldstein" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"><h3>Sam Goldstein</h3><p style="color:var(--gold-dark); font-weight:800;">National Policy and Legislative Affairs Director</p><p>Leads legislative strategy and policy work, including efforts connected to SB 333 – “Kerri’s Law,” and broader national child protection goals.</p></div>
+          <div class="card"><img src="zac.jpg" alt="Zac Gerhardy" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:22px; margin-bottom:1rem;"><h3>Zac Gerhardy</h3><p style="color:var(--gold-dark); font-weight:800;">Co-Founder &amp; Director of Systems and Technology</p><p>Builds and supports the tools, systems, and technology that help Project Worth grow and operate effectively behind the scenes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="merch">
+      <div class="container">
+        <div class="section-heading"><h2>Project Worth Merch</h2><p>Coming soon, with purpose behind every item.</p></div>
+        <div class="card subsection-card">
+          <div class="icon">★</div>
+          <h3 style="color:var(--gold); font-weight:800;">Merch with Meaning</h3>
+          <p style="color:#fff; font-weight:600;">Project Worth merch is coming soon, including sticker sheets and other mission-driven items designed to spread hope, belonging, and awareness.</p>
+          <p style="color:#fff; font-weight:600;">All proceeds will go toward volunteer stipends for trainings provided to state systems and schools, or toward future efforts to help build a centralized Wisconsin database that strengthens child protection systems.</p>
+          <p style="color:var(--gold); font-weight:800;">★ Together, we light up the darkness.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="involved">
+      <div class="container">
+        <div class="section-heading"><h2>Get Involved: <span style="color:var(--gold-dark);">Light the Way</span></h2><p>There are many ways to support Project Worth, from advocacy and partnerships to volunteer support and survivor-informed change.</p></div>
+        <div class="grid-3">
+          <div class="card"><div class="icon">⚖</div><h3>Support Legislative Change</h3><p>Help connect Project Worth with legislators, civic leaders, and policy advocates who care about stronger child protection laws.</p></div>
+          <div class="card"><div class="icon">🤝</div><h3>Community Leaders &amp; Partners</h3><p>Schools, churches, nonprofits, youth programs, and community leaders can partner with Project Worth.</p></div>
+          <div class="card"><div class="icon">★</div><h3>Volunteer With Purpose</h3><p>Support outreach, awareness events, resource development, policy research, and community connections.</p></div>
+          <div class="card"><div class="icon">🗣</div><h3>Your Voice Matters</h3><p>Adult survivors of childhood abuse in Wisconsin can help Project Worth better understand reporting barriers and system gaps.</p></div>
+          <div class="card"><div class="icon">☀</div><h3>Spread Awareness</h3><p>Share Project Worth’s mission and help normalize prevention-focused child protection.</p></div>
+          <div class="card"><div class="icon">✉</div><h3>Start the Conversation</h3><p>Interested in sponsoring legislation, partnering, volunteering, sharing your voice, or learning more?</p><a href="mailto:info@projectworthwi.org?subject=Project Worth - Get Involved" class="btn btn-primary">Email Project Worth</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="donate">
+      <div class="container">
+        <div class="subsection-card" style="text-align:center; padding:2.7rem; margin-bottom:1.8rem; position:relative; overflow:hidden;">
+          <span style="position:absolute; top:12px; left:14%; color:#ffd24a; opacity:0.45;">★</span>
+          <span style="position:absolute; top:30px; right:18%; color:#ffd24a; opacity:0.35; font-size:0.85rem;">★</span>
+          <span style="position:absolute; bottom:18px; left:28%; color:#ffd24a; opacity:0.3; font-size:0.8rem;">★</span>
+
+          <div class="eyebrow" style="color:var(--gold);">Support the Mission</div>
+          <h2 style="color:#fff; font-size:clamp(2rem, 4vw, 3rem); margin-bottom:0.8rem;">Donate to Project Worth</h2>
+          <p style="color:#fff; font-weight:600; max-width:760px; margin:0 auto 1.3rem;">
+            Your support helps Project Worth build prevention-focused resources, strengthen child protection systems, and bring survivor-informed advocacy into communities that need it.
+          </p>
+          <a href="#" class="btn btn-primary">Donate Coming Soon</a>
+        </div>
+
+        <div class="grid-3" style="margin-bottom:1.8rem;">
+          <div class="card">
+            <div class="icon">★</div>
+            <h3>Training &amp; Education</h3>
+            <p>Support grooming awareness materials, prevention-focused training, and resources for schools, churches, nonprofits, and community leaders.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">⚖</div>
+            <h3>Advocacy &amp; Policy</h3>
+            <p>Help advance survivor-informed policy work, legislative education, and advocacy efforts that strengthen child protection systems.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">☀</div>
+            <h3>Outreach &amp; Awareness</h3>
+            <p>Fund outreach tools, awareness campaigns, sticker collections, community events, and materials that help spread prevention and hope.</p>
+          </div>
+        </div>
+
+        <div class="card subsection-card" style="margin-top:1.5rem;">
+          <div class="icon">★</div>
+          <h3 style="color: var(--gold); font-weight:800; letter-spacing:0.03em;">Donor &amp; Grant Readiness</h3>
+          <p style="color: var(--white); font-weight:600;">Project Worth is building toward sustainable impact through community giving, grant funding, and strategic partnerships.</p>
+          <div class="grant-list">
+            <div class="press-item">
+              <p style="color: var(--white); font-weight:700; margin-bottom:0.35rem;">What support can fund</p>
+              <p style="color: var(--white);">Volunteer stipends, survivor-informed advocacy, training materials, outreach resources, and system-strengthening initiatives.</p>
+            </div>
+            <div class="press-item">
+              <p style="color: var(--white); font-weight:700; margin-bottom:0.35rem;">Long-term vision</p>
+              <p style="color: var(--white);">Support future work toward a centralized Wisconsin database, improved reporting systems, and stronger child protection infrastructure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position:relative; overflow:hidden;">
+    <span style="position:absolute; top:12px; left:10%; color:#ffd24a; opacity:0.35;">★</span>
+    <span style="position:absolute; top:24px; right:18%; color:#ffd24a; opacity:0.3; font-size:0.85rem;">★</span>
+    <span style="position:absolute; bottom:18px; left:25%; color:#ffd24a; opacity:0.28; font-size:0.8rem;">★</span>
+    <span style="position:absolute; bottom:12px; right:12%; color:#ffd24a; opacity:0.25; font-size:0.75rem;">★</span>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="PROJECT-WORTH-LOGO.png" alt="Project Worth Logo" style="width:80px; margin-bottom:1rem;">
+        <h3>Project Worth</h3>
+        <p>A nonprofit organization advocating for stronger child protection laws, survivor-informed reform, and systems that better protect children.</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>info@projectworthwi.org<br>www.projectworthwi.org</p>
+        <p>5605 Sheridan Road Unit 101<br />Kenosha, WI 53140</p>
+      </div>
+
+      <div>
+        <h4>Core Message</h4>
+        <p>Because children are worth protecting.</p>
+        <p>Protecting Kids. Changing Systems. Empowering Survivors.</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">© 2026 Project Worth, Inc. All rights reserved.</div>
+  </footer>
+</body>
+</html>
