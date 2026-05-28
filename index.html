@@ -8528,6 +8528,402 @@ body:not(.tab-active) #home { display: block; }
   background: #fffaf4 !important;
 }
 
+
+
+/* FINAL USER PATCH: restore original glowing yellow BTS dots only, below the photo */
+#press .media-bts-carousel {
+  overflow: visible !important;
+}
+
+#press .media-bts-dots {
+  position: absolute !important;
+  left: 50% !important;
+  top: auto !important;
+  bottom: -1.55rem !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  z-index: 30 !important;
+  padding: 0.28rem 0.6rem !important;
+  border-radius: 999px !important;
+  background: rgba(255, 250, 244, 0.92) !important;
+  border: 1px solid rgba(200, 155, 47, 0.35) !important;
+  box-shadow: 0 8px 20px rgba(200, 155, 47, 0.18) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#press .media-bts-dot {
+  width: 0.68rem !important;
+  height: 0.68rem !important;
+  border-radius: 999px !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  background: rgba(200, 155, 47, 0.30) !important;
+  box-shadow: 0 0 8px rgba(200, 155, 47, 0.24) !important;
+}
+
+#press .media-bts-dot.active {
+  background: #ffd24a !important;
+  box-shadow:
+    0 0 8px rgba(255, 210, 74, 0.95),
+    0 0 18px rgba(200, 155, 47, 0.70) !important;
+}
+
+
+/* LITTLE LIGHTS KIDS COLLECTION SNEAK PEEK */
+.little-lights-shop-sneak-peek {
+  margin: 0 auto 1.8rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(200,155,47,0.16), transparent 32%),
+    linear-gradient(135deg, #fffaf4 0%, #ffffff 58%, #f8ecd1 100%);
+  border: 1px solid rgba(200,155,47,0.35);
+  border-left: 8px solid var(--gold);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.little-lights-shop-sneak-peek::after {
+  content: "★";
+  position: absolute;
+  right: 1rem;
+  top: 0.35rem;
+  color: var(--gold);
+  opacity: 0.10;
+  font-size: 6rem;
+  pointer-events: none;
+}
+
+.little-lights-shop-wrap {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.little-lights-shop-copy {
+  text-align: left;
+}
+
+.little-lights-shop-copy .eyebrow {
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.little-lights-shop-copy h3 {
+  color: var(--navy);
+  font-weight: 900;
+  font-size: clamp(1.85rem, 3.5vw, 2.8rem);
+  margin-bottom: 0.75rem;
+}
+
+.little-lights-shop-copy p {
+  color: #334052;
+  font-weight: 650;
+  max-width: 560px;
+}
+
+.little-lights-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 900;
+  box-shadow: 0 10px 22px rgba(200,155,47,0.22);
+}
+
+.little-lights-coming-soon::before {
+  content: "★";
+}
+
+.little-lights-shop-image {
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(15,49,88,0.10);
+  box-shadow: 0 16px 38px rgba(15,49,88,0.14);
+}
+
+.little-lights-shop-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .little-lights-shop-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .little-lights-shop-copy {
+    text-align: center;
+  }
+
+  .little-lights-shop-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+/* FINAL ADVOCACY CONNECTION LAYOUT: issue cards and solution cards paired side by side */
+#advocacy .advocacy-gap-fix-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(1.1rem, 2.4vw, 1.6rem) !important;
+  align-items: stretch !important;
+  margin: 0 0 2rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.15rem !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: clamp(1.25rem, 2.6vw, 1.7rem) !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-side-intro {
+  display: block !important;
+  min-height: auto !important;
+  padding: 0 !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-kicker {
+  margin-bottom: 0.75rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side h3 {
+  font-size: clamp(1.45rem, 2.2vw, 2rem) !important;
+  line-height: 1.12 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-lead,
+#advocacy .advocacy-gap-fix-grid .pw-work-intro-copy p {
+  font-size: 0.98rem !important;
+  line-height: 1.55 !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-carousel {
+  flex: 1 1 auto !important;
+  display: grid !important;
+  grid-template-rows: auto 1fr auto auto !important;
+  min-height: 26rem !important;
+  padding: 0 2.45rem !important;
+  align-items: center !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-card-over-title {
+  color: var(--gold-dark) !important;
+  font-size: clamp(1.12rem, 2vw, 1.45rem) !important;
+  margin-bottom: 0.7rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-slide {
+  min-height: 18.5rem !important;
+  max-height: 24rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-static-header {
+  min-height: 5.25rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-content.rf-three-line-content {
+  max-height: 13rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .rf-card-under-note {
+  max-width: 100% !important;
+  font-size: clamp(0.92rem, 1.4vw, 1.02rem) !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .pw-work-side .rf-carousel {
+  min-height: 26rem !important;
+}
+
+#advocacy .advocacy-gap-fix-grid .pw-work-side .rf-static-header {
+  min-height: 5.25rem !important;
+}
+
+@media (max-width: 1050px) {
+  #advocacy .advocacy-gap-fix-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-carousel {
+    min-height: 24rem !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #advocacy .advocacy-gap-fix-grid .reporting-flashcards-side .rf-carousel {
+    padding: 0 2.15rem !important;
+  }
+}
+
+
+/* SPARK PAGE POLISH */
+#story {
+  position: relative;
+  overflow: hidden;
+}
+
+#story .spark-opening-card {
+  max-width: 980px;
+  margin: -0.45rem auto 2rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(200,155,47,0.14), transparent 34%),
+    linear-gradient(135deg, #fffaf4 0%, #ffffff 62%, #fff1c4 100%);
+  border: 1px solid rgba(200,155,47,0.38);
+  border-left: 8px solid var(--gold);
+  box-shadow: 0 18px 42px rgba(15,49,88,0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#story .spark-opening-card::after {
+  content: "★";
+  position: absolute;
+  right: 1rem;
+  bottom: -0.45rem;
+  color: var(--gold);
+  opacity: 0.10;
+  font-size: 5rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+#story .spark-opening-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+  padding: 0.42rem 0.78rem;
+  border-radius: 999px;
+  background: rgba(15,49,88,0.06);
+  border: 1px solid rgba(200,155,47,0.28);
+  color: var(--gold-dark);
+  font-weight: 900;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#story .spark-opening-kicker::before,
+#story .spark-opening-kicker::after {
+  content: "★";
+  color: var(--gold);
+  letter-spacing: 0;
+}
+
+#story .spark-opening-card p {
+  color: var(--navy);
+  font-size: clamp(1.03rem, 2vw, 1.17rem);
+  line-height: 1.75;
+  font-weight: 750;
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+#story .story-banner {
+  margin-top: 1.25rem !important;
+  border: 1px solid rgba(200,155,47,0.30) !important;
+  box-shadow: 0 18px 45px rgba(15,49,88,0.14) !important;
+}
+
+#story .kerri-story-scroll {
+  border-left: 6px solid var(--gold) !important;
+}
+
+#story .spark-bottom-quote {
+  max-width: 1040px;
+  margin: 2.4rem auto 0;
+  padding: clamp(1.55rem, 3vw, 2.15rem);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(255,210,74,0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 30%),
+    linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+  border: 2px solid var(--gold);
+  border-left: 9px solid var(--gold);
+  box-shadow: 0 18px 45px rgba(15,49,88,0.20);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#story .spark-bottom-quote::before,
+#story .spark-bottom-quote::after {
+  content: "★ ★ ★";
+  position: absolute;
+  color: #ffd24a;
+  opacity: 0.18;
+  letter-spacing: 0.75rem;
+  pointer-events: none;
+}
+
+#story .spark-bottom-quote::before {
+  top: 0.9rem;
+  left: 1.1rem;
+}
+
+#story .spark-bottom-quote::after {
+  right: 1.1rem;
+  bottom: 0.9rem;
+}
+
+#story .spark-bottom-quote p {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.18rem, 2.7vw, 1.85rem);
+  line-height: 1.55;
+  font-weight: 900;
+  position: relative;
+  z-index: 1;
+}
+
+#story .spark-bottom-quote span {
+  color: var(--gold);
+}
+
+@media (max-width: 760px) {
+  #story .spark-opening-card {
+    margin-top: -0.2rem;
+    padding: 1.35rem;
+    border-radius: 24px;
+  }
+
+  #story .spark-bottom-quote {
+    border-radius: 24px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -8571,7 +8967,7 @@ body:not(.tab-active) #home { display: block; }
 <a href="#awareness">What is Grooming?</a>
 <a href="#advocacy">Advocacy</a>
 <a href="#team">Our Team</a>
-<a href="#story">Kerri's Story</a>
+<a href="#story">The Spark</a>
 <a href="#press">Media &amp; Impact</a>
 <a href="#merch">Shop</a>
 <a href="#donate">Donate</a>
@@ -8654,18 +9050,22 @@ body:not(.tab-active) #home { display: block; }
 </section>
 <section class="story-hero site-bg-gold" id="story">
 <div class="container">
-<div class="page-title-banner"><div class="page-kicker">Kerri’s Story</div><h2>KERRI’S STORY</h2><p>My why. Our purpose.</p></div>
+<div class="page-title-banner"><div class="page-kicker">Join the Movement</div><h2>A Story That Became A Movement</h2><p>One Story. A Statewide Mission.</p></div>
+<div class="spark-opening-card">
+  <div class="spark-opening-kicker">The Spark</div>
+  <p>
+    Project Worth was born from Kerri’s story, but its purpose reaches far beyond one person.
+    Her case exposed a painful breakdown in justice and deeper gaps in the systems meant to
+    protect children. Today, Project Worth is growing across Wisconsin for every child who
+    deserved protection, every survivor who deserved to be heard, and every community willing
+    to do better.
+  </p>
+</div>
 <div class="story-banner" style="border-radius:32px; display:grid; grid-template-columns:1.05fr 0.95fr; overflow:hidden;">
 <div class="story-banner-left" style="padding:2.6rem;">
 <div class="kerri-story-scroll" style="padding:1.8rem; border-radius:26px; background:linear-gradient(135deg,#fffaf4,#fff); border:1px solid var(--border); box-shadow:0 10px 26px rgba(15,49,88,0.06); max-height:620px; overflow-y:auto; padding-right:2rem; scroll-behavior:smooth;">
 <div class="scroll-box">
-<p>This is not my whole story, but it is the part that shaped my voice and advocacy.</p>
-
-<p>As a minor, I was groomed and abused by an authority figure connected to a Kenosha private school. At the time, I did not fully understand what was happening to me. Like many teenagers who experience grooming, I carried confusion, shame, and pain I did not yet have words for. 
-
-<p>Despite concerns that had reportedly been raised, no mandated report was made and my parents were never notified.</p>
-
-<p>Years later, as a counselor and mandated reporter, I chose to report what happened to me because I believed it could help protect other children.</p>
+<p>The abuse is not my whole story, but it is the part that shaped my voice and advocacy.</p>
 
 <p>What began as telling the truth and simply trying to do the next right thing eventually led me to testify before the Wisconsin State Senate in support of what became Wisconsin Act 200.</p>
 
@@ -8673,20 +9073,18 @@ body:not(.tab-active) #home { display: block; }
 
 <p>What I once carried alone became part of a larger fight to better protect children and support survivors.</p>
 
-<p>Today, I am a wife to my loving husband Zac, a mom to my cat Ellie, a godmother, a foster parent, counselor, daughter, and friend.<p>
+<p>Today, I am a wife to my loving husband Zac, a mom to my cat Ellie, a godmother, a foster parent, counselor, daughter, and friend.</p>
 
 <p>Kenosha is a beautiful community. I believe in a future where Wisconsin children are among the most protected in the nation, not the least.</p>
 
-<p>Reporting to the same systems that failed to protect me and many others is not easy, but I continue to show up because change matters.<p>
-
 <p>Churches and schools should be among the safest places in a child’s life and leaders in child protection, prevention, and accountability.</p>
+
+<p>Reporting to the same systems that failed to protect me and many others is not easy, but I continue to show up because change matters.</p>
 
 <p>I never lost my faith. I lost trust in the systems that were supposed to protect children.</p>
 
-<p>I never intended to become a child advocate. But somewhere along the way, advocacy became the natural result of refusing to stay silent about problems that continue to hurt children and families.</p>
-
     <p class="story-highlight">If you have been hurt, you are not alone.</p>
-<p>Project Worth is bigger than my case. It is for every child who deserved protection, every survivor who deserved to be heard, every system willing to hear hard truths with courage and grace, and every community willing to do better.</p>
+
 <p style="font-weight:900; color:var(--navy); margin-top:1.4rem; font-size:1.05rem;">
   Project Worth exists because children deserve better, and systems must do better.
 </p>
@@ -8703,7 +9101,7 @@ body:not(.tab-active) #home { display: block; }
 <div class="story-tldr-card">
 <p style="margin-bottom:0;">
 <strong style="color:var(--navy); font-weight:900;">TL;DR:</strong>
-              Abuse was reported. Systems failed to act. The risk continued. That failure became the foundation for advocacy, policy change, and Project Worth, so known patterns lead to protection, not silence.
+              Abuse was reported. Systems and authorities failed to act. The risk continued. That failure became the foundation for advocacy, policy change, and Project Worth, so known patterns lead to protection, not silence.
             </p>
 </div>
 <div class="support-note-card">
@@ -8757,7 +9155,7 @@ body:not(.tab-active) #home { display: block; }
                 </p>
 </div>
 <a href="#awareness" style="margin-top:0.8em; font-weight:800; text-decoration:underline; color:var(--navy);">
-                See more in Awareness
+                See more in Advocacy
               </a>
 </div>
 </div>
@@ -8892,141 +9290,162 @@ body:not(.tab-active) #home { display: block; }
   }
 </style>
 
-<div class="systems-graphic-shell">
-  <div class="systems-graphic-frame">
-    <img src="a_clean_infographic_poster_on_a_light_cream_backgr.png" alt="Project Worth infographic comparing Wisconsin and Illinois reporting experiences and system gaps">
+<section class="hope-action-section" style="
+  max-width:1080px;
+  margin:1.5rem auto 2.2rem;
+  padding:clamp(1.4rem,3vw,2rem);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at top left, rgba(255,210,74,0.22), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(200,155,47,0.16), transparent 32%),
+    linear-gradient(135deg,#fffaf4 0%, #fff1c4 52%, #ffffff 100%);
+  border:1px solid rgba(200,155,47,0.42);
+  box-shadow:0 18px 42px rgba(15,49,88,0.12);
+  position:relative;
+  overflow:hidden;
+">
+  <div style="
+    text-align:center;
+    max-width:820px;
+    margin:0 auto 1.25rem;
+  ">
+    <div style="
+      display:inline-flex;
+      align-items:center;
+      gap:0.45rem;
+      padding:0.45rem 0.85rem;
+      border-radius:999px;
+      background:rgba(255,255,255,0.68);
+      border:1px solid rgba(200,155,47,0.35);
+      color:var(--gold-dark);
+      font-weight:900;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      font-size:0.8rem;
+      margin-bottom:0.7rem;
+    ">☀️ Reform Into Action</div>
+
+    <h3 style="
+      color:var(--navy);
+      font-size:clamp(1.75rem,3vw,2.45rem);
+      font-weight:900;
+      margin-bottom:0.5rem;
+    ">Where Hope Turns Into Action</h3>
+
+    <p style="
+      color:#334052;
+      font-weight:700;
+      line-height:1.65;
+      margin:0 auto;
+      max-width:760px;
+    ">
+      Wisconsin can better protect children when prevention, clearer laws, coordinated response, and survivor informed care work together.
+    </p>
   </div>
-  <p class="systems-graphic-note">
-    A factual comparison of how two systems responded, and why stronger reporting, clearer documentation, coordinated response, and survivor informed care matter.
-  </p>
 
   <div style="
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-columns:repeat(3,minmax(0,1fr));
     gap:1rem;
-    margin-top:1.15rem;
     align-items:stretch;
+    margin-top:1.25rem;
   ">
     <div style="
-      min-height:260px;
+      background:rgba(255,255,255,0.86);
+      border:1px solid rgba(200,155,47,0.34);
+      border-top:5px solid var(--gold);
       border-radius:24px;
-      padding:1.35rem;
-      background:linear-gradient(180deg,#07172a 0%,#081b33 58%,#091829 100%);
-      border:1px solid rgba(200,155,47,0.42);
-      border-left:6px solid var(--gold);
-      box-shadow:0 14px 32px rgba(15,49,88,0.16);
-      color:#fff;
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
+      padding:1.2rem;
+      box-shadow:0 10px 24px rgba(15,49,88,0.08);
+      text-align:center;
     ">
-      <h3 style="color:var(--gold); text-align:center; font-size:1.28rem; font-weight:900; margin-bottom:0.9rem;">
-        ⚖️ Why Reform Matters ⚖️
-      </h3>
-      <div style="
-        max-height:185px;
-        overflow-y:auto;
-        padding-right:0.55rem;
-        scrollbar-width:thin;
-        scrollbar-color:var(--gold) rgba(255,255,255,0.12);
-        color:rgba(255,255,255,0.92);
-        font-weight:650;
-        line-height:1.65;
-      ">
-        </p>
-        <p style="margin-bottom:0.8rem; color:rgba(255,255,255,0.92);">
-          The reality is difficult to confront: many of the professionals involved were operating within the boundaries Wisconsin law currently allows.
-        </p>
-        <p style="margin-bottom:0.8rem; color:rgba(255,255,255,0.92);">
-          When systems repeatedly fail children, the problem is larger than one school, one agency, or one officer. It is a legislative and systemic issue.
-        </p>
-        <p style="margin-bottom:0; color:rgba(255,255,255,0.92);">
-          When laws are too weak to support earlier intervention, children are often left carrying the consequences until significant harm has already occurred.
-        </p>
-      </div>
-      <p style="
-        margin:1rem auto 0;
-        padding-top:0.85rem;
-        border-top:1px solid rgba(200,155,47,0.26);
-        color:#f4d06f;
-        font-family:Georgia, 'Times New Roman', serif;
-        font-style:italic;
-        font-size:0.96rem;
-        line-height:1.55;
-        text-align:center;
-        max-width:92%;
-      ">
-        Wisconsin can become a national leader in child protection through prevention, transparency, and courage.
+      <div style="font-size:1.45rem; margin-bottom:0.45rem;">⚖️</div>
+      <h4 style="color:var(--navy); font-weight:900; font-size:1.05rem; margin-bottom:0.45rem;">Why Reform Matters</h4>
+      <p style="color:#334052; font-weight:650; line-height:1.55; margin:0;">
+        When current law allows warning signs to be missed, the solution has to be bigger than one school, one agency, or one officer.
       </p>
     </div>
 
     <div style="
-      min-height:260px;
+      background:rgba(255,255,255,0.86);
+      border:1px solid rgba(200,155,47,0.34);
+      border-top:5px solid var(--gold);
       border-radius:24px;
-      padding:1.35rem;
-      background:linear-gradient(135deg,#fff8e8 0%,#fdf1c9 100%);
-      border:1px solid rgba(200,155,47,0.32);
-      border-left:6px solid var(--gold);
-      box-shadow:0 14px 32px rgba(15,49,88,0.10);
-      color:var(--navy);
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
+      padding:1.2rem;
+      box-shadow:0 10px 24px rgba(15,49,88,0.08);
+      text-align:center;
     ">
-      <h3 style="color:var(--gold-dark); text-align:center; font-size:1.28rem; font-weight:900; margin-bottom:0.9rem;">
-        ☀️ Where Hope Turns Into Action ☀️
-      </h3>
-      <div style="
-        max-height:150px;
-        overflow-y:auto;
-        padding-right:0.55rem;
-        scrollbar-width:thin;
-        scrollbar-color:var(--gold) rgba(15,49,88,0.08);
-        color:#334052;
-        font-weight:650;
-        line-height:1.65;
-        flex:1 1 auto;
-      ">
-        <p style="margin-bottom:0.8rem; color:#334052;">
-          Despite everything, this journey connected me with people across Wisconsin who believe children deserve stronger protections and systems willing to act earlier.
-        </p>
-        <p style="margin-bottom:0; color:#334052;">
-          Meaningful reform is possible, but it requires courage, leadership, and communities willing to face hard truths.
-        </p>
-      </div>
+      <div style="font-size:1.45rem; margin-bottom:0.45rem;">🧩</div>
+      <h4 style="color:var(--navy); font-weight:900; font-size:1.05rem; margin-bottom:0.45rem;">System Gaps Have Consequences</h4>
+      <p style="color:#334052; font-weight:650; line-height:1.55; margin:0;">
+        Weak documentation, unclear reporting paths, and disconnected response can leave children carrying harm that should have been interrupted earlier.
+      </p>
+    </div>
 
-      <div style="
-        margin-top:1rem;
-        padding-top:0.95rem;
-        border-top:1px solid rgba(15,49,88,0.14);
-        text-align:center;
-        flex:0 0 auto;
-      ">
-        <a href="#involved" style="
-          display:inline-block;
-          padding:0.72rem 1.05rem;
-          border-radius:999px;
-          background:linear-gradient(135deg,#c89b2f 0%,#f4d98e 100%);
-          color:#07172a;
-          font-weight:900;
-          text-decoration:none;
-          box-shadow:0 8px 18px rgba(200,155,47,0.25);
-        ">
-          Legislators and advocates: get involved
-        </a>
-        <div style="font-size:1.45rem; color:var(--gold-dark); margin-top:0.35rem; font-weight:900;">⌄</div>
-      </div>
+    <div style="
+      background:rgba(255,255,255,0.86);
+      border:1px solid rgba(200,155,47,0.34);
+      border-top:5px solid var(--gold);
+      border-radius:24px;
+      padding:1.2rem;
+      box-shadow:0 10px 24px rgba(15,49,88,0.08);
+      text-align:center;
+    ">
+      <div style="font-size:1.45rem; margin-bottom:0.45rem;">☀️</div>
+      <h4 style="color:var(--navy); font-weight:900; font-size:1.05rem; margin-bottom:0.45rem;">Hope Requires Action</h4>
+      <p style="color:#334052; font-weight:650; line-height:1.55; margin:0;">
+        Meaningful reform is possible when leaders, advocates, and communities are willing to face hard truths and act sooner.
+      </p>
     </div>
   </div>
-</div>
+
+  <div style="
+    max-width:780px;
+    margin:1.35rem auto 0;
+    padding:1.25rem 1.35rem;
+    border-radius:26px;
+    background:
+      radial-gradient(circle at top right, rgba(255,210,74,0.24), transparent 34%),
+      linear-gradient(135deg,#fff8e8 0%, #fdf1c9 55%, #ffffff 100%);
+    border:1px solid rgba(200,155,47,0.42);
+    border-left:7px solid var(--gold);
+    box-shadow:0 14px 32px rgba(15,49,88,0.10);
+    text-align:center;
+  ">
+    <p style="
+      color:var(--navy);
+      font-weight:800;
+      line-height:1.65;
+      margin:0 auto 1rem;
+      max-width:660px;
+    ">
+      This work has connected Project Worth with people across Wisconsin who believe children deserve stronger protections and systems willing to act earlier.
+    </p>
+
+    <a href="#involved" style="
+      display:inline-block;
+      padding:0.8rem 1.2rem;
+      border-radius:999px;
+      background:#ffffff;
+      color:var(--navy);
+      border:2px solid rgba(200,155,47,0.55);
+      font-weight:900;
+      text-decoration:none;
+      box-shadow:0 8px 18px rgba(15,49,88,0.08);
+    ">
+      Legislators and Community Advocates: Get Involved
+    </a>
+  </div>
+</section>
 
 <style>
   @media (max-width: 850px) {
-    .systems-graphic-shell > div[style*="grid-template-columns:repeat(2"] {
+    .hope-action-section div[style*="grid-template-columns:repeat(3"] {
       grid-template-columns: 1fr !important;
     }
   }
 </style>
+
 <div style="max-width:1040px; margin:-1rem auto 2rem;">
 <style>
     @media (max-width: 850px) {
@@ -9102,6 +9521,13 @@ body:not(.tab-active) #home { display: block; }
 
 </style>
 </div>
+<div class="spark-bottom-quote">
+  <p>
+    Wisconsin can become a national leader in child protection through
+    <span>prevention</span>, <span>transparency</span>, and <span>courage</span>.
+  </p>
+</div>
+
 </div>
 </section>
 <section class="star-section home-only site-bg-white" id="star">
@@ -9211,8 +9637,8 @@ body:not(.tab-active) #home { display: block; }
 <div class="icon">⚖</div>
 <div class="eyebrow" style="color:var(--gold-dark); margin-bottom:0.5em;">Advocacy in Action</div>
 <h3 style="color:var(--navy); font-weight:900;"><a href="https://docs.legis.wisconsin.gov/2023/related/lcactmemo/act200.pdf" rel="noopener" style="color:var(--navy); text-decoration:underline; text-decoration-color:var(--gold);" target="_blank">SB 333, now Wisconsin Act 200</a></h3>
-<p>Bipartisan legislative leadership led to the passage of SB 333, now Wisconsin Act 200, a child protection law that passed unanimously and strengthened protections around educator sexual misconduct and student safety.</p>
-<p style="font-weight:700; color:var(--navy);">For Project Worth, this law represents what can happen when lived experience is taken seriously, patterns are named, and child protection becomes a shared responsibility.</p>
+<p style="font-weight:800; color:var(--navy); margin-bottom:0;">Bipartisan legislative leadership led to the passage of SB 333, now Wisconsin Act 200, a child protection law that passed unanimously and strengthened protections around educator sexual misconduct and student safety.</p>
+<p><p style="font-weight:700; color:var(--navy);">For Project Worth, this law represents what can happen when lived experience is taken seriously, patterns are named, and child protection becomes a shared responsibility.</p>
 <p style="font-weight:800; color:var(--navy); margin-bottom:0;">This work is not finished. One law is not the finish line. It is proof that change is possible and a foundation for future reforms that help systems act sooner, communicate better, and prioritize prevention.</p>
 </div>
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.9em; align-items:stretch;">
@@ -9513,6 +9939,7 @@ body:not(.tab-active) #home { display: block; }
 </div>
 </div>
 </div>
+<div class="advocacy-gap-fix-grid reveal-on-scroll">
 <div aria-labelledby="reporting-flashcard-title" class="reporting-flashcards reporting-flashcards-side reveal-on-scroll" id="did-you-know-flashcards">
 <div class="rf-side-intro">
 <div class="rf-kicker">★ Did You Know?</div>
@@ -9745,17 +10172,14 @@ body:not(.tab-active) #home { display: block; }
 </div>
 <div aria-labelledby="pw-work-flashcard-title" class="reporting-flashcards reporting-flashcards-side pw-work-side reveal-on-scroll">
 <div class="rf-side-intro">
-<div class="rf-kicker">★ What Project Worth Is Working On</div>
+<div class="rf-kicker">★ Our Current Projects:</div>
 <h3 id="pw-work-flashcard-title">Prevention, Policy, and Healing</h3>
 <div class="pw-work-intro-copy" style="margin-top:1rem; padding:0; color:var(--navy); font-weight:700; line-height:1.6; max-width:100%;">
-<p style="margin:0 0 0.75rem; color:var(--navy);">Project Worth is working to identify the strongest child protection policies already being used across the country, study where Wisconsin is falling behind, and help bring the best protections here.</p>
-<p style="margin:0 0 0.75rem; color:var(--navy); font-weight:900;">The goal is simple: make Wisconsin the safest state for children in the nation by 2028.</p>
-<p style="margin:0 0 0.75rem; color:var(--gold); font-weight:900;">Then help make that protection the standard for every child in the United States.</p>
-<p style="margin:0; color:var(--navy); font-size:0.95rem; opacity:0.9;">See more in future projects below.</p>
+<p style="margin:0 0 0.75rem; color:var(--navy);">Project Worth is working to identify the strongest child protection policies already being used across the country, study where Wisconsin is falling behind, and help bring the best protections here. See more in future projects below.</p>
 </div>
 </div>
 <div aria-label="Project Worth initiative flashcards" class="rf-carousel">
-<div class="rf-card-over-title">We are Turning Prevention Into Policy, One Gap at a Time.</div>
+<div class="rf-card-over-title">Fix One Gap at a Time.</div>
 <button aria-label="Previous Project Worth initiative" class="rf-carousel-arrow left" type="button">‹</button>
 <div class="rf-carousel-track">
 <div class="rf-card rf-slide rf-no-dropdown is-active">
@@ -9960,6 +10384,7 @@ body:not(.tab-active) #home { display: block; }
 </div>
 
 </div>
+</div>
 <div class="future-fighting-callout reveal-on-scroll">
   <div class="future-fighting-grid">
     <div class="future-fighting-copy">
@@ -9967,14 +10392,14 @@ body:not(.tab-active) #home { display: block; }
       <h3>The Future We’re Fighting For</h3>
       <p>Project Worth is working to identify the strongest child protection policies already being used across the country, study where Wisconsin is falling behind, and help bring the best protections here.<br><br>
 
-<span style="color:#0b1f3a;">The goal is simple: make Wisconsin the safest state for children in the nation by 2028. <span style="color:#d4af37; font-weight:700;">Then help make that protection the standard for every child in the United States.</span></p>
+<span style="color:#0b1f3a;">The goal is simple: make Wisconsin the safest state for children in the nation by 2030. <span style="color:#d4af37; font-weight:700;">Then help make that protection the standard for every child in the United States.</span></p>
       <p>Does one of these areas speak to you? We would love to connect you with the team members helping move that work forward.</p>
       <div class="future-fighting-actions">
         <a class="btn btn-primary" href="future-we-are-fighting-for.pdf" rel="noopener" target="_blank">View the Future We’re Fighting For PDF →</a>
         <a class="btn btn-secondary" href="#involved">Connect With Our Team →</a>
       </div>
     </div>
-    <a class="future-fighting-visual" href="future-we-are-fighting-for.pdf" rel="noopener" target="_blank" aria-label="Open The Future We’re Fighting For PDF">
+    <a class="future-fighting-visual" href="future-we-are-fighting-for.jpg" rel="noopener" target="_blank" aria-label="Open The Future We’re Fighting For PDF">
       <img alt="The Future We're Fighting For: Light Up Wisconsin, Light Up the Nation, Protect Our Children" src="future-we-are-fighting-for.jpg"/>
     </a>
   </div>
@@ -10200,7 +10625,22 @@ Project Worth is built by people who understand the importance of prevention, ac
 
 <section class="site-bg-gold" id="merch">
 <div class="container">
-<div class="page-title-banner"><div class="page-kicker">Project Worth Merch</div><h2>Project Worth Merch</h2><p>Coming soon, with purpose behind every item.</p><span class="coming-soon-badge">Coming Soon</span></div>
+<div class="page-title-banner"><div class="page-kicker">Project Worth Shop</div><h2>Project Worth Shop</h2><p>Coming soon, with purpose behind every item.</p><span class="coming-soon-badge">Coming Soon</span></div>
+
+<div class="little-lights-shop-sneak-peek">
+<div class="little-lights-shop-wrap">
+<div class="little-lights-shop-copy">
+<div class="eyebrow">Sneak Peek</div>
+<h3>Little Lights Kids Collection</h3>
+<p>A Project Worth kids collection is coming soon, created to celebrate courage, kindness, and the little lights who make the world brighter.</p>
+<span class="little-lights-coming-soon">Coming Soon</span>
+</div>
+<div class="little-lights-shop-image">
+<img src="little-lights-kids-stickers.jpg" alt="Little Lights Kids Collection stickers with encouraging messages for children">
+</div>
+</div>
+</div>
+
 <div class="card subsection-card">
 <div class="icon">★</div>
 <h3 style="color:var(--gold); font-weight:800;">Merch with Meaning</h3>
