@@ -5434,7 +5434,7 @@
           </button>
           <button class="map-filter" data-filter="policy" type="button">
             <span class="filter-dot policy"></span>
-            Strong Strong Policy Examples
+            Strong Policy Examples
           </button>
         </div>
 
@@ -5829,7 +5829,7 @@
             <label class="role-choice"><input type="checkbox" name="light_role" value="Partner" data-preview-category="partners" /> <span>Partner</span></label>
             <label class="role-choice"><input type="checkbox" name="light_role" value="Volunteer or Donor" data-preview-category="advocates" /> <span>Volunteer or Donor</span></label>
             <label class="role-choice"><input type="checkbox" name="light_role" value="Policy or Prevention" data-preview-category="policy" /> <span>Policy or Prevention</span></label>
-            <label class="role-choice"><input type="checkbox" name="light_role" value="Strong Strong Policy Example" data-preview-category="policy" /> <span>Strong Strong Policy Example</span></label>
+            <label class="role-choice"><input type="checkbox" name="light_role" value="Strong Policy Example" data-preview-category="policy" /> <span>Strong Policy Example</span></label>
             <label class="role-choice"><input type="checkbox" name="light_role" value="Other" data-preview-category="advocates" /> <span>Other</span></label>
           </div>
         </div>
@@ -6289,7 +6289,40 @@
   const contactForm = document.getElementById("project-worth-contact-form");
   const contactStatus = document.getElementById("contact-form-status");
   if (contactForm && contactStatus) {
-    contactForm.addEventListener("submit", () => { contactStatus.textContent = "Sending your message to Project Worth..."; });
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const formData = new FormData(contactForm);
+      const payload = new URLSearchParams();
+      for (const [key, value] of formData.entries()) payload.append(key, value);
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+      contactStatus.textContent = "Sending your message to Project Worth...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body: payload.toString()
+        });
+
+        if (!response.ok) throw new Error("Contact form submission failed");
+
+        contactForm.reset();
+        contactStatus.textContent = "Thank you. Your message was sent to Project Worth.";
+      } catch (error) {
+        contactStatus.textContent = "Something went wrong. Please try again, or email info@projectworthwi.org directly.";
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send Message";
+        }
+      }
+    });
   }
 
   if (addLightForm && addLightStatus) {
@@ -6299,29 +6332,62 @@
       const submitButton = addLightForm.querySelector('.add-light-submit');
       const roles = Array.from(addLightForm.querySelectorAll('input[name="light_role"]:checked')).map((item) => item.value).join(", ") || "None selected";
       const gaps = Array.from(addLightForm.querySelectorAll('input[name="gap_type"]:checked')).map((item) => item.value).join(", ") || "None selected";
+      const publicMessage = document.getElementById("public-message")?.value.trim() || "No response provided";
+      const changeHopedFor = document.getElementById("change-hoped-for")?.value.trim() || "No response provided";
+      const privateNote = document.getElementById("private-note")?.value.trim() || "No private note provided";
+      const publicDisplay = document.getElementById("public-display")?.value || "Based on map permission selection";
+
       const compiledMessage = [
-        "ADD YOUR LIGHT SUBMISSION", "",
+        "ADD YOUR LIGHT SUBMISSION",
+        "",
+        "━━━━━━━━━━━━━━━━━━",
+        "BASIC INFORMATION",
+        "━━━━━━━━━━━━━━━━━━",
+        "",
         `Name or Anonymous: ${document.getElementById("light-name")?.value || ""}`,
         `Email: ${document.getElementById("light-email")?.value || ""}`,
         `Location Scope: ${document.querySelector('input[name="location_scope"]:checked')?.value || "Wisconsin"}`,
         `Wisconsin County or Region: ${document.getElementById("light-county")?.value || ""}`,
         `State if outside Wisconsin: ${document.getElementById("light-state")?.value || ""}`,
+        "",
+        "━━━━━━━━━━━━━━━━━━",
+        "ROLES AND MAP SETTINGS",
+        "━━━━━━━━━━━━━━━━━━",
+        "",
         `Roles Selected: ${roles}`,
         `Map Permission: ${document.getElementById("map-permission")?.value || ""}`,
-        `Public Display Preference: ${document.getElementById("display-preference")?.value || ""}`,
+        `Public Display Preference: ${publicDisplay}`,
+        "",
+        "━━━━━━━━━━━━━━━━━━",
+        "GAPS, ACTION, OR CONNECTION TYPES",
+        "━━━━━━━━━━━━━━━━━━",
+        "",
         `Gap, Action, or Connection Type: ${gaps}`,
         "",
-        "What they want people to understand:",
-        document.getElementById("light-understand")?.value || "",
+        "━━━━━━━━━━━━━━━━━━",
+        "WHAT PEOPLE SHOULD UNDERSTAND",
+        "━━━━━━━━━━━━━━━━━━",
         "",
-        "Change they hope this light helps grow:",
-        document.getElementById("light-change")?.value || "",
+        publicMessage,
         "",
-        "Private note:",
-        document.getElementById("light-private-note")?.value || "",
+        "━━━━━━━━━━━━━━━━━━",
+        "CHANGE THIS LIGHT HELPS GROW",
+        "━━━━━━━━━━━━━━━━━━",
         "",
-        "Important: This submission should be reviewed before anything appears publicly on the map."
-      ].join("\\n");
+        changeHopedFor,
+        "",
+        "━━━━━━━━━━━━━━━━━━",
+        "PRIVATE NOTE",
+        "━━━━━━━━━━━━━━━━━━",
+        "",
+        privateNote,
+        "",
+        "━━━━━━━━━━━━━━━━━━",
+        "REVIEW NOTICE",
+        "━━━━━━━━━━━━━━━━━━",
+        "",
+        "This submission should be reviewed before anything appears publicly on the map."
+      ].join("\n");
 
       const formData = new URLSearchParams();
       formData.set("name", document.getElementById("light-name")?.value || "Add Your Light Submission");
@@ -6613,6 +6679,7 @@
   };
 
   function el(id) { return document.getElementById(id); }
+  const countyPreviewLight = el('countyPreviewLight');
   function selectedScope() { return document.querySelector('input[name="location_scope"]:checked')?.value || 'Wisconsin'; }
   function selectedCategory() {
     const checked = Array.from(document.querySelectorAll('input[name="light_role"]:checked'));
