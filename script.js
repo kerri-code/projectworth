@@ -357,3 +357,26 @@
     showSlide(index);
   });
 })();
+
+
+/* Shared footer include */
+document.addEventListener('DOMContentLoaded', function () {
+  var footerTargets = document.querySelectorAll('[data-include="footer"]');
+  if (!footerTargets.length) return;
+
+  fetch('footer.html', { cache: 'no-cache' })
+    .then(function (response) {
+      if (!response.ok) throw new Error('Footer include failed: ' + response.status);
+      return response.text();
+    })
+    .then(function (html) {
+      footerTargets.forEach(function (target) {
+        target.outerHTML = html;
+      });
+    })
+    .catch(function () {
+      footerTargets.forEach(function (target) {
+        target.innerHTML = '<footer><div class="container footer-bottom"><p>Project Worth is a 501(c)(3) nonprofit organization.</p><p><a href="transparency.html">Transparency</a></p><p>© 2026 Project Worth, Inc. All rights reserved.</p></div></footer>';
+      });
+    });
+});

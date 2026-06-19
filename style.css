@@ -9401,3 +9401,34 @@ body.split-page .nav-links a.active-page {
   }
 }
 
+
+
+/* SHARED FOOTER COMPONENT */
+.footer-brand h3,
+.footer-grid h4,
+.footer-connect-centered h4 {
+  color: var(--gold) !important;
+}
+.footer-grid {
+  margin-bottom: 0.75rem !important;
+}
+.footer-connect-centered,
+.footer-disclaimer,
+.footer-bottom {
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  text-align: center !important;
+  margin-top: 0.45rem !important;
+  padding-top: 0.2rem !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.footer-connect-centered p,
+.footer-disclaimer,
+.footer-bottom p {
+  margin: 0.15rem 0 !important;
+}
+.footer-include-placeholder {
+  min-height: 20rem;
+}
