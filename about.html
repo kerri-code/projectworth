@@ -9,7 +9,59 @@
 
   gtag('config', 'G-NBPXRGKXBJ');
 </script>
-<title>About Project Worth | Our Mission and Vision</title><meta name="description" content="Learn about Project Worth, a Wisconsin nonprofit working to strengthen child protection through prevention, advocacy, awareness, and survivor informed reform."><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head><body class="split-page page-mission"><header>
+<title>About Project Worth | Our Mission and Vision</title><meta name="description" content="Learn about Project Worth, a Wisconsin nonprofit working to strengthen child protection through prevention, advocacy, awareness, and survivor informed reform."><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/>
+
+<style>
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+  justify-content: center;
+  justify-items: stretch;
+  width: 100%;
+  max-width: 1120px;
+  margin: 1.25rem auto 0;
+  box-sizing: border-box;
+}
+
+.values-grid .value-card {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#mission {
+  position: relative;
+  overflow: hidden;
+}
+
+#mission > .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 650px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  #mission .spark-page-watermark img {
+    width: min(520px, 95vw) !important;
+    transform: translateX(-28%) !important;
+  }
+}
+</style>
+
+</head><body class="split-page page-mission"><header>
 <div aria-hidden="true" class="header-scene">
 <span class="trail-star med s1">★</span>
 <span class="trail-star small s2">★</span>
@@ -36,7 +88,7 @@
 </div>
 <div class="container nav">
 <a class="brand" href="index.html">
-<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:cover;"/>
+<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:contain;"/>
 <div class="brand-text">
 <strong>PROJECT WORTH</strong>
 <small>Change Starts Here.</small>
@@ -47,6 +99,7 @@
 <a class="active-page" href="about.html">About Project Worth</a>
 <a href="awareness.html">What is Grooming?</a>
 <a href="advocacy.html">Advocacy</a>
+<a href="partners.html">Partners</a>
 <a href="team.html">Our Team</a>
 <a href="the-spark.html">The Spark</a>
 <a href="media.html">Media &amp; Impact</a>
@@ -57,9 +110,33 @@
 </a>
 </nav>
 </div>
-</header><main><section class="site-bg-white" id="mission">
-<div class="container">
-<div class="page-title-banner"><div class="page-kicker">About Project Worth</div><h2>About Project Worth</h2><p>Protecting children, strengthening systems, and supporting survivor-informed reform.</p></div>
+</header>
+
+<main>
+<section class="story-hero site-bg-gold" id="mission" style="position:relative; overflow:hidden;">
+
+<div aria-hidden="true" class="spark-page-watermark" style="
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      pointer-events:none;
+      z-index:0;
+      overflow:hidden;
+    ">
+<img alt="" src="PROJECT-WORTH-LOGO.png" style="
+        width:min(720px,60vw);
+        opacity:.075;
+        object-fit:contain;
+        transform:translateX(-10%);
+        filter:grayscale(100%) sepia(18%) brightness(1.05);
+        mix-blend-mode:multiply;
+      "/>
+</div>
+
+<div class="container" style="position:relative; z-index:1;">
+<div class="page-title-banner"><div class="page-kicker">Who We Are</div><h2>About Project Worth</h2><p>Protecting Kids. Changing Systems. Empowering Survivors.</p></div>
 <div class="mission-vision-grid">
 <div class="card subsection-card mission-vision-card">
 <div class="icon">✦</div>
@@ -71,32 +148,104 @@
 <div class="icon">★</div>
 <div class="eyebrow" style="color:var(--gold);">Our Mission</div>
 <h3 style="color:var(--gold); font-weight:900;">Make Wisconsin a national leader in child protection.</h3>
-<p style="color:#fff; font-weight:650;">Project Worth exists to make Wisconsin a national leader in child protection by advancing strong legislation, strengthening accountability, and closing systemic gaps that fail to protect children and survivors, so our state leads the standard instead of playing catch-up.</p>
-<p style="color:#fff; font-weight:650;">Project Worth transforms personal and professional experience into meaningful policy change, ensuring that child protection systems are consistent, effective, and designed to act, not react.</p>
+<p style="color:#fff; font-weight:650;">
+Project Worth works to close the gaps that fail children and survivors by advancing stronger laws, accountability, and prevention-driven reform across Wisconsin.</p>
 </div>
 </div>
-<div class="vision-lead">
-          Wisconsin should set the national standard for child safety, prevention, accountability, and response.
-        </div>
+
+<div style="
+  margin:2rem auto 0;
+  padding:1.5rem 1.75rem;
+  max-width:920px;
+  background:
+    radial-gradient(circle at top right, rgba(255,210,74,0.18), transparent 28%),
+    linear-gradient(135deg, #fffaf4 0%, #ffffff 60%, #fff6df 100%);
+  border:1px solid rgba(224,195,106,0.45);
+  border-left:6px solid var(--gold);
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  position:relative;
+  overflow:hidden;
+">
+<span aria-hidden="true" style="position:absolute; top:12px; right:18px; color:var(--gold); opacity:0.35; font-size:1.4rem;">★</span>
+<div style="color:var(--navy); font-weight:900; text-transform:uppercase; letter-spacing:0.08em; font-size:0.9rem; margin-bottom:0.55rem;">
+★ 100% Volunteer-Led
+</div>
+<p style="margin:0; color:var(--navy); font-weight:650; line-height:1.65;">
+Project Worth is fully volunteer-led. Every resource entrusted to us is handled with care, integrity, and commitment to our mission.
+</p>
+</div>
+
 <div style="margin-top:2.5rem;">
 <div class="section-heading">
 <h2>Our Values</h2>
-<p>What guides Project Worth in every decision, conversation, and action.</p>
+<p>The principles behind every action we take.</p>
 </div>
-<div class="grid-3 values-grid">
+
+<div class="values-grid">
 <div class="card value-card"><div class="value-icon">★</div><h3>Protection First</h3><p>Children deserve systems that act early, consistently, and decisively to keep them safe.</p></div>
-<div class="card value-card"><div class="value-icon">✦</div><h3>Truth &amp; Transparency</h3><p>We bring light to what is hidden, responsibly and factually, so patterns cannot continue unnoticed. We work to build stronger systems together for children, not assign blame.</p></div>
-<div class="card value-card survivor-navy-card"><div class="value-icon">♡</div><h3>Survivor-Informed</h3><p>Lived experience helps shape stronger systems and better protection.</p></div>
-<div class="card value-card"><div class="value-icon">⚖</div><h3>Accountability</h3><p>Systems and institutions must be transparent, responsive, and held accountable when they fail to protect children.</p></div>
-<div class="card value-card"><div class="value-icon">✦</div><h3>System Reform</h3><p>We work to close gaps and build stronger, more effective child protection systems.</p></div>
-<div class="card value-card"><div class="value-icon">★</div><h3>Nonpartisan</h3><p>Child safety is not political. We work across all parties and perspectives to advance solutions that protect children, focusing on shared responsibility over ideology.</p></div>
-<div class="card value-card"><div class="value-icon">🧭</div><h3>Higher Standards</h3><p>People working or volunteering with children should meet a higher standard than simply having no criminal record. Child serving roles require integrity, sound judgment, accountability, and a demonstrated commitment to child safety.</p></div>
-<div class="card value-card"><div class="value-icon">🏛️</div><h3>Child Protection Leadership</h3><p>Churches, schools, youth programs, and organizations serving children should model and be held to the highest standards of child protection, prevention, transparency, and accountability.</p></div>
-<div class="card value-card"><div class="value-icon">🤝</div><h3>Shared Responsibility</h3><p>Protecting children is not the responsibility of one person, one agency, or one institution. Families, communities, schools, churches, lawmakers, law enforcement, and child protection systems all have a role to play.</p></div>
-<div class="card value-card"><div class="value-icon">📚</div><h3>Research &amp; Evidence</h3><p>Strong reform should be supported by research, data, survivor experience, and real world system gaps. Project Worth values credible information that helps lawmakers and communities understand what needs to change.</p></div>
-<div class="card value-card"><div class="value-icon">🌱</div><h3>Hope &amp; Healing</h3><p>What began in pain can become purpose. Project Worth believes healing and reform can grow together, helping survivors reclaim their voices while building safer systems for the next generation.</p></div>
-<div class="card value-card"><div class="value-icon">🕊️</div><h3>Courage to Speak</h3><p>Silence protects abuse. Honest conversations, difficult truths, and brave voices help protect children.</p></div>
+<div class="card value-card"><div class="value-icon">♡</div><h3 style="color:var(--navy);">Survivor-Informed Reform</h3><p style="color:var(--gold-dark); font-weight:850;">Lived experience helps shape stronger systems and better protection.</p></div>
+<div class="card value-card"><div class="value-icon">⚖</div><h3>Higher Standards & Accountability</h3><p>Child-serving institutions must uphold standards of safety, judgment, transparency, and accountability, not simply the absence of a criminal record.</p></div>
+<div class="card value-card"><div class="value-icon">★</div><h3 style="color:var(--navy);">Nonpartisan</h3><p style="color:var(--gold-dark); font-weight:850;">Child protection is not political. We work across perspectives to advance solutions that keep children safe.</p></div>
+<div class="card value-card"><div class="value-icon">🧭</div><h3>Courage to Speak</h3><p>Brave voices, honest conversations, and survivor-centered reform can build safer systems for the next generation.</p></div>
+<div class="card value-card"><div class="value-icon">📚</div><h3 style="color:var(--navy);">Research &amp; Evidence</h3><p style="color:var(--gold-dark); font-weight:850;">Strong reform should be guided by research, data, survivor experience, and real-world system gaps.</p></div>
+</div>
+
+</div>
+
+<div class="advocacy-prevention-band reveal-on-scroll" style="
+  width:100%;
+  margin:3rem 0 0 0;
+  background:linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%) !important;
+  border-top:2px solid var(--gold);
+  border-bottom:2px solid var(--gold);
+  position:relative;
+  overflow:hidden;
+  padding:clamp(2rem, 4vw, 3rem) 1.5rem;
+  text-align:center;
+  box-shadow:0 -10px 30px rgba(15,49,88,0.18);
+">
+<span aria-hidden="true" style="position:absolute; top:12px; left:10%; color:#ffd24a; opacity:0.26; font-size:1rem;">★</span>
+<span aria-hidden="true" style="position:absolute; top:24px; right:16%; color:#ffd24a; opacity:0.22; font-size:0.9rem;">★</span>
+<span aria-hidden="true" style="position:absolute; bottom:18px; left:25%; color:#ffd24a; opacity:0.20; font-size:0.85rem;">★</span>
+<span aria-hidden="true" style="position:absolute; bottom:12px; right:11%; color:#ffd24a; opacity:0.18; font-size:0.8rem;">★</span>
+<span aria-hidden="true" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#ffd24a; opacity:0.08; font-size:8rem; line-height:1;">★</span>
+
+
+
+<p style="
+    color:#ffffff !important;
+    font-weight:900;
+    font-size:clamp(1.18rem, 2.5vw, 1.7rem);
+    line-height:1.55;
+    max-width:1050px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+  ">
+<span style="color:var(--gold);">★</span> We are building toward a Wisconsin where prevention leads, accountability is expected, and children always come first.
+</p>
+<div style="
+    color:var(--gold);
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:clamp(0.78rem, 1.5vw, 0.95rem);
+    margin:0 auto 0.8rem;
+    position:relative;
+    z-index:1;
+  ">
+
+
+Project Worth Est. 2026
 </div>
 </div>
+
 </div>
-</section></main><div data-include="footer" class="footer-include-placeholder"></div><script src="script.js"></script></body></html>
+</section>
+</main>
+
+<div data-include="footer" class="footer-include-placeholder"></div>
+<script src="script.js"></script>
+
+</body></html>

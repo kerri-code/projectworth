@@ -36,7 +36,7 @@
 </div>
 <div class="container nav">
 <a class="brand" href="index.html">
-<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:cover;"/>
+<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:contain;"/>
 <div class="brand-text">
 <strong>PROJECT WORTH</strong>
 <small>Change Starts Here.</small>
@@ -47,6 +47,7 @@
 <a href="about.html">About Project Worth</a>
 <a href="awareness.html">What is Grooming?</a>
 <a href="advocacy.html">Advocacy</a>
+<a href="partners.html">Partners</a>
 <a class="active-page" href="team.html">Our Team</a>
 <a href="the-spark.html">The Spark</a>
 <a href="media.html">Media &amp; Impact</a>
@@ -57,11 +58,34 @@
 </a>
 </nav>
 </div>
-</header><main><section class="light-gold-section" id="team">
-<div class="container">
-<div class="page-title-banner"><div class="page-kicker">Meet Our Team</div><h2>Meet Our Team</h2><p>The people behind Project Worth are committed to protecting children, strengthening systems, and supporting survivors.</p></div>
+</header><main><section class="story-hero site-bg-gold team-page-section" id="team" style="position:relative; overflow:hidden;">
+<div aria-hidden="true" class="spark-page-watermark" style="
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      pointer-events:none;
+      z-index:0;
+      overflow:hidden;
+    ">
+<img alt="" src="PROJECT-WORTH-LOGO.png" style="
+        width:min(720px,60vw);
+        opacity:.075;
+        object-fit:contain;
+        transform:translateX(-10%);
+        filter:grayscale(100%) sepia(18%) brightness(1.05);
+        mix-blend-mode:multiply;
+      "/>
+</div>
+<div class="container" style="position:relative; z-index:1;">
+<div class="page-title-banner">
+<div class="page-kicker">Meet Our Team</div>
+<h2>Meet Our Team</h2>
+<p>The people behind Project Worth are committed to protecting children, strengthening systems, and supporting survivors.</p>
+</div>
 <div style="width:100%; display:flex; justify-content:center; margin:0 auto 3rem auto;">
-<div class="card" style="max-width:950px; text-align:center;">
+<div class="card team-intro-card" style="max-width:950px; text-align:center;">
 <div class="icon" style="margin:0 auto 1.5rem auto;">♡</div>
 <h3 style="color:var(--navy); font-weight:900; margin-bottom:1rem;">Survivor Informed Leadership</h3>
 <p style="max-width:800px; margin:0 auto; color:var(--ink);">
@@ -190,11 +214,116 @@ Project Worth is built by people who understand the importance of prevention, ac
 </div>
 </div>
 </div>
-<div class="team-safe-note" style="text-align:center; margin:3.8rem auto 0; color:#9aa47b; font-family:'Allura','Great Vibes','Snell Roundhand','Brush Script MT',cursive; font-size:clamp(1.65rem,4vw,2.65rem); font-weight:300; letter-spacing:0.04em; line-height:1.4;">
-<span aria-hidden="true" style="font-family:Georgia,'Times New Roman',serif; font-size:0.85em; margin-right:0.7rem; opacity:0.82; vertical-align:middle;">;</span>
-<span style="vertical-align:middle;">your story is safe with us.</span>
-<span aria-hidden="true" style="font-family:Georgia,'Times New Roman',serif; font-size:0.72em; margin-left:0.7rem; opacity:0.9; vertical-align:middle;">🌻</span>
+<!-- FULL-WIDTH TEAM COMMITMENT BAND -->
+<div class="advocacy-prevention-band reveal-on-scroll" style="
+  width:100%;
+  margin:3rem 0 0 0;
+  background:linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%) !important;
+  border-top:2px solid var(--gold);
+  border-bottom:2px solid var(--gold);
+  position:relative;
+  overflow:hidden;
+  padding:clamp(2rem, 4vw, 3rem) 1.5rem;
+  text-align:center;
+  box-shadow:0 -10px 30px rgba(15,49,88,0.18);
+">
+<span aria-hidden="true" style="position:absolute; top:12px; left:10%; color:#ffd24a; opacity:0.26; font-size:1rem;">★</span>
+<span aria-hidden="true" style="position:absolute; top:24px; right:16%; color:#ffd24a; opacity:0.22; font-size:0.9rem;">★</span>
+<span aria-hidden="true" style="position:absolute; bottom:18px; left:25%; color:#ffd24a; opacity:0.20; font-size:0.85rem;">★</span>
+<span aria-hidden="true" style="position:absolute; bottom:12px; right:11%; color:#ffd24a; opacity:0.18; font-size:0.8rem;">★</span>
+<span aria-hidden="true" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#ffd24a; opacity:0.08; font-size:8rem; line-height:1;">★</span>
+<p style="
+    color:#ffffff !important;
+    font-weight:900;
+    font-size:clamp(1.18rem, 2.5vw, 1.7rem);
+    line-height:1.55;
+    max-width:1050px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+  ">
+<span style="color:var(--gold);">★</span> Our team is united by one belief: prevention is possible, protection is necessary, and every child is worth the work.
+  </p>
 </div>
 </div>
-</section></main><div data-include="footer" class="footer-include-placeholder"></div>
+</section>
+<style>
+  body.page-team,
+  body.page-team main {
+    background:#fff3d7 !important;
+  }
+
+  #team.team-page-section {
+    background:
+      radial-gradient(circle at 92% 6%, rgba(255,210,74,0.30), transparent 32%),
+      radial-gradient(circle at 8% 24%, rgba(224,195,106,0.18), transparent 30%),
+      linear-gradient(180deg, #fff1cf 0%, #fff4dc 38%, #fff1cf 100%) !important;
+  }
+
+  #team .team-intro-card,
+  #team .team-member-card {
+    background:
+      radial-gradient(circle at bottom right, rgba(255,210,74,0.14), transparent 28%),
+      linear-gradient(135deg,#fffaf4 0%, #ffffff 58%, #fff6df 100%) !important;
+    border:1px solid rgba(224,195,106,0.45) !important;
+    border-left:7px solid var(--gold) !important;
+    box-shadow:0 16px 36px rgba(15,49,88,0.09) !important;
+    position:relative;
+    overflow:hidden;
+  }
+
+  #team .team-intro-card::after,
+  #team .team-member-card::after {
+    content:"★";
+    position:absolute;
+    right:1rem;
+    bottom:-0.65rem;
+    color:rgba(224,195,106,0.13);
+    font-size:5.2rem;
+    line-height:1;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  #team .team-intro-card > *,
+  #team .team-member-card > * {
+    position:relative;
+    z-index:1;
+  }
+
+  #team .team-member-card img {
+    background:#fffaf4 !important;
+    border:1px solid rgba(224,195,106,0.22);
+    box-shadow:0 12px 28px rgba(15,49,88,0.10);
+  }
+
+  #team .team-email {
+    color:var(--navy);
+    font-weight:850;
+    text-decoration:none;
+  }
+
+  #team .team-email:hover {
+    color:var(--gold-dark);
+    text-decoration:underline;
+  }
+
+  #team .kerri-story-scroll {
+    background:
+      radial-gradient(circle at bottom right, rgba(255,210,74,0.12), transparent 32%),
+      linear-gradient(135deg,#fffaf4 0%, #ffffff 62%, #fff6df 100%) !important;
+    border:1px solid rgba(224,195,106,0.38) !important;
+    border-top:3px solid var(--gold) !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.86), 0 10px 24px rgba(15,49,88,0.06) !important;
+  }
+
+  @media (max-width: 850px) {
+    #team .spark-page-watermark img {
+      width:88vw !important;
+      opacity:.055 !important;
+      transform:translateX(-22%) !important;
+    }
+  }
+</style>
+</main><div data-include="footer" class="footer-include-placeholder"></div>
 <div class="nonprofit-status-line">Project Worth is recognized as a 501(c)(3) nonprofit organization. Contributions may be tax deductible as allowed by law.</div><script src="script.js"></script></body></html>

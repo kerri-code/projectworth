@@ -35,7 +35,7 @@
 </div>
 <div class="container nav">
 <a class="brand" href="index.html">
-<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:cover;"/>
+<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:contain;"/>
 <div class="brand-text">
 <strong>PROJECT WORTH</strong>
 <small>Change Starts Here.</small>
@@ -46,6 +46,7 @@
 <a href="about.html">About Project Worth</a>
 <a href="awareness.html">What is Grooming?</a>
 <a href="advocacy.html">Advocacy</a>
+<a href="partners.html">Partners</a>
 <a href="team.html">Our Team</a>
 <a href="the-spark.html">The Spark</a>
 <a class="active-page" href="media.html">Media &amp; Impact</a>
@@ -56,15 +57,38 @@
 </a>
 </nav>
 </div>
-</header><main><section class="site-bg-white" id="press">
-<div class="container">
-<div class="page-title-banner"><div class="page-kicker">Media &amp; Impact</div><h2>Media &amp; Impact</h2><p>Public advocacy, legislative work, and media coverage connected to Project Worth.</p></div>
-<div class="card" style="margin-bottom:1.5rem; text-align:center; background:linear-gradient(180deg, rgba(255,248,232,0.98), rgba(255,244,214,0.98)); border:1px solid rgba(15,49,88,0.14); box-shadow:0 14px 34px rgba(15,49,88,0.08); color:var(--navy);">
+</header><main><section class="story-hero site-bg-gold" id="press" style="position:relative; overflow:hidden;">
+<div aria-hidden="true" class="spark-page-watermark" style="
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      pointer-events:none;
+      z-index:0;
+      overflow:hidden;
+    ">
+<img alt="" src="PROJECT-WORTH-LOGO.png" style="
+        width:min(720px,60vw);
+        opacity:.075;
+        object-fit:contain;
+        transform:translateX(-10%);
+        filter:grayscale(100%) sepia(18%) brightness(1.05);
+        mix-blend-mode:multiply;
+      "/>
+</div>
+<div class="container" style="position:relative; z-index:1;">
+<div class="page-title-banner">
+<div class="page-kicker">Media &amp; Impact</div>
+<h2>Media &amp; Impact</h2>
+<p>Public advocacy, legislative work, and media coverage connected to Project Worth.</p>
+</div>
+<div class="card" style="margin-bottom:1.5rem; text-align:center; background:radial-gradient(circle at bottom right, rgba(255,210,74,0.18), transparent 28%), linear-gradient(135deg,#fffaf4 0%, #ffffff 58%, #fff6df 100%); border:1px solid rgba(224,195,106,0.45); border-left:8px solid var(--gold); border-radius:32px; box-shadow:0 16px 36px rgba(15,49,88,0.10); color:var(--navy); position:relative; overflow:hidden;">
 <h3 style="color:var(--navy);">Media Inquiries</h3>
 <p style="color:var(--navy); font-weight:700;">For interviews, press inquiries, speaking requests, or media opportunities, please contact Project Worth directly.</p>
 <a class="btn btn-primary" href="mailto:info@projectworthwi.org?subject=Project Worth - Media Inquiry" style="background:var(--navy); border-color:var(--navy); color:#fff;">Start the Conversation</a>
 </div>
-<div class="card" style="margin-bottom:1.5rem; border-left:6px solid var(--gold); background:linear-gradient(135deg,#fff,#fffaf4);">
+<div class="card" style="margin-bottom:1.5rem; border:1px solid rgba(224,195,106,0.45); border-left:8px solid var(--gold); border-radius:32px; background:radial-gradient(circle at bottom right, rgba(255,210,74,0.14), transparent 28%), linear-gradient(135deg,#fffaf4 0%, #ffffff 58%, #fff6df 100%); box-shadow:0 16px 36px rgba(15,49,88,0.10); position:relative; overflow:hidden;">
 <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:1.5em; align-items:stretch;">
 <div>
 <div class="icon">⚖</div>
@@ -92,7 +116,7 @@
 <a href="https://docs.legis.wisconsin.gov/misc/lc/hearing_testimony_and_materials/2023/sb333/sb0333_2023_08_22.pdf" rel="noopener" style="display:inline-block; color:var(--gold); font-weight:900; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.55); text-underline-offset:0.22em; font-size:0.92em; line-height:1.35;" target="_blank">Review SB 333 Senate hearing materials and testimony →</a>
 </div>
 </div>
-<div style="border-radius:1.3em; overflow:hidden; border:2px solid rgba(15,49,88,0.18); background:linear-gradient(135deg,#f3e4c7,#fff1c4); min-height:15em; display:flex; flex-direction:column; justify-content:space-between; padding:1em; color:var(--navy);">
+<div style="border-radius:1.3em; overflow:hidden; border:2px solid rgba(224,195,106,0.45); background:linear-gradient(135deg,#fffaf4 0%, #ffffff 58%, #fff6df 100%); min-height:15em; display:flex; flex-direction:column; justify-content:space-between; padding:1em; color:var(--navy); box-shadow:0 12px 28px rgba(15,49,88,0.08);">
 <div aria-label="Behind-the-scenes photo carousel" class="media-bts-carousel">
 <button aria-label="Previous behind-the-scenes photo" class="media-bts-arrow left" data-media-bts-prev="" type="button">‹</button>
 <div class="media-bts-track" data-media-bts-track="">
@@ -177,7 +201,7 @@
 </div>
 </div>
 </div>
-<div class="card subsection-card featured-coverage-card">
+<div class="card subsection-card featured-coverage-card" style="background:linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%); border:1px solid rgba(255,210,74,.5); border-top:4px solid var(--gold); border-radius:32px; box-shadow:0 18px 42px rgba(15,49,88,.18), 0 0 22px rgba(224,195,106,.12);">
 <div class="icon">★</div>
 <h3 style="color:var(--gold); font-weight:800;">Featured Coverage</h3>
 <p style="color:#fff; font-weight:600; margin-bottom:0.8rem;">Scroll to view coverage, articles, and official resources connected to Project Worth and Wisconsin Act 200.</p>
@@ -210,4 +234,51 @@
 </div>
 </div>
 </div>
-</section></main><div data-include="footer" class="footer-include-placeholder"></div><script src="script.js"></script></body></html>
+</section>
+<style>
+  .page-press #press .page-title-banner {
+    background:linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%) !important;
+    border-top:2px solid var(--gold) !important;
+    border-bottom:2px solid var(--gold) !important;
+    border-left:0 !important;
+    border-right:0 !important;
+    border-radius:0 !important;
+    box-shadow:0 18px 42px rgba(15,49,88,.18), 0 0 22px rgba(224,195,106,.12) !important;
+    color:#ffffff !important;
+  }
+
+  .page-press #press .page-title-banner .page-kicker {
+    color:var(--gold) !important;
+  }
+
+  .page-press #press .page-title-banner h2,
+  .page-press #press .page-title-banner p {
+    color:#ffffff !important;
+  }
+
+  .page-press #press .card {
+    backdrop-filter:saturate(1.05);
+  }
+
+  .page-press #press .press-item {
+    border-color:rgba(255,210,74,0.26);
+    background:rgba(255,255,255,0.045);
+  }
+
+  .page-press #press .featured-coverage-scroll {
+    scrollbar-color:var(--gold) rgba(255,255,255,0.10);
+  }
+
+  @media (max-width: 900px) {
+    .page-press #press [style*="grid-template-columns:1.05fr 0.95fr"],
+    .page-press #press [style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns:1fr !important;
+    }
+
+    .page-press #press .spark-page-watermark img {
+      width:min(620px,92vw) !important;
+      transform:translateX(-24%) !important;
+    }
+  }
+</style>
+</main><div data-include="footer" class="footer-include-placeholder"></div><script src="script.js?v=media-style-polish-20260709"></script></body></html>

@@ -9,7 +9,388 @@
 
   gtag('config', 'G-NBPXRGKXBJ');
 </script>
-<title>Project Worth | Donate</title><meta name="description" content="Support Project Worth’s mission to strengthen child protection, prevention, advocacy, and awareness efforts across Wisconsin."><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/></head><body class="split-page page-donate"><header>
+<title>Project Worth | Donate</title><meta name="description" content="Support Project Worth’s mission to strengthen child protection, prevention, advocacy, and awareness efforts across Wisconsin."><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="style.css" rel="stylesheet"/>
+<style>
+  /* Donate page: Spark-page color + layout match */
+  #donate.story-hero.site-bg-gold {
+    position: relative;
+    overflow: hidden;
+    padding: 4.8rem 0 2.2rem;
+  }
+
+  #donate .donate-page-watermark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  #donate .donate-page-watermark img {
+    width: min(720px, 60vw);
+    opacity: .075;
+    object-fit: contain;
+    transform: translateX(-10%);
+    filter: grayscale(100%) sepia(18%) brightness(1.05);
+    mix-blend-mode: multiply;
+  }
+
+  #donate .donate-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  #donate .donate-spark-intro {
+    position: relative;
+    margin: 1.25rem auto 1.75rem;
+    padding: 0;
+    text-align: center;
+    overflow: visible;
+  }
+
+  #donate .donate-spark-wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  #donate .donate-top-box-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.35rem;
+    align-items: stretch;
+    max-width: 1180px;
+    margin: 0 auto 1.35rem;
+  }
+
+  #donate .donate-spark-card {
+    margin: 0;
+    padding: 2.2rem clamp(1.25rem, 3vw, 2.75rem);
+    border-radius: 32px;
+    background:
+      radial-gradient(circle at bottom right, rgba(255,210,74,0.18), transparent 28%),
+      linear-gradient(135deg,#fffaf4 0%, #ffffff 58%, #fff6df 100%);
+    border: 1px solid rgba(224,195,106,0.45);
+    border-left: 8px solid var(--gold);
+    box-shadow: 0 16px 36px rgba(15,49,88,0.10);
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  #donate .donate-spark-card.square-card,
+  #donate .donate-action-card.square-card {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #donate .donate-action-card {
+    margin: 0;
+    padding: 1.55rem clamp(1.2rem,3vw,2rem);
+    text-align: center;
+    border-radius: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(255,210,74,0.18), transparent 30%),
+      linear-gradient(135deg,#07172a 0%,#081b33 58%,#091829 100%);
+    border: 2px solid rgba(224,195,106,0.56);
+    border-left: 0.4em solid var(--gold);
+    box-shadow: 0 18px 42px rgba(15,49,88,0.18);
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  #donate .donate-bg-star {
+    position: absolute;
+    right: 1rem;
+    bottom: -0.65rem;
+    color: rgba(224,195,106,0.16);
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  #donate .donate-action-card .donate-bg-star {
+    color: rgba(255,210,74,0.12);
+  }
+
+  #donate .spark-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.5rem 1.35rem;
+    margin-bottom: 1.35rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(224,195,106,0.58);
+    color: var(--gold);
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  #donate .donate-action-card .spark-pill {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,210,74,0.48);
+    color: var(--gold);
+  }
+
+  #donate .donate-spark-card h3,
+  #donate .donate-choice-heading h3,
+  #donate .donate-support-intro h3,
+  #donate .donate-impact-card h3 {
+    color: var(--navy);
+    font-weight: 900;
+    margin-bottom: 0.55em;
+  }
+
+  #donate .donate-action-card h3 {
+    color: var(--gold);
+    font-weight: 800;
+    margin-bottom: 0.55em;
+    font-size: clamp(1.45rem, 2.35vw, 2.05rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  #donate .donate-spark-card p {
+    color: var(--navy);
+    font-weight: 800;
+    font-size: clamp(1rem, 1.16vw, 1.08rem);
+    line-height: 1.72;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+  }
+
+  #donate .donate-action-card p {
+    color: rgba(255,255,255,0.92);
+    font-weight: 700;
+    line-height: 1.65;
+    max-width: 720px;
+    margin: 0 auto 1.15rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  #donate .donate-secure-note {
+    color: #fff1c4 !important;
+    font-weight: 800 !important;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0 auto !important;
+  }
+
+  #donate .donate-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin: 0.3rem 0 1.15rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  #donate .donate-light-btn {
+    color: #ffffff;
+    border-color: rgba(255,255,255,.75);
+  }
+
+  #donate .donate-choice-shell,
+  #donate .donate-support-intro,
+  #donate .donate-impact-card {
+    border-radius: 32px;
+    background:
+      radial-gradient(circle at bottom right, rgba(255,210,74,0.14), transparent 28%),
+      linear-gradient(135deg,#fffaf4 0%, #ffffff 58%, #fff6df 100%);
+    border: 1px solid rgba(224,195,106,0.45);
+    border-left: 8px solid var(--gold);
+    box-shadow: 0 16px 36px rgba(15,49,88,0.10);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #donate .donate-choice-shell {
+    max-width: 1180px;
+    margin: 0 auto 1.35rem;
+    padding: 1.6rem clamp(1.1rem, 3vw, 2rem);
+    text-align: center;
+  }
+
+  #donate .donate-choice-heading {
+    max-width: 780px;
+    margin: 0 auto 1.15rem;
+  }
+
+  #donate .donate-choice-heading p,
+  #donate .donate-support-intro p,
+  #donate .donate-impact-card p {
+    color: #334052;
+    font-weight: 700;
+    line-height: 1.65;
+    margin: 0 auto;
+  }
+
+  #donate .donate-path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+    margin-top: 1.25rem;
+  }
+
+  #donate .donate-path-card {
+    background: rgba(255,255,255,0.86);
+    border: 1px solid rgba(200,155,47,0.34);
+    border-top: 5px solid var(--gold);
+    border-radius: 24px;
+    padding: 1.2rem;
+    box-shadow: 0 10px 24px rgba(15,49,88,0.08);
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 12rem;
+  }
+
+  #donate .donate-path-card.featured {
+    background:
+      radial-gradient(circle at top left, rgba(255,210,74,0.18), transparent 30%),
+      linear-gradient(135deg,#07172a 0%,#081b33 58%,#091829 100%);
+    border: 2px solid rgba(224,195,106,0.56);
+    border-top: 5px solid var(--gold);
+    box-shadow: 0 18px 42px rgba(15,49,88,0.18);
+  }
+
+  #donate .donate-path-icon {
+    font-size: 1.55rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  #donate .donate-path-card strong {
+    color: var(--navy);
+    font-weight: 900;
+    font-size: 1.05rem;
+  }
+
+  #donate .donate-path-card span:last-child {
+    color: #334052;
+    font-weight: 650;
+    line-height: 1.55;
+  }
+
+  #donate .donate-path-card.featured strong,
+  #donate .donate-path-card.featured span:last-child {
+    color: rgba(255,255,255,0.92);
+  }
+
+  #donate .donate-path-card.featured .donate-path-icon {
+    color: var(--gold);
+  }
+
+  #donate .donate-support-intro {
+    max-width: 940px;
+    margin: 0 auto 1.35rem;
+    padding: 1.35rem clamp(1.1rem, 3vw, 1.65rem);
+    text-align: center;
+  }
+
+  #donate .donate-impact-grid-expanded {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+    max-width: 1180px;
+    margin: 0 auto 1.35rem;
+  }
+
+  #donate .donate-impact-card {
+    padding: 1.25rem;
+    text-align: center;
+    min-height: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #donate .donate-impact-card .icon,
+  #donate .donate-support-intro .icon,
+  #donate .donate-spark-card .icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #donate .donate-tax-note-light {
+    max-width: 900px;
+    margin: 1.35rem auto 0;
+    padding: 0.35rem 1rem 0;
+    color: var(--navy);
+    font-weight: 900;
+    line-height: 1.7;
+    font-size: clamp(0.98rem,1.15vw,1.06rem);
+    text-align: center;
+  }
+
+  @media (max-width: 850px) {
+    #donate.story-hero.site-bg-gold {
+      padding: 3.6rem 0 1.75rem;
+    }
+
+    #donate .container,
+    #donate .donate-spark-wrap {
+      width: min(100%, 100vw);
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    #donate .page-title-banner {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    #donate .donate-top-box-grid,
+    #donate .donate-path-grid,
+    #donate .donate-impact-grid-expanded {
+      grid-template-columns: 1fr !important;
+    }
+
+    #donate .donate-spark-card.square-card,
+    #donate .donate-action-card.square-card {
+      aspect-ratio: auto !important;
+    }
+
+    #donate .donate-spark-card,
+    #donate .donate-action-card,
+    #donate .donate-choice-shell,
+    #donate .donate-support-intro,
+    #donate .donate-impact-card {
+      border-radius: 24px !important;
+      padding: 1.25rem !important;
+      min-height: 0 !important;
+    }
+
+    #donate .donate-hero-actions a {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+</style>
+</head><body class="split-page page-donate"><header>
 <div aria-hidden="true" class="header-scene">
 <span class="trail-star med s1">★</span>
 <span class="trail-star small s2">★</span>
@@ -36,7 +417,7 @@
 </div>
 <div class="container nav">
 <a class="brand" href="index.html">
-<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:cover;"/>
+<img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:90px; height:90px; border-radius:50%; object-fit:contain;"/>
 <div class="brand-text">
 <strong>PROJECT WORTH</strong>
 <small>Change Starts Here.</small>
@@ -47,6 +428,7 @@
 <a href="about.html">About Project Worth</a>
 <a href="awareness.html">What is Grooming?</a>
 <a href="advocacy.html">Advocacy</a>
+<a href="partners.html">Partners</a>
 <a href="team.html">Our Team</a>
 <a href="the-spark.html">The Spark</a>
 <a href="media.html">Media &amp; Impact</a>
@@ -57,25 +439,49 @@
 </a>
 </nav>
 </div>
-</header><main><section class="site-bg-white" id="donate">
-<div class="container">
-<div class="donate-hero-card">
-<span aria-hidden="true" class="donate-star donate-star-one">★</span>
-<span aria-hidden="true" class="donate-star donate-star-two">★</span>
-<span aria-hidden="true" class="donate-star donate-star-three">★</span>
-<div class="eyebrow">Support the Mission</div>
+</header><main><section class="story-hero site-bg-gold" id="donate">
+<div class="donate-page-watermark" aria-hidden="true">
+  <img src="PROJECT-WORTH-LOGO.png" alt="">
+</div>
+
+<div class="container donate-inner">
+<div class="page-title-banner">
+<div class="page-kicker">Help Us Carry the Light Forward</div>
 <h2>Donate to Project Worth</h2>
+<p>Support prevention, protection, and survivor-informed reform across Wisconsin.</p>
+</div>
+
+<section class="donate-spark-intro">
+<div class="donate-spark-wrap">
+
+<div class="donate-top-box-grid">
+<div class="donate-action-card square-card">
+<div aria-hidden="true" class="donate-bg-star">★</div>
+<div class="spark-pill">★ Secure Giving ★</div>
+<h3>Choose how you want to support the mission.</h3>
 <p>
-    Your support helps Project Worth advance child protection reform, survivor-informed advocacy, prevention education, and awareness efforts across Wisconsin.
-  </p>
+  Every gift helps Project Worth carry prevention, protection, and survivor-informed advocacy forward.
+</p>
 <div class="donate-hero-actions">
 <a class="btn btn-primary" href="donate-options.html">Donate</a>
 <a class="btn btn-secondary donate-light-btn" href="donate-options.html#monthly-giving">Give Monthly</a>
 </div>
 <p class="donate-secure-note">
-    Project Worth does not collect or store payment information on this website. Donations are processed securely through Stripe.
-  </p>
+  Project Worth does not collect or store payment information on this website. Donations are processed securely through Stripe.
+</p>
 </div>
+
+<div class="donate-spark-card square-card">
+<div aria-hidden="true" class="donate-bg-star">★</div>
+<div class="icon">★</div>
+<div class="spark-pill">Donor Transparency</div>
+<h3>Where Your Donation Goes</h3>
+<p>
+  Project Worth is 100% volunteer led, with no paid staff or board members. We keep our administrative costs intentionally low, allowing donated funds to directly support advocacy, prevention, awareness, and child protection initiatives.
+</p>
+</div>
+</div>
+
 <div class="donate-choice-shell compact-donate-shell">
 <div class="donate-choice-heading">
 <div class="icon">★</div>
@@ -101,11 +507,13 @@
 </a>
 </div>
 </div>
+
 <div class="donate-support-intro card">
 <div class="icon">★</div>
 <h3>Building Toward Sustainable Impact</h3>
 <p>Project Worth is building toward sustainable impact through community giving, grant funding, and strategic partnerships.</p>
 </div>
+
 <div class="donate-impact-grid donate-impact-grid-expanded">
 <div class="card donate-impact-card">
 <div class="icon">★</div>
@@ -139,5 +547,9 @@
 </div>
 </div>
 <p class="donate-tax-note donate-tax-note-light">Project Worth is a registered 501(c)(3) nonprofit organization.</p>
+
 </div>
-</section></main><div data-include="footer" class="footer-include-placeholder"></div><script src="script.js"></script></body></html>
+</section>
+</div>
+</section>
+</main><div data-include="footer" class="footer-include-placeholder"></div><script src="script.js"></script></body></html>
