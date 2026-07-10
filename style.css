@@ -95,6 +95,15 @@
       z-index: 2;
     }
 
+  .brand-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+
     .brand {
       display: flex;
       align-items: center;
