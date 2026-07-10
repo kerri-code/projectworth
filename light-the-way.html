@@ -90,7 +90,14 @@
     gap: 0.9rem;
   }
 
-
+  .brand-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
 
   .brand-text strong {
     display: block;
@@ -119,7 +126,7 @@
   }
 
   .nav-links a:hover,
-  .nav-links a.active { color: var(--gold) ; }
+  .nav-links a.active { color: var(--gold); }
 
   .btn {
     display: inline-flex;
@@ -9394,6 +9401,17 @@ body.page-light-the-way.pw-polished-clean .container > *:last-child {
     pointer-events: none !important;
   }
 
+  body.page-light-the-way.pw-polished-clean header .trail-star {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0.86 !important;
+    color: #ffd24a !important;
+    text-shadow:
+      0 0 4px rgba(255,215,90,0.95),
+      0 0 10px rgba(255,200,60,0.75),
+      0 0 18px rgba(255,185,40,0.45) !important;
+  }
+
   body.page-light-the-way.pw-polished-clean header .nav {
     position: relative !important;
     z-index: 2 !important;
@@ -9408,7 +9426,7 @@ body.page-light-the-way.pw-polished-clean .container > *:last-child {
   }
 </style>
 </head>
-<body class="page-light-the-way split-clean">
+<body class="page-light-the-way pw-polished-clean">
 <div aria-hidden="true" class="light-way-page-watermark">
   <img src="PROJECT-WORTH-LOGO.png" alt=""/>
 </div>
@@ -9446,7 +9464,7 @@ body.page-light-the-way.pw-polished-clean .container > *:last-child {
 <small>Change Starts Here.</small>
 </div>
 </a>
-<nav class="nav-links">
+<nav aria-label="Main navigation" class="nav-links">
 <a href="index.html">Home</a>
 <a href="about.html">About Project Worth</a>
 <a href="awareness.html">What is Grooming?</a>
@@ -9457,7 +9475,7 @@ body.page-light-the-way.pw-polished-clean .container > *:last-child {
 <a href="media.html">Media &amp; Impact</a>
 <a href="merch.html">Shop</a>
 <a href="donate.html">Donate</a>
-<a class="active-page" style="color: var(--gold) " href="light-the-way.html">Light the Way</a>
+<a class="active-page" href="light-the-way.html">Light the Way</a>
 </nav>
 </div>
 </header>
