@@ -319,6 +319,33 @@ Project Worth is built by people who understand the importance of prevention, ac
     box-shadow:inset 0 1px 0 rgba(255,255,255,0.86), 0 10px 24px rgba(15,49,88,0.06) !important;
   }
 
+  /* Center the shared footer on this page without affecting the rest of the site. */
+  body.page-team footer {
+    width:100% !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    left:auto !important;
+    right:auto !important;
+    transform:none !important;
+  }
+
+  body.page-team footer > .container,
+  body.page-team footer .footer-inner,
+  body.page-team footer .footer-grid,
+  body.page-team footer .footer-connect-centered,
+  body.page-team footer .footer-brand {
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.page-team .nonprofit-status-line {
+    width:100% !important;
+    box-sizing:border-box !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    text-align:center !important;
+  }
+
   @media (max-width: 850px) {
     #team .spark-page-watermark img {
       width:88vw !important;
