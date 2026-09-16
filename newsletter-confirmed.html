@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBPXRGKXBJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBPXRGKXBJ');
+  </script>
+
+  <title>You're In! | Project Worth</title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="style.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --pw-navy: #07172a;
+      --pw-navy-2: #0f3158;
+      --pw-navy-3: #081b33;
+      --pw-gold: #c89b2f;
+      --pw-gold-light: #e0c36a;
+      --pw-cream: #fffaf4;
+      --pw-cream-2: #fff6df;
+      --pw-white: #ffffff;
+    }
+
+    body.page-newsletter-confirmed {
+      margin: 0;
+      color: var(--pw-navy-2);
+      background: var(--pw-cream);
+    }
+
+    .confirmation-hero {
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100vh - 80px);
+      padding: clamp(2rem, 5vw, 4rem) 1rem 4.5rem;
+      background:
+        radial-gradient(circle at 90% 8%, rgba(255,210,74,0.22), transparent 24%),
+        radial-gradient(circle at 9% 88%, rgba(15,49,88,0.08), transparent 27%),
+        linear-gradient(135deg, #fffaf4 0%, #ffffff 52%, #fff6df 100%);
+    }
+
+    .confirmation-watermark {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .confirmation-watermark img {
+      width: min(720px, 60vw);
+      opacity: 0.075;
+      object-fit: contain;
+      transform: translateX(-10%);
+      filter: grayscale(100%) sepia(18%) brightness(1.05);
+      mix-blend-mode: multiply;
+    }
+
+    .confirmation-shell {
+      width: min(940px, 100%);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .confirmation-title-banner {
+      margin: 0 auto 1.4rem;
+      padding: 1rem 1.25rem 1.05rem;
+      text-align: center;
+      background: linear-gradient(180deg, #07172a 0%, #081b33 55%, #091829 100%);
+      border-top: 2px solid var(--pw-gold);
+      border-bottom: 2px solid var(--pw-gold);
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      box-shadow: 0 18px 42px rgba(15,49,88,.18), 0 0 22px rgba(224,195,106,.12);
+      color: #fff;
+    }
+
+    .confirmation-kicker {
+      color: var(--pw-gold);
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .confirmation-title-banner h1 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      line-height: 1.08;
+      font-weight: 950;
+    }
+
+    .confirmation-card {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      max-width: 760px;
+      padding: clamp(1.4rem, 4vw, 2.25rem);
+      text-align: center;
+      border: 1px solid rgba(224,195,106,0.45);
+      border-left: 8px solid var(--pw-gold);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at bottom right, rgba(255,210,74,0.18), transparent 28%),
+        linear-gradient(135deg, #fffaf4 0%, #ffffff 58%, #fff6df 100%);
+      box-shadow: 0 16px 36px rgba(15,49,88,0.10);
+    }
+
+    .confirmation-card::before {
+      content: "★";
+      position: absolute;
+      right: 1rem;
+      top: -1.3rem;
+      color: rgba(224,195,106,0.14);
+      font-size: 7.5rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .confirmation-card::after {
+      content: "";
+      position: absolute;
+      left: 2rem;
+      right: 2rem;
+      bottom: 1rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200,155,47,.42), transparent);
+      pointer-events: none;
+    }
+
+    .confirmation-logo-wrap {
+      position: relative;
+      width: fit-content;
+      margin: 0 auto 0.9rem;
+    }
+
+    .confirmation-logo {
+      display: block;
+      width: clamp(96px, 15vw, 132px);
+      height: auto;
+      margin: 0 auto;
+      filter: drop-shadow(0 10px 18px rgba(15,49,88,0.10));
+    }
+
+    .logo-star {
+      position: absolute;
+      color: var(--pw-gold-light);
+      text-shadow: 0 0 12px rgba(224,195,106,0.45);
+      opacity: 0.88;
+    }
+
+    .logo-star.one { top: 8%; left: -20%; font-size: 0.9rem; }
+    .logo-star.two { top: 18%; right: -18%; font-size: 0.68rem; }
+    .logo-star.three { bottom: 10%; right: -26%; font-size: 1rem; }
+
+    .confirmation-eyebrow {
+      color: var(--pw-gold);
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      margin: 0 0 0.35rem;
+    }
+
+    .confirmation-card h2 {
+      margin: 0 0 0.65rem;
+      color: var(--pw-navy-2);
+      font-size: clamp(2rem, 5vw, 3.15rem);
+      line-height: 1.02;
+      font-weight: 950;
+    }
+
+    .confirmation-card .lead {
+      margin: 0.25rem auto 0;
+      max-width: 620px;
+      color: var(--pw-navy-2);
+      font-size: clamp(1.05rem, 2.3vw, 1.2rem);
+      line-height: 1.6;
+      font-weight: 800;
+    }
+
+    .confirmation-card .glad {
+      margin: 0.42rem auto 0;
+      color: var(--pw-navy-2);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .confirmation-divider {
+      width: 72px;
+      height: 4px;
+      border-radius: 999px;
+      margin: 1.05rem auto 0;
+      background: linear-gradient(90deg, var(--pw-gold), var(--pw-gold-light));
+      box-shadow: 0 0 12px rgba(224,195,106,0.28);
+    }
+
+    .confirmation-quote {
+      position: relative;
+      margin: 1.15rem auto 0;
+      max-width: 620px;
+      padding: 1rem 1.15rem;
+      border-radius: 1.15rem;
+      background: linear-gradient(180deg, #07172a 0%, #081b33 100%);
+      border: 2px solid rgba(200,155,47,0.45);
+      box-shadow: 0 14px 30px rgba(15,49,88,0.16);
+      overflow: hidden;
+    }
+
+    .confirmation-quote::before {
+      content: "★";
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--pw-gold);
+      font-size: 1rem;
+      text-shadow: 0 0 10px rgba(224,195,106,0.45);
+    }
+
+    .confirmation-quote::after {
+      content: "“";
+      position: absolute;
+      right: 0.65rem;
+      top: -0.3rem;
+      color: rgba(224,195,106,0.25);
+      font-size: 4.1rem;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .confirmation-quote p {
+      margin: 0;
+      padding: 0 1.3rem;
+      color: #fff;
+      font-size: clamp(1rem, 2vw, 1.08rem);
+      line-height: 1.5;
+      font-style: italic;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+    }
+
+    .confirmation-quote strong {
+      color: #ffffff;
+    }
+
+    .confirmation-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.3rem;
+    }
+
+    .confirmation-actions .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 0.74rem 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .confirmation-actions .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .confirmation-actions .btn-home {
+      color: #fff;
+      background: var(--pw-navy-2);
+      border: 2px solid var(--pw-navy-2);
+      box-shadow: 0 10px 24px rgba(15,49,88,0.14);
+    }
+
+    .confirmation-actions .btn-light {
+      color: #fff;
+      background: var(--pw-gold);
+      border: 2px solid var(--pw-gold);
+      box-shadow: 0 10px 24px rgba(200,155,47,0.16);
+    }
+
+    .confirmation-small {
+      margin: 0.95rem 0 0;
+      padding-bottom: 0.65rem;
+      color: rgba(15,49,88,0.72);
+      font-size: 0.84rem;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .spark {
+      position: absolute;
+      color: var(--pw-gold-light);
+      opacity: 0.4;
+      text-shadow: 0 0 12px rgba(224,195,106,0.45);
+      pointer-events: none;
+    }
+
+    .spark.s1 { top: 11%; left: 8%; font-size: 0.8rem; }
+    .spark.s2 { top: 17%; right: 10%; font-size: 1rem; }
+    .spark.s3 { bottom: 18%; left: 15%; font-size: 0.7rem; }
+    .spark.s4 { bottom: 10%; right: 14%; font-size: 0.9rem; }
+
+    @media (max-width: 700px) {
+      .confirmation-hero {
+        padding: 1.5rem 0.75rem 2rem;
+      }
+
+      .confirmation-card {
+        border-radius: 24px;
+        padding: 1.2rem 1rem;
+      }
+
+      .confirmation-watermark img {
+        width: min(620px, 92vw);
+        transform: translateX(-24%);
+      }
+
+      .confirmation-actions {
+        flex-direction: column;
+      }
+
+      .confirmation-actions .btn {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+
+<body class="split-page page-newsletter-confirmed">
+  <header>
+    <div aria-hidden="true" class="header-scene">
+      <span class="trail-star med s1">★</span>
+      <span class="trail-star small s2">★</span>
+      <span class="trail-star med s3">★</span>
+      <span class="trail-star tiny s4">★</span>
+      <span class="trail-star med s5">★</span>
+      <span class="trail-star tiny s6">★</span>
+      <span class="trail-star small s7">★</span>
+      <span class="trail-star tiny s8">★</span>
+      <span class="trail-star small s9">★</span>
+      <span class="trail-star tiny s10">★</span>
+      <span class="trail-star small s11">★</span>
+    </div>
+
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img alt="Project Worth Logo" class="brand-logo" src="PROJECT-WORTH-LOGO.png"/>
+        <div class="brand-text">
+          <strong>PROJECT WORTH</strong>
+          <small>Change Starts Here.</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Project Worth</a>
+        <a href="awareness.html">What is Grooming?</a>
+        <a href="advocacy.html">Advocacy</a>
+        <a href="partners.html">Partners</a>
+        <a href="team.html">Our Team</a>
+        <a href="the-spark.html">The Spark</a>
+        <a href="media.html">Media &amp; Impact</a>
+        <a href="merch.html">Shop</a>
+        <a href="donate.html">Donate</a>
+        <a href="light-the-way.html">Light the Way</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="confirmation-hero">
+      <div aria-hidden="true" class="confirmation-watermark">
+        <img alt="" src="PROJECT-WORTH-LOGO.png"/>
+      </div>
+
+      <span aria-hidden="true" class="spark s1">★</span>
+      <span aria-hidden="true" class="spark s2">★</span>
+      <span aria-hidden="true" class="spark s3">★</span>
+      <span aria-hidden="true" class="spark s4">★</span>
+
+      <div class="confirmation-shell">
+        <div class="confirmation-title-banner">
+          <div class="confirmation-kicker">Project Worth Newsletter</div>
+          <h1>Subscription Confirmed</h1>
+        </div>
+
+        <section class="confirmation-card" aria-labelledby="confirmation-title">
+          <div class="confirmation-logo-wrap">
+            <span aria-hidden="true" class="logo-star one">★</span>
+            <span aria-hidden="true" class="logo-star two">★</span>
+            <span aria-hidden="true" class="logo-star three">★</span>
+            <img
+              class="confirmation-logo"
+              src="PROJECT-WORTH-LOGO.png"
+              alt="Project Worth logo"
+            />
+          </div>
+
+          <div class="confirmation-eyebrow">Welcome to Project Worth</div>
+          <h2 id="confirmation-title">You’re in! ★</h2>
+
+          <p class="lead">Thanks for joining Project Worth.</p>
+          <p class="glad">We’re glad you’re here.</p>
+
+          <div class="confirmation-divider" aria-hidden="true"></div>
+
+          <div class="confirmation-quote">
+            <p><strong>Together, we light up the darkness.</strong></p>
+          </div>
+
+          <div class="confirmation-actions">
+            <a class="btn btn-home" href="index.html">Return Home</a>
+            <a class="btn btn-light" href="light-the-way.html">Light the Way</a>
+          </div>
+
+          <p class="confirmation-small">
+            Keep an eye on your inbox for Project Worth news, progress, and ways to get involved.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer" class="footer-include-placeholder"></div>
+  <script src="script.js?v=20260820"></script>
+</body>
+</html>
