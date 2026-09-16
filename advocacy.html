@@ -105,6 +105,183 @@
   }
 }
 
+
+/* Compact Current Policy Priorities mini-carousel */
+.page-advocacy .pw-policy-priority-strip {
+  margin:1.15rem 0 0;
+  padding:.88rem .9rem;
+  border-radius:20px;
+  background:rgba(255,250,244,0.82);
+  border:1px solid rgba(224,195,106,0.38);
+  box-shadow:0 10px 22px rgba(15,49,88,0.08);
+  overflow:hidden;
+}
+.page-advocacy .pw-policy-priority-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+  margin:0 0 .28rem;
+  color:var(--navy);
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.page-advocacy .pw-policy-priority-head span:first-child {
+  font-size:1.08rem;
+}
+.page-advocacy .pw-policy-priority-head span:last-child {
+  color:var(--gold-dark);
+  font-size:.88rem;
+  white-space:nowrap;
+}
+.page-advocacy .pw-policy-priority-scroll-hint {
+  text-align:center;
+  color:var(--gold-dark);
+  font-weight:900;
+  font-size:.86rem;
+  margin:0 0 .6rem;
+  letter-spacing:.02em;
+}
+.page-advocacy .pw-policy-priority-shell {
+  display:grid;
+  grid-template-columns:38px minmax(0, 1fr) 38px;
+  align-items:center;
+  gap:.62rem;
+}
+.page-advocacy .pw-policy-priority-arrow {
+  width:38px;
+  height:174px;
+  border:1px solid rgba(224,195,106,.58);
+  border-radius:14px;
+  background:linear-gradient(135deg,#fffaf4,#fff2d4);
+  color:var(--gold-dark);
+  font-weight:900;
+  font-size:1.42rem;
+  cursor:pointer;
+  box-shadow:0 8px 16px rgba(15,49,88,.09);
+}
+.page-advocacy .pw-policy-priority-arrow:hover,
+.page-advocacy .pw-policy-priority-arrow:focus {
+  background:linear-gradient(135deg,#fff2d4,#ffffff);
+  outline:2px solid rgba(224,195,106,.35);
+  outline-offset:2px;
+}
+.page-advocacy .pw-policy-priority-viewport {
+  overflow:hidden;
+  width:100%;
+}
+.page-advocacy .pw-policy-priority-track {
+  display:flex;
+  transition:transform .28s ease;
+  will-change:transform;
+}
+.page-advocacy .pw-policy-priority-page {
+  flex:0 0 100%;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:.68rem;
+}
+.page-advocacy .pw-policy-priority-card {
+  min-height:174px;
+  max-height:174px;
+  border-radius:18px;
+  padding:1.05rem 1.08rem;
+  background:linear-gradient(135deg,#ffffff 0%, #fffaf4 72%, #fff2d4 100%);
+  border:1px solid rgba(224,195,106,0.48);
+  border-left:5px solid var(--gold);
+  box-shadow:0 8px 18px rgba(15,49,88,0.08);
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+}
+.page-advocacy .pw-policy-priority-card h4 {
+  margin:0 0 .34rem;
+  color:var(--gold-dark);
+  font-size:1.05rem;
+  line-height:1.15;
+  font-weight:900;
+}
+.page-advocacy .pw-policy-priority-card p {
+  margin:0;
+  color:var(--navy);
+  font-size:.88rem;
+  line-height:1.38;
+  font-weight:750;
+}
+.page-advocacy .pw-policy-priority-gold {
+  color:var(--gold-dark);
+  font-weight:900;
+}
+.page-advocacy .pw-policy-priority-card a {
+  color:inherit;
+  font-weight:900;
+  text-decoration:none;
+}
+.page-advocacy .pw-policy-priority-card a:hover,
+.page-advocacy .pw-policy-priority-card a:focus {
+  text-decoration:underline;
+}
+.page-advocacy .pw-policy-priority-dots {
+  display:flex;
+  justify-content:center;
+  gap:.38rem;
+  margin:.52rem 0 0;
+}
+.page-advocacy .pw-policy-priority-dots span {
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:rgba(15,49,88,.22);
+}
+
+.page-advocacy .pw-policy-priority-heart-line {
+  text-align:center;
+  color:var(--navy);
+  font-weight:900;
+  font-size:clamp(1rem, 1.7vw, 1.2rem);
+  line-height:1.35;
+  margin:.85rem auto 0;
+  max-width:860px;
+}
+@media (max-width: 700px) {
+  .page-advocacy .pw-policy-priority-strip {
+    padding:.8rem .7rem;
+  }
+  .page-advocacy .pw-policy-priority-head {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:.18rem;
+  }
+  .page-advocacy .pw-policy-priority-head span:first-child {
+    font-size:1rem;
+  }
+  .page-advocacy .pw-policy-priority-head span:last-child {
+    font-size:.82rem;
+  }
+  .page-advocacy .pw-policy-priority-shell {
+    grid-template-columns:30px minmax(0, 1fr) 30px;
+    gap:.38rem;
+  }
+  .page-advocacy .pw-policy-priority-arrow {
+    width:30px;
+    height:158px;
+  }
+  .page-advocacy .pw-policy-priority-page {
+    grid-template-columns:1fr;
+  }
+  .page-advocacy .pw-policy-priority-card {
+    min-height:158px;
+    max-height:158px;
+  }
+  .page-advocacy .pw-policy-priority-card h4 {
+    font-size:.98rem;
+  }
+  .page-advocacy .pw-policy-priority-card p {
+    font-size:.82rem;
+    line-height:1.34;
+  }
+}
+
 </style>
 </head>
 <body class="split-page page-advocacy">
@@ -205,32 +382,33 @@
 <div class="advocacy-impact-book reveal-on-scroll">
 <div class="impact-book-heading">
 <div class="eyebrow" style="color:var(--gold-dark); margin-bottom:0.5rem;">Why Response Matters</div>
-<h3>Reports Deserve Documentation, Pattern Review, and Protective Action</h3>
-<p>These truths belong together: delayed disclosure is common, false reports are uncommon, and child protection systems should be built to respond before harm continues.</p>
+<h3>Reports Deserve Documentation, Appropriate Pattern Review, and Safety-Focused Response</h3>
+<p>Child sexual abuse disclosure can be delayed for years, and reports should be evaluated on evidence rather than assumptions. Strong systems preserve information, review relevant patterns, and respond with child safety in mind.</p>
 </div>
 <div class="impact-flashcards">
 <div class="impact-flashcard" data-mark="1">
 <h4>Delayed Disclosure Is Common</h4>
-<p>Disclosure often occurs years later in adulthood, which is a well-documented pattern among survivors of child sexual abuse.</p>
-<p style="font-weight:800; color:var(--navy); margin-bottom:0;">Systems must be built to recognize risk and act early.</p>
+<p>Children and adolescents may delay or withhold disclosure of child sexual abuse, sometimes until adulthood.</p>
+<p style="font-weight:800; color:var(--navy); margin-bottom:0;">Systems should be prepared to respond whenever disclosure occurs.</p>
+<span class="source-note"><a href="https://pubmed.ncbi.nlm.nih.gov/31564382/" rel="noopener" target="_blank">Systematic review</a> • <a href="https://pubmed.ncbi.nlm.nih.gov/24903400/" rel="noopener" target="_blank">Adult disclosure review</a></span>
 </div>
 <div class="impact-flashcard false-report-highlight" data-mark="2" style="background:linear-gradient(135deg,#fff8e8,#f3e4c7); border:2px solid var(--gold); box-shadow:0 16px 34px rgba(200,155,47,0.22);">
-<h4>False Reports Are Rare</h4>
-<p>Research estimates false report rates around 2-8%.</p>
-<p style="font-weight:800; color:var(--navy); margin-bottom:0;">Reports should be documented carefully, reviewed for patterns, and taken seriously.</p>
-<span class="source-note"><a href="https://evawintl.org/wp-content/uploads/False-Reports.pdf" rel="noopener" target="_blank">EVAWI</a>; <a href="https://www.nsvrc.org/resource/false-reporting-overview/" rel="noopener" target="_blank">NSVRC, Lisak et al.</a></span>
+<h4>False Reports Are Uncommon</h4>
+<p>Research on sexual assault reports estimates intentionally false reports at approximately 2-8%.</p>
+<p style="font-weight:800; color:var(--navy); margin-bottom:0;">Delayed, unsubstantiated, or unprosecuted does not mean false.</p>
+<span class="source-note"><a href="https://evawintl.org/best_practice_faqs/false-reports-percentage/" rel="noopener" target="_blank">EVAWI</a> • <a href="https://nsvrc.org/resource/false-reports-moving-beyond-issue-successfully-investigate-and-prosecute-non/" rel="noopener" target="_blank">NSVRC</a></span>
 </div>
 <div class="impact-flashcard" data-mark="3">
 <h4>Systems Must Carry the Responsibility</h4>
-<p>Because delayed disclosure is common and false reports are uncommon, systems should prioritize child safety, documentation, and early intervention.</p>
-<p style="font-weight:900; margin-bottom:0;">Systems should not rely on survivors to expose harm after the fact.</p>
+<p>Delayed disclosure and incomplete early information make documentation and pattern review essential.</p>
+<p style="font-weight:900; margin-bottom:0;">Survivors should not have to expose harm after the fact for systems to act.</p>
 </div>
 </div>
 </div>
 <div aria-labelledby="reporting-overview-title" class="reporting-flashcards reporting-flashcards-side reveal-on-scroll" id="did-you-know-overview">
 <div class="rf-side-intro">
 <div class="rf-kicker">★ Did You Know?</div>
-<h3 id="reporting-overview-title">Wisconsin is falling behind many states in key areas of child protection.</h3>
+<h3 id="reporting-overview-title">Wisconsin is Falling Behind Other States on Child Protection</h3>
 <p class="rf-lead">Children deserve safe adults, safe organizations, and safe systems, especially in places families are asked to trust.</p>
 <p class="rf-lead" style="margin-top:1rem;">Project Worth works to close gaps in reporting, oversight, and accountability so churches, schools, youth-serving organizations, and communities are held to higher standards of prevention and protection.</p>
 <p class="rf-lead" style="margin-top:1rem; font-weight:900; color:var(--gold);">Our goal is simple: help make Wisconsin the safest state for children in the nation by 2030, then help make that protection the standard for every child.</p>
@@ -242,23 +420,25 @@
 <div aria-label="Wisconsin red light gaps" class="pw-gap-scroll-wrap" style="overflow-x:auto; -webkit-overflow-scrolling:touch; padding:.2rem .1rem .9rem; scroll-behavior:smooth;">
 <div class="pw-gap-scroll" style="display:flex; gap:1rem; min-width:max-content; scroll-snap-type:x mandatory;">
 <div class="pw-gap-card" style="flex:0 0 min(82vw,390px); scroll-snap-align:start; padding:clamp(1rem,2vw,1.25rem); border-radius:20px; background:linear-gradient(135deg,#ffffff 0%,#fffaf4 100%); border:2px solid rgba(200,155,47,.24); box-shadow:0 10px 24px rgba(15,49,88,.09);">
-<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Centralized Reporting:</span> Wisconsin remains one of the few states without a centralized child abuse reporting system.</p>
+<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Centralized Reporting:</span> Wisconsin directs child abuse and neglect reports to county or tribal CPS agencies or law enforcement rather than a single statewide child-abuse hotline. Project Worth supports statewide intake and pattern-tracking tools that can connect information across jurisdictions. <a href="https://dcf.wisconsin.gov/reportabuse" rel="noopener" target="_blank" style="color:var(--gold-dark); font-weight:900; text-decoration:underline;">Source: Wisconsin DCF</a></p>
 </div>
 <div class="pw-gap-card" style="flex:0 0 min(82vw,390px); scroll-snap-align:start; padding:clamp(1rem,2vw,1.25rem); border-radius:20px; background:linear-gradient(135deg,#ffffff 0%,#fffaf4 100%); border:2px solid rgba(200,155,47,.24); box-shadow:0 10px 24px rgba(15,49,88,.09);">
-<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Adult Survivor Reporting:</span> Unlike most states, Wisconsin does not provide a reporting pathway within child protective systems for adult survivors of childhood abuse, even when the reported individual may still work or volunteer with children.</p>
+<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Adult Survivor Reporting:</span> Wisconsin’s public CPS reporting guidance does not identify a dedicated statewide CPS intake pathway specifically for adults reporting abuse they experienced as children. Project Worth supports a pathway that can preserve those reports and assess any current child-safety implications. <a href="https://dcf.wisconsin.gov/reportabuse" rel="noopener" target="_blank" style="color:var(--gold-dark); font-weight:900; text-decoration:underline;">Source: Wisconsin DCF</a></p>
 </div>
 <div class="pw-gap-card" style="flex:0 0 min(82vw,390px); scroll-snap-align:start; padding:clamp(1rem,2vw,1.25rem); border-radius:20px; background:linear-gradient(135deg,#ffffff 0%,#fffaf4 100%); border:2px solid rgba(200,155,47,.24); box-shadow:0 10px 24px rgba(15,49,88,.09);">
-<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Limited Mandated Reporters:</span> Wisconsin limits mandated reporting duties to specific professionals and roles, while some states require universal mandated reporting for everyone over 18.</p>
+<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Mandated Reporting:</span> Wisconsin law identifies specific professions and roles as mandated reporters; other people may also make reports. Some states use broader reporting requirements. Project Worth supports a clear, broader duty to report suspected child abuse. <a href="https://dcf.wisconsin.gov/cps/mandatedreporters" rel="noopener" target="_blank" style="color:var(--gold-dark); font-weight:900; text-decoration:underline;">Source: Wisconsin DCF</a></p>
 </div>
 <div class="pw-gap-card" style="flex:0 0 min(82vw,390px); scroll-snap-align:start; padding:clamp(1rem,2vw,1.25rem); border-radius:20px; background:linear-gradient(135deg,#ffffff 0%,#fffaf4 100%); border:2px solid rgba(200,155,47,.24); box-shadow:0 10px 24px rgba(15,49,88,.09);">
-<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Failure to Report:</span> Limited accountability for adults who fail to report suspected child abuse.</p>
+<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Abuse Prevention Education:</span> The <a href="https://www.erinslawfoundation.org/about-us/" rel="noopener" target="_blank" style="color:var(--gold-dark); font-weight:900; text-decoration:underline;">Erin’s Law Foundation</a> currently lists 38 states as having enacted Erin’s Law. Wisconsin is not among them. Project Worth supports age-appropriate child sexual abuse prevention education in Wisconsin schools.</p>
 </div>
 <div class="pw-gap-card" style="flex:0 0 min(82vw,390px); scroll-snap-align:start; padding:clamp(1rem,2vw,1.25rem); border-radius:20px; background:linear-gradient(135deg,#ffffff 0%,#fffaf4 100%); border:2px solid rgba(200,155,47,.24); box-shadow:0 10px 24px rgba(15,49,88,.09);">
-<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Clergy Reporting:</span> A clergy reporting loophole that many states have narrowed or eliminated.</p>
+<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Failure to Report:</span> Under Wisconsin law, a person who is required to report and intentionally fails to do so may be fined up to $1,000, imprisoned for up to six months, or both. Project Worth supports stronger accountability when adults with child-protection duties fail to act. <a href="https://dcf.wisconsin.gov/cps/mandatedreporters" rel="noopener" target="_blank" style="color:var(--gold-dark); font-weight:900; text-decoration:underline;">Source: Wisconsin DCF</a></p>
 </div>
 <div class="pw-gap-card" style="flex:0 0 min(82vw,390px); scroll-snap-align:start; padding:clamp(1rem,2vw,1.25rem); border-radius:20px; background:linear-gradient(135deg,#ffffff 0%,#fffaf4 100%); border:2px solid rgba(200,155,47,.24); box-shadow:0 10px 24px rgba(15,49,88,.09);">
-<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Justice Time Limits:</span> Wisconsin still limits civil and criminal paths for childhood sexual abuse claims, while some states have eliminated limits or created lookback windows for survivors.
-</p>
+<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Clergy Reporting:</span> Wisconsin includes clergy among mandated reporters for specified suspected abuse, but the law contains an exception for information received solely through certain confidential clergy communications. Project Worth supports examining whether that exception leaves preventable child-safety gaps. <a href="https://dcf.wisconsin.gov/cps/mandatedreporters" rel="noopener" target="_blank" style="color:var(--gold-dark); font-weight:900; text-decoration:underline;">Source: Wisconsin DCF</a></p>
+</div>
+<div class="pw-gap-card" style="flex:0 0 min(82vw,390px); scroll-snap-align:start; padding:clamp(1rem,2vw,1.25rem); border-radius:20px; background:linear-gradient(135deg,#ffffff 0%,#fffaf4 100%); border:2px solid rgba(200,155,47,.24); box-shadow:0 10px 24px rgba(15,49,88,.09);">
+<p style="margin:0; line-height:1.65; color:var(--navy); font-weight:750;"><span style="color:var(--gold-dark); font-weight:900;">Civil Justice Time Limits:</span> Wisconsin’s civil statute for childhood sexual assault requires an action to be brought before the injured person reaches age 35. Other states have removed civil time limits for some or all child sexual abuse claims. Project Worth supports broader survivor access to justice. <a href="https://www.ncsl.org/human-services/state-civil-statutes-of-limitations-in-child-sexual-abuse-cases" rel="noopener" target="_blank" style="color:var(--gold-dark); font-weight:900; text-decoration:underline;">Source: NCSL</a></p>
 </div>
 </div>
 </div>
@@ -271,6 +451,65 @@
 </div>
 </div>
 </div>
+
+<div class="pw-policy-priority-strip" aria-label="Current policy priorities">
+<div class="pw-policy-priority-head"><span>Current Policy Priorities:</span><span>Where advocacy leads →</span></div>
+<div class="pw-policy-priority-scroll-hint">Use arrows to view more. Scroll inside a card if needed →</div>
+<div class="pw-policy-priority-shell">
+<button class="pw-policy-priority-arrow pw-policy-priority-prev" type="button" aria-label="Show previous policy priorities">‹</button>
+<div class="pw-policy-priority-viewport">
+<div class="pw-policy-priority-track">
+<div class="pw-policy-priority-page">
+<div class="pw-policy-priority-card">
+<h4>Mandated Grooming Prevention Training</h4>
+<p>Build on Wisconsin Act 200 by requiring in-person grooming prevention training for child serving and child oversight organizations, so adults can recognize warning signs, interrupt grooming behaviors and sexual misconduct, and report concerns before harm escalates.</p>
+</div>
+<div class="pw-policy-priority-card">
+<h4>Universal Reporting &amp; Accountability</h4>
+<p>Move Wisconsin toward a clear duty for all adults to report suspected child abuse, with stronger penalties for adults in child serving, volunteer, or oversight roles who fail to act.</p>
+</div>
+<div class="pw-policy-priority-card">
+<h4>Centralized Reporting &amp; Pattern Tracking</h4>
+<p>Create one statewide reporting system with report numbers, adult survivor pathways, and pattern tracking so warning signs can be connected across jurisdictions rather than remaining isolated county by county.</p>
+</div>
+</div>
+<div class="pw-policy-priority-page">
+<div class="pw-policy-priority-card">
+<h4>Retroactive Pattern Review</h4>
+<p>Once a centralized system exists, require child serving organizations to report known past concerns for pattern review, tracking, and protective action.</p>
+</div>
+<div class="pw-policy-priority-card">
+<h4>Abuse Prevention Education for Children</h4>
+<p>Bring <a href="https://www.erinslawfoundation.org/about-us/" target="_blank" rel="noopener">Erin’s Law</a> prevention education to Wisconsin, so children can recognize unsafe behavior, understand body safety, speak up, and get help sooner.</p>
+</div>
+<div class="pw-policy-priority-card">
+<h4>Higher Standards for Child Serving Organizations</h4>
+<p>Use elements of Illinois’ <a href="https://www.isbe.net/faithslaw" rel="noopener" target="_blank">Faith’s Law framework</a> as a model for clearer adult conduct rules, employment-history review, stronger prevention practices, and safeguards beyond background checks.</p>
+</div>
+</div>
+<div class="pw-policy-priority-page">
+<div class="pw-policy-priority-card">
+<h4>Survivor Access to Justice</h4>
+<p>Remove civil and criminal time limits for child abuse claims and ban NDAs that silence survivors, protect institutions, or allow abuse to stay hidden.</p>
+</div>
+<div class="pw-policy-priority-card">
+<h4>Wisconsin Leads on Child Protection</h4>
+<p>At the heart of this work is a simple goal: Wisconsin should lead as a child protection state, not keep catching up to stronger protections already used elsewhere.</p>
+</div>
+</div>
+</div>
+</div>
+<button class="pw-policy-priority-arrow pw-policy-priority-next" type="button" aria-label="Show more policy priorities">›</button>
+</div>
+<div class="pw-policy-priority-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+
+
+<div class="card reveal-on-scroll" style="margin:1.25rem 0 1.6rem; padding:1rem 1.2rem; border-left:5px solid var(--gold); background:rgba(255,250,244,.92); color:var(--navy); line-height:1.6;">
+<strong style="color:var(--gold-dark);">Policy &amp; source note:</strong>
+Project Worth summarizes laws and policy gaps for public education and advocacy. Laws, bill status, and agency procedures can change. Follow the linked government and research sources for current information. This page is not legal advice.
+</div>
+
 <div class="future-fighting-callout reveal-on-scroll">
 <div class="future-fighting-grid">
 <div class="future-fighting-copy">
@@ -309,8 +548,8 @@
 <a class="resource-pill" href="https://www.childwelfare.gov" rel="noopener" target="_blank"><span class="pill-icon">📊</span>Child Welfare Gateway</a>
 <a class="resource-pill" href="https://dcfs.illinois.gov" rel="noopener" target="_blank"><span class="pill-icon">🏛</span>Illinois DCFS</a>
 <a class="resource-pill" href="https://www.ilga.gov/legislation/ilcs/documents/032500050K7.3.htm" rel="noopener" target="_blank"><span class="pill-icon">⚖</span>Illinois Reporting Law</a>
-<a class="resource-pill" href="https://evawintl.org/wp-content/uploads/False-Reports.pdf" rel="noopener" target="_blank"><span class="pill-icon">📚</span>EVAWI</a>
-<a class="resource-pill" href="https://www.nsvrc.org/resource/false-reporting-overview/" rel="noopener" target="_blank"><span class="pill-icon">🧠</span>NSVRC</a>
+<a class="resource-pill" href="https://evawintl.org/best_practice_faqs/false-reports-percentage/" rel="noopener" target="_blank"><span class="pill-icon">📚</span>EVAWI</a>
+<a class="resource-pill" href="https://nsvrc.org/resource/false-reports-moving-beyond-issue-successfully-investigate-and-prosecute-non/" rel="noopener" target="_blank"><span class="pill-icon">🧠</span>NSVRC</a>
 <a class="resource-pill" href="https://docs.legis.wisconsin.gov/2023/related/acts/200" rel="noopener" target="_blank"><span class="pill-icon">📜</span>Wisconsin Act 200</a>
 <a class="resource-pill" href="https://dcf.wisconsin.gov/cps/process" rel="noopener" target="_blank"><span class="pill-icon">🧾</span>WI CPS Process</a>
 <a class="resource-pill" href="https://www.childwelfare.gov/state-child-abuse-and-neglect-reporting-numbers/" rel="noopener" target="_blank"><span class="pill-icon">☎️</span>State Reporting Numbers</a>
@@ -389,23 +628,25 @@
   setTimeout(applyCleanNav, 1000);
 })();
 </script>
-<script src="script.js"></script>
 <script>
-(function projectWorthPriorityCarousel(){
+(function projectWorthPolicyMiniCarousel(){
   function init(){
-    document.querySelectorAll('.pw-priority-carousel').forEach(function(carousel){
+    document.querySelectorAll('.pw-policy-priority-strip').forEach(function(carousel){
       if (carousel.dataset.ready === 'true') return;
       carousel.dataset.ready = 'true';
-      var cards = carousel.querySelectorAll('.pw-priority-card');
-      var dots = carousel.querySelectorAll('.pw-priority-dots span');
+      var track = carousel.querySelector('.pw-policy-priority-track');
+      var pages = carousel.querySelectorAll('.pw-policy-priority-page');
+      var dots = carousel.querySelectorAll('.pw-policy-priority-dots span');
+      var prev = carousel.querySelector('.pw-policy-priority-prev');
+      var next = carousel.querySelector('.pw-policy-priority-next');
       var current = 0;
       function show(index){
-        current = (index + cards.length) % cards.length;
-        cards.forEach(function(card, i){ card.style.display = i === current ? 'flex' : 'none'; });
+        current = (index + pages.length) % pages.length;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
         dots.forEach(function(dot, i){ dot.style.background = i === current ? 'var(--gold)' : 'rgba(15,49,88,.22)'; });
       }
-      carousel.querySelector('.pw-priority-prev').addEventListener('click', function(){ show(current - 1); });
-      carousel.querySelector('.pw-priority-next').addEventListener('click', function(){ show(current + 1); });
+      if (prev) prev.addEventListener('click', function(){ show(current - 1); });
+      if (next) next.addEventListener('click', function(){ show(current + 1); });
       show(0);
     });
   }
@@ -413,5 +654,7 @@
   document.addEventListener('DOMContentLoaded', init);
 })();
 </script>
+
+
 </body>
 </html>
