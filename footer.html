@@ -1,24 +1,124 @@
-<footer style="position:relative; overflow:hidden;">
+<footer class="pwFooter" style="position:relative; overflow:hidden;">
   <style>
-    .footer-brand h3,
-    .footer-grid h4,
-    .footer-connect-centered h4 { color: var(--gold) !important; }
-    .footer-grid { margin-bottom: 0.75rem !important; }
-    .footer-connect-centered,
-    .footer-disclaimer,
-    .footer-bottom {
-      border-top: none !important;
-      border-bottom: none !important;
-      box-shadow: none !important;
+    .pwFooter {
+      background: #071727 !important;
+      color: #ffffff !important;
+      padding: 2rem 1.25rem !important;
+      margin: 0 !important;
       text-align: center !important;
-      margin-top: 0.45rem !important;
-      padding-top: 0.2rem !important;
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
     }
-    .footer-connect-centered p,
-    .footer-disclaimer,
-    .footer-bottom p { margin: 0.15rem 0 !important; }
+
+    .pwFooter .footer-grid {
+      width: 100% !important;
+      max-width: 1100px !important;
+      margin: 0 auto 0.6rem !important;
+      padding: 0 !important;
+
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 2rem !important;
+
+      align-items: center !important;
+      justify-items: center !important;
+      text-align: center !important;
+    }
+
+    .pwFooter .footer-grid > div {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      text-align: center !important;
+    }
+
+    .pwFooter h3,
+    .pwFooter h4 {
+      color: #d6a928 !important;
+      margin: 0 0 0.25rem !important;
+      padding: 0 !important;
+    }
+
+    .pwFooter p {
+      color: #ffffff !important;
+      margin: 0.12rem 0 !important;
+      line-height: 1.35 !important;
+    }
+
+    .pwFooter .footer-brand img {
+      display: block !important;
+      width: 65px !important;
+      height: auto !important;
+      margin: 0 auto 0.35rem !important;
+    }
+
+    .pwFooter .footer-newsletter {
+      width: 100% !important;
+      max-width: 1100px !important;
+      margin: 1rem auto 0.8rem !important;
+      padding: 0 !important;
+      text-align: center !important;
+    }
+
+    .pwFooter .footer-newsletter-btn {
+      display: inline-block !important;
+      padding: 0.7rem 1.2rem !important;
+      border-radius: 999px !important;
+
+      background: #d6a928 !important;
+      color: #ffffff !important;
+
+      border: 2px solid #d6a928 !important;
+      text-decoration: none !important;
+      font-weight: 800 !important;
+
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .pwFooter .footer-newsletter-btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 18px rgba(214, 169, 40, 0.25) !important;
+    }
+
+    .pwFooter .footer-connect-centered {
+      width: 100% !important;
+      max-width: 1100px !important;
+      margin: 0.45rem auto 0 !important;
+      padding: 0 !important;
+      text-align: center !important;
+    }
+
+    .pwFooter .footer-connect-centered h4 {
+      margin-bottom: 0.15rem !important;
+    }
+
+    .pwFooter .footer-connect-centered p {
+      margin: 0 !important;
+    }
+
+    .pwFooter .footer-connect-centered a {
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+
+    .pwFooter .footer-bottom {
+      width: 100% !important;
+      max-width: 1100px !important;
+      margin: 0.55rem auto 0 !important;
+      padding: 0 !important;
+      text-align: center !important;
+    }
+
+    .pwFooter .footer-bottom p {
+      margin: 0.05rem auto !important;
+      font-size: 0.78rem !important;
+      opacity: 0.85 !important;
+    }
+
+    @media (max-width: 800px) {
+      .pwFooter .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+      }
+    }
   </style>
 
   <span style="position:absolute; top:12px; left:10%; color:#ffd24a; opacity:0.35;">★</span>
@@ -26,47 +126,78 @@
   <span style="position:absolute; bottom:18px; left:25%; color:#ffd24a; opacity:0.28; font-size:0.8rem;">★</span>
   <span style="position:absolute; bottom:12px; right:12%; color:#ffd24a; opacity:0.25; font-size:0.75rem;">★</span>
 
-  <div class="container footer-grid">
+  <div class="footer-grid">
+
     <div class="footer-brand">
-      <img alt="Project Worth Logo" src="PROJECT-WORTH-LOGO.png" style="width:80px; margin-bottom:1rem;"/>
+      <img
+        alt="Project Worth Logo"
+        src="PROJECT-WORTH-LOGO.png"
+      >
+
       <h3>Project Worth</h3>
-      <p>A nonprofit organization advocating for stronger child protection laws, survivor-informed reform, and systems that better protect children.</p>
+
+      <p>
+        Protecting Kids. Changing Systems. Empowering Survivors.
+      </p>
     </div>
 
     <div>
       <h4>Contact</h4>
+
       <p>(262) 220-7455</p>
-      <p>info@projectworthwi.org<br/>www.projectworthwi.org</p>
-      <p>5605 Sheridan Road Unit 101<br/>Kenosha, WI 53140</p>
+
+      <p>
+        info@projectworthwi.org
+      </p>
+
+      <p>
+        5605 Sheridan Road Unit 101<br>
+        Kenosha, WI 53140
+      </p>
     </div>
 
     <div>
       <h4>Core Message</h4>
+
       <p>Because children are worth protecting.</p>
-      <p>Protecting Kids. Changing Systems. Empowering Survivors.</p>
     </div>
+
   </div>
 
-  <div class="container footer-connect-centered">
-    <h4 style="margin:0 0 0.25rem;">Connect With Us</h4>
-    <p style="color:#ffffff; font-weight:700;">
-      <a href="https://projectworthwi.org" style="color:#ffffff;">Website</a>
-      <span style="color:var(--gold); margin:0 0.35rem;">•</span>
-      <a href="https://www.facebook.com/ProjectWorthWI" style="color:#ffffff;">Facebook</a>
-      <span style="color:var(--gold); margin:0 0.35rem;">•</span>
-      <a href="https://www.linkedin.com/company/project-worth-wi" style="color:#ffffff;">LinkedIn</a>
-      <span style="color:var(--gold); margin:0 0.35rem;">•</span>
-      <a href="https://www.youtube.com/@ProjectWorthWI" style="color:#ffffff;">YouTube</a>
-      <span style="color:var(--gold); margin:0 0.35rem;">•</span>
-      <a href="transparency.html" style="color:#ffffff;">Transparency</a>
+  <div class="footer-newsletter">
+    <a
+      class="footer-newsletter-btn"
+      href="newsletter.html"
+      aria-label="Subscribe to the Project Worth newsletter"
+    >
+      ★ Subscribe to Our Newsletter
+    </a>
+  </div>
+
+  <div class="footer-connect-centered">
+    <h4>Connect With Us</h4>
+
+    <p style="font-weight:700;">
+      <a href="https://projectworthwi.org">Website</a>
+      <span style="color:#d6a928; margin:0 0.35rem;">•</span>
+
+      <a href="https://www.facebook.com/ProjectWorthWI">Facebook</a>
+      <span style="color:#d6a928; margin:0 0.35rem;">•</span>
+
+      <a href="https://www.linkedin.com/company/project-worth-wi">LinkedIn</a>
+      <span style="color:#d6a928; margin:0 0.35rem;">•</span>
+
+      <a href="https://www.youtube.com/@ProjectWorthWI">YouTube</a>
+      <span style="color:#d6a928; margin:0 0.35rem;">•</span>
+
+      <a href="transparency.html">Transparency</a>
+      <span style="color:#d6a928; margin:0 0.35rem;">•</span>
+
+      <a href="privacy.html">Privacy Policy</a>
     </p>
   </div>
 
-  <div class="container footer-disclaimer" style="display:block; width:100%; max-width:none; text-align:center;">
-    Project Worth provides advocacy, education, and systems-change work. It does not provide legal, clinical, or emergency services.
-  </div>
-
-  <div class="container footer-bottom">
+  <div class="footer-bottom">
     <p>Project Worth is a 501(c)(3) nonprofit organization.</p>
     <p>© 2026 Project Worth, Inc. All rights reserved.</p>
   </div>
