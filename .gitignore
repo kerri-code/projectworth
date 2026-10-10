@@ -1,0 +1,17 @@
+chad/.env
+chad/data/
+chad/node_modules/
+chad/checkins/
+__pycache__/
+
+chat/node_modules/
+chat/dist/
+chat/test-results/
+
+infrastructure/node_modules/
+infrastructure/cdk.out*/
+infrastructure/config.local.json
+infrastructure/releases/
+
+# Local production-portal import contains private meeting details.
+/institute-portal.html

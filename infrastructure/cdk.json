@@ -1,0 +1,1 @@
+{"app":"npx tsx app.ts","context":{"@aws-cdk/core:checkSecretUsage":true,"@aws-cdk/core:defaultCrossStackReferences":"strong"}}

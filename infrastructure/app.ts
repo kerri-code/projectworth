@@ -1,0 +1,14 @@
+import { readFileSync } from 'node:fs';
+import { App, Aspects } from 'aws-cdk-lib';
+import { AwsSolutionsChecks } from 'cdk-nag';
+import { validate } from './lib/config.js';
+import { DataStack, RecoveryStack, ReleaseStack } from './lib/stacks.js';
+const app = new App();
+const filename = app.node.tryGetContext('config') as string | undefined;
+if (!filename) throw new Error('Pass -c config=/absolute/path/to/reviewed-config.json; example accounts are not deployment targets.');
+const c = validate(JSON.parse(readFileSync(filename, 'utf8')));
+if (c.environment !== 'dev') throw new Error('Production migration requires a separate reviewed plan to preserve existing identities, messages and DNS. This entrypoint deploys isolated dev only.');
+const data = new DataStack(app, `ProjectWorth-${c.environment}-Data`, c);
+new ReleaseStack(app, `ProjectWorth-${c.environment}-Releases`, c, data);
+new RecoveryStack(app, `ProjectWorth-${c.environment}-Recovery`, c);
+Aspects.of(app).add(new AwsSolutionsChecks({ verbose: true }));

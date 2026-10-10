@@ -1,0 +1,13 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+import { validate } from './lib/config.js';
+import { approvePromotion, ReleaseEvidence, verifySiteManifest } from './lib/releases.js';
+const [configPath,evidencePath,manifestPath,frontDoor,outputPath]=process.argv.slice(2);
+if(!outputPath)throw new Error('Usage: promote.ts config evidence site-manifest frontdoor output-config');
+const c=validate(JSON.parse(readFileSync(configPath,'utf8')));
+const slot=c.activeSlot==='A'?'B':'A',release=slot==='A'?c.releaseA:c.releaseB;
+const manifest=verifySiteManifest(manifestPath);
+if(manifest.releaseId!==release||manifest.slot!==slot)throw new Error('Manifest is not the inactive slot');
+const evidence=JSON.parse(readFileSync(evidencePath,'utf8')) as ReleaseEvidence;
+approvePromotion({releaseId:release,artifactSha256:manifest.artifactSha256,url:`${frontDoor.replace(/\/$/,'')}/releases/${slot}/${release}/index.html`},evidence);
+writeFileSync(outputPath,JSON.stringify({...c,activeSlot:slot},null,2)+'\n',{flag:'wx'});
+console.log('Promotion configuration prepared. Review cdk diff before deploying; live routing was not changed.');

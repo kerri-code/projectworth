@@ -380,3 +380,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 });
+
+// Private messages use the existing Project Worth account session.
+(() => {
+  const chat = document.createElement("script");
+  chat.src = "chat/widget.js"; chat.defer = true;
+  document.head.append(chat);
+})();

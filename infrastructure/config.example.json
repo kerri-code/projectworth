@@ -1,0 +1,1 @@
+{"environment":"dev","primaryAccount":"111111111111","recoveryAccount":"222222222222","region":"us-east-1","recoveryRegion":"us-east-1","activeSlot":"A","releaseA":"initial-a","releaseB":"initial-b","retentionDays":90,"alarmEmail":"replace-with-independent-operator@example.com","fixture":true}

@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Institute Portal Login | Project Worth</title>
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--pw-navy:#07172a;--pw-gold:#e0c36a;--pw-cream:#fffdf6}
+*{box-sizing:border-box}
+body.page-institute-login{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--pw-navy);background:linear-gradient(180deg,#f4e3b2,#f8edd1 42%,#fffaf4)}
+.pw-header{background:#07172a;border-bottom:4px solid var(--pw-gold);padding:14px max(18px,calc((100vw - 1170px)/2))}
+.pw-brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.06em}
+.pw-brand img{width:48px;height:48px;object-fit:contain}
+.pw-brand small{display:block;color:var(--pw-gold);font-size:.72rem;margin-top:4px}
+.institute-login-shell{min-height:calc(100vh - 90px);display:flex;align-items:center;justify-content:center;padding:36px 18px;background:radial-gradient(circle at 8% 12%,rgba(224,195,106,.22),transparent 30%)}
+.institute-login-card{position:relative;width:min(540px,100%);padding:clamp(22px,4vw,34px);border-radius:30px;border:1.5px solid var(--pw-gold);border-top:5px solid var(--pw-gold);background:linear-gradient(180deg,#07172a,#081b33 60%,#091829);box-shadow:0 24px 60px #07172a3d;color:#fff}
+.login-heading{text-align:center;margin-bottom:22px}
+.login-star{display:grid;place-items:center;width:62px;height:62px;margin:0 auto 14px;border:1px solid #e0c36a88;border-radius:20px;background:#e0c36a20;color:var(--pw-gold);font-size:28px}
+.login-eyebrow{font-size:12px;font-weight:900;letter-spacing:.13em;color:var(--pw-gold);text-transform:uppercase}
+.login-heading h1{font-size:clamp(27px,4vw,39px);line-height:1.2;margin:9px 0;color:white}
+.login-heading p{font-size:14px;line-height:1.65;color:#fffdf6de;margin:0}
+.login-form{display:grid;gap:16px}
+.login-field{display:grid;gap:7px}
+.password-guidance{margin:0;color:#fffdf6de;font-size:13px;line-height:1.6}
+.login-field label{font-size:14px;font-weight:800}
+.login-input-wrap{position:relative}
+.login-field input{width:100%;min-height:49px;padding:11px 14px;border-radius:13px;border:1px solid #e0c36a77;background:#fffdf6;color:#07172a;font:inherit;font-size:15px}
+.login-field input:focus{outline:3px solid #e0c36a66}
+.login-input-wrap input{padding-right:70px}
+.password-toggle{position:absolute;right:9px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#886515;font-weight:800;cursor:pointer}
+.login-submit{border:1px solid var(--pw-gold);border-radius:30px;min-height:49px;background:var(--pw-gold);color:#07172a;font:inherit;font-weight:900;cursor:pointer;padding:12px 20px}
+.login-submit:disabled{opacity:.6;cursor:wait}
+.login-status{display:none;padding:12px;border-radius:12px;font-size:13px;line-height:1.5;font-weight:700}
+.login-status.is-visible{display:block}
+.login-status.error{background:#96241a44;color:#fff1ef;border:1px solid #ffa69a77}
+.login-status.success{background:#e0c36a20;color:#fffdf6;border:1px solid #e0c36a88}
+.login-note{padding:13px;border:1px solid #e0c36a66;border-radius:13px;background:#ffffff0a;font-size:13px;line-height:1.6}
+.login-secret{display:block;overflow-wrap:anywhere;padding:13px;background:var(--pw-cream);color:var(--pw-navy);border-radius:10px;user-select:all;font-size:14px;margin-top:8px}
+.login-link{border:0;background:none;color:var(--pw-gold);font:inherit;font-size:13px;font-weight:850;text-decoration:underline;cursor:pointer;padding:4px}
+.login-subactions{display:flex;justify-content:flex-end}
+.login-footnote{border-top:1px solid #e0c36a44;margin-top:22px;padding-top:17px;text-align:center;color:#fffdf6bd;font-size:13px;line-height:1.7}
+.login-footnote a{color:var(--pw-gold);font-weight:800;text-decoration:none}
+.login-contact-button{display:inline-block;border:1px solid #e0c36a88;border-radius:30px;margin-top:8px;padding:8px 14px;background:#e0c36a1a}
+.login-back{margin-top:14px}
+.login-panel-hidden{display:none!important}
+[hidden]{display:none!important}
+</style>
+</head>
+<body class="page-institute-login">
+<header class="pw-header">
+  <a href="index.html" class="pw-brand">
+    <img src="PROJECT-WORTH-LOGO.png" alt="Project Worth logo">
+    <span>PROJECT WORTH<small>CHANGE STARTS HERE.</small></span>
+  </a>
+</header>
+<main class="institute-login-shell">
+  <div class="institute-login-card">
+    <section id="loginPanel">
+      <div class="login-heading">
+        <div class="login-star" aria-hidden="true">★</div>
+        <div class="login-eyebrow">Light the Way Training &amp; Research Institute</div>
+        <h1>Institute Portal</h1>
+        <p>Sign in with your approved Project Worth account to access training and team resources.</p>
+      </div>
+      <form id="loginForm" class="login-form">
+        <div class="login-field"><label for="username">Email or username</label>
+          <input id="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required></div>
+        <div class="login-field"><label for="password">Password</label>
+          <div class="login-input-wrap"><input id="password" type="password" autocomplete="current-password" required>
+            <button type="button" class="password-toggle" data-toggle="password">Show</button></div></div>
+        <div id="loginStatus" class="login-status" role="status" aria-live="polite"></div>
+        <button class="login-submit" type="submit">Portal Login</button>
+        <div class="login-subactions"><button type="button" class="login-link" id="forgotStart">Forgot password?</button></div>
+      </form>
+    </section>
+    <section id="passwordPanel" class="login-panel-hidden">
+      <div class="login-heading"><div class="login-star">★</div><div class="login-eyebrow">First Sign In</div>
+        <h1>Create Your Password</h1><p>Choose a new password to activate your account.</p></div>
+      <form id="passwordForm" class="login-form">
+        <div class="login-field"><label for="newPassword">New password</label><input id="newPassword" type="password" autocomplete="new-password" aria-describedby="newPasswordRules passwordStatus" required></div>
+        <p id="newPasswordRules" class="password-guidance" data-password-rules></p>
+        <div class="login-field"><label for="confirmPassword">Confirm new password</label><input id="confirmPassword" type="password" autocomplete="new-password" aria-describedby="passwordStatus" required></div>
+        <div id="passwordStatus" class="login-status" role="status"></div>
+        <button class="login-submit" type="submit">Save Password &amp; Continue</button>
+      </form>
+    </section>
+    <section id="mfaPanel" class="login-panel-hidden">
+      <div class="login-heading"><div class="login-star">★</div><div class="login-eyebrow">Account Security</div>
+        <h1>Verify It's You</h1><p id="mfaInstruction">Enter your verification code.</p></div>
+      <form id="mfaForm" class="login-form">
+        <div class="login-field"><label for="mfaCode">Verification code</label><input id="mfaCode" inputmode="numeric" autocomplete="one-time-code" maxlength="8" required></div>
+        <div id="mfaStatus" class="login-status" role="status"></div>
+        <button class="login-submit" type="submit">Verify &amp; Enter Portal</button>
+      </form>
+    </section>
+    <section id="setupPanel" class="login-panel-hidden">
+      <div class="login-heading"><div class="login-star">★</div><div class="login-eyebrow">One-Time Setup</div>
+        <h1>Secure Your Account</h1><p>Connect an authenticator app to protect your account.</p></div>
+      <form id="setupForm" class="login-form">
+        <div class="login-note">In Google or Microsoft Authenticator, choose <b>Add account → Enter setup key</b>.
+          <code id="totpSecret" class="login-secret"></code>
+          <button id="copySecret" type="button" class="login-link">Copy setup key</button>
+          <p>Keep this key private, then enter the six-digit code from your app.</p></div>
+        <div class="login-field"><label for="setupCode">Authenticator verification code</label><input id="setupCode" inputmode="numeric" maxlength="6" required></div>
+        <div id="setupStatus" class="login-status" role="status"></div>
+        <button class="login-submit" type="submit">Verify &amp; Finish Setup</button>
+      </form>
+    </section>
+    <section id="resetPanel" class="login-panel-hidden">
+      <div class="login-heading"><div class="login-star">★</div><div class="login-eyebrow">Account Recovery</div>
+        <h1>Reset Your Password</h1><p>Use the verification code emailed to your account.</p></div>
+      <form id="resetForm" class="login-form">
+        <div class="login-field"><label for="resetCode">Email verification code</label><input id="resetCode" autocomplete="one-time-code" required></div>
+        <div class="login-field"><label for="resetPassword">New password</label><input id="resetPassword" type="password" autocomplete="new-password" aria-describedby="resetPasswordRules resetStatus" required></div>
+        <p id="resetPasswordRules" class="password-guidance" data-password-rules></p>
+        <div id="resetStatus" class="login-status" role="status"></div>
+        <button class="login-submit" type="submit">Reset Password</button>
+      </form>
+    </section>
+    <div class="login-footnote">Institute access is limited to approved participants. There is no public registration.
+      <br><a class="login-contact-button" href="light-the-way.html#contact">Contact Project Worth</a>
+      <br><button id="backToLogin" type="button" class="login-link login-back" hidden>← Back to Login</button>
+      <br><a href="institute.html">← Back to the Training &amp; Research Institute</a>
+    </div>
+  </div>
+</main>
+<script>
+(() => {
+  "use strict";
+  // Public Cognito app client. Never put AWS keys or a client secret here.
+  const REGION = "us-east-1";
+  const CLIENT_ID = "djbqai6h9rak2c4g6o8gq008o";
+  const PORTAL = "institute-portal.html";
+  const ENDPOINT = `https://cognito-idp.${REGION}.amazonaws.com/`;
+  const $ = id => document.getElementById(id);
+  // Keep this guidance aligned with the user pool policy; Cognito validates passwords.
+  const PASSWORD_RULES = "Use at least 8 characters, including an uppercase letter (A–Z), a lowercase letter (a–z), a number (0–9), and a symbol such as !, @, or #.";
+  document.querySelectorAll("[data-password-rules]").forEach(el => { el.textContent = PASSWORD_RULES; });
+  const panels = ["loginPanel","passwordPanel","mfaPanel","setupPanel","resetPanel"];
+  let currentUsername = "", pendingSession = "", mfaChallenge = "", setupSecret = "";
+  function showPanel(id) {
+    panels.forEach(name => $(name).classList.toggle("login-panel-hidden", name !== id));
+    $("backToLogin").hidden = id === "loginPanel";
+    $(id).querySelector("input")?.focus();
+  }
+  function message(id, text, success = false) {
+    const el = $(id);
+    el.textContent = text;
+    el.className = "login-status is-visible " + (success ? "success" : "error");
+  }
+  function clearMessage(id) { $(id).textContent=""; $(id).className="login-status"; }
+  function friendly(error) {
+    const type=String(error.type||"");
+    if (type === "InvalidPasswordException") {
+      // Only expose password-policy messages, never arbitrary service errors.
+      const detail = String(error.serviceMessage || "").match(/Password must (?:have|be)[^\r\n]*/i)?.[0];
+      return (detail ? detail.replace(/[.!]+$/, "") + ". " : "Your password doesn't meet the password requirements. ") + PASSWORD_RULES;
+    }
+    if (type === "PasswordHistoryPolicyViolationException")
+      return "You have used this password before. Choose a different password. " + PASSWORD_RULES;
+    if (["NotAuthorizedException","UserNotFoundException"].includes(type))
+      return "Those sign-in details were not accepted. Please try again.";
+    if (type==="CodeMismatchException") return "That verification code was not accepted. Try the latest code.";
+    if (type==="ExpiredCodeException") return "That code has expired. Restart the process.";
+    if (["TooManyRequestsException","LimitExceededException"].includes(type))
+      return "Too many attempts. Please wait and try again.";
+    if (["InvalidParameterException","InvalidUserPoolConfigurationException"].includes(type))
+      return "Cognito configuration needs attention. Contact the portal administrator.";
+    if (type==="NotConfirmedException"||type==="UserNotConfirmedException")
+      return "Your account must be confirmed before signing in.";
+    if (type==="PasswordResetRequiredException") return "Please use Forgot password to reset your password.";
+    return error.message?.startsWith("Unsupported authentication") ? error.message
+      : "We couldn't complete that step. Please try again or contact Project Worth.";
+  }
+  async function cognito(action, body) {
+    const response=await fetch(ENDPOINT,{
+      method:"POST",
+      headers:{"Content-Type":"application/x-amz-json-1.1",
+        "X-Amz-Target":"AWSCognitoIdentityProviderService."+action},
+      body:JSON.stringify(body),cache:"no-store"
+    });
+    const data=await response.json().catch(()=>({}));
+    if(!response.ok){
+      const err=new Error("Authentication request failed");
+      err.type=String(data.__type||data.code||"").split("#").pop();
+      err.serviceMessage=typeof data.message === "string" ? data.message : "";
+      throw err;
+    }
+    return data;
+  }
+  async function busy(form,label,operation) {
+    const button=form.querySelector('button[type="submit"]');
+    const previous=button.textContent;
+    button.disabled=true; button.textContent=label;
+    try{await operation();}finally{button.disabled=false;button.textContent=previous;}
+  }
+  function saveSession(result) {
+    if(!result.AccessToken||!result.IdToken) throw new Error("Tokens missing");
+    ["pwInstituteAccessToken","pwInstituteIdToken","pwInstituteRefreshToken",
+      "pwInstituteExpiresAt","pwCognitoClientId"].forEach(k=>sessionStorage.removeItem(k));
+    sessionStorage.setItem("pwInstituteAccessToken",result.AccessToken);
+    sessionStorage.setItem("pwInstituteIdToken",result.IdToken);
+    sessionStorage.setItem("pwInstituteExpiresAt",
+      String(Date.now()+Number(result.ExpiresIn||3600)*1000));
+    sessionStorage.setItem("pwCognitoClientId",CLIENT_ID);
+    location.assign(PORTAL);
+  }
+  async function respond(challenge, answers, session=pendingSession) {
+    return cognito("RespondToAuthChallenge",{
+      ChallengeName:challenge,ClientId:CLIENT_ID,
+      ChallengeResponses:{USERNAME:currentUsername,...answers},Session:session
+    });
+  }
+  async function processResponse(result) {
+    if(result.AuthenticationResult){saveSession(result.AuthenticationResult);return;}
+    if(!result.ChallengeName||!result.Session) throw new Error("Missing authentication step");
+    pendingSession=result.Session;
+    if(result.ChallengeParameters?.USER_ID_FOR_SRP)
+      currentUsername=result.ChallengeParameters.USER_ID_FOR_SRP;
+    switch(result.ChallengeName){
+      case "NEW_PASSWORD_REQUIRED":
+        $("password").value="";showPanel("passwordPanel");return;
+      case "SOFTWARE_TOKEN_MFA":case "SMS_MFA":case "EMAIL_MFA":case "EMAIL_OTP":
+        mfaChallenge=result.ChallengeName;
+        $("mfaInstruction").textContent=mfaChallenge==="SOFTWARE_TOKEN_MFA"
+          ? "Enter the six-digit code from your authenticator app."
+          : "Enter the verification code sent to your registered contact method.";
+        showPanel("mfaPanel");return;
+      case "MFA_SETUP":{
+        const associated=await cognito("AssociateSoftwareToken",{Session:pendingSession});
+        setupSecret=associated.SecretCode;
+        if(!setupSecret) throw new Error("Unable to prepare MFA");
+        $("totpSecret").textContent=setupSecret;
+        pendingSession=associated.Session||pendingSession;
+        showPanel("setupPanel");return;
+      }
+      case "SELECT_MFA_TYPE":{
+        const available=String(result.ChallengeParameters?.MFAS_CAN_CHOOSE||"");
+        if(!available.includes("SOFTWARE_TOKEN_MFA"))
+          throw new Error("Unsupported authentication method: MFA selection");
+        await processResponse(await respond("SELECT_MFA_TYPE",{ANSWER:"SOFTWARE_TOKEN_MFA"}));
+        return;
+      }
+      default:throw new Error("Unsupported authentication method: "+result.ChallengeName);
+    }
+  }
+  $("loginForm").addEventListener("submit",event=>{
+    event.preventDefault();clearMessage("loginStatus");
+    currentUsername=$("username").value.trim();
+    const password=$("password").value;
+    if(!currentUsername||!password)return;
+    busy(event.currentTarget,"Signing In…",async()=>{
+      const result=await cognito("InitiateAuth",{
+        AuthFlow:"USER_PASSWORD_AUTH",ClientId:CLIENT_ID,
+        AuthParameters:{USERNAME:currentUsername,PASSWORD:password}
+      });
+      $("password").value="";
+      await processResponse(result);
+    }).catch(err=>{$("password").value="";message("loginStatus",friendly(err));});
+  });
+  $("passwordForm").addEventListener("submit",event=>{
+    event.preventDefault();clearMessage("passwordStatus");
+    if($("newPassword").value!==$("confirmPassword").value){
+      message("passwordStatus","The two passwords don't match. Re-enter the same password in both fields. " + PASSWORD_RULES);return;
+    }
+    busy(event.currentTarget,"Saving Password…",async()=>{
+      const result=await respond("NEW_PASSWORD_REQUIRED",{NEW_PASSWORD:$("newPassword").value});
+      $("newPassword").value="";$("confirmPassword").value="";
+      await processResponse(result);
+    }).catch(err=>message("passwordStatus",friendly(err)));
+  });
+  $("mfaForm").addEventListener("submit",event=>{
+    event.preventDefault();clearMessage("mfaStatus");
+    const key={SOFTWARE_TOKEN_MFA:"SOFTWARE_TOKEN_MFA_CODE",SMS_MFA:"SMS_MFA_CODE",
+      EMAIL_MFA:"EMAIL_MFA_CODE",EMAIL_OTP:"EMAIL_OTP_CODE"}[mfaChallenge];
+    if(!key){message("mfaStatus","Please restart sign-in.");return;}
+    busy(event.currentTarget,"Verifying…",async()=>{
+      const result=await respond(mfaChallenge,{[key]:$("mfaCode").value.trim()});
+      $("mfaCode").value="";await processResponse(result);
+    }).catch(err=>message("mfaStatus",friendly(err)));
+  });
+  $("setupForm").addEventListener("submit",event=>{
+    event.preventDefault();clearMessage("setupStatus");
+    busy(event.currentTarget,"Verifying…",async()=>{
+      const verified=await cognito("VerifySoftwareToken",{
+        Session:pendingSession,UserCode:$("setupCode").value.trim(),
+        FriendlyDeviceName:"Project Worth Portal"
+      });
+      if(verified.Status!=="SUCCESS"||!verified.Session) throw new Error("MFA not verified");
+      setupSecret="";$("totpSecret").textContent="";
+      const result=await respond("MFA_SETUP",{},verified.Session);
+      await processResponse(result);
+    }).catch(err=>message("setupStatus",friendly(err)));
+  });
+  $("copySecret").addEventListener("click",async()=>{
+    if(!setupSecret)return;
+    try{await navigator.clipboard.writeText(setupSecret);$("copySecret").textContent="Copied!";}
+    catch{$("copySecret").textContent="Select the key above to copy";}
+  });
+  document.querySelectorAll("[data-toggle]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      const input=$(button.dataset.toggle);
+      input.type=input.type==="password"?"text":"password";
+      button.textContent=input.type==="password"?"Show":"Hide";
+    });
+  });
+  $("forgotStart").addEventListener("click",async()=>{
+    currentUsername=$("username").value.trim();
+    if(!currentUsername){
+      message("loginStatus","Enter your email or username first, then select Forgot password.");return;
+    }
+    try{
+      await cognito("ForgotPassword",{ClientId:CLIENT_ID,Username:currentUsername});
+      showPanel("resetPanel");
+      message("resetStatus","If recovery is available, check your verified email for a code.",true);
+    }catch(err){message("loginStatus",friendly(err));}
+  });
+  $("resetForm").addEventListener("submit",event=>{
+    event.preventDefault();clearMessage("resetStatus");
+    busy(event.currentTarget,"Resetting…",async()=>{
+      await cognito("ConfirmForgotPassword",{
+        ClientId:CLIENT_ID,Username:currentUsername,
+        ConfirmationCode:$("resetCode").value.trim(),Password:$("resetPassword").value
+      });
+      $("resetCode").value="";$("resetPassword").value="";
+      showPanel("loginPanel");
+      message("loginStatus","Password updated. Sign in with your new password.",true);
+    }).catch(err=>message("resetStatus",friendly(err)));
+  });
+  $("backToLogin").addEventListener("click",()=>{
+    pendingSession="";setupSecret="";$("totpSecret").textContent="";
+    $("mfaCode").value="";$("setupCode").value="";showPanel("loginPanel");
+  });
+  const supplied=new URLSearchParams(location.search).get("username");
+  if(supplied)$("username").value=supplied.slice(0,128);
+})();
+</script>
+</body>
+</html>
