@@ -696,23 +696,6 @@
                 </div>
               </div>
             </div>
-            <div
-              class="home-support-worth-card home-support-volunteer-card home-top-volunteer-card"
-            >
-              <div class="home-volunteer-note">
-                <div
-                  style="text-align: center !important; width: 100% !important"
-                >
-                  ★ 100% Volunteer Led
-                </div>
-                <p>
-                  Project Worth is currently volunteer led, with no paid staff
-                  or compensated board members. We keep administrative costs
-                  intentionally low so donated funds can directly support our
-                  mission. <a href="donate.html">Donate →</a>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -790,6 +773,18 @@
               </div>
             </div>
           </div>
+          <!-- Volunteer-led nonprofit commitment, above facilitator training. -->
+          <section class="home-volunteer-banner" aria-labelledby="home-volunteer-banner-title">
+            <div class="home-volunteer-banner-heading">
+              <span aria-hidden="true" class="home-volunteer-banner-star">★</span>
+              <h2 id="home-volunteer-banner-title">100% Volunteer Led</h2>
+            </div>
+            <p>
+              Project Worth is currently volunteer led, with no paid staff or compensated board members.
+              We keep administrative costs intentionally low so donated funds can directly support our mission.
+            </p>
+            <a class="btn home-volunteer-banner-link" href="donate.html">Donate →</a>
+          </section>
           <!-- Featured facilitator opportunity — below the four quick-link cards. -->
           <section
             class="home-facilitator-spotlight"
@@ -2995,6 +2990,249 @@
       .page-home .home-square-card-institute p,
       .page-home .home-square-card-institute .home-card-spark-line {
         color: #ffffff !important;
+      }
+    </style>
+
+    <style id="pw-home-focused-polish-20261019">
+      /* Two equal hero columns; the nonprofit commitment now has its own banner. */
+      .page-home #home .hero-grid.home-hero-side-by-side {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        align-items: stretch !important;
+        gap: clamp(1rem, 2.4vw, 1.75rem) !important;
+      }
+      .page-home #home .home-hero-copy-card {
+        min-width: 0 !important;
+        height: 100% !important;
+        padding: clamp(1.55rem, 3vw, 2.45rem) !important;
+      }
+      .page-home #home .home-top-right-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
+        height: 100% !important;
+        min-width: 0 !important;
+      }
+      .page-home #home .home-top-right-stack .home-why-system-card {
+        width: 100% !important;
+        max-width: none !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding: clamp(1.55rem, 3vw, 2.45rem) !important;
+        border-radius: 28px !important;
+      }
+      /* Replace the nested outlines and badges with one cohesive content panel. */
+      .page-home #home .home-top-right-stack .home-why-combined-card {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: clamp(.75rem, 1.35vw, 1.05rem) !important;
+        width: 100% !important;
+        flex: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-left: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        background-image: none !important;
+        box-shadow: none !important;
+      }
+      .page-home #home .home-why-combined-card .home-why-intro-wrap {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      .page-home #home .home-why-heading-row {
+        gap: .55rem !important;
+        margin-bottom: .5rem !important;
+      }
+      .page-home #home .home-top-right-stack .home-why-system-card h3 {
+        font-size: clamp(1.55rem, 2.45vw, 2.2rem) !important;
+        line-height: 1.2 !important;
+        letter-spacing: -.02em !important;
+      }
+      .page-home #home .home-why-star {
+        font-size: 1.18rem !important;
+        text-shadow: none !important;
+      }
+      .page-home #home .home-why-tagline {
+        font-size: clamp(1.07rem, 1.35vw, 1.25rem) !important;
+        line-height: 1.38 !important;
+        font-weight: 850 !important;
+      }
+      .page-home #home .home-why-combined-card .home-why-description:empty {
+        display: none !important;
+      }
+      .page-home #home .home-why-combined-card .home-why-action-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: .48rem !important;
+        margin: 0 !important;
+        padding: .75rem 0 0 !important;
+        border: 0 !important;
+        border-top: 1px solid rgba(170, 132, 46, .26) !important;
+        background: transparent !important;
+        background-image: none !important;
+        box-shadow: none !important;
+      }
+      .page-home #home .home-why-combined-card .home-why-question {
+        max-width: 100% !important;
+        font-size: clamp(.97rem, 1.15vw, 1.08rem) !important;
+        font-weight: 820 !important;
+        line-height: 1.4 !important;
+      }
+      .page-home #home .home-why-combined-card .home-why-advocacy-link {
+        display: inline-flex !important;
+        color: #936a1e !important;
+        font-size: .99rem !important;
+        line-height: 1.5 !important;
+        font-weight: 850 !important;
+        text-decoration: none !important;
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      .page-home #home .home-top-right-stack .home-why-combined-card .callout-stat {
+        margin: 0 !important;
+        padding: .85rem 0 0 !important;
+        border: 0 !important;
+        border-top: 1px solid rgba(170, 132, 46, .26) !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: var(--navy) !important;
+      }
+      .page-home #home .home-top-right-stack .home-why-combined-card .callout-stat p {
+        font-size: clamp(.94rem, 1.12vw, 1.05rem) !important;
+        line-height: 1.55 !important;
+        font-weight: 650 !important;
+        margin: 0 !important;
+      }
+      /* Give the four mission cards room to breathe, keeping their existing palette. */
+      .page-home .home-quick-links-section .home-square-link-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: clamp(.95rem, 1.8vw, 1.3rem) !important;
+      }
+      .page-home .home-quick-links-section .home-square-link-card {
+        min-height: 208px !important;
+        padding: clamp(1.2rem, 2.2vw, 1.65rem) !important;
+        border-radius: 23px !important;
+      }
+      .page-home .home-quick-links-section .home-square-link-card h3 {
+        font-size: clamp(1.2rem, 1.75vw, 1.5rem) !important;
+        line-height: 1.27 !important;
+        margin-bottom: .55rem !important;
+      }
+      .page-home .home-quick-links-section .home-square-link-card p {
+        font-size: .98rem !important;
+        line-height: 1.5 !important;
+        max-width: 56ch !important;
+        font-weight: 650 !important;
+      }
+      /* Standalone volunteer banner sits directly above facilitator training. */
+      .page-home .home-quick-links-section .home-volunteer-banner {
+        display: grid !important;
+        grid-template-columns: minmax(185px, .85fr) minmax(0, 1.65fr) auto !important;
+        align-items: center !important;
+        gap: clamp(.95rem, 2vw, 1.6rem) !important;
+        margin: clamp(1.05rem, 1.9vw, 1.35rem) 0 .85rem !important;
+        padding: clamp(1.15rem, 2.25vw, 1.65rem) !important;
+        border: 1px solid rgba(180, 142, 57, .36) !important;
+        border-left: 6px solid var(--gold) !important;
+        border-radius: 23px !important;
+        background: linear-gradient(115deg, #fffaf1 0%, #fffdfa 57%, #fff1ce 100%) !important;
+        box-shadow: 0 10px 28px rgba(15, 49, 88, .075) !important;
+      }
+      .page-home .home-volunteer-banner-heading {
+        display: flex !important;
+        gap: .7rem !important;
+        align-items: center !important;
+      }
+      .page-home .home-volunteer-banner-star {
+        color: #b58729 !important;
+        font-size: 1.35rem !important;
+      }
+      .page-home .home-volunteer-banner h2 {
+        margin: 0 !important;
+        font-size: clamp(1.15rem, 1.85vw, 1.55rem) !important;
+        color: var(--navy) !important;
+        line-height: 1.2 !important;
+        font-weight: 950 !important;
+      }
+      .page-home .home-volunteer-banner p {
+        margin: 0 !important;
+        color: #253952 !important;
+        font-size: .94rem !important;
+        line-height: 1.55 !important;
+        font-weight: 620 !important;
+      }
+      .page-home .home-volunteer-banner .home-volunteer-banner-link {
+        display: inline-flex !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        background: var(--navy) !important;
+        color: #fff !important;
+        padding: .7rem 1.1rem !important;
+        text-decoration: none !important;
+        border-radius: 999px !important;
+        font-weight: 850 !important;
+        box-shadow: none !important;
+      }
+      .page-home .home-volunteer-banner .home-volunteer-banner-link:hover {
+        background: #173e68 !important;
+      }
+      .page-home .home-quick-links-section .home-facilitator-spotlight {
+        margin-top: .85rem !important;
+        padding: clamp(1.25rem, 2.3vw, 1.7rem) !important;
+        border-radius: 23px !important;
+        gap: clamp(1.2rem, 2.5vw, 2rem) !important;
+      }
+      @media (max-width: 980px) {
+        .page-home .home-quick-links-section .home-volunteer-banner {
+          grid-template-columns: 1fr auto !important;
+        }
+        .page-home .home-volunteer-banner-heading {grid-column: 1 / -1 !important}
+      }
+      @media (max-width: 880px) {
+        .page-home #home .hero-grid.home-hero-side-by-side {
+          grid-template-columns: 1fr !important;
+        }
+        .page-home #home .home-top-right-stack,
+        .page-home #home .home-top-right-stack .home-why-system-card {
+          height: auto !important;
+          min-height: 0 !important;
+        }
+      }
+      @media (max-width: 680px) {
+        .page-home .home-quick-links-section .home-square-link-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .page-home .home-quick-links-section .home-square-link-card {min-height: 0 !important}
+        .page-home .home-quick-links-section .home-volunteer-banner {
+          grid-template-columns: 1fr !important;
+          gap: .75rem !important;
+        }
+        .page-home .home-volunteer-banner-heading {grid-column: auto !important}
+        .page-home .home-volunteer-banner .home-volunteer-banner-link {
+          justify-self: start !important;
+        }
+        .page-home .home-quick-links-section .home-facilitator-spotlight {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+        }
       }
     </style>
 
