@@ -685,9 +685,15 @@
   const announce=document.getElementById("spark-announcer");
   const fmt=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(n);
   const allowed=new Map(catalog.flatMap(p=>p.variants.map(v=>[v.id,{...v,product:p}])));
-  // Each visit starts with an empty bag. Previous versions stored it persistently.
+  // Keep bag while tab remains open, including return from checkout.
+  const sessionKey="pw-spark-bag-session-v1";
   let bag=[];
-  try { localStorage.removeItem("pw-spark-bag-v1"); } catch(e) {}
+  try{
+    localStorage.removeItem("pw-spark-bag-v1");
+    const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"[]");
+    if(Array.isArray(saved))bag=saved.filter(x=>allowed.has(String(x.id))&&Number.isInteger(x.qty)&&x.qty>0&&x.qty<=99).map(x=>({id:String(x.id),qty:x.qty}));
+  }catch(e){bag=[];}
+  const saveBag=()=>{try{sessionStorage.setItem(sessionKey,JSON.stringify(bag));}catch(e){}};
   function render(){
     const totalQty=bag.reduce((s,x)=>s+x.qty,0);
     bagCount.textContent=totalQty;
@@ -714,7 +720,7 @@
     let item=bag.find(x=>x.id===id);
     if(item){item.qty=Math.min(99,item.qty+delta);if(item.qty<=0)bag=bag.filter(x=>x.id!==id);}
     else if(delta>0&&allowed.has(id))bag.push({id,qty:1});
-    render();
+    saveBag();render();
   }
   document.querySelectorAll("[data-spark-product]").forEach(card=>{
     const select=card.querySelector("[data-spark-select]");
@@ -735,10 +741,15 @@
     if(pairs.length)window.location.assign(domain+"/cart/"+pairs.join(","));
   });
 
-  // Clear the in-page bag when leaving (including navigating to Shopify checkout).
-  // If the browser restores this page from its back/forward cache, show an empty bag.
-  window.addEventListener("pagehide",()=>{bag=[];});
-  window.addEventListener("pageshow",event=>{if(event.persisted){bag=[];render();}});
+  // Synchronize tab-scoped selections on browser Back navigation.
+  window.addEventListener("pageshow",event=>{
+    if(!event.persisted)return;
+    try{
+      const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"[]");
+      bag=Array.isArray(saved)?saved.filter(x=>allowed.has(String(x.id))&&Number.isInteger(x.qty)&&x.qty>0&&x.qty<=99).map(x=>({id:String(x.id),qty:x.qty})):[];
+    }catch(e){bag=[];}
+    render();
+  });
 
   // Display up to six items at a time, then enable arrows for additional products.
   const cards=Array.from(document.querySelectorAll("#spark-product-grid > [data-spark-product]"));
