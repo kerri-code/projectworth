@@ -677,7 +677,6 @@
   "use strict";
   const catalog=[{"id":"15416885641299","name":"Rooted in Wisconsin","description":"Wisconsin roots. Safer futures for children.","kind":"Sweatshirt","handle":"project-worth-wisconsin-est-2026-sweatshirt","image":"https://cdn.shopify.com/s/files/1/0796/9003/9379/files/unisex-organic-sweatshirt-white-front-6ad58ea2e2c42.jpg?v=1792380600","variants":[{"id":"67740959768659","label":"S","price":50},{"id":"67740959801427","label":"M","price":50},{"id":"67740959834195","label":"L","price":50},{"id":"67740959866963","label":"XL","price":50},{"id":"67740959899731","label":"XXL","price":50}]},{"id":"15416642535507","name":"Worth the Work","description":"Every child is worth protecting. Every voice matters.","kind":"T-shirt","handle":"unisex-t-shirt","image":"https://cdn.shopify.com/s/files/1/0796/9003/9379/files/unisex-staple-t-shirt-navy-front-6ad5762f731f8.jpg?v=1792374344","variants":[{"id":"67739786870867","label":"XS","price":22},{"id":"67739786903635","label":"S","price":22},{"id":"67739786936403","label":"M","price":22},{"id":"67739786969171","label":"L","price":22},{"id":"67739787001939","label":"XL","price":22},{"id":"67739787034707","label":"2XL","price":25},{"id":"67739787067475","label":"3XL","price":27.5},{"id":"67739787100243","label":"4XL","price":30}]},{"id":"15416732024915","name":"Hope Is a Verb","description":"Turn hope into action for children and survivors.","kind":"Mug","handle":"mug-with-color-inside","image":"https://cdn.shopify.com/s/files/1/0796/9003/9379/files/white-ceramic-mug-with-color-inside-golden-yellow-11-oz-right-6ad5798c57d12.jpg?v=1792375193","variants":[{"id":"67740360802387","label":"Dark Blue / 11 oz","price":15},{"id":"67740360835155","label":"Dark Blue / 15 oz","price":15},{"id":"67740360867923","label":"Golden Yellow / 11 oz","price":15}]},{"id":"15416861556819","name":"Rooted in Worth","description":"Rooted in worth. Building safer futures.","kind":"Mug","handle":"mug-with-color-inside-1","image":"https://cdn.shopify.com/s/files/1/0796/9003/9379/files/white-ceramic-mug-with-color-inside-dark-blue-11-oz-right-6ad5862201fa2.jpg?v=1792378414","variants":[{"id":"67740846719059","label":"Dark Blue / 11 oz","price":15},{"id":"67740846751827","label":"Dark Blue / 15 oz","price":15},{"id":"67740846784595","label":"Golden Yellow / 11 oz","price":15}]},{"id":"15416629330003","name":"Carry the Light","description":"Carry the mission. Spark conversations.","kind":"Tote","handle":"all-over-print-large-tote-bag","image":"https://cdn.shopify.com/s/files/1/0796/9003/9379/files/all-over-print-large-tote-bag-w-pocket-yellow-front-6ad582f9e352d.jpg?v=1792377598","variants":[{"id":"67739690958931","label":"One size","price":30}]},{"id":"15416866046035","name":"Small Paws. Big Purpose.","description":"Small paws. A powerful message.","kind":"Pet Bandana","handle":"all-over-print-bandana","image":"https://cdn.shopify.com/s/files/1/0796/9003/9379/files/all-over-print-bandana-white-s-front-6ad5868b02ca2.jpg?v=1792378532","variants":[{"id":"67740858941523","label":"S","price":13.5},{"id":"67740858974291","label":"M","price":13.5},{"id":"67740859007059","label":"L","price":13.5}]}];
   const domain="https://u0qzjh-p9.myshopify.com";
-  const storageKey="pw-spark-bag-v1";
   const dialog=document.getElementById("spark-bag-dialog");
   const bagCount=document.getElementById("spark-bag-count");
   const lines=document.getElementById("spark-cart-items");
@@ -686,12 +685,9 @@
   const announce=document.getElementById("spark-announcer");
   const fmt=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(n);
   const allowed=new Map(catalog.flatMap(p=>p.variants.map(v=>[v.id,{...v,product:p}])));
+  // Each visit starts with an empty bag. Previous versions stored it persistently.
   let bag=[];
-  try {
-    const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");
-    if(Array.isArray(stored)) bag=stored.filter(x=>allowed.has(String(x.id))&&Number.isInteger(x.qty)&&x.qty>0&&x.qty<=99).map(x=>({id:String(x.id),qty:x.qty}));
-  }catch(e){bag=[];}
-  const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(bag));}catch(e){}};
+  try { localStorage.removeItem("pw-spark-bag-v1"); } catch(e) {}
   function render(){
     const totalQty=bag.reduce((s,x)=>s+x.qty,0);
     bagCount.textContent=totalQty;
@@ -718,7 +714,7 @@
     let item=bag.find(x=>x.id===id);
     if(item){item.qty=Math.min(99,item.qty+delta);if(item.qty<=0)bag=bag.filter(x=>x.id!==id);}
     else if(delta>0&&allowed.has(id))bag.push({id,qty:1});
-    save();render();
+    render();
   }
   document.querySelectorAll("[data-spark-product]").forEach(card=>{
     const select=card.querySelector("[data-spark-select]");
@@ -738,6 +734,11 @@
     const pairs=bag.filter(x=>allowed.has(x.id)).map(x=>x.id+":"+x.qty);
     if(pairs.length)window.location.assign(domain+"/cart/"+pairs.join(","));
   });
+
+  // Clear the in-page bag when leaving (including navigating to Shopify checkout).
+  // If the browser restores this page from its back/forward cache, show an empty bag.
+  window.addEventListener("pagehide",()=>{bag=[];});
+  window.addEventListener("pageshow",event=>{if(event.persisted){bag=[];render();}});
 
   // Display up to six items at a time, then enable arrows for additional products.
   const cards=Array.from(document.querySelectorAll("#spark-product-grid > [data-spark-product]"));
