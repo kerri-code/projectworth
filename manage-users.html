@@ -1,0 +1,227 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Manage Users | Project Worth</title><style>:root{--navy:#071a30;--navy2:#102f4d;--gold:#c9a653;--cream:#f8f4ea;--line:#d8d9d9}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--navy);font:15px/1.5 system-ui,-apple-system,Arial}header{background:var(--navy);color:white;padding:19px 4vw;display:flex;justify-content:space-between;align-items:center;gap:16px}header strong{letter-spacing:.13em}header a{color:#f5dc8a}main{max-width:1100px;margin:32px auto;padding:0 22px}h1{font-size:clamp(1.8rem,3vw,2.6rem);margin:0}.muted{color:#627083}.shell{display:grid;grid-template-columns:230px 1fr;gap:24px;margin-top:22px}.menu{background:#fff;border:1px solid var(--line);border-radius:17px;padding:12px;align-self:start}.menu button{display:block;width:100%;text-align:left;background:transparent;color:var(--navy);border:0;padding:14px;border-radius:11px;font-weight:700;cursor:pointer}.menu button.active{background:var(--navy);color:#fff}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 10px 45px #071a3009}.tab[hidden]{display:none}h2{margin:0 0 7px;font-size:1.5rem}h3{margin:18px 0 8px}label{display:grid;gap:6px;font-weight:700;font-size:.85rem}input,select{font:inherit;padding:11px;border:1px solid #b9c3c9;border-radius:10px;min-width:0;width:100%}input:focus,select:focus{outline:2px solid var(--gold)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}button.action{background:var(--navy);color:white;border:0;padding:12px 18px;border-radius:10px;font-weight:750;cursor:pointer}button.ghost{background:#eef1f3;color:var(--navy)}button:disabled{opacity:.55;cursor:wait}.notice{background:#fcf7e9;border-left:3px solid var(--gold);padding:13px 15px;margin:18px 0;border-radius:6px}.person{border:1px solid var(--line);padding:17px;border-radius:12px;margin:12px 0}.person strong{font-size:1.05rem}.person p{margin:4px 0 9px;color:#596577}.success{color:#13704a}.error{color:#a12729}.status{font-weight:700;min-height:20px}.status.error{color:#b42318!important}.status.success{color:#087443!important}.pill{background:#f5ebca;border-radius:40px;padding:4px 12px;font-size:.8rem}.person-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}footer{margin:30px 0;text-align:center;font-size:.8rem;color:#5e6873}@media(max-width:720px){.shell{grid-template-columns:1fr}.grid,.person-fields{grid-template-columns:1fr}.panel{padding:18px}}</style><link rel="stylesheet" href="/pw-institute-learning-theme.css?v=20261019"></head><body class="pw-ui-standalone"><header><strong>✦ PROJECT WORTH · MANAGE USERS</strong><a href="/institute-portal.html">Return to Institute →</a></header><main><p class="muted" style="margin:0">Institute & Team Portal / Account Management</p><h1>People. Purpose. Permissions.</h1><p class="muted">Create team accounts, send invitations, and manage existing members securely.</p><div class="shell"><nav class="menu" aria-label="Manage users sections"><button class="active" data-tab="people">People & Accounts</button><button data-tab="departments">Departments</button><button data-tab="permissions">Permissions</button></nav><section class="panel"><div class="tab" id="people"><h2>People & Accounts</h2><p class="muted">These are live accounts from Project Worth Cognito and the member directory.</p><div class="actions"><button class="action" id="refresh">Refresh accounts</button><button class="action ghost" id="go-create">+ Create user</button></div><p class="status" id="people-status" role="status"></p><div id="people-list"></div></div><div class="tab" id="create" hidden><h2>Create User</h2><p class="muted">Invite an approved person to Project Worth.</p><div class="notice">Production-safe creation currently uses the existing Admin-authorized provisioning service. Department-scoped Team Lead delegation is not yet enabled on this page.</div><form id="create-form"><div class="grid"><label>First name<input id="first" required maxlength="70" autocomplete="off"></label><label>Last name<input id="last" required maxlength="70" autocomplete="off"></label><label>Email address<input id="email" type="email" required maxlength="250" autocomplete="off"></label><label>Public position / title<input id="position" required maxlength="100" placeholder="e.g. Survivor Advocacy Volunteer"></label><label>Department<select id="department" required><option value="">Select department</option></select></label><label>Access level to grant<select id="grant"><option value="team_member">Team Member</option><option value="team_lead">Team Lead</option><option value="student">Student</option><option value="leadership">Leadership Team</option></select></label></div><div class="actions"><button class="action" id="create-submit" type="submit">Create Account & Send Invitation</button></div><p class="status" id="create-status" role="status"></p></form></div><div class="tab" id="departments" hidden><h2>Departments & People</h2><p class="muted">Read-only backend verification. Shows only actual portal accounts and their stored primary department assignments. No suggestions or inferred memberships.</p><button type="button" class="action" id="refresh-departments">Refresh departments</button><p id="department-status" class="status"></p><div id="department-list"></div></div><div class="tab" id="permissions" hidden><h2>Permissions</h2><p class="muted">View your current access and manage saved group grants for Project Worth accounts.</p><p id="permission-status" class="status"></p><div id="permission-list"></div><div class="actions"><a href="/account-permissions-test.html">Open detailed authorization test →</a></div></div></section></div><footer>PROJECT WORTH · Protecting Kids. Changing Systems. Empowering Survivors.</footer></main><script src="/institute-tab-session.js"></script><script>(async()=>{'use strict';const API='https://t0pckriwia.execute-api.us-east-2.amazonaws.com';const $=id=>document.getElementById(id);let token=await window.PWSession.getToken();if(!token){try{sessionStorage.setItem('pwInstitutePendingDestination',location.pathname+location.search+location.hash)}catch(e){}location.replace(window.PWSession.loginUrl());return;}const allowed=new Set(['people','create','departments','permissions']);function tab(t){if(!allowed.has(t))t='people';document.querySelectorAll('.tab').forEach(n=>n.hidden=n.id!==t);document.querySelectorAll('[data-tab]').forEach(n=>n.classList.toggle('active',n.dataset.tab===t));history.replaceState(null,'','#'+t);if(t==='permissions')loadPerms();if(t==='departments')loadDepartments();}document.querySelectorAll('[data-tab]').forEach(n=>n.addEventListener('click',()=>n.dataset.tab==='create'?openNewUserRow():tab(n.dataset.tab)));$('go-create').onclick=()=>openNewUserRow();async function request(path,method='GET',body){token=await window.PWSession.getToken();if(!token){location.replace(window.PWSession.loginUrl());throw Error('Sign-in required')}const r=await fetch(API+path,{method,cache:'no-store',headers:{Authorization:'Bearer '+token,Accept:'application/json','Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});const d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.error||d.message||('HTTP '+r.status));return d}function el(tag,text){const x=document.createElement(tag);if(text!==undefined)x.textContent=String(text);return x}function stat(id,text,bad){$(id).textContent=text;$(id).className='status '+(bad?'error':'success')}const deps=['To Be Assigned','Administration','Project Worth Leadership','Training & Education','Community Outreach','Policy & Research','Survivor Advocacy and Support','Child Advocacy','Legal & Justice Advocacy','Marketing & Public Relations','Data & Systems','Personal Enrichment'];for(const d of deps){const o=el('option',d);o.value=d;$('department').appendChild(o)}function makeProfileField(label,value){
+ const wrap=el('label',label),input=el('input');input.value=value||'';wrap.appendChild(input);return {wrap,input};
+}
+function makeProfileSelect(label,value,options){
+ const wrap=el('label',label),input=el('select');
+ for(const [id,name] of options){const option=el('option',name);option.value=id;input.appendChild(option)}
+ input.value=value||options[0][0];wrap.appendChild(input);return {wrap,input};
+}
+let accountsCache=null,permissionsCache=null;
+async function getAccounts(force=false){
+ if(!force&&accountsCache)return accountsCache;
+ const d=await request('/api/admin/members');
+ accountsCache=Array.isArray(d.members)?d.members:[];
+ return accountsCache;
+}
+async function getMyPermissions(){
+ if(!permissionsCache)permissionsCache=await request('/api/authorization-test/me');
+ return permissionsCache;
+}
+
+function openNewUserRow(){
+ tab('people');
+ const list=$('people-list');
+ const existing=$('new-user-row');if(existing){existing.scrollIntoView({block:'center'});return}
+ const card=el('article');card.className='person';card.id='new-user-row';
+ card.appendChild(el('h3','New user · Unsaved'));
+ card.appendChild(el('p','Complete the fields and select Create Account & Send Invitation to save this new account.'));
+ const form=$('create-form');
+ form.reset();
+ $('first').value='';$('last').value='';$('email').value='';$('position').value='';$('department').value='';
+ card.appendChild(form);list.prepend(card);
+ card.scrollIntoView({block:'start',behavior:'smooth'});
+}
+
+async function loadUsers(force=false){
+ stat('people-status','Loading accounts…');
+ try{
+  const members=await getAccounts(force);
+  const list=$('people-list');list.replaceChildren();
+  let permissions={};
+  try{permissions=await getMyPermissions()}catch(_){}
+  const isAdmin=(permissions.groups||[]).includes('admin')||(permissions.globalPermissions||[]).includes('*');
+  const levels=[['student','Student'],['team_member','Team Member'],['team_lead','Team Lead'],['leadership','Leadership Team']];
+  if(isAdmin)levels.push(['admin','Admin']);
+  for(const m of members){
+   const c=el('article');c.className='person';
+   c.appendChild(el('strong',(m.name||'Member')+' · '+(m.email||'')));
+   c.appendChild(el('p',(m.access||'team_member')+' · '+(m.enabled?'Active':'Inactive')+' · '+(m.department||'Unassigned')));
+   if(m.access==='admin'){
+    c.appendChild(el('small','Protected Admin account — access changes require a dedicated privileged workflow.'));
+    list.appendChild(c);continue;
+   }
+   const fields=el('div');fields.className='person-fields';
+   const parts=String(m.name||'').trim().split(/\s+/);const first=makeProfileField('First name',parts.shift()||'');const last=makeProfileField('Last name',parts.join(' '));const role=makeProfileField('Public position / title',m.role);
+   const department=makeProfileSelect('Department',m.department||'To Be Assigned',deps.map(x=>[x,x]));
+   if(m.department&&!deps.includes(m.department)){const o=el('option',m.department);o.value=m.department;department.input.appendChild(o);department.input.value=m.department}
+   const access=makeProfileSelect('Access level to grant',m.access,levels);
+   
+   for(const field of [first,last,role,department,access])fields.appendChild(field.wrap);
+   c.appendChild(fields);
+   const controls=el('div');controls.className='actions';
+   const status=el('p');status.className='status';
+   const button=(label,fn)=>{
+    const b=el('button',label);b.type='button';b.className='action ghost';
+    b.onclick=async()=>{b.disabled=true;try{const message=await fn();status.textContent=message||'Saved successfully';status.className='status success'}catch(e){status.textContent=e.message;status.className='status error'}finally{b.disabled=false}};
+    controls.appendChild(b);
+   };
+   button('Save changes',async()=>{
+    const next=access.input.value;
+    if(next==='admin'||next==='team_lead')throw Error('This access level cannot yet be granted by the legacy update API. No changes were submitted.');
+    if(!first.input.value.trim()||!last.input.value.trim())throw Error('First and last name are required');if(!confirm('Save name, position, department, and '+access.input.selectedOptions[0].text+' access for '+m.name+'?'))return 'Save cancelled';
+    const newName=first.input.value.trim()+' '+last.input.value.trim();
+    if(newName!==String(m.name||'').trim()){
+     await request('/api/admin/members/'+encodeURIComponent(m.userId)+'/name','POST',{firstName:first.input.value.trim(),lastName:last.input.value.trim()});
+    }
+    await request('/api/admin/members/'+encodeURIComponent(m.userId)+'/update','POST',{
+     firstName:first.input.value.trim(),lastName:last.input.value.trim(),role:role.input.value.trim(),department:department.input.value,teamLead:next==='leadership'?'Kerri Gerhardy':m.teamLead,access:next,enabled:m.enabled
+    });
+    accountsCache=null;return 'Saved to the account service. Refresh to verify.';
+   });
+   button('Resend invitation',async()=>{await request('/api/admin/members/'+encodeURIComponent(m.userId)+'/resend','POST',{});return 'Invitation request completed'});
+   button(m.enabled?'Deactivate':'Reactivate',async()=>{
+    if(!confirm('Change sign-in status for '+m.name+'?'))return 'Cancelled';
+    await request('/api/admin/members/'+encodeURIComponent(m.userId)+'/'+(m.enabled?'deactivate':'reactivate'),'POST',{});
+    await loadUsers(true);return 'Account status changed';
+   });
+   c.append(controls,status);list.appendChild(c);
+  }
+  stat('people-status',members.length+' live accounts loaded (cached until refresh).');
+ }catch(e){stat('people-status',e.message,true)}
+}
+$('refresh').onclick=()=>loadUsers(true);$('create-form').onsubmit=async e=>{e.preventDefault();const b=$('create-submit');if(!confirm('Create and invite '+$('first').value.trim()+' '+$('last').value.trim()+' at '+$('email').value.trim()+'?'))return;b.disabled=true;stat('create-status','Creating account…');try{const d=await request('/api/admin/members','POST',{firstName:$('first').value.trim(),lastName:$('last').value.trim(),email:$('email').value.trim(),role:$('position').value.trim(),department:$('department').value,teamLead:$('grant').value==='leadership'?'Kerri Gerhardy':'',access:$('grant').value==='team_lead'?'team_member':$('grant').value});stat('create-status',d.emailStatus==='failed'?'Account created. Invitation delivery was not confirmed; use Resend Invitation in People & Accounts.':d.message||'Account created successfully.',d.emailStatus==='failed');$('create-form').reset();$('create').appendChild($('create-form'));await loadUsers(true)}catch(err){stat('create-status',err.message,true)}finally{b.disabled=false}};
+async function loadDepartments(force=false){
+ const area=$('department-list');area.replaceChildren();
+ $('department-status').textContent='Loading verified account assignments…';
+ try{
+  const accounts=await getAccounts(force);
+  const groups=new Map();
+  const unassigned=[];
+  for(const m of accounts){
+   const dept=String(m.department||'').trim();
+   if(!dept){unassigned.push(m);continue}
+   if(!groups.has(dept))groups.set(dept,[]);
+   groups.get(dept).push(m);
+  }
+  function renderGroup(name,people){
+   const card=el('section');card.className='person';
+   card.appendChild(el('h3',name+' · '+people.length+' account'+(people.length===1?'':'s')));
+   for(const p of people.sort((a,b)=>String(a.name||'').localeCompare(String(b.name||'')))){
+    const row=el('div');row.style.cssText='border-top:1px solid #e5e7e8;padding:10px 0';
+    row.appendChild(el('strong',p.name||'Unnamed account'));
+    row.appendChild(el('div',[p.role,p.email].filter(Boolean).join(' · ')));
+    const details=el('small','Stored department: '+(p.department||'(none)')+' · Access: '+(p.access||'not returned')+' · '+(p.enabled?'Enabled':'Disabled')+' · Source: ProjectWorthMembers / Cognito');
+    details.className='muted';row.appendChild(details);card.appendChild(row);
+   }
+   area.appendChild(card);
+  }
+  for(const [name,people] of [...groups.entries()].sort((a,b)=>a[0].localeCompare(b[0])))renderGroup(name,people);
+  if(unassigned.length)renderGroup('No department assigned',unassigned);
+  if(!accounts.length)area.appendChild(el('p','The account API returned no member records.'));
+  $('department-status').textContent=accounts.length+' actual accounts · '+groups.size+' departments with assigned accounts. Only saved primary department assignments are shown; no inferred placements.';
+ }catch(e){$('department-status').textContent='Unable to verify stored assignments: '+e.message;}
+}
+$('refresh-departments').onclick=()=>loadDepartments(true);
+async function loadPerms(){
+ const box=$('permission-list');box.replaceChildren();
+ stat('permission-status','Loading permissions…');
+ try{
+  const d=await getMyPermissions();
+  const groups=(d.groups||[]).map(x=>({'admin':'Admin','leadership_team':'Leadership Team','team_lead':'Team Lead','team_member':'Team Member','student':'Student'}[x]||x));
+  box.appendChild(el('h3','Your access'));
+  box.appendChild(el('p',groups.length?groups.join(' · '):'No global groups assigned'));
+  box.appendChild(el('p',(d.globalPermissions||[]).includes('*')?'Organization-wide administration enabled':'Permissions are limited to assigned groups and scopes'));
+  const subTitle=el('h3','Manage group assignments');box.appendChild(subTitle);
+  box.appendChild(el('p','Select an existing portal account to review and change its stored permission grants.'));
+  const accounts=await getAccounts();
+  const pick=el('select');
+  const blank=el('option','Select user');blank.value='';pick.appendChild(blank);
+  for(const m of accounts){const opt=el('option',m.name+' · '+m.email);opt.value=m.userId;pick.appendChild(opt)}
+  box.appendChild(pick);
+  const current=el('div');box.appendChild(current);
+  async function show(){
+   current.replaceChildren();if(!pick.value)return;
+   try{
+    const data=await request('/api/admin/members/'+encodeURIComponent(pick.value)+'/grants');
+    current.appendChild(el('h3','Saved group grants'));
+    if(!data.grants.length)current.appendChild(el('p','No group grants saved in ProjectWorthAuthorization.'));
+    for(const g of data.grants){
+      const line=el('p',g.group.replaceAll('_',' ')+' · '+(g.department||'Global')+' · '+g.status);
+      current.appendChild(line);
+    }
+    const chosen=accounts.find(a=>a.userId===pick.value);
+    if(chosen?.access==='admin'){current.appendChild(el('p','Protected Admin account. Grant changes are unavailable.'));return}
+    const groupField=makeProfileSelect('Group to manage','team_lead',[['team_lead','Team Lead'],['leadership_team','Leadership Team'],['team_member','Team Member'],['student','Student']]);
+    const depField=makeProfileSelect('Department scope','',deps.map(d=>[d,d]));
+    current.appendChild(groupField.wrap);current.appendChild(depField.wrap);
+    const info=el('p','Team Lead grants apply only to the selected department. Global group changes update the authorization directory; older Cognito-based access may still require synchronization.');
+    info.className='muted';current.appendChild(info);
+    const status=el('p');current.appendChild(status);
+    for(const action of ['grant','revoke']){
+     const button=el('button',action==='grant'?'Grant group':'Revoke group');
+     button.className='action ghost';button.onclick=async()=>{
+      if(!confirm((action==='grant'?'Grant ':'Revoke ')+groupField.input.selectedOptions[0].text+' for '+chosen.name+'?'))return;
+      button.disabled=true;
+      try{
+       await request('/api/admin/members/'+encodeURIComponent(pick.value)+'/grants','POST',{group:groupField.input.value,department:groupField.input.value==='team_lead'?depField.input.value:'',action});
+       await show();
+      }catch(e){status.textContent=e.message;status.className='status error'}finally{button.disabled=false}
+     };
+     current.appendChild(button);
+    }
+   }catch(e){current.appendChild(el('p','Could not load group assignments: '+e.message))}
+  }
+  pick.onchange=show;
+  stat('permission-status','Permissions loaded from ProjectWorthAuthorization.');
+ }catch(e){stat('permission-status',e.message,true)}
+}
+let lookupSequence=0;
+async function fillDirectory(){
+  const first=$('first').value.trim(),last=$('last').value.trim();
+  if(!first||!last)return;
+  const turn=++lookupSequence;
+  const q=new URLSearchParams({firstName:first,lastName:last});
+  try{
+    const [position,contact]=await Promise.all([
+      request('/api/manage-users/lookup/positions?'+q),
+      request('/api/manage-users/lookup/contacts?'+q)
+    ]);
+    if(turn!==lookupSequence)return;
+    if(position.matchStatus==='single'){
+      const match=position.matches[0];
+      $('position').value=match.title||'';
+    }
+    if(contact.matchStatus==='single'){
+      const match=contact.matches[0];
+      $('email').value=match.email||'';
+    }
+    stat('create-status',position.matchStatus==='single'||contact.matchStatus==='single'?'Known Project Worth team member found. Review suggested fields before creating the account.':'No exact directory match. Complete the fields manually.',position.matchStatus!=='single'&&contact.matchStatus!=='single');
+  }catch(e){stat('create-status','Directory lookup unavailable: '+e.message,true)}
+}
+$('first').addEventListener('blur',fillDirectory);
+$('last').addEventListener('blur',fillDirectory);
+$('email').addEventListener('blur',async()=>{
+ const email=$('email').value.trim();if(!email)return;
+ try{
+  const d=await request('/api/manage-users/lookup/contacts?'+new URLSearchParams({email}));
+  if(d.matchStatus==='single'){
+   const person=d.matches[0];
+   if(!$('first').value.trim())$('first').value=person.firstName||'';
+   if(!$('last').value.trim())$('last').value=person.lastName||'';
+   if($('first').value.trim()&&$('last').value.trim())await fillDirectory();
+  }
+ }catch(e){stat('create-status','Email lookup unavailable: '+e.message,true)}
+});
+async function loadGrantOptions(){
+ try{
+  const permissions=await request('/api/authorization-test/me');
+  const isAdmin=(permissions.groups||[]).includes('admin')||(permissions.globalPermissions||[]).includes('*');
+  const isLeadership=isAdmin||(permissions.groups||[]).includes('leadership_team');
+  const choices=[['student','Student'],['team_member','Team Member'],['team_lead','Team Lead']];
+  if(isLeadership)choices.push(['leadership','Leadership Team']);
+  if(isAdmin)choices.push(['admin','Admin']);
+  const select=$('grant');select.replaceChildren();
+  for(const [value,label] of choices){const option=document.createElement('option');option.value=value;option.textContent=label;select.appendChild(option)}
+ }catch(e){stat('create-status','Could not verify grant permissions: '+e.message,true);$('create-submit').disabled=true}
+}
+const initialTab=location.hash.slice(1)||'people';tab(initialTab==='create'?'people':initialTab);await loadGrantOptions();await loadUsers();if(initialTab==='create')openNewUserRow();})();</script><script src="/pw-support-link.js"></script></body></html>

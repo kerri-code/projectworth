@@ -1,0 +1,167 @@
+/* styles.css */
+:root {
+  --navy:#0f3158;
+  --gold:#c89b2f;
+  --white:#ffffff;
+}
+
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#fbf7f0;
+  color:#10233f;
+}
+
+.container {
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+header {
+  background:linear-gradient(180deg,#07172a,#091829);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+}
+
+.logo {
+  width:56px;
+  height:56px;
+  border-radius:50%;
+}
+
+.brand-text small {
+  display:block;
+  font-size:0.7rem;
+  opacity:0.7;
+}
+
+.nav-links a {
+  color:white;
+  margin-left:20px;
+  font-weight:600;
+  opacity:0.85;
+}
+
+.nav-links a:hover {
+  opacity:1;
+}
+
+.hero {
+  padding:120px 0 100px;
+  background:
+    linear-gradient(rgba(7,23,42,0.45), rgba(7,23,42,0.6)),
+    url('header-stars.png') center/cover no-repeat;
+  color:white;
+}
+
+.hero h1 {
+  font-size:4rem;
+  margin:0 0 12px;
+}
+
+.hero-subtitle {
+  font-size:1.3rem;
+}
+
+.highlight {
+  color:var(--gold);
+  font-weight:bold;
+}
+
+.button {
+  padding:12px 20px;
+  border-radius:999px;
+  font-weight:700;
+}
+
+.button-primary {
+  background:var(--gold);
+  color:#091829;
+}
+
+.button-secondary {
+  border:2px solid white;
+  color:white;
+}
+
+.story {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:80px 0;
+}
+
+.story-right {
+  background:var(--navy);
+  color:white;
+  padding:40px;
+  border-radius:20px;
+}
+
+blockquote {
+  font-size:1.6rem;
+  line-height:1.5;
+  font-style:italic;
+}
+
+.impact-line {
+  font-weight:700;
+  font-size:1.1rem;
+}
+
+.support-section {
+  padding:80px 0;
+  background:linear-gradient(180deg,#07172a,#081b33,#091829);
+}
+
+.support-card {
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  color:white;
+}
+
+.involved-section {
+  padding:80px 0;
+}
+
+.involved-card {
+  background:linear-gradient(180deg,#07172a,#081b33,#091829);
+  color:white;
+  padding:40px;
+  border-radius:20px;
+}
+
+footer {
+  background:#081524;
+  color:white;
+  text-align:center;
+  padding:40px 0;
+}
+
+.footer-logo {
+  width:70px;
+  margin:0 auto 10px;
+}
+
+@media (max-width:900px) {
+  .story {
+    grid-template-columns:1fr;
+  }
+}

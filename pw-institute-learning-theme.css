@@ -1,0 +1,24 @@
+/* Project Worth Institute: My Learning-inspired shared presentation, 2026-10-19.
+   Visual only; do not alter app visibility, permissions, tabs, or form behavior. */
+:root{--pw-ui-navy:#0b223a;--pw-ui-gold:#cfa94b;--pw-ui-line:#e5d6b5;--pw-ui-cream:#f8f4ea;--pw-ui-muted:#607184}
+html{scroll-behavior:smooth}
+body{background:#f8f4ea;color:#0b223a}
+.pw-shell,.pw-department-page{color:#0b223a}
+.pw-shell .pw-hero-card,.pw-department-page .pw-hero-card{border-radius:21px;overflow:hidden}
+.pw-shell .pw-hero h1,.pw-department-page .pw-hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.025em}
+.pw-shell .pw-main h2,.pw-department-page .pw-main h2{font-family:Georgia,'Times New Roman',serif;color:#0b223a}
+.pw-shell .pw-tabs-wrap,.pw-department-page .pw-tabs-wrap{background:#fffdf7;border:1px solid #ecdbb7;border-radius:26px;padding:6px 9px;box-shadow:0 7px 22px rgba(17,34,48,.05)}
+.pw-shell .pw-tabs-wrap .pw-tab,.pw-department-page .pw-tabs-wrap .pw-tab{border-radius:18px;min-height:46px;font-weight:750;transition:background-color .18s ease,color .18s ease}
+.pw-shell .pw-tabs-wrap .pw-tab.active,.pw-shell .pw-tabs-wrap .pw-tab[aria-current="page"],.pw-department-page .pw-tabs-wrap .pw-tab.active,.pw-department-page .pw-tabs-wrap .pw-tab[aria-current="page"]{background:#071b2d;color:#e9c76d;box-shadow:0 9px 20px rgba(6,24,40,.13)}
+.pw-shell .pw-section,.pw-department-page .pw-section,.pw-shell .pw-card,.pw-department-page .pw-card,.pw-shell .pw-glance-card,.pw-department-page .pw-essential-card{border:1px solid #e5d6b5;border-radius:20px;box-shadow:0 10px 27px rgba(7,27,45,.045)}
+.pw-shell input:not([type=checkbox]):not([type=radio]),.pw-shell select,.pw-shell textarea,.pw-department-page input:not([type=checkbox]):not([type=radio]),.pw-department-page select,.pw-department-page textarea{border-radius:10px}
+.pw-shell :is(button,a,input,select,textarea):focus-visible,.pw-department-page :is(button,a,input,select,textarea):focus-visible{outline:3px solid #cfa94b;outline-offset:3px}
+.pw-shell .pw-button,.pw-department-page .pw-button{border-radius:999px}
+body.pw-ui-standalone{background:#f8f4ea;color:#0b223a}
+body.pw-ui-standalone :is(h1,h2,h3){color:#0b223a}
+body.pw-ui-standalone :is(h1,h2){font-family:Georgia,'Times New Roman',serif}
+body.pw-ui-standalone :is(.card,.panel,.person,.intro,.hero,.pw-section){border-radius:20px;border-color:#e5d6b5;box-shadow:0 9px 26px rgba(7,27,45,.045)}
+body.pw-ui-standalone :is(button,input,select,textarea){font-family:inherit}
+body.pw-ui-standalone :is(input,select,textarea){border-radius:10px}
+body.pw-ui-standalone :is(button,a,input,select,textarea):focus-visible{outline:3px solid #cfa94b;outline-offset:3px}
+@media(max-width:740px){.pw-shell .pw-tabs-wrap,.pw-department-page .pw-tabs-wrap{border-radius:16px;padding:5px}.pw-shell .pw-tabs-wrap .pw-tab,.pw-department-page .pw-tabs-wrap .pw-tab{border-radius:12px;font-size:.82rem;min-height:44px}}

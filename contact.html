@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <title>Contact Project Worth | Project Worth Wisconsin</title>
+
+  <meta
+    name="description"
+    content="Contact Project Worth about partnerships, volunteering, advocacy, community outreach, media, or other questions."
+  />
+
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Project Worth"/>
+
+  <meta property="og:title" content="Contact Project Worth"/>
+
+  <meta
+    property="og:description"
+    content="Questions, partnerships, volunteering, advocacy, or community outreach? Connect with Project Worth."
+  />
+
+  <meta property="og:type" content="website"/>
+
+  <meta
+    property="og:url"
+    content="https://projectworthwi.org/contact.html"
+  />
+
+  <meta property="og:site_name" content="Project Worth"/>
+
+  <link
+    href="style.css?v=contact-20261004"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    :root {
+      --pw-navy:#0f3158;
+      --pw-navy-deep:#07172a;
+      --pw-gold:#d4af37;
+      --pw-gold-dark:#b88b25;
+      --pw-cream:#fffaf4;
+      --pw-cream-deep:#f7ecd0;
+      --pw-white:#ffffff;
+      --pw-text:#17324f;
+      --pw-shadow:0 18px 46px rgba(15,49,88,.13);
+    }
+
+
+    .page-contact main {
+      min-height:70vh;
+    }
+
+
+    .contact-page {
+      position:relative;
+      overflow:hidden;
+
+      padding:
+        clamp(3rem,7vw,5.5rem)
+        1.25rem;
+
+      background:
+        radial-gradient(
+          circle at 12% 10%,
+          rgba(255,255,255,.45),
+          transparent 25%
+        ),
+
+        radial-gradient(
+          circle at 88% 18%,
+          rgba(212,175,55,.17),
+          transparent 28%
+        ),
+
+        linear-gradient(
+          180deg,
+          #f4e3b2 0%,
+          #f7ecd0 42%,
+          #fffaf4 100%
+        );
+    }
+
+
+    .contact-page::before {
+      content:"★";
+
+      position:absolute;
+
+      left:-1.5rem;
+      top:7rem;
+
+      color:rgba(15,49,88,.045);
+
+      font-size:
+        clamp(11rem,28vw,27rem);
+
+      line-height:1;
+
+      pointer-events:none;
+
+      transform:rotate(-8deg);
+    }
+
+
+    .contact-page::after {
+      content:"★";
+
+      position:absolute;
+
+      right:5%;
+      bottom:3%;
+
+      color:rgba(212,175,55,.09);
+
+      font-size:
+        clamp(5rem,13vw,10rem);
+
+      line-height:1;
+
+      pointer-events:none;
+    }
+
+
+    .contact-wrap {
+      width:min(860px,100%);
+
+      margin:0 auto;
+
+      position:relative;
+
+      z-index:2;
+    }
+
+
+    .contact-heading {
+      text-align:center;
+
+      margin-bottom:1.35rem;
+    }
+
+
+    .contact-kicker {
+      color:var(--pw-gold-dark);
+
+      text-transform:uppercase;
+
+      letter-spacing:.18em;
+
+      font-weight:900;
+
+      font-size:.78rem;
+
+      margin-bottom:.55rem;
+    }
+
+
+    .contact-heading h1 {
+      margin:0;
+
+      color:var(--pw-navy);
+
+      font-size:
+        clamp(2rem,5vw,3.45rem);
+
+      line-height:1.05;
+
+      font-weight:950;
+
+      letter-spacing:-.035em;
+    }
+
+
+    .contact-heading p {
+      max-width:650px;
+
+      margin:.9rem auto 0;
+
+      color:var(--pw-navy);
+
+      font-size:
+        clamp(.98rem,2vw,1.1rem);
+
+      line-height:1.65;
+
+      font-weight:650;
+    }
+
+
+    .contact-card {
+      position:relative;
+
+      overflow:hidden;
+
+      background:
+
+        radial-gradient(
+          circle at top right,
+          rgba(212,175,55,.10),
+          transparent 25%
+        ),
+
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #fffaf4 100%
+        );
+
+      border:
+        1px solid
+        rgba(184,139,37,.28);
+
+      border-top:
+        5px solid
+        var(--pw-gold);
+
+      border-radius:28px;
+
+      box-shadow:
+        var(--pw-shadow);
+
+      padding:
+        clamp(1.35rem,4vw,2.35rem);
+    }
+
+
+    .contact-card::after {
+      content:"★";
+
+      position:absolute;
+
+      right:-1rem;
+      top:-1.7rem;
+
+      color:rgba(212,175,55,.10);
+
+      font-size:7rem;
+
+      line-height:1;
+
+      pointer-events:none;
+    }
+
+
+    .contact-form {
+      position:relative;
+
+      z-index:2;
+    }
+
+
+    .field-grid {
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+      gap:1rem;
+    }
+
+
+    .field {
+      display:flex;
+
+      flex-direction:column;
+
+      gap:.42rem;
+
+      margin-bottom:1rem;
+    }
+
+
+    .field.full {
+      grid-column:1 / -1;
+    }
+
+
+    .field label {
+      color:var(--pw-navy);
+
+      font-size:.9rem;
+
+      font-weight:900;
+    }
+
+
+    .field label .optional {
+      color:#6d7884;
+
+      font-weight:700;
+
+      font-size:.8rem;
+    }
+
+
+    .field input,
+    .field textarea {
+      width:100%;
+
+      box-sizing:border-box;
+
+      border:
+        1px solid
+        rgba(15,49,88,.18);
+
+      border-radius:14px;
+
+      background:#fff;
+
+      color:var(--pw-text);
+
+      font:inherit;
+
+      padding:.88rem 1rem;
+
+      outline:none;
+
+      transition:
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease;
+    }
+
+
+    .field textarea {
+      min-height:170px;
+
+      resize:vertical;
+
+      line-height:1.55;
+    }
+
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color:var(--pw-gold);
+
+      box-shadow:
+        0 0 0 4px
+        rgba(212,175,55,.14);
+    }
+
+
+    .contact-actions {
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      margin-top:.35rem;
+    }
+
+
+    .contact-submit {
+      appearance:none;
+
+      border:0;
+
+      border-radius:999px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #163f6e 0%,
+          #0f3158 100%
+        );
+
+      color:#fff;
+
+      font-weight:900;
+
+      font-size:.98rem;
+
+      padding:.88rem 1.6rem;
+
+      min-width:190px;
+
+      cursor:pointer;
+
+      box-shadow:
+        0 10px 24px
+        rgba(15,49,88,.20);
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        opacity .18s ease;
+    }
+
+
+    .contact-submit:hover,
+    .contact-submit:focus-visible {
+      transform:translateY(-2px);
+
+      box-shadow:
+        0 14px 28px
+        rgba(15,49,88,.24);
+    }
+
+
+    .contact-submit:disabled {
+      cursor:wait;
+
+      opacity:.7;
+
+      transform:none;
+    }
+
+
+    .form-status {
+      min-height:1.25rem;
+
+      margin:.8rem 0 0;
+
+      text-align:center;
+
+      color:var(--pw-navy);
+
+      font-size:.88rem;
+
+      font-weight:750;
+    }
+
+
+    .form-status.error {
+      color:#8a2f2f;
+    }
+
+
+    .contact-note {
+      max-width:760px;
+
+      margin:1.15rem auto 0;
+
+      padding:1rem 1.15rem;
+
+      border-radius:18px;
+
+      background:
+        rgba(255,255,255,.72);
+
+      border:
+        1px solid
+        rgba(15,49,88,.10);
+
+      color:var(--pw-navy);
+
+      text-align:center;
+
+      font-size:.84rem;
+
+      line-height:1.55;
+
+      font-weight:650;
+
+      position:relative;
+
+      z-index:2;
+    }
+
+
+    .contact-note a {
+      color:var(--pw-gold-dark);
+
+      font-weight:900;
+
+      text-underline-offset:.15em;
+    }
+
+
+    .contact-success {
+      display:none;
+
+      position:relative;
+
+      z-index:2;
+
+      text-align:center;
+
+      padding:
+        clamp(1.25rem,4vw,2.2rem)
+        .5rem;
+    }
+
+
+    .contact-success.show {
+      display:block;
+    }
+
+
+    .success-icon {
+      width:4rem;
+
+      height:4rem;
+
+      margin:
+        0 auto .9rem;
+
+      border-radius:50%;
+
+      display:grid;
+
+      place-items:center;
+
+      background:
+        var(--pw-navy);
+
+      color:
+        var(--pw-gold);
+
+      font-size:1.8rem;
+
+      box-shadow:
+        0 12px 26px
+        rgba(15,49,88,.18);
+    }
+
+
+    .contact-success h2 {
+      margin:0;
+
+      color:var(--pw-navy);
+
+      font-size:
+        clamp(1.55rem,4vw,2.25rem);
+
+      font-weight:950;
+
+      letter-spacing:-.02em;
+    }
+
+
+    .contact-success p {
+      max-width:590px;
+
+      margin:.8rem auto 0;
+
+      color:var(--pw-navy);
+
+      font-size:1rem;
+
+      line-height:1.6;
+
+      font-weight:700;
+    }
+
+
+    .contact-success a {
+      display:inline-block;
+
+      margin-top:1.15rem;
+
+      color:var(--pw-gold-dark);
+
+      font-weight:900;
+
+      text-underline-offset:.17em;
+    }
+
+
+    .hp-field {
+      position:absolute !important;
+
+      left:-9999px !important;
+
+      width:1px !important;
+
+      height:1px !important;
+
+      overflow:hidden !important;
+
+      opacity:0 !important;
+
+      pointer-events:none !important;
+    }
+
+
+    @media (max-width:720px) {
+
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+
+      .field.full {
+        grid-column:auto;
+      }
+
+
+      .contact-card {
+        border-radius:22px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body class="split-page page-contact">
+
+
+<header>
+
+  <div
+    aria-hidden="true"
+    class="header-scene"
+  >
+
+    <span class="trail-star med s1">★</span>
+
+    <span class="trail-star small s2">★</span>
+
+    <span class="trail-star med s3">★</span>
+
+    <span class="trail-star tiny s4">★</span>
+
+    <span class="trail-star med s5">★</span>
+
+    <span class="trail-star tiny s6">★</span>
+
+    <span class="trail-star small s7">★</span>
+
+    <span class="trail-star tiny s8">★</span>
+
+    <span class="trail-star small s9">★</span>
+
+    <span class="trail-star tiny s10">★</span>
+
+    <span class="trail-star small s11">★</span>
+
+  </div>
+
+
+  <div class="container nav">
+
+
+    <a
+      class="brand"
+      href="index.html"
+    >
+
+      <img
+        alt="Project Worth Logo"
+        class="brand-logo"
+        src="PROJECT-WORTH-LOGO.png"
+      />
+
+
+      <div class="brand-text">
+
+        <strong>
+          PROJECT WORTH
+        </strong>
+
+        <small>
+          Change Starts Here.
+        </small>
+
+      </div>
+
+
+    </a>
+
+
+    <nav class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About Project Worth
+      </a>
+
+      <a href="awareness.html">
+        What is Grooming?
+      </a>
+
+      <a href="advocacy.html">
+        Advocacy
+      </a>
+
+      <a href="team.html">
+        Our Team
+      </a>
+
+      <a href="the-spark.html">
+        The Spark
+      </a>
+
+      <a href="media.html">
+        Media &amp; Impact
+      </a>
+
+      
+
+      <a href="donate.html">
+        Donate
+      </a>
+
+      <a href="light-the-way.html">
+        Light the Way
+      </a>
+
+    </nav>
+
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="contact-page">
+
+
+  <div class="contact-wrap">
+
+
+    <div class="contact-heading">
+
+      <div class="contact-kicker">
+        We’d Love to Hear From You
+      </div>
+
+
+      <h1>
+        Contact Project Worth
+      </h1>
+
+
+      <p>
+        Have a question, want to connect, or interested in
+        working alongside Project Worth? Send us a message
+        and we’ll help point you in the right direction.
+      </p>
+
+    </div>
+
+
+
+    <div class="contact-card">
+
+
+      <form
+        class="contact-form"
+        id="project-worth-contact-form"
+      >
+
+
+        <div class="field-grid">
+
+
+          <div class="field">
+
+            <label for="contact-name">
+              Name
+            </label>
+
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              maxlength="100"
+              required
+            />
+
+          </div>
+
+
+
+          <div class="field">
+
+            <label for="contact-email">
+              Email
+            </label>
+
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="160"
+              required
+            />
+
+          </div>
+
+
+
+          <div class="field full">
+
+            <label for="contact-community">
+
+              Organization or Hometown
+
+              <span class="optional">
+                (optional)
+              </span>
+
+            </label>
+
+
+            <input
+              id="contact-community"
+              name="organization_or_hometown"
+              type="text"
+              maxlength="160"
+              placeholder="Organization, city, or county"
+            />
+
+          </div>
+
+
+
+          <div class="field full">
+
+            <label for="contact-message">
+              Message
+            </label>
+
+
+            <textarea
+              id="contact-message"
+              name="message"
+              maxlength="5000"
+              required
+            ></textarea>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!--
+          Spam protection.
+          Real visitors will never see this.
+        -->
+
+        <div
+          class="hp-field"
+          aria-hidden="true"
+        >
+
+          <label for="contact-website">
+            Website
+          </label>
+
+          <input
+            id="contact-website"
+            name="website"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+
+        <input
+          type="hidden"
+          name="source"
+          value="contact.html"
+        />
+
+
+
+        <div class="contact-actions">
+
+          <button
+            class="contact-submit"
+            id="contact-submit"
+            type="submit"
+          >
+
+            Send Message
+
+          </button>
+
+        </div>
+
+
+
+        <p
+          aria-live="polite"
+          class="form-status"
+          id="contact-form-status"
+          role="status"
+        ></p>
+
+
+      </form>
+
+
+
+      <div
+        aria-live="polite"
+        class="contact-success"
+        id="contact-success"
+        tabindex="-1"
+      >
+
+
+        <div
+          class="success-icon"
+          aria-hidden="true"
+        >
+          ★
+        </div>
+
+
+        <h2>
+          Thank you for contacting Project Worth.
+        </h2>
+
+
+        <p>
+          A member of our team will be in contact shortly.
+        </p>
+
+
+        <a href="index.html">
+          Return to Project Worth →
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="contact-note">
+
+      You can also email us directly at
+
+      <a href="mailto:info@projectworthwi.org">
+        info@projectworthwi.org
+      </a>.
+
+      Please do not use this form to report an emergency
+      or suspected child abuse.
+
+      If a child is in immediate danger, call 911 or the
+      appropriate reporting agency.
+
+      Project Worth does not provide legal, clinical,
+      or emergency services.
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<div
+  class="footer-include-placeholder"
+  data-include="footer"
+></div>
+
+
+
+<script
+  src="script.js?v=contact-20261004"
+></script>
+
+
+
+<script>
+
+  /*
+    PROJECT WORTH CONTACT FORM
+
+    This sends the form as JSON to:
+
+    /api/contact
+
+    When your AWS API Gateway / Lambda endpoint
+    is ready, change CONTACT_ENDPOINT below
+    if needed.
+  */
+
+
+  const CONTACT_ENDPOINT = "/api/contact";
+
+
+
+  (function () {
+
+
+    const form =
+      document.getElementById(
+        "project-worth-contact-form"
+      );
+
+
+    const submitButton =
+      document.getElementById(
+        "contact-submit"
+      );
+
+
+    const status =
+      document.getElementById(
+        "contact-form-status"
+      );
+
+
+    const success =
+      document.getElementById(
+        "contact-success"
+      );
+
+
+    if (!form) return;
+
+
+
+    form.addEventListener(
+      "submit",
+      async function (event) {
+
+
+        event.preventDefault();
+
+
+        status.textContent = "";
+
+        status.classList.remove("error");
+
+
+        const formData =
+          new FormData(form);
+
+
+
+        /*
+          Honeypot spam check.
+        */
+
+        if (
+          (formData.get("website") || "")
+            .trim()
+        ) {
+
+          form.style.display = "none";
+
+          success.classList.add("show");
+
+          success.focus();
+
+          return;
+
+        }
+
+
+
+        const payload = {
+
+          name:
+            (
+              formData.get("name") || ""
+            ).trim(),
+
+
+          email:
+            (
+              formData.get("email") || ""
+            ).trim(),
+
+
+          organization_or_hometown:
+            (
+              formData.get(
+                "organization_or_hometown"
+              ) || ""
+            ).trim(),
+
+
+          message:
+            (
+              formData.get("message") || ""
+            ).trim(),
+
+
+          source:
+            "contact.html"
+
+        };
+
+
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+          "Sending…";
+
+
+        status.textContent =
+          "Sending your message…";
+
+
+
+        try {
+
+
+          const response =
+            await fetch(
+              CONTACT_ENDPOINT,
+              {
+
+                method:"POST",
+
+                headers:{
+                  "Content-Type":
+                    "application/json",
+
+                  "Accept":
+                    "application/json"
+                },
+
+                body:
+                  JSON.stringify(payload)
+
+              }
+            );
+
+
+
+          if (!response.ok) {
+
+            throw new Error(
+              "Contact request failed."
+            );
+
+          }
+
+
+
+          form.reset();
+
+
+          form.style.display =
+            "none";
+
+
+          success.classList.add(
+            "show"
+          );
+
+
+          success.focus();
+
+
+
+        } catch (error) {
+
+
+          console.error(error);
+
+
+          status.textContent =
+            "We couldn’t send your message right now. Please email info@projectworthwi.org.";
+
+
+          status.classList.add(
+            "error"
+          );
+
+
+        } finally {
+
+
+          submitButton.disabled =
+            false;
+
+
+          submitButton.textContent =
+            "Send Message";
+
+
+        }
+
+
+      }
+    );
+
+
+  })();
+
+</script>
+
+
+</body>
+</html>

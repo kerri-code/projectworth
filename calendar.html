@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Team Calendar | Project Worth</title>
+  <meta name="theme-color" content="#08233c">
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #08233c;
+      --navy-dark: #061a2e;
+      --gold: #d9b95e;
+      --gold-deep: #99731b;
+      --cream: #faf6ea;
+      --white: #ffffff;
+      --ink: #102438;
+      --muted: #556476;
+      --line: #e7dcc1;
+      --shadow: 0 14px 36px rgba(9, 32, 51, .09);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: linear-gradient(180deg, #f7f2e6, #fffdf7); color: var(--ink); }
+    a { color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    :focus-visible { outline: 3px solid #a97b15; outline-offset: 3px; }
+    .topbar { background: linear-gradient(120deg, var(--navy-dark), #12324f); border-bottom: 4px solid var(--gold); color: var(--white); }
+    .topbar-inner { max-width: 1230px; margin: auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 1.05rem; font-weight: 850; }
+    .brand img { width: 44px; height: 44px; object-fit: contain; }
+    .brand small { display: block; color: #d9e1e8; font-size: .77rem; font-weight: 500; margin-top: 2px; }
+    .top-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+    .member { display: inline-flex; gap: 9px; align-items: center; margin-right: 7px; font-weight: 700; }
+    .member::before { content: ""; width: 12px; height: 12px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 0 6px #ffffff14; }
+    .nav-link, .logout { display: inline-block; padding: 10px 16px; text-decoration: none; color: white; background: transparent; border: 1px solid #a48b57; border-radius: 999px; font-weight: 750; }
+    .nav-link.profile { color: #efd488; }
+    .nav-link:hover, .logout:hover { background: #ffffff16; }
+    .shell { max-width: 1230px; margin: auto; padding: clamp(20px, 4vw, 42px) 24px 55px; }
+    .back { color: #826118; font-size: .91rem; font-weight: 750; text-decoration: none; }
+    .page-head { margin: 20px 0 25px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .13em; font-size: .76rem; font-weight: 850; color: var(--gold-deep); }
+    h1 { margin: 7px 0 9px; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.04em; color: var(--navy); }
+    .intro { max-width: 690px; margin: 0; line-height: 1.6; color: var(--muted); }
+    .overview { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(270px, .9fr); gap: 18px; align-items: stretch; }
+    .panel { background: white; border: 1px solid var(--line); border-radius: 24px; padding: clamp(18px, 2.5vw, 27px); box-shadow: var(--shadow); min-width: 0; }
+    .panel h2 { color: var(--navy); font-size: 1.3rem; margin: 0 0 9px; }
+    .panel-sub { font-size: .9rem; color: var(--muted); margin: 0 0 18px; line-height: 1.55; }
+    .calendar-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .calendar-head h2 { margin: 0; font-size: 1.45rem; }
+    .cal-controls { display: inline-flex; gap: 6px; align-items: center; }
+    .cal-controls button { border: 1px solid var(--line); color: var(--navy); border-radius: 11px; background: #fcf8ed; padding: 8px 11px; font-weight: 750; }
+    .cal-controls button:hover { background: #f6ecd2; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+    .day-label { text-align: center; color: var(--muted); font-weight: 850; font-size: .77rem; padding: 0 0 8px; }
+    .day, .day-blank { min-height: 77px; border: 1px solid #ece6d9; border-radius: 12px; padding: 9px 7px; background: #fffdfa; text-align: left; }
+    .day-blank { background: #f9f7f1; border-color: transparent; }
+    .day-number { display: block; font-weight: 750; font-size: .9rem; }
+    .meeting-day { background: #fff5d8; color: var(--navy); border: 2px solid var(--gold); width: 100%; transition: background .15s, transform .15s; }
+    .meeting-day:hover { background: #ffebae; transform: translateY(-1px); }
+    .meeting-day[aria-pressed="true"] { outline: 2px solid var(--navy); outline-offset: 1px; }
+    .meeting-label { display: block; margin-top: 7px; color: #785713; font-size: .72rem; font-weight: 850; line-height: 1.2; }
+    .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; font-size: .81rem; color: var(--muted); }
+    .legend-dot { width: 13px; height: 13px; border-radius: 4px; background: #fff5d8; border: 2px solid var(--gold); }
+    .spotlight { background: linear-gradient(155deg, var(--navy-dark), #123758); border-color: #b39a62; color: white; overflow: hidden; position: relative; }
+    .spotlight::after { content: "★"; position: absolute; font-size: 135px; right: -9px; top: -58px; color: #ffffff0b; pointer-events: none; }
+    .spotlight .eyebrow { color: #e8cd7b; }
+    .spotlight h2 { color: white; margin: 9px 0; font-size: 1.6rem; line-height: 1.2; }
+    .spotlight p { color: #e2e9ef; line-height: 1.58; margin: 8px 0; font-size: .94rem; }
+    .meeting-when { display: flex; flex-direction: column; gap: 4px; margin: 22px 0; padding: 16px; border: 1px solid #d9b95e70; border-radius: 16px; background: #ffffff10; }
+    .meeting-when strong { font-size: 1.11rem; color: #f3d889; }
+    .meeting-when span { color: white; font-weight: 700; }
+    .button, .button-alt { display: block; border-radius: 12px; padding: 12px 16px; font-weight: 850; text-align: center; text-decoration: none; font-size: .93rem; border: 1px solid var(--gold); }
+    .button { color: var(--navy-dark); background: #efd07e; }
+    .button:hover { background: #ffe3a0; }
+    .button-alt { color: #f7e2a4; background: transparent; }
+    .button-alt:hover { background: #ffffff13; }
+    .spotlight .button + .button-alt { margin-top: 10px; }
+    .fineprint { font-size: .79rem !important; opacity: .85; }
+    .footer { margin-top: 27px; text-align: center; font-size: .83rem; color: #617083; }
+    @media (max-width: 980px) { .overview { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .topbar-inner, .shell { padding-left: 15px; padding-right: 15px; }
+      .topbar-inner { align-items: start; }
+      .member { width: 100%; font-size: .86rem; }
+      .nav-link, .logout { font-size: .8rem; padding: 8px 11px; }
+      .panel { border-radius: 17px; padding: 16px; }
+      .calendar-head { flex-wrap: wrap; }
+      .calendar-grid { gap: 3px; }
+      .day, .day-blank { min-height: 62px; border-radius: 8px; padding: 6px 4px; }
+      .day-number { font-size: .82rem; }
+      .meeting-label { font-size: .6rem; margin-top: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="institute-portal.html">
+        <img src="PROJECT-WORTH-LOGO.png" alt="Project Worth logo">
+        <span>PROJECT WORTH<small>Training &amp; Research Institute</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="member">Project Worth Team Member</span>
+        <a class="nav-link" href="institute-portal.html">My Portal</a>
+        <a class="nav-link profile" href="my-profile.html">My Profile</a>
+        <button class="logout" id="logoutButton" type="button">Log Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <a class="back" href="institute-portal.html">← Back to Team Portal</a>
+    <div class="page-head">
+      <div class="eyebrow">Stay connected · Work together</div>
+      <h1>Project Worth Calendar</h1>
+      <p class="intro">View monthly team meetings and request time with your department leader.</p>
+    </div>
+
+    <div class="overview">
+      <section class="panel" aria-labelledby="monthHeading">
+        <div class="calendar-head">
+          <h2 id="monthHeading">Team Meeting Calendar</h2>
+          <div class="cal-controls">
+            <button type="button" id="previousMonth" aria-label="Previous month">←</button>
+            <button type="button" id="todayMonth">Today</button>
+            <button type="button" id="nextMonth" aria-label="Next month">→</button>
+          </div>
+        </div>
+        <p class="panel-sub">Our planned monthly team meeting falls on the <strong>second Friday of each month at 10:00 a.m. Central.</strong></p>
+        <div class="calendar-grid" id="calendarGrid" aria-label="Monthly meeting calendar"></div>
+        <div class="legend"><span class="legend-dot" aria-hidden="true"></span> Monthly Team Meeting · 10:00 a.m. Central</div>
+      </section>
+
+      <aside class="panel spotlight" aria-labelledby="nextMeetingHeading">
+        <div class="eyebrow">Together, we light up the darkness.</div>
+        <h2 id="nextMeetingHeading">Monthly Team Meeting</h2>
+        <p>We move further when we move together. A time to share progress, align priorities, and support one another.</p>
+        <div class="meeting-when">
+          <strong id="highlightDate">Finding the next meeting…</strong>
+          <span>10:00 a.m. Central Time</span>
+          <small>Every second Friday of the month</small>
+        </div>
+        <a class="button" href="https://calendar.google.com/calendar?cid=aW5mb0Bwcm9qZWN0d29ydGh3aS5vcmc" target="_blank" rel="noopener noreferrer">Open Official Google Calendar ↗</a>
+        <a class="button-alt" id="leaderRequest" href="mailto:info@projectworthwi.org?subject=Meeting%20Request%20-%20Department%20Leader">Schedule a Meeting with Your Leader →</a>
+        <p class="fineprint">Meeting requests open a draft email to info@projectworthwi.org; they do not book a time. Confirm meeting dates and links in the official Google Calendar.</p>
+      </aside>
+    </div>
+
+    <footer class="footer">Project Worth · Protecting Kids. Changing Systems. Empowering Survivors.</footer>
+  </main>
+
+  <script src="/institute-tab-session.js"></script><script>
+    (async function () {
+      "use strict";
+
+      // Match the existing Institute Portal's client-side sign-in check.
+      // Important: true security for private events must be enforced by the server / Google.
+      var localPreview = location.protocol === "file:";
+      function readSession(key) {
+        try { return sessionStorage.getItem(key); }
+        catch (error) { return null; } // Allows local HTML preview in strict browsers.
+      }
+      var token = localPreview ? "preview" : await window.PWSession.getToken();
+      var expiresAt = token ? Date.now()+60000 : 0;
+      if (!localPreview && !(token && expiresAt > Date.now() + 10000)) {
+        try{sessionStorage.setItem("pwInstitutePendingDestination",location.pathname+location.search+location.hash)}catch(_){}location.replace("institute-login.html?returnTo="+encodeURIComponent(location.pathname+location.search+location.hash));
+        return;
+      }
+
+      document.getElementById("logoutButton").addEventListener("click", function () {
+        if (localPreview) {
+          alert("Preview only: logout is active when the page is hosted in your portal.");
+          return;
+        }
+        ["pwInstituteAccessToken", "pwInstituteIdToken", "pwInstituteRefreshToken", "pwInstituteExpiresAt"]
+          .forEach(function (key) { sessionStorage.removeItem(key); });
+        location.replace("institute-login.html");
+      });
+
+      // Google Calendar events aren't created by this page; it shows the requested rule.
+      var weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      var grid = document.getElementById("calendarGrid");
+      var heading = document.getElementById("monthHeading");
+      var highlight = document.getElementById("highlightDate");
+      var selected = null;
+
+      function secondFriday(year, month) {
+        var firstWeekday = new Date(year, month, 1).getDay();
+        return 1 + ((5 - firstWeekday + 7) % 7) + 7;
+      }
+
+      function centralNow() {
+        var parts = new Intl.DateTimeFormat("en-US", {
+          timeZone: "America/Chicago", year: "numeric", month: "numeric",
+          day: "numeric", hour: "numeric", hourCycle: "h23"
+        }).formatToParts(new Date());
+        var result = {};
+        parts.forEach(function (item) { if (item.type !== "literal") result[item.type] = Number(item.value); });
+        return { year: result.year, month: result.month - 1, day: result.day, hour: result.hour };
+      }
+
+      function nextMeeting() {
+        var now = centralNow();
+        var y = now.year, m = now.month;
+        var day = secondFriday(y, m);
+        if (now.day > day || (now.day === day && now.hour >= 10)) {
+          m++;
+          if (m > 11) { m = 0; y++; }
+          day = secondFriday(y, m);
+        }
+        return { year: y, month: m, day: day };
+      }
+
+      function dateText(year, month, day) {
+        return new Intl.DateTimeFormat("en-US", {
+          weekday: "long", month: "long", day: "numeric", year: "numeric"
+        }).format(new Date(year, month, day));
+      }
+
+      var initial = nextMeeting();
+      var displayedYear = initial.year;
+      var displayedMonth = initial.month;
+
+      function changeMonth(step) {
+        var next = new Date(displayedYear, displayedMonth + step, 1);
+        displayedYear = next.getFullYear();
+        displayedMonth = next.getMonth();
+        selected = null;
+        render();
+      }
+
+      function render() {
+        var first = new Date(displayedYear, displayedMonth, 1);
+        var firstDay = first.getDay();
+        var monthLength = new Date(displayedYear, displayedMonth + 1, 0).getDate();
+        var meetingDay = secondFriday(displayedYear, displayedMonth);
+        heading.textContent = new Intl.DateTimeFormat("en-US", {month: "long", year: "numeric"}).format(first);
+        grid.replaceChildren();
+
+        weekdays.forEach(function (name) {
+          var label = document.createElement("span");
+          label.className = "day-label";
+          label.textContent = name;
+          grid.appendChild(label);
+        });
+        for (var blank = 0; blank < firstDay; blank++) {
+          var empty = document.createElement("span");
+          empty.className = "day-blank";
+          empty.setAttribute("aria-hidden", "true");
+          grid.appendChild(empty);
+        }
+        for (var d = 1; d <= monthLength; d++) {
+          var meeting = d === meetingDay;
+          var cell = document.createElement(meeting ? "button" : "div");
+          cell.className = meeting ? "day meeting-day" : "day";
+          if (meeting) {
+            cell.type = "button";
+            cell.setAttribute("aria-label", "Team meeting on " + dateText(displayedYear, displayedMonth, d) + " at 10 a.m. Central");
+            cell.setAttribute("aria-pressed", selected === d ? "true" : "false");
+            cell.addEventListener("click", function () {
+              selected = meetingDay;
+              highlight.textContent = dateText(displayedYear, displayedMonth, meetingDay);
+              render();
+            });
+          }
+          var number = document.createElement("span");
+          number.className = "day-number";
+          number.textContent = d;
+          cell.appendChild(number);
+          if (meeting) {
+            var tag = document.createElement("span");
+            tag.className = "meeting-label";
+            tag.textContent = "★ 10 AM";
+            cell.appendChild(tag);
+          }
+          grid.appendChild(cell);
+        }
+      }
+
+      function meetingRequest(target) {
+        var subject = "Meeting Request - " + target;
+        var body = "Hello Project Worth team,\n\nI'd like to request a meeting with " + target + ".\n\n" +
+          "My name:\nMy department / role:\nPreferred dates and times (Central):\nGeneral topic or question:\n\nThank you!";
+        return "mailto:info@projectworthwi.org?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      }
+
+      document.getElementById("leaderRequest").href = meetingRequest("my department leader");
+      document.getElementById("previousMonth").addEventListener("click", function () { changeMonth(-1); });
+      document.getElementById("nextMonth").addEventListener("click", function () { changeMonth(1); });
+      document.getElementById("todayMonth").addEventListener("click", function () {
+        var today = centralNow();
+        displayedYear = today.year;
+        displayedMonth = today.month;
+        selected = null;
+        render();
+      });
+      highlight.textContent = dateText(initial.year, initial.month, initial.day);
+      render();
+    }());
+  </script>
+</body>
+</html>

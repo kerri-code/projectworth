@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<!-- Google Slides embed: grant your learners Viewer access in the source presentation. -->
+<meta name="theme-color" content="#091e33">
+<title>Light the Way | Facilitator Training | Project Worth</title>
+<style>
+:root{--navy:#091e33;--blue:#163653;--gold:#d7ab43;--cream:#fff9ec;--paper:#fff;--ink:#18334a;--muted:#5a6c7b;--line:#dbe3e8;--good:#196849;--bad:#a32938}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f3f6f7;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.52;cursor:not-allowed}
+a{color:#18517b}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+[hidden]{display:none!important}
+.top{background:var(--navy);border-bottom:3px solid var(--gold);color:white}
+.top-inner{max-width:1160px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none}.brand .star{color:var(--gold);font-size:29px;border:1px solid #9b7b35;border-radius:12px;width:46px;height:46px;display:grid;place-items:center}
+.brand strong{display:block;font-size:13px;letter-spacing:.11em}.brand small{display:block;color:#cad8e5;font-size:11px}
+.back{color:white;text-decoration:none;border:1px solid #8ca0b4;padding:9px 15px;border-radius:100px;font-size:13px;font-weight:800}
+.hero{background:radial-gradient(circle at 83% 20%,#244768,transparent 38%),linear-gradient(135deg,#091e33,#15314b);color:white}
+.hero-inner{max-width:1160px;margin:auto;padding:47px 24px 57px}.eyebrow{color:var(--gold);font-weight:900;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(31px,5vw,53px);line-height:1.1;letter-spacing:-.035em;margin:12px 0}h2{font-size:clamp(24px,3vw,33px);line-height:1.18;color:var(--navy);margin:5px 0 15px}h3{color:var(--navy);line-height:1.25;margin:0 0 8px}
+p{margin:0 0 13px}.hero p{color:#e2ebf3;font-size:17px;max-width:710px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}.chips span{font-size:12px;font-weight:800;color:#fff;border:1px solid #7890a5;border-radius:30px;padding:5px 11px}
+.shell{max-width:1160px;margin:-24px auto 65px;padding:0 24px;position:relative}.layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:20px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px #091e330c}.sidebar{padding:17px;position:sticky;top:14px}.side-label{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--muted);margin:0 0 12px}
+.step{border:0;background:transparent;border-radius:10px;display:flex;text-align:left;align-items:center;gap:9px;width:100%;padding:11px 9px;color:var(--ink);font-size:13px;font-weight:800}.step:hover:not(:disabled){background:#f3f5f7}.step.active{background:#fff1d1;color:var(--navy)}.step .number{display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;width:27px;height:27px;flex:none;font-size:11px}.step.done .number{background:#e5f5ed;border-color:#c0e3d0;color:var(--good)}
+.progress-label{font-size:12px;display:flex;justify-content:space-between;gap:5px;margin:20px 0 7px;font-weight:800}.track{height:9px;border-radius:20px;background:#e6eaed;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#bd8c2b,#e2b959);transition:width .2s}
+.side-note{border-top:1px solid var(--line);margin-top:19px;padding-top:15px;color:var(--muted);font-size:12px}
+.main{min-width:0;padding:clamp(18px,3.2vw,36px)}.section-tag{color:#946f21;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:950}.lead{color:var(--muted);font-size:16px;max-width:750px}
+.btn{border:1px solid transparent;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 19px;font-size:14px;font-weight:850;line-height:1.3;min-height:45px;text-align:center}.btn-primary{background:var(--navy);color:#fff}.btn-gold{background:var(--gold);color:#14253a}.btn-outline{background:#fff;color:var(--navy);border-color:#b6c4d0}.btn:hover:not(:disabled){filter:brightness(.96)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:22px}.action-right{display:flex;flex-wrap:wrap;gap:10px}
+.callout{padding:17px 19px;background:var(--cream);border:1px solid #eedbb6;border-left:5px solid var(--gold);border-radius:13px;margin:16px 0}.callout p:last-child{margin-bottom:0}.dark{background:var(--navy);color:#fff;border-radius:17px;padding:22px;margin:20px 0}.dark h3{color:var(--gold)}.dark p{color:#edf2f5}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}.card p:last-child{margin-bottom:0}.card small{color:#906b20;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+/* Lightweight hosted presentation: no inline base64 imagery. */
+.slide-embed-frame {
+  position: relative;
+  margin: 20px 0 15px;
+  width: 100%;
+  aspect-ratio: 16 / 9.9;
+  border: 1px solid #cdd7e0;
+  border-radius: 17px;
+  overflow: hidden;
+  background: #0b1e35;
+  box-shadow: 0 8px 25px rgba(9, 30, 51, .11);
+}
+.slide-embed-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/*
+   Only the provider's external-opening button is concealed.
+   The Google Slides slide area and the previous/next controls
+   on the LEFT remain fully interactive.
+   Embeds are cross-origin, so their internal footer cannot be styled.
+*/
+.slide-embed-frame .slide-provider-cover {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  width: clamp(140px, 33%, 275px);
+  height: 50px;
+  background: #f7f8fa;
+  border-bottom-right-radius: 16px;
+  pointer-events: auto;
+  cursor: default;
+}
+@media (max-width: 620px) {
+  .slide-embed-frame .slide-provider-cover {
+    width: clamp(115px, 40%, 200px);
+    height: 43px;
+    border-bottom-right-radius: 10px;
+  }
+}
+.slide-review-status { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin:18px 0 8px; padding:14px 16px; border:1px solid var(--line); border-radius:14px; background:#fbfcfd; }
+.slide-review-status strong { color:var(--navy); font-size:14px; }
+.slide-review-status p { margin:3px 0 0; color:var(--muted); font-size:13px; }
+.slide-review-status .btn { flex-shrink:0; }
+@media(max-width:620px){.slide-review-status .btn{width:100%;}.slide-review-status{padding:13px}}
+.slide-help { margin: 12px 0 14px; }
+.resource-links { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:14px; }
+.resource-steps { padding-left:22px; margin:10px 0 16px; }
+.resource-steps li { padding:2px 0 8px; }
+.slide-confirm { margin-top: 18px; }
+.resource-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 20px 0; }
+.download-card { display: flex; flex-direction: column; gap: 9px; padding: 20px; border: 1px solid #dbe3e8; border-radius: 16px; min-width: 0; background: #fff; }
+.download-card h3 { margin: 0; }
+.download-card p { color: var(--muted); flex: 1; margin: 0 0 9px; }
+.download-card .btn { max-width: 100%; white-space: normal; align-self: flex-start; }
+.assessment-review { margin: 18px 0; border: 1px solid #d5dfe5; border-radius: 15px; background: #fbfcfd; padding: clamp(15px, 3vw, 22px); }
+.assessment-review h3 { margin: 0 0 6px; }
+.assessment-review > p { color: var(--muted); }
+.assessment-missed { padding-left: 23px; margin: 15px 0 0; display: grid; gap: 12px; }
+.assessment-missed li { padding: 13px 15px; background: #fff; border: 1px solid #e6d7d8; border-left: 4px solid #b14b52; border-radius: 10px; }
+.assessment-missed h4 { margin: 0 0 5px; font-size: 14px; color: var(--navy); }
+.assessment-missed p { margin: 4px 0 7px; font-weight: 700; }
+.assessment-missed .selected-answer { color: #962c37; }
+.assessment-missed .correct-answer { color: #196849; }
+.certificate-panel { background: linear-gradient(135deg, #fffefa, #fff6df); border: 2px solid #dcc489; border-radius: 18px; padding: clamp(18px, 3vw, 28px); margin-top: 19px; }
+.certificate-panel h3 { margin-top: 0; }
+.certificate-status { color: var(--muted); margin: 8px 0 18px; }
+.certificate-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.quiz-question{margin:14px 0;border:1px solid var(--line);border-radius:13px;padding:16px;min-width:0}.quiz-question legend{font-weight:850;color:var(--navy);padding:0 5px}.quiz-tag{display:block;font-size:11px;font-weight:850;color:#966f22;text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px}
+.answer{display:flex;align-items:flex-start;gap:11px;padding:10px;border:1px solid #e4eaee;border-radius:9px;margin:7px 0;cursor:pointer}.answer:has(input:checked){border-color:var(--gold);background:#fff9eb}.answer input{accent-color:#ac812c;margin-top:4px;flex:none}
+.status{padding:14px 16px;margin:15px 0;border-radius:11px;background:#edf4f8;border-left:4px solid #69849a;white-space:pre-line}.status.good{background:#eaf6ee;border-color:var(--good);color:#174c35}.status.error{background:#fff0f1;border-color:var(--bad);color:#872332}
+.choice{display:flex;align-items:flex-start;gap:11px;padding:13px 14px;margin:9px 0;border:1px solid var(--line);border-radius:12px;cursor:pointer}.choice:has(input:checked){background:#fff8e8;border-color:var(--gold)}.choice input{margin-top:5px;accent-color:#ac812c}.choice small{display:block;color:var(--muted);line-height:1.55;margin-top:4px}
+.agreement{border:1px solid #dbccaa;background:#fffdf7;border-radius:16px;padding:clamp(16px,3vw,24px);margin-top:20px}.agreement ol{padding-left:21px}.agreement li{padding:0 0 10px 3px}.agreement input[type=text]{width:100%;max-width:490px;border:1px solid #b5c5d1;border-radius:10px;padding:12px;margin:7px 0 11px}.muted{color:var(--muted);font-size:13px}.divider{border:0;border-top:1px solid var(--line);margin:22px 0}
+@media(max-width:830px){.layout{grid-template-columns:1fr}.sidebar{position:static}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.step{justify-content:center;padding:9px 4px;flex-direction:column;font-size:10px;text-align:center}.sidebar .progress-label{margin-top:12px}.side-note{margin-top:12px}}
+@media(max-width:620px){
+  .top-inner{padding:12px 15px}
+  .brand .star{height:40px;width:40px}
+  .back{font-size:11px;padding:8px 11px}
+  .hero-inner{padding:32px 17px 46px}
+  .shell{padding:0 12px}
+  .main{padding:18px 14px}
+  .grid,.resource-grid{grid-template-columns:1fr}
+  .slide-embed-frame{border-radius:11px}
+  .resource-links a{flex:1}
+  .download-card{padding:16px}
+  .actions .btn{width:100%}
+  .action-right{width:100%}
+  .action-right .btn{flex:1;width:auto}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .step{font-size:11px}
+}
+@media(max-width:385px){.step{font-size:10px}.brand strong{font-size:11px}.slide-embed-frame{aspect-ratio:16/10.5}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fill{transition:none}}
+
+/* Slide navigation: the portal controls the embedded presentation directly. */
+.slide-embed-frame { aspect-ratio: 16 / 9; }
+.slide-embed-frame iframe { pointer-events: none; }
+.slide-nav-buttons { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
+.slide-nav-buttons .btn { white-space: normal; }
+@media (max-width: 620px) {
+  .slide-review-status { display: block; }
+  .slide-nav-buttons { display: grid; grid-template-columns: 1fr 1fr; margin-top: 12px; }
+  .slide-nav-buttons .btn { width: 100%; padding-inline: 10px; }
+}
+
+/* Visible slideshow navigation — independent from the Google viewer footer. */
+.slide-embed-frame { position:relative; }
+.slide-overlay-arrow {
+  position:absolute; z-index:5; top:50%; transform:translateY(-50%);
+  display:grid; place-items:center; width:46px; height:64px;
+  border:1px solid rgba(255,255,255,.5); border-radius:16px;
+  background:rgba(9,30,51,.86); color:#fff;
+  font:900 39px/1 system-ui,sans-serif; cursor:pointer;
+  box-shadow:0 3px 14px rgba(0,0,0,.22);
+  transition:background .15s,transform .15s;
+}
+.slide-overlay-arrow:not(:disabled):hover {background:#214c70; transform:translateY(-50%) scale(1.04)}
+.slide-overlay-arrow:focus-visible {outline:3px solid var(--gold);outline-offset:3px}
+.slide-overlay-arrow:disabled {opacity:.18;cursor:not-allowed}
+.slide-overlay-previous {left:10px}
+.slide-overlay-next {right:10px}
+.slide-review-status {align-items:center}
+.slide-nav-buttons {gap:10px}
+@media (max-width:620px){
+ .slide-overlay-arrow{width:35px;height:50px;font-size:31px;border-radius:11px}
+ .slide-overlay-previous{left:4px}.slide-overlay-next{right:4px}
+ .slide-nav-buttons{grid-template-columns:1fr 1fr}
+}
+
+.ltw-quick-model{margin:18px 0;padding:20px;border-radius:16px;background:linear-gradient(125deg,#fff9ea,#fff);border:1px solid #e6d5ae}
+.ltw-quick-model ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));list-style:none;margin:12px 0 0;padding:0;gap:9px}
+.ltw-quick-model li{background:white;border:1px solid #dee4e8;border-radius:10px;padding:12px;font-size:13px}
+.ltw-quick-model b{color:#a67e26}
+.ltw-attendance{margin:19px 0;padding:20px;background:#f9fbfb;border:1px solid #d6e0e5;border-radius:16px}
+.ltw-attendance label{font-size:13px;font-weight:800}
+.ltw-attendance input[type="text"],.ltw-attendance input[type="date"],.ltw-attendance textarea{display:block;width:100%;margin-top:5px;margin-bottom:11px;border:1px solid #aec0cd;border-radius:10px;padding:11px;font:inherit}
+.ltw-attendance .ltw-att-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ltw-attendance .ltw-att-fields .wide{grid-column:1/-1}
+.ltw-attendance .ltw-att-table{overflow-x:auto}
+.ltw-attendance table{min-width:540px;width:100%;border-collapse:collapse;margin:15px 0;font-size:13px}
+.ltw-attendance th,.ltw-attendance td{padding:9px;border-bottom:1px solid #dce5e9;text-align:left}
+.ltw-attendance th{color:#364f61;font-size:11px}
+.ltw-attendance input[type=checkbox]{width:17px;height:17px;accent-color:#ae852f}
+.ltw-attendance .remove-attendee{background:none;border:0;color:#9e3040;text-decoration:underline;font-weight:700}
+@media(max-width:620px){.ltw-attendance .ltw-att-fields{grid-template-columns:1fr}.ltw-quick-model ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#facilitatorReadinessChecklist{padding:15px 18px;margin:12px 0}
+#facilitatorReadinessChecklist h3{margin:0 0 8px;font-size:20px}
+.pw-readiness-checklist{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px;row-gap:2px;padding:0;margin:0 0 10px}
+.pw-readiness-checklist li{position:relative;padding:5px 0 5px 22px;background:transparent;border:0;font-size:14px;line-height:1.35}
+.pw-readiness-checklist li::before{content:"□";position:absolute;left:0;top:3px;font-size:19px;color:#a77e2f}
+#facilitatorReadinessChecklist .pw-readiness-footer{border-top:1px solid #e9d8b2;padding-top:9px;margin:0;font-size:13px;line-height:1.5}
+@media(max-width:700px){.pw-readiness-checklist{grid-template-columns:1fr;row-gap:1px}#facilitatorReadinessChecklist{padding:13px 15px}}
+#practiceReportExercise summary{cursor:pointer;color:#09213d}
+#practiceReportExercise input[type=file]{font:inherit}
+#facilitatorReadinessChecklist .pw-readiness-checklist li{padding:2px 0;background:transparent}
+#facilitatorReadinessChecklist .pw-readiness-checklist li::before{content:none}
+#facilitatorReadinessChecklist .pw-readiness-checklist label{display:flex;align-items:flex-start;gap:9px;cursor:pointer;padding:4px 1px;line-height:1.35;font-size:14px}
+#facilitatorReadinessChecklist .pw-readiness-checklist input[type=checkbox]{flex:0 0 17px;width:17px;height:17px;margin:1px 0 0;accent-color:#b18a32;cursor:pointer}
+#facilitatorReadinessChecklist .pw-readiness-checklist label:has(input:checked) span{color:#426275}
+#facilitatorReadinessChecklist .pw-readiness-saved{color:#426275;font-size:12px;margin:2px 0 10px}
+.facilitator-welcome-kit{margin:20px 0;padding:clamp(20px,3vw,30px);border:1px solid #dbc691;border-left:6px solid #c9a13d;border-radius:14px;background:#fffdf8;color:#10283c}
+.facilitator-welcome-kit .section-tag{color:#9b741d;letter-spacing:.12em;font-weight:800;font-size:11px}
+.facilitator-welcome-kit h3{font-size:clamp(27px,3.4vw,38px);line-height:1.15;letter-spacing:-.025em;margin:9px 0 13px;color:#0d293d}
+.facilitator-welcome-kit .facilitator-kit-intro{font-size:clamp(15px,1.7vw,17px);line-height:1.55;max-width:760px;margin:0 0 22px;color:#284257}
+.facilitator-kit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #e0cfaa;border-bottom:1px solid #e0cfaa;margin:0 0 20px}
+.facilitator-kit-item{padding:18px 22px 17px 0;min-width:0}
+.facilitator-kit-item + .facilitator-kit-item{border-left:1px solid #e0cfaa;padding-left:22px;padding-right:0}
+.facilitator-kit-label{display:block;font-size:11px;font-weight:800;letter-spacing:.11em;color:#9b741d;margin-bottom:8px}
+.facilitator-kit-item>strong{display:block;font-size:17px;line-height:1.3;color:#10283c}
+.facilitator-kit-item p{font-size:14px;line-height:1.5;margin:6px 0 0;color:#536979}
+.facilitator-kit-next{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.facilitator-kit-next p{font-size:13px;line-height:1.5;flex:1 1 260px;margin:0;color:#536979}
+.facilitator-kit-next .btn{font-size:13px;padding:11px 16px}
+.facilitator-welcome-kit .facilitator-kit-tagline{font-weight:800;color:#98711c;letter-spacing:.13em;font-size:11px;margin:20px 0 0}
+@media(max-width:670px){.facilitator-kit-list{grid-template-columns:1fr}.facilitator-kit-item{padding:15px 0}.facilitator-kit-item + .facilitator-kit-item{border-left:0;border-top:1px solid #e0cfaa;padding-left:0;padding-right:0}.facilitator-kit-next{align-items:flex-start}}
+#facilitatorReadinessChecklist .pw-research-note{font-size:12px;line-height:1.4;color:#536778;margin:2px 0 8px}
+.pw-kit-request{margin-top:16px;padding:20px;border:1px solid #d6c592;border-radius:13px;background:#fff}
+.pw-kit-request h4{font-size:22px;margin:6px 0 10px}
+.pw-kit-request>p{font-size:14px;line-height:1.5}
+.pw-kit-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+.pw-kit-fields fieldset{border:1px solid #dae1e5;border-radius:11px;padding:14px;min-width:0}
+.pw-kit-fields legend{font-weight:850;color:#8b691d;font-size:12px;letter-spacing:.06em;padding:0 6px}
+.pw-kit-request label{display:block;font-size:12px;font-weight:750;color:#1b3446;margin:11px 0}
+.pw-kit-request input,.pw-kit-request textarea{display:block;width:100%;padding:10px 12px;border:1px solid #abbcca;border-radius:8px;background:#fff;margin-top:5px;color:#10283c;font:inherit;font-size:14px;box-sizing:border-box}
+.pw-kit-request .pw-kit-wide{grid-column:1/-1}
+.pw-kit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:12px}
+.pw-kit-request .muted{font-size:12px}
+#kitOrderStatus{margin:8px 0;font-size:12px;line-height:1.5;color:#536979}
+#kitOrderResult{font-size:14px;line-height:1.5;font-weight:750}
+@media(max-width:730px){.pw-kit-fields{grid-template-columns:1fr}.pw-kit-grid{grid-template-columns:1fr}}
+
+/* Compact Project Worth preparation cards — scoped to Forms & Resources only. */
+section[data-panel="forms"] .resource-grid{gap:12px;margin:15px 0 18px}
+section[data-panel="forms"] .resource-grid .download-card{
+  padding:15px 17px 14px;border-radius:12px;gap:5px;
+  border-color:#d8e1e6;background:#fff;
+  box-shadow:0 1px 0 rgba(9,33,61,.035)
+}
+section[data-panel="forms"] .download-card .section-tag{
+  font-size:10px;line-height:1.3;letter-spacing:.095em;margin:0 0 1px
+}
+section[data-panel="forms"] .download-card h3{
+  font-size:18px;line-height:1.25;letter-spacing:-.015em;margin:0;color:#10283c
+}
+section[data-panel="forms"] .download-card p{
+  font-size:13px;line-height:1.45;margin:1px 0 0;flex:none;color:#53697a
+}
+section[data-panel="forms"] .download-card .pw-resource-actions{
+  gap:8px!important;padding-top:11px!important;margin-top:auto!important;
+  justify-content:flex-start
+}
+section[data-panel="forms"] .download-card .pw-resource-actions .btn{
+  min-height:34px;padding:7px 13px;font-size:12px;line-height:1.2;
+  white-space:nowrap;letter-spacing:0
+}
+@media(max-width:600px){
+  section[data-panel="forms"] .resource-grid{gap:10px}
+  section[data-panel="forms"] .download-card{padding:14px 15px}
+  section[data-panel="forms"] .download-card .pw-resource-actions .btn{font-size:12px}
+}
+.learner-readiness-evaluation{margin:20px 0;padding:19px;border:1px solid #d7c699;border-left:5px solid #bb9239;border-radius:14px;background:#fffdf8}
+.learner-readiness-evaluation h3{margin:7px 0 9px;color:#10283c}
+.learner-eval-score{font-weight:850;font-size:19px;margin:13px 0}
+.learner-eval-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0 16px}
+.learner-eval-grid div{border:1px solid #e0e6e8;border-radius:8px;padding:10px 12px;background:#fff;font-size:13px}
+.learner-eval-grid strong{display:block}
+.learner-eval-notes{border-top:1px solid #e5d6af;padding-top:13px}
+.learner-eval-notes p{white-space:pre-line;font-size:14px;line-height:1.55;margin:9px 0}
+@media(max-width:560px){.learner-eval-grid{grid-template-columns:1fr}}
+#facilitatorKitForm .pw-kit-billing-check{display:flex;align-items:center;gap:9px;grid-column:1/-1;margin:8px 0}
+#facilitatorKitForm .pw-kit-billing-check input{width:18px;height:18px;flex:0 0 18px;margin:0}.fac-annual-renewal{margin:22px 0 8px;padding:20px 24px;border:1px solid #e0c98d;border-left:5px solid #c5a047;border-radius:14px;background:#fffaf1;color:#153149}
+.fac-annual-renewal .fac-renewal-eyebrow{font-size:11px;font-weight:800;letter-spacing:.1em;color:#927026}
+.fac-annual-renewal h3{font-size:22px;color:#0b273e;margin:6px 0 8px}
+.fac-annual-renewal p{font-size:13px;line-height:1.55;color:#4b6273}
+.fac-renewal-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:15px 0}
+.fac-renewal-steps li{display:flex;gap:9px;align-items:flex-start;font-size:12px;border:1px solid #e4e5df;background:white;border-radius:9px;padding:9px 11px}
+.fac-renewal-steps li.ready{color:#395b47}
+.fac-renewal-steps li.missing{color:#80511f}
+.fac-renewal-steps li>span:first-child{font-weight:900}
+.fac-renewal-check{display:flex;align-items:flex-start;gap:9px;font-size:13px;font-weight:700;color:#15344b;margin:13px 0}
+.fac-renewal-check input{flex:0 0 17px;width:17px;height:17px;accent-color:#b18a37;margin:2px 0 0}
+.fac-annual-renewal form button{margin-top:8px}
+.fac-annual-renewal a#facRenewedPDF{display:inline-block;margin-top:10px}
+.fac-annual-renewal #facRenewedPDF[hidden]{display:none!important}
+@media(max-width:650px){.fac-renewal-steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-inner">
+<a class="brand" href="institute-portal.html"><span class="star" aria-hidden="true">★</span><span><strong>PROJECT WORTH</strong><small>Training &amp; Research Institute</small></span></a>
+<a class="back" href="my-learning.html">← My Learning</a>
+</div></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">Professional Development · Light the Way</div><h1>Facilitator Training</h1><p>Bring Light the Way into your workplace or community. Teach accurately, lead with dignity, and help adults take the next responsible step.</p><div class="chips"><span>32 updated slides</span><span>7 Foundations modules</span><span>90% assessment + critical safety</span><span>Teach-back &amp; signed agreement</span></div></div></section>
+<div class="shell"><div class="layout">
+<aside class="sidebar panel"><div class="side-label">Your pathway</div><nav class="steps" aria-label="Facilitator training steps">
+<button type="button" class="step active" data-tab="welcome"><span class="number">1</span>Welcome</button>
+<button type="button" class="step" data-tab="slides"><span class="number">2</span>32 Slides</button>
+<button type="button" class="step" data-tab="assessment"><span class="number">3</span>Assessment</button>
+<button type="button" class="step" data-tab="teachback"><span class="number">4</span>Teach-back</button>
+<button type="button" class="step" data-tab="forms"><span class="number">5</span>Forms &amp; Resources</button>
+<button type="button" class="step" data-tab="agreement"><span class="number">6</span>Agreement</button>
+   <button type="button" class="step" data-tab="certificate"><span class="number">7</span>Certificate</button>
+</nav><div class="progress-label"><span>Training progress</span><span id="progressPct">0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div><div class="side-note">Training and signing do not authorize facilitation. Written Project Worth approval and a certificate follow review.</div></aside>
+<main class="main panel" id="course">
+<section data-panel="welcome"><div class="section-tag">Begin your pathway</div><h2>Change starts in your sphere of influence.</h2><p class="lead">Complete Light the Way Foundations first. Then review these 32 approved trainer slides, demonstrate your knowledge, prepare a 5–8 minute teach-back for Kerri or Zac, and sign the facilitator-specific agreement.</p><div class="grid"><div class="card"><small>What you'll learn</small><h3>Know. Facilitate. Respond.</h3><p>Carry all seven modules faithfully, lead discussions without requesting trauma disclosures, and know when and how to take the next responsible action.</p></div><div class="card"><small>Authorization</small><h3>Demonstrate readiness.</h3><p>Pass the knowledge check, schedule your teach-back, sign your agreement, and receive separate written authorization before teaching.</p></div></div><div class="callout"><strong>Bring the light with confidence.</strong> Once approved, you can share Light the Way in the settings we’ve authorized. You represent your own organization, not Project Worth, unless we’ve separately authorized you to speak on our behalf. If a child-safety concern arises, use the appropriate reporting channels—this course is for learning.</div>
+<div class="ltw-quick-model" aria-labelledby="quickModelTitle">
+ <div class="section-tag">Quick Light the Way Model</div>
+ <h3 id="quickModelTitle">Seven modules. A shared responsibility.</h3>
+ <p class="muted">Carry this short roadmap into every Foundations session. When safety concerns arise, follow the responsible response: <strong>Document · Report · Preserve · Support · Allow the process</strong>.</p>
+ <ol>
+  <li><b>01 · Worth</b><div>Every child matters; adults carry responsibility.</div></li>
+  <li><b>02 · Recognize</b><div>Notice patterns, grooming, and boundaries.</div></li>
+  <li><b>03 · Listen</b><div>Support disclosures without investigating.</div></li>
+  <li><b>04 · Respond</b><div>Take the next responsible step.</div></li>
+  <li><b>05 · Accountability</b><div>Systems must follow through.</div></li>
+  <li><b>06 · Prevent</b><div>Build safer environments and oversight.</div></li>
+  <li><b>07 · Be the Light</b><div>Commit to one protective action.</div></li>
+ </ol>
+</div>
+<div id="integrationNotice" class="status" role="status"></div><div class="actions"><a class="btn btn-outline" href="light-the-way-foundations.html">Review Foundations ↗</a><button type="button" class="btn btn-gold" id="beginBtn">Begin / resume slides →</button></div></section>
+<section data-panel="slides" hidden>
+  <div class="section-tag">Learn · Original 32-slide presentation</div>
+  <h2>Know the message. Lead with integrity.</h2>
+  <p class="lead">The way we teach shapes how adults protect children. Study all 32 slides, practice the responsible response, and carry the message with accuracy, dignity, and courage.</p>
+  <div class="slide-embed-frame">
+    <iframe id="slidesEmbed"
+      title="Light the Way Facilitator Training — current slide"
+      loading="eager"
+      tabindex="-1"
+      referrerpolicy="strict-origin-when-cross-origin"
+      src="https://docs.google.com/presentation/d/1-3mf6Etad5l0jMarxwc_ZkVwXYK5Fdfv0cF06_b36pc/preview?rm=minimal&amp;slide=id.pw_polish_01#slide=id.pw_polish_01"></iframe>
+    <button type="button" class="slide-overlay-arrow slide-overlay-previous" id="slideArrowPrevious" aria-label="Previous training slide" title="Previous slide" disabled>‹</button>
+    <button type="button" class="slide-overlay-arrow slide-overlay-next" id="slideArrowNext" aria-label="Next training slide" title="Next slide">›</button>
+  </div>
+  <div class="slide-review-status" aria-live="polite" aria-atomic="true">
+    <div>
+      <strong id="slideReviewCount">Slide 1 of 32</strong>
+      <p id="slideReviewInstruction">Use the arrows to read every slide. Your progress is saved as you move forward.</p>
+    </div>
+    <div class="slide-nav-buttons">
+      <button type="button" class="btn btn-outline" id="previousTrainingSlide" disabled>← Previous slide</button>
+      <button type="button" class="btn btn-gold" id="nextTrainingSlide">Next slide →</button>
+    </div>
+  </div>
+  <div class="resource-links">
+    <a href="https://dcf.wisconsin.gov/reportabuse" target="_blank" rel="noopener noreferrer">Wisconsin reporting ↗</a>
+  </div>
+  <div class="actions">
+    <button type="button" class="btn btn-gold" id="goQuiz" disabled>Continue to assessment →</button>
+  </div>
+</section>
+<section data-panel="assessment" hidden><div class="section-tag">Knowledge assessment</div><h2>Demonstrate what you know.</h2><p class="lead">20 original scenario-based questions. Pass with at least 18/20 (90%, equivalent to 9/10) <strong>and</strong> answer every critical safety question correctly. Up to three attempts; records require a connected portal service.</p><p class="muted" id="attemptsLabel"></p><form id="quizForm"><div id="questions"></div><div class="actions"><button type="submit" class="btn btn-gold" id="submitQuiz">Submit assessment →</button></div></form><div id="quizFeedback" class="status" role="status" aria-live="polite" hidden></div>
+<div id="assessmentReview" class="assessment-review" aria-live="polite" hidden></div>
+<div class="actions">
+  <button type="button" class="btn btn-outline" data-goto="slides">← Review slides</button>
+  <div class="action-right">
+    <button type="button" class="btn btn-primary" id="retryQuiz" hidden>Try assessment again →</button>
+    <button type="button" class="btn btn-primary" id="afterQuiz" hidden>Prepare teach-back →</button>
+  </div>
+</div></section>
+<section data-panel="teachback" hidden><div class="section-tag">Facilitator readiness</div><h2>Teach it in your own voice.</h2><p class="lead">Prepare a 5–8 minute segment and one scenario for review with Kerri or Zac. A meeting request is not a confirmed appointment.</p><div class="grid"><div class="card"><small>Your demonstration</small><h3>Explain. Apply. Respond.</h3><p>Explain all seven module messages, retell Run to the Roar, give a brief 30-second introduction, and demonstrate one respectful redirect.</p></div><div class="card"><small>Facilitation standards</small><h3>Keep the room safe.</h3><p>Protect privacy, avoid investigating or collecting trauma details, honor reporting duties, and model Integrity, Dignity, Courage, Collaboration, Stewardship, and Hope.</p></div></div><div class="dark">
+  <h3>Schedule your teach-back with Kerri or Zac</h3>
+  <p><strong>This is a separate scheduling process.</strong> After passing your assessment, email Project Worth with your name and a few available dates and times to request your 5–8 minute demonstration. Kerri or Zac will confirm the appointment directly by email.</p>
+  <p style="margin-bottom:10px">Send your request to <a href="mailto:info@projectworthwi.org" style="color:#f1cc72;font-weight:800;overflow-wrap:anywhere">info@projectworthwi.org</a>.</p>
+  
+  <p style="margin:12px 0 0;color:#e2ebf3;font-size:13px">Teach-back scheduling is handled separately from the portal. Email the address above and return to the Agreement tab to select “Yes, Kerri or Zac confirmed a date and time” only after receiving confirmation.</p>
+</div><div class="actions"><button type="button" class="btn btn-outline" data-goto="assessment">← Assessment</button><button type="button" class="btn btn-gold" data-goto="forms">Continue to forms &amp; resources →</button></div></section>
+<section data-panel="forms" hidden>
+  <div class="section-tag">Prepare · Forms &amp; resources</div>
+  <h2>Prepare to guide the room.</h2>
+  <p class="lead">Before your teach-back with Kerri or Zac, explore these resources and bring a 5–8 minute example of how you would guide a group.</p>
+  <div class="resource-grid">
+    <article class="download-card">
+      <span class="section-tag">01 · Facilitation</span>
+      <h3>Facilitator Guide</h3>
+      <p>Your guide to pacing, discussion, boundaries, and safe responses.</p>
+      <div class="actions pw-resource-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px"><a class="btn btn-outline" href="/resources/Light_the_Way_Facilitator_Guide.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a><a class="btn btn-outline" href="/resources/Light_the_Way_Facilitator_Guide.pdf" download="Project_Worth_Light_the_Way_Facilitator_Guide.pdf">Download PDF ↓</a></div>
+    </article>
+    <article class="download-card">
+      <span class="section-tag">02 · Participant learning</span>
+      <h3>Participant Workbook</h3>
+      <p>Explore participant reflections and choose one activity to demonstrate.</p>
+      <div class="actions pw-resource-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px"><a class="btn btn-outline" href="/resources/Light_the_Way_Participant_Workbook.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a><a class="btn btn-outline" href="/resources/Light_the_Way_Participant_Workbook.pdf" download="Project_Worth_Light_the_Way_Participant_Workbook.pdf">Download PDF ↓</a></div>
+    </article>
+    <article class="download-card">
+      <span class="section-tag">03 · Teaching presentation</span>
+      <h3>Light the Way Foundations</h3>
+      <p>The approved Professional &amp; Community Training slides you'll teach—not the facilitator course.</p>
+      <div class="actions pw-resource-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px"><a class="btn btn-outline" href="https://docs.google.com/presentation/d/1SmkHcKud-RfqH5SIGOI4Z6tNq5ttQGrAfJCcVEaIVjk/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">Open Google Slides ↗</a><a class="btn btn-outline" href="https://docs.google.com/presentation/d/1SmkHcKud-RfqH5SIGOI4Z6tNq5ttQGrAfJCcVEaIVjk/export/pdf" target="_blank" rel="noopener noreferrer">Download PDF ↓</a></div>
+    </article>
+    <article class="download-card">
+      <span class="section-tag">04 · Documentation</span>
+      <h3>Incident Report Form</h3>
+      <p>Practice factual documentation. This form never replaces required external reporting.</p>
+      <div class="actions pw-resource-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px"><a class="btn btn-outline" href="/project-worth-incident-report-fillable.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a><a class="btn btn-outline" href="/project-worth-incident-report-fillable.pdf" download="Project_Worth_Incident_Report_Fillable.pdf">Download PDF ↓</a></div>
+    </article>
+    <article class="download-card">
+      <span class="section-tag">05 · Readiness evaluation</span>
+      <h3>One-page Readiness Guide</h3>
+      <p>See the scoring rubric and what readiness looks like.</p>
+      <div class="actions pw-resource-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px"><a class="btn btn-outline" href="/resources/Light_the_Way_Facilitator_Readiness_Guide.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a><a class="btn btn-outline" href="/resources/Light_the_Way_Facilitator_Readiness_Guide.pdf" download="Project_Worth_Light_the_Way_Facilitator_Readiness_Guide.pdf">Download PDF ↓</a></div>
+    </article>
+
+    <article class="download-card">
+      <span class="section-tag">06 · Session records</span>
+      <h3>Attendance &amp; Certificates</h3>
+      <p>Track attendance and email permission so Project Worth can prepare Advocate certificates.</p>
+      <div class="actions pw-resource-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px"><a class="btn btn-outline" href="/resources/Light_the_Way_Session_Attendance_Fillable.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a><a class="btn btn-outline" href="/resources/Light_the_Way_Session_Attendance_Fillable.pdf" download="Project_Worth_Light_the_Way_Attendance_Fillable.pdf">Download PDF ↓</a></div>
+    </article>
+
+  </div>
+  
+<div class="callout" id="facilitatorReadinessChecklist">
+    <h3>Light the Way Readiness Checklist</h3>
+    <ul class="pw-readiness-checklist">
+      <li><label><input type="checkbox" data-readiness-step="0"><span><strong>Seven modules:</strong> Explain each key message.</span></label></li>
+      <li><label><input type="checkbox" data-readiness-step="1"><span><strong>Run to the Roar:</strong> Connect courage to safe action.</span></label></li>
+      <li><label><input type="checkbox" data-readiness-step="2"><span><strong>Teach-back:</strong> Lead 5–8 minutes and practice a redirect.</span></label></li>
+      <li><label><input type="checkbox" data-readiness-step="3"><span><strong>Workbook:</strong> Complete it and demonstrate one activity.</span></label></li>
+      <li><label><input type="checkbox" data-readiness-step="4"><span><strong>Practice report:</strong> Complete the fictional PDF during your demo.</span></label></li>
+      <li><label><input type="checkbox" data-readiness-step="5"><span><strong>Safety:</strong> Handle disclosures, reporting, and emergencies.</span></label></li>
+      <li><label><input type="checkbox" data-readiness-step="6"><span><strong>Research &amp; feedback:</strong> Explain both optional surveys; invite using workbook QR codes.</span></label></li>
+    </ul>
+    <p class="pw-research-note">Research identifies child-safety gaps; course feedback helps improve training. Both surveys are optional.</p>
+    <p id="readinessSaveStatus" class="pw-readiness-saved" role="status" aria-live="polite">Your progress is saved as you check each step.</p>
+    <p class="pw-readiness-footer"><strong>Ready: 85/100 + all safety requirements.</strong> Kerri or Zac provides feedback and another practice opportunity if needed.</p>
+  </div>
+  <div class="callout" id="practiceReportExercise">
+    <details class="pw-fictional-practice" open>
+      <summary><strong>Practice submitting an Incident Report</strong></summary>
+      <p>Kerri or Zac will give you a fictional scenario at your teach-back. Complete the form together, then upload your saved PDF. Never use real identities.</p>
+      <p><a class="btn btn-outline" href="/project-worth-incident-report-fillable.pdf" download="Project_Worth_Incident_Documentation_Fillable.pdf">Download fillable Incident Report ↓</a></p>
+      <p class="muted">Label the notes <strong>FICTIONAL PRACTICE — NOT A REAL INCIDENT</strong>, then save your completed PDF.</p>
+      <label for="practiceIncidentPdf"><strong>Upload fictional practice PDF (max 2.2 MB)</strong></label>
+      <input type="file" id="practiceIncidentPdf" accept=".pdf,application/pdf" style="display:block;margin:10px 0 12px;max-width:100%;width:100%;padding:11px;border:1px solid #bac9d5;border-radius:10px;background:#fff">
+      <label class="choice"><input type="checkbox" id="practiceFictionalOnly"><span><strong>I confirm this is fictional practice only.</strong><small>No real identities, concerns, or identifying case information are included.</small></span></label>
+      <div class="actions"><button type="button" class="btn btn-gold" id="submitPracticeReport">Submit Practice Incident Form</button></div>
+      <div id="practiceReportFeedback" class="status" role="status" aria-live="polite" hidden></div>
+      <p class="muted">Practice PDFs go only to <strong>Facilitator Readiness Review</strong>. Real concerns require the separate reporting process; call 911 in an emergency.</p>
+    </details>
+  </div>
+  <div class="callout">
+    <h3>Bring Light the Way to your organization</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0" aria-label="How individual learning grows into organization recognition">
+      <div style="background:#fff;border:1px solid #e8dcc4;border-radius:12px;padding:14px"><strong>01 · Learn</strong><p>Complete Foundations and earn your <strong>Advocate Certificate</strong>.</p></div>
+      <div style="background:#fff;border:1px solid #e8dcc4;border-radius:12px;padding:14px"><strong>02 · Together</strong><p>Covered staff, service contractors, and volunteers earn Advocate certificates.</p></div>
+      <div style="background:#fff;border:1px solid #e8dcc4;border-radius:12px;padding:14px"><strong>03 · Recognized</strong><p>Project Worth reviews the roster and issues the <strong>Certified Light the Way Organization</strong> certificate.</p></div>
+    </div>
+    <p class="muted">Schools should include applicable roles under Wisconsin Act 200. Organizations remain responsible for screening, supervision, and safeguarding. Recognition is not state accreditation; CE credits are not yet available.</p>
+    
+  </div>
+  <p class="muted">Need help opening a resource? Contact <a href="mailto:info@projectworthwi.org?subject=Light%20the%20Way%20Facilitator%20Resources">info@projectworthwi.org</a>. Please keep approved materials unchanged.</p>
+  <label class="choice">
+    <input type="checkbox" id="formsReviewed">
+    <span><strong>I have reviewed my facilitator materials.</strong>
+      <small>I know what to bring to my teach-back.</small></span>
+  </label>
+  <p id="formsReviewStatus" class="muted" role="status" aria-live="polite"></p>
+  <div class="actions">
+    <button type="button" class="btn btn-outline" data-goto="teachback">← Teach-back preparation</button>
+    <button type="button" class="btn btn-gold" id="formsNext" disabled>Continue to agreement →</button>
+  </div>
+</section>
+<section data-panel="agreement" hidden><div class="section-tag">Before submission · Required agreement</div><h2>Carry the light with integrity.</h2><p class="lead">This facilitator agreement builds on your existing Project Worth representative commitment and is required before a teach-back scheduling confirmation can be submitted.</p>
+<div class="callout"><strong>Respect the materials.</strong> Use Project Worth slides, guides, workbooks, and forms only for approved training. Please get written permission before copying, forwarding, posting, adapting, or sharing them beyond your authorization. This protects the message we carry together.</div>
+<div class="agreement"><h3>Light the Way Facilitator Agreement</h3><p>I agree to:</p><ol><li><strong>Represent Project Worth professionally.</strong> Uphold Integrity, Dignity, Courage, Collaboration, Stewardship, and Hope. Engage with people and systems respectfully and work collaboratively, not combatively.</li><li><strong>Protect curriculum integrity.</strong> Use approved training materials and reporting guidance, credit Project Worth, and seek written permission before changing required content or extending authorization to others.</li><li><strong>Maintain safe learning boundaries.</strong> Never solicit personal disclosures or identifying case details. Respect participants' choices, privacy, and dignity; facilitate education rather than therapy, investigation, or legal advice.</li><li><strong>Respond responsibly.</strong> Take immediate safety concerns seriously, follow applicable external reporting duties without delay, never promise secrecy, and document only appropriate factual information through approved processes.</li><li><strong>Support ethical research and outreach.</strong> Share a relevant, approved Project Worth research opportunity with each host organization using official channels. Participation is voluntary; do not collect private responses or case information.</li><li><strong>Honor authorization and accountability.</strong> Teach only after written approval and within the approved scope. Approval may be paused or withdrawn. Completing this course does not make me an employee, spokesperson, investigator, or accredited continuing-education provider.</li></ol><p class="muted">Agreement version: <strong>LTW-FAC-2026-10-16</strong></p><label for="legalName"><strong>Electronic signature — full legal name</strong></label><div><input id="legalName" type="text" autocomplete="name" maxlength="120" placeholder="First and last name"></div><label class="choice"><input type="checkbox" id="agree"><span><strong>I have read this agreement and consent to using my typed name as my electronic signature.</strong><small>Submission must be verified and timestamped by Project Worth's secure service to become an official record.</small></span></label></div>
+<h3 style="margin-top:23px">Is your teach-back scheduled?</h3><label class="choice"><input type="radio" name="scheduled" value="yes"><span><strong>Yes, Kerri or Zac confirmed a date and time.</strong><small>I am ready to send my confirmation and signed agreement for review.</small></span></label><label class="choice"><input type="radio" name="scheduled" value="no"><span><strong>Not yet — save my progress.</strong><small>I will return after I have a confirmed appointment.</small></span></label><label class="choice"><input type="checkbox" id="research"><span><strong>I understand the approved research outreach responsibility.</strong><small>I will invite participation through official channels and will not pressure people or collect sensitive details.</small></span></label><div id="submitFeedback" class="status" role="status" aria-live="polite" hidden></div><div class="actions"><button type="button" class="btn btn-outline" data-goto="teachback">← Teach-back</button><button type="button" class="btn btn-gold" id="submitAgreement">Save / submit confirmation →</button></div></section>
+<section data-panel="result" hidden><div class="section-tag">Next step · Pending review</div><h2>Thank you for carrying the light.</h2><p id="resultText" class="lead"></p><div id="signedInfo" class="callout"></div><div class="dark"><h3>Teach what matters. Protect who matters.</h3><p>Only a successful teach-back, completed requirements, and written Project Worth authorization make someone an approved facilitator. Together, we light up the darkness.</p></div><div class="actions"><a class="btn btn-outline" href="my-learning.html">← Return to My Learning</a><button class="btn btn-primary" data-goto="teachback">Review teach-back →</button><button class="btn btn-gold" data-goto="certificate">Certificate status →</button></div></section>
+<section data-panel="certificate" hidden>
+  <div class="section-tag">After your teach-back · Official authorization</div>
+  <h2>Approval before certification.</h2>
+  <p class="lead">A passing assessment, signed agreement, and teach-back do not independently authorize you to facilitate. Your certificate is issued only after Kerri or Zac records written approval through Project Worth's secure system.</p>
+  <div class="certificate-panel">
+    <h3>Light the Way Certified Facilitator</h3>
+    <p id="certificateStatus" class="certificate-status" role="status" aria-live="polite">Awaiting Project Worth approval.</p>
+    <p id="certificateDetails" class="muted" hidden></p>
+    <p id="certificateIntegrity" class="muted">Certificates are uniquely numbered, issued only after an authorized approval, and verified against Project Worth's official record. Altered or unverifiable copies are not valid.</p>
+    <div class="certificate-actions">
+      <button type="button" class="btn btn-outline" id="checkApproval">Check approval status</button>
+      <a id="downloadCertificate" class="btn btn-gold" href="#" target="_blank" rel="noopener noreferrer" hidden>Download certified facilitator PDF ↗</a>
+      <a id="verifyCertificate" class="btn btn-outline" href="#" target="_blank" rel="noopener noreferrer" hidden>Verify certificate ↗</a>
+    </div>
+  </div>
+  <section class="learner-readiness-evaluation" id="learnerReadinessEvaluation" aria-labelledby="learnerEvaluationHeading">
+  <div class="section-tag">Your readiness review</div>
+  <h3 id="learnerEvaluationHeading">Your Light the Way Evaluation</h3>
+  <p id="learnerEvaluationStatus" class="muted" role="status" aria-live="polite">Checking your Project Worth readiness review…</p>
+  <div id="learnerEvaluationDetails" hidden>
+    <p id="learnerEvaluationSummary" class="learner-eval-score"></p>
+    <div id="learnerEvaluationScores" class="learner-eval-grid"></div>
+    <div class="learner-eval-notes"><strong>Feedback &amp; next steps</strong><p id="learnerEvaluationNotes"></p></div>
+    <p id="learnerEvaluationSafeguards" class="muted"></p>
+    <button type="button" class="btn btn-outline" id="acknowledgeEvaluation">I have reviewed my evaluation ✓</button>
+    <p id="learnerEvaluationAckStatus" role="status" class="muted"></p>
+  </div>
+</section>
+<p class="muted">Approval and certificate issuance must be recorded on the server, not in this browser. Only authorized Project Worth administrators—Kerri or Zac—can approve facilitators. If your review is complete but a certificate is not available, contact <a href="mailto:info@projectworthwi.org?subject=Facilitator%20Certificate%20Status">info@projectworthwi.org</a>.</p>
+  <div class="facilitator-welcome-kit" aria-labelledby="facilitatorKitHeading">
+    <div class="section-tag">PROJECT WORTH / LIGHT THE WAY FACILITATORS</div>
+    <h3 id="facilitatorKitHeading">Project Worth is a verb.</h3>
+    <p class="facilitator-kit-intro">Your certificate recognizes the work you've done. What matters next is helping adults recognize concerns, respond responsibly, and build safer places for children.</p>
+    <div class="facilitator-kit-list">
+      <div class="facilitator-kit-item">
+        <span class="facilitator-kit-label">01 / FOR YOU</span>
+        <strong>Two merch items from The Spark Shop on us (you've earned it!)</strong>
+        <p>Select any two items you would love from The Spark Shop. We'll help you represent Project Worth wherever you serve.</p>
+      </div>
+      <div class="facilitator-kit-item">
+        <span class="facilitator-kit-label">02 / FOR THE PEOPLE YOU TRAIN</span>
+        <strong>Light the Way participant swag box</strong>
+        <p>Pens and stickers to share at your Foundations sessions.</p>
+      </div>
+    </div>
+    <div class="facilitator-kit-next">
+      <p><strong>After approval:</strong> Project Worth will email your facilitator certificate and instructions for arranging your welcome kit.</p>
+      <button class="btn btn-gold" type="button" id="kitShowForm" disabled>Request your welcome kit →</button>
+    </div>
+    <p id="kitOrderStatus" role="status" aria-live="polite">Welcome-kit requests open after official facilitator approval.</p><p class="facilitator-kit-tagline">BECAUSE EVERY CHILD IS WORTH THE WORK.</p><section class="pw-kit-request" id="kitRequestPanel" aria-labelledby="kitFormHeading" hidden>
+      <div class="section-tag">APPROVED FACILITATOR / MERCHANDISE REQUEST</div>
+      <h4 id="kitFormHeading">Your Spark Shop welcome kit</h4>
+      <p>Choose <strong>two items from <a href="/merch.html" target="_blank" rel="noopener noreferrer">The Spark Shop ↗</a>, on us</strong>. Tell us what you'll need for your participants and where to send everything. Project Worth will review and fulfill the request.</p>
+      <form id="facilitatorKitForm">
+        <div class="pw-kit-fields">
+          <fieldset>
+            <legend>01 / Your two Spark Shop items</legend>
+            <label for="kitItem1">Item 1 — product name <input id="kitItem1" name="item1" type="text" maxlength="240" placeholder="Item and color" required></label>
+            <label for="kitSize1">Size / style (if applicable) <input id="kitSize1" name="size1" type="text" maxlength="60" placeholder="e.g., Medium, navy"></label>
+            <label for="kitUrl1">Spark Shop item link (helpful) <input id="kitUrl1" name="url1" type="url" maxlength="450" placeholder="https://..."></label>
+            <label for="kitItem2">Item 2 — product name <input id="kitItem2" name="item2" type="text" maxlength="240" placeholder="Item and color" required></label>
+            <label for="kitSize2">Size / style (if applicable) <input id="kitSize2" name="size2" type="text" maxlength="60" placeholder="e.g., Large, cream"></label>
+            <label for="kitUrl2">Spark Shop item link (helpful) <input id="kitUrl2" name="url2" type="url" maxlength="450" placeholder="https://..."></label>
+          </fieldset>
+          <fieldset>
+            <legend>02 / Participant materials</legend>
+            <p class="muted">Request Light the Way pens and stickers for your upcoming sessions.</p>
+            <label for="kitAttendees">Expected participants <input id="kitAttendees" type="number" min="0" max="1000" step="1" value="15" required></label>
+            <label for="kitPens">Pens requested <input id="kitPens" type="number" min="0" max="1000" step="1" value="15" required></label>
+            <label for="kitStickers">Stickers requested <input id="kitStickers" type="number" min="0" max="1000" step="1" value="15" required></label>
+          </fieldset>
+          <fieldset class="pw-kit-wide">
+            <legend>03 / Shipping address</legend>
+            <div class="pw-kit-grid">
+              <label for="kitRecipient" class="pw-kit-wide">Recipient name <input id="kitRecipient" maxlength="120" autocomplete="name" required></label>
+              <label for="kitAddress1" class="pw-kit-wide">Street address <input id="kitAddress1" maxlength="180" autocomplete="address-line1" required></label>
+              <label for="kitAddress2" class="pw-kit-wide">Apartment, suite, or unit (optional) <input id="kitAddress2" maxlength="180" autocomplete="address-line2"></label>
+              <label for="kitCity">City <input id="kitCity" maxlength="90" autocomplete="address-level2" required></label>
+              <label for="kitState">State <input id="kitState" maxlength="60" autocomplete="address-level1" required></label>
+              <label for="kitPostal">ZIP code <input id="kitPostal" maxlength="20" autocomplete="postal-code" required></label>
+            </div>
+            <label class="pw-kit-billing-check"><input type="checkbox" id="kitBillingSame" checked> Billing address is the same as shipping</label>
+<fieldset class="pw-kit-wide" id="kitBillingFields" hidden disabled>
+<legend>Billing address</legend>
+<div class="pw-kit-grid">
+<label>Billing name <input id="kitBillingRecipient" maxlength="120"></label>
+<label>Billing street <input id="kitBillingAddress1" maxlength="180"></label>
+<label>Apartment / suite <input id="kitBillingAddress2" maxlength="180"></label>
+<label>Billing city <input id="kitBillingCity" maxlength="90"></label>
+<label>Billing state <input id="kitBillingState" maxlength="60"></label>
+<label>Billing ZIP <input id="kitBillingPostal" maxlength="20"></label>
+</div></fieldset>
+<label for="kitNotes">Special requests or delivery notes (optional) <textarea id="kitNotes" rows="2" maxlength="700" placeholder="Delivery information or a question for Project Worth"></textarea></label>
+          </fieldset>
+        </div>
+        <p class="muted">Shipping details are used only to arrange your welcome kit and are available to authorized Project Worth administrators. This submits a request; it does not place a retail order.</p>
+        <button id="kitSubmit" type="submit" class="btn btn-gold">Submit welcome-kit request →</button>
+      </form>
+      <p id="kitOrderResult" role="status" aria-live="polite" hidden></p>
+    </section>
+  </div>
+  <div class="actions"><button type="button" class="btn btn-outline" data-goto="agreement">← Agreement</button><a href="my-learning.html" class="btn btn-outline">Return to My Learning →</a></div>
+</section>
+<hr class="divider"><p class="muted">Project Worth · Training &amp; Research Institute. Educational content only; not legal advice, an intake service, or emergency response. If a child is in immediate danger, call 911.</p>
+</main></div></div>
+<script src="/institute-tab-session.js"></script><script>
+'use strict';
+// CONTENT: 32 slides checked against Light the Way Facilitator Training.pptx.
+// SLIDE TEXT is embedded here: no image files or outside JavaScript required.
+// The presentation remains in Google Slides; no slide text or images are embedded.
+// Google Slides controls navigation within its embedded 32-slide viewer.
+const questions=[
+['Module 1','Who carries the primary responsibility for protecting children?',['Children who recognize danger','Adults and the systems they create','Only child protection agencies','Only parents'],null],
+['Module 1','What does Project Worth mean by a child’s worth?',['It depends on a child speaking up','It is earned through trust','It is inherent, regardless of circumstances','An agency decides'],null],
+['Module 2','A repeated boundary concern is noticed. What should a facilitator emphasize?',['Assume adult motives','Describe observable behavior and respond within role','Wait for proof of an offense','Publicly name the person'],null],
+['Module 2','How should grooming concerns be discussed?',['Patterns and boundaries without deciding guilt','All unusual friendliness is abuse','Only physical evidence matters','Participants diagnose motives'],null],
+['Module 3','A child starts to share a concern. What is a sound first response?',['Ask detailed investigative questions','Promise secrecy','Stay calm, listen, and support','Challenge inconsistencies'],null,true],
+['Module 3','A delayed or incomplete disclosure means:',['It must be false','It proves someone is mistaken','Conduct a new interview','It is not, by itself, proof of dishonesty'],null],
+['Module 4','Which sequence reflects the response framework?',['Confront, debate, share, wait','Document, report, preserve, support, safeguard','Investigate, interview, publish, close','Notify a colleague and stop'],null],
+['Module 4','When external reporting is legally required, telling a supervisor is:',['Always sufficient','A replacement for reporting','Not a substitute for required external reporting','More important than safety'],null,true],
+['Module 5','An agency closes a report. What should a child-serving organization do?',['End all safeguarding','Continue safeguards within its authority','Publicly name the accused','Destroy related records'],null],
+['Module 5','What is the key distinction in Module 5?',['Agency decisions and ongoing safeguarding duties are not always the same','All reports lead to prosecution','Only investigators protect children','Every concern is a verdict'],null],
+['Module 6','Which action turns policy into practice?',['Assume policies enforce themselves','Make exceptions for trusted adults','Consistent boundaries, oversight, and accountability','Avoid difficult training'],null],
+['Module 6','What is useful to ask after Foundations?',['Who should we blame publicly?','What protective practice should we strengthen?','Who had the worst experience?','Can we guarantee zero risk?'],null],
+['Module 7','What does Be the Light ask participants to do?',['Choose one achievable protective action','Become investigators','Wait for someone else','Share private stories publicly'],null],
+['Research partnership','How does a facilitator connect a host organization with research?',['Require survey participation','Share an approved opportunity through official channels; participation is voluntary','Collect identifying case details','Forward participants’ personal information'],null],
+['Run to the Roar','What does the parable represent?',['Confront accused people','Face hard truths through safe, lawful action','Investigate independently','Pressure public disclosures'],null],
+['Safety response','During Light the Way training, someone reports a child-safety concern. What must you do?',['Ask the group to gather details and investigate','Promise secrecy and wait until the course ends','Support safety and privacy, complete a Project Worth Incident Report, and follow any required external reporting without delay','Only tell your supervisor; no documentation or external report is needed'],null,true],
+['Facilitation','Which method guides discussion?',['Debate, persuade, conclude','Invite, pause, redirect, recenter','Interrogate, compare, diagnose','Avoid questions'],null],
+['Safety response','A child may be in immediate danger and someone asks for secrecy. What is appropriate?',['Promise confidentiality','Wait until another training','Investigate first','Address safety, explain limits, report as required; call 911 for immediate danger'],null,true],
+['Curriculum integrity','A facilitator wants to change reporting guidance. What is required?',['Written Project Worth approval','Only host organization approval','No approval required','Remove the guidance'],null],
+['Authorization','When may someone independently deliver Light the Way as an approved facilitator?',['Immediately after this page','After the quiz alone','Only after required steps, review, and written Project Worth authorization','When their manager requests it'],null]
+];
+const PRESENTATION_ID = '1-3mf6Etad5l0jMarxwc_ZkVwXYK5Fdfv0cF06_b36pc';
+const TRAINING_SLIDE_IDS = [
+  "pw_polish_01",
+  "pw_polish_02",
+  "pw_polish_03",
+  "pw_polish_04",
+  "pw_polish_05",
+  "pw_polish_06",
+  "pw_run_to_the_roar_07",
+  "pw_polish_07",
+  "pw_polish_08",
+  "pw_polish_09",
+  "pw_polish_10",
+  "pw_polish_11",
+  "pw_polish_12",
+  "pw_polish_13",
+  "pw_polish_14",
+  "pw_polish_15",
+  "pw_polish_16",
+  "pw_polish_17",
+  "pw_polish_18",
+  "pw_incident_report_19",
+  "pw_polish_19",
+  "pw_polish_20",
+  "pw_curriculum_integrity_22",
+  "pw_polish_21",
+  "pw_polish_22",
+  "pw_polish_23",
+  "pw_polish_24",
+  "ltw_26_knowledge",
+  "ltw_26_pitch",
+  "ltw_26_resources",
+  "ltw_26_certification",
+  "pw_polish_25"
+];
+
+// The Slides player has no public cross-origin API for reading its current slide.
+// Instead, Next/Previous load a deep link for the correct slide object ID.
+function trainingSlideUrl(index) {
+  const slideId = TRAINING_SLIDE_IDS[index];
+  return 'https://docs.google.com/presentation/d/' + PRESENTATION_ID +
+    '/preview?rm=minimal&slide=id.' + encodeURIComponent(slideId) +
+    '#slide=id.' + encodeURIComponent(slideId);
+}
+const $=id=>document.getElementById(id);
+// Production integration contract:
+// - event 'assessment': server must grade and persist attempts securely.
+// - event 'teachback-scheduled': server must save signed agreement atomically.
+// - event 'certificate-status': read-only, session-authenticated response only.
+//   Respond {status:'approved',approvedBy:'Kerri'|'Zac',
+//            certificate:{status:'issued',id:'...',completedAt:'YYYY-MM-DD',
+//                         url:'https://...',verificationUrl:'https://...',issuedAt:'...'}}.
+// - Kerri/Zac approval + uniquely numbered, verifiable PDF MUST be created server-side.
+// - An approved response must also contain certificate.completedAt (YYYY-MM-DD)
+//   and ideally certificate.verificationUrl; neither may come from browser state.
+// - Admin identity/role, learner identity, and completed date must be checked on server.
+// - Store the issued PDF's SHA-256 hash; ideally digitally sign the PDF with an
+//   organization-controlled signing key. Keep downloadable PDFs read-only in S3.
+// - All browser checks are display-only; they DO NOT secure issuing certificates.
+const API_URL='https://t0pckriwia.execute-api.us-east-2.amazonaws.com/api/facilitator-training';
+const USER_ID=(()=>{try{const t=sessionStorage.getItem('pwInstituteIdToken')||'';const c=JSON.parse(atob(t.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));return c.sub||'missing'}catch(_){return 'missing'}})();
+const KEY='pw-ltw-facilitator-v3:'+USER_ID;
+const AGREEMENT_VERSION='LTW-FAC-2026-10-16';
+const panels=['welcome','slides','assessment','teachback','forms','agreement','certificate'];
+const blank=()=>({started:false,slide:0,maxViewed:0,formsReviewed:false,practiceIncidentSubmitted:false,attempts:0,passed:false,score:0,scheduled:false,signed:null,lastAssessment:null,awaitingRetry:false});
+let state=blank();
+// Server-verified certificate status is NEVER persisted in browser storage.
+let verifiedCertificate=null;
+let approvalRequestInFlight=false;
+try {
+  const recent=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(recent){state={...state,...recent}}
+  else {
+    // Keep assessments and signed records earned in older courses.
+    // A one-click slide checkbox from v2 is not evidence of 32 completed slides.
+    const oldV2=JSON.parse(localStorage.getItem('pw-ltw-facilitator-v2:'+USER_ID)||'null');
+    const oldV1=JSON.parse(localStorage.getItem('pw-ltw-facilitator-v1:'+USER_ID)||'null');
+    const older=oldV2||oldV1;
+    if(older){state={...state,started:!!older.started,attempts:Number(older.attempts)||0,passed:!!older.passed,score:Number(older.score)||0,maxViewed:older.passed?32:0,formsReviewed:!!older.formsReviewed,scheduled:older.scheduled===true||older.schedule==='yes',signed:older.signed||older.facilitatorAgreement||null}}
+  }
+}catch(_){/* Storage may be blocked. */}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(_){}}
+function notice(id,message,type=''){const el=$(id);el.textContent=message;el.className='status '+type;el.hidden=false}
+function allowed(tab){if(tab==='assessment')return state.maxViewed===32;if(tab==='teachback'||tab==='forms')return state.passed;if(tab==='agreement')return state.passed&&state.formsReviewed;if(tab==='certificate')return state.passed&&Boolean(state.signed);return true}
+function progress(){let v=state.passed?90:Math.round(state.maxViewed/32*70);if(state.signed)v=95;if(verifiedCertificate)v=100;$('progressPct').textContent=v+'%';$('progressFill').style.width=v+'%';document.querySelectorAll('.step').forEach(b=>{const tab=b.dataset.tab;b.disabled=!allowed(tab);b.classList.toggle('done',(tab==='slides'&&state.maxViewed===32)||(tab==='assessment'&&state.passed)||(tab==='forms'&&state.formsReviewed)||(tab==='agreement'&&!!state.signed)||(tab==='certificate'&&!!verifiedCertificate))})}
+function show(tab){if(!allowed(tab))return;const wasOnSlides=!document.querySelector('[data-panel="slides"]').hidden;if(tab==='slides'&&!wasOnSlides){state.slide=0;save();}document.querySelectorAll('[data-panel]').forEach(p=>p.hidden=p.dataset.panel!==tab);document.querySelectorAll('.step').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));progress();$('course').scrollIntoView({block:'start',behavior:'smooth'});if(tab==='slides')renderSlideReview();if(tab==='assessment')renderQuiz();if(tab==='forms')renderForms();if(tab==='certificate')refreshCertificateStatus()}
+function renderSlideReview(){
+  state.maxViewed=Math.max(0,Math.min(32,Math.floor(Number(state.maxViewed)||0)));
+  state.slide=Math.max(0,Math.min(31,Math.floor(Number(state.slide)||0)));
+
+  // A learner can revisit any slide already reached, but cannot skip ahead
+  // of the sequential review progression before completing the pathway.
+  if(state.maxViewed<32 && state.slide>state.maxViewed){
+    state.slide=state.maxViewed;
+  }
+
+  const requestedUrl=trainingSlideUrl(state.slide);
+  const frame=$('slidesEmbed');
+  if(frame.getAttribute('src')!==requestedUrl){
+    frame.setAttribute('src',requestedUrl);
+  }
+  const current=state.slide+1;
+  const done=state.maxViewed===32;
+  const last=current===32;
+  $('slideReviewCount').textContent='Slide '+current+' of 32 · '+state.maxViewed+' reviewed';
+  $('slideReviewInstruction').textContent=done
+    ? 'You have reviewed all 32 slides. Use Previous and Next to revisit them, or continue to the assessment.'
+    : last
+      ? 'You have reached the final slide. Choose Finish slide review to unlock your assessment.'
+      : 'Use Previous and Next to review the training. Moving forward marks each slide as reviewed.';
+
+  $('previousTrainingSlide').disabled=state.slide===0;
+  $('slideArrowPrevious').disabled=state.slide===0;
+  $('slideArrowNext').disabled=false;
+  $('nextTrainingSlide').textContent=last
+    ? (done?'Restart slides ↻':'Finish slide review ✓')
+    : 'Next slide →';
+  $('nextTrainingSlide').disabled=false;
+  $('goQuiz').disabled=!done;
+}
+
+const readinessInputs=Array.from(document.querySelectorAll('[data-readiness-step]'));
+let readinessQueue=Promise.resolve();
+function renderReadinessChecks(steps){
+  const list=Array.isArray(steps)?Array.from({length:7},(_,i)=>steps[i]===true):Array(7).fill(false);
+  readinessInputs.forEach((input,i)=>{input.checked=list[i]===true;});
+  $('readinessSaveStatus').textContent=list.filter(Boolean).length+'/7 steps checked · Saved to your Institute account.';
+}
+readinessInputs.forEach(input=>input.addEventListener('change',()=>{
+  const steps=readinessInputs.map(box=>box.checked);
+  $('readinessSaveStatus').textContent='Saving checklist progress…';
+  readinessQueue=readinessQueue.catch(()=>{}).then(async()=>{
+    const res=await eventToPortal('readiness-checklist',{steps});
+    if(!res.saved)throw Error('Checklist save was not confirmed.');
+    $('readinessSaveStatus').textContent=steps.filter(Boolean).length+'/7 steps checked · Saved to your Institute account.';
+  }).catch(err=>{
+    $('readinessSaveStatus').textContent='Could not save checklist progress: '+err.message+'. Check your connection and click a step again to retry.';
+  });
+}));
+
+function renderForms(){
+  $('formsReviewed').checked=Boolean(state.formsReviewed);
+  $('formsNext').disabled=!(state.passed&&state.formsReviewed);
+}
+function renderQuiz() {
+  const box=$('questions');
+  if (box.children.length===0) {
+    questions.forEach((q,i)=>{
+      const field=document.createElement('fieldset');
+      field.className='quiz-question';
+      const legend=document.createElement('legend');
+      legend.textContent=(i+1)+'. '+q[1];
+      const tag=document.createElement('span');
+      tag.className='quiz-tag';
+      tag.textContent=q[0]+(q[4]?' · Critical safety':'');
+      field.append(legend,tag);
+      q[2].forEach((option,j)=>{
+        const label=document.createElement('label');
+        label.className='answer';
+        const input=document.createElement('input');
+        input.type='radio';
+        input.name='q'+i;
+        input.value=j;
+        input.required=true;
+        const labelText=document.createElement('span');
+        labelText.textContent=option;
+        label.append(input,labelText);
+        field.append(label);
+      });
+      box.append(field);
+    });
+  }
+  $('attemptsLabel').textContent=state.passed
+    ? 'Passed: '+state.score+'/20'
+    : 'Attempts remaining: '+Math.max(0,3-state.attempts)+' of 3';
+  $('quizForm').hidden=state.passed||state.attempts>=3||state.awaitingRetry;
+  $('retryQuiz').hidden=state.passed||state.attempts>=3||!state.awaitingRetry;
+  $('afterQuiz').hidden=!state.passed;
+  renderAssessmentReview();
+}
+
+function renderAssessmentReview() {
+  const review=$('assessmentReview');
+  review.replaceChildren();
+  const result=state.lastAssessment;
+  if (!result || result.passed || !Array.isArray(result.answers)) {
+    review.hidden=true;
+    return;
+  }
+  review.hidden=false;
+  const heading=document.createElement('h3');
+  heading.textContent='Assessment review · '+result.score+' / 20 ('+Math.round(result.score/20*100)+'%)';
+  const intro=document.createElement('p');
+  const missed=result.answers.reduce((n,answer,i)=>n+(answer!==questions[i][3]?1:0),0);
+  intro.textContent=missed+' incorrect '+(missed===1?'answer':'answers')+'. Review these before your next attempt.';
+  review.append(heading,intro);
+  const list=document.createElement('ol');
+  list.className='assessment-missed';
+  result.answers.forEach((answer,i)=>{
+    const q=questions[i];
+    if (!q || answer===q[3])return;
+    const item=document.createElement('li');
+    const label=document.createElement('h4');
+    label.textContent='Question '+(i+1)+(q[4]?' · Critical safety':'');
+    const prompt=document.createElement('p');
+    prompt.textContent=q[1];
+    const selected=document.createElement('div');
+    selected.className='selected-answer';
+    selected.textContent='Your answer: '+(q[2][answer]||'No answer');
+    const correct=document.createElement('div');
+    correct.className='correct-answer';
+    correct.textContent='Correct answer: '+q[2][q[3]];
+    item.append(label,prompt,selected,correct);
+    list.append(item);
+  });
+  review.append(list);
+}
+
+renderAssessmentReview=function(){const box=$('assessmentReview');box.hidden=true;box.replaceChildren();};
+$('retryQuiz').addEventListener('click',()=>{
+  if (state.passed || state.attempts>=3)return;
+  state.awaitingRetry=false;
+  state.lastAssessment=null;
+  save();
+  $('quizForm').reset();
+  $('quizFeedback').hidden=true;
+  renderQuiz();
+  $('questions').scrollIntoView({block:'start',behavior:'smooth'});
+});
+
+function certificateMessage(message) {
+  $('certificateStatus').textContent=message;
+}
+
+function renderCertificate() {
+  const link=$('downloadCertificate');
+  const details=$('certificateDetails');
+  link.hidden=!verifiedCertificate;
+  details.hidden=!verifiedCertificate;
+  if (verifiedCertificate) {
+    link.href=verifiedCertificate.url;
+    const verifyLink=$('verifyCertificate');
+    verifyLink.hidden=!verifiedCertificate.verificationUrl;
+    if(verifiedCertificate.verificationUrl)verifyLink.href=verifiedCertificate.verificationUrl;
+    else verifyLink.removeAttribute('href');
+    const complete=verifiedCertificate.completedAt;
+    details.textContent='Certificate '+verifiedCertificate.id+
+      ' · Approved: '+complete+
+      ' · Approved by Project Worth'+
+      (verifiedCertificate.validUntil?' · Valid through '+verifiedCertificate.validUntil:'')+
+      ' · Renew annually';
+    certificateMessage(verifiedCertificate.expired?'100% Training Complete. Your facilitator approval has expired; renew through Project Worth before leading another session.':'100% Complete! Your approved Light the Way Facilitator certificate is ready. A PDF copy has also been emailed to you.');
+  } else {
+    link.removeAttribute('href');
+    $('verifyCertificate').hidden=true;
+    $('verifyCertificate').removeAttribute('href');
+    details.textContent='';
+    certificateMessage('Awaiting Kerri or Zac review. Once approved, your numbered certificate will appear here and a PDF copy will be emailed to you.');
+  }
+  $('checkApproval').disabled=!API_URL||approvalRequestInFlight;
+  progress();
+}
+
+async function refreshCertificateStatus() {
+  verifiedCertificate=null;
+  renderCertificate();
+  if (!API_URL)return;
+  approvalRequestInFlight=true;
+  $('checkApproval').disabled=true;
+  certificateMessage('Checking your approval record…');
+  try {
+    // Secure server must identify the learner from the authenticated session,
+    // verify an approval by Kerri or Zac, and issue a server-generated PDF.
+    // NEVER accept learner-supplied localStorage as certificate authorization.
+    const response=await fetch(API_URL,{
+      method:'POST',cache:'no-store',
+      headers:{'Content-Type':'application/json',Authorization:'Bearer '+sessionStorage.getItem('pwInstituteIdToken')},
+      body:JSON.stringify({course:'light-the-way-facilitator',event:'certificate-status'})
+    });
+    if (!response.ok)throw Error('Could not verify your approval status. Please try again.');
+    const result=await response.json();
+    const approved=['approved','expired'].includes(String(result.status||'').toLowerCase());
+    const expired=result.status==='expired';
+    const issued=['issued','expired'].includes(result.certificate?.status);
+    const url=result.certificate?.url;
+    const completedAt=String(result.certificate?.completedAt||'');
+    const verifyUrl=String(result.certificate?.verificationUrl||'');
+    const certificateId=String(result.certificate?.id||'');
+    const approver=String(result.approvedBy||'').trim();
+    // This is a display sanity check ONLY. The trusted server must verify
+    // the administrator's authenticated ID and the signed issuance record.
+    const authorizedApprover=/\b(kerri|zac)\b/i.test(approver);
+    const isValidDate=/^\d{4}-\d{2}-\d{2}$/.test(completedAt);
+    const issuedId=certificateId.length>8&&certificateId.length<128;
+    const validDownload=typeof url==='string'&&/^https:\/\/[^\s]+$/i.test(url);
+    const validVerify=!verifyUrl||/^https:\/\/[^\s]+$/i.test(verifyUrl);
+    if(approved&&issued&&authorizedApprover&&issuedId&&isValidDate&&validDownload&&validVerify){
+      verifiedCertificate={
+        url,id:certificateId,approver,completedAt,
+        verificationUrl:verifyUrl,issuedAt:result.certificate?.issuedAt||'',validUntil:result.certificate?.validUntil||'',expired
+      };
+    } else if(approved) {
+      certificateMessage('Approval is recorded, but your certificate is not issued yet. Please contact Project Worth.');
+    } else if(result.status==='declined'||result.status==='changes_requested') {
+      certificateMessage('Your review requires follow-up with Kerri or Zac before certification.');
+    } else if(result.status==='revoked') {
+      certificateMessage('Facilitator authorization is not active. Please contact Project Worth.');
+    } else {
+      certificateMessage('Approval is still pending. Complete your teach-back and wait for written authorization from Kerri or Zac.');
+    }
+  }catch(error){certificateMessage(error.message)}
+  finally{
+    approvalRequestInFlight=false;
+    if(verifiedCertificate)renderCertificate();
+    else { $('downloadCertificate').hidden=true;$('checkApproval').disabled=false;progress(); }
+  }
+}
+$('checkApproval').addEventListener('click',refreshCertificateStatus);
+
+async function eventToPortal(event,data){
+ const token=await window.PWSession.getToken();
+ if(!token)throw Error('Sign in to Project Worth first.');
+ const res=await fetch(API_URL,{method:'POST',cache:'no-store',
+ headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},
+ body:JSON.stringify({course:'light-the-way-facilitator',event,...data})});
+ const val=await res.json().catch(()=>({}));
+ if(!res.ok)throw Error(val.error||'Training service unavailable.');
+ if(val.saved!==true)throw Error('Training record not verified.');
+ return val;
+}
+$('beginBtn').addEventListener('click',async()=>{try{await eventToPortal('course-started',{});state.started=true;save();show('slides')}catch(e){notice('integrationNotice',e.message,'error')}});
+// The iframe is cross-origin, so the site controls slide changes through
+// known slide object IDs rather than relying on Google's internal arrows.
+function previousTrainingSlide(){
+  if(state.slide<=0)return;
+  state.slide--;
+  save();renderSlideReview();progress();
+}
+let progressQueue=Promise.resolve();
+function queueProgress(n){const job=progressQueue.then(()=>eventToPortal('slide-progress',{maxViewed:n}));progressQueue=job.catch(e=>notice('integrationNotice','Progress save failed: '+e.message,'error'));}
+function nextTrainingSlide(){
+  // Sequential advancement acknowledges the slide being viewed.
+  if(state.slide===state.maxViewed && state.maxViewed<32){
+    state.maxViewed++;
+    queueProgress(state.maxViewed);
+  }
+  // At slide 32, Next restarts the presentation instead of becoming disabled.
+  // The separate Assessment button unlocks only when all 32 were reviewed.
+  state.slide=state.slide===31 ? 0 : state.slide+1;
+  save();renderSlideReview();progress();
+}
+$('previousTrainingSlide').addEventListener('click',previousTrainingSlide);
+$('nextTrainingSlide').addEventListener('click',nextTrainingSlide);
+$('slideArrowPrevious').addEventListener('click',previousTrainingSlide);
+$('slideArrowNext').addEventListener('click',nextTrainingSlide);
+// Optional keyboard navigation when focus is outside editable fields.
+document.addEventListener('keydown',event=>{
+  if(document.querySelector('[data-panel="slides"]').hidden)return;
+  if(event.altKey||event.ctrlKey||event.metaKey)return;
+  const active=document.activeElement;
+  if(active && (['INPUT','SELECT','TEXTAREA'].includes(active.tagName)||active.isContentEditable))return;
+  if(event.key==='ArrowRight'){event.preventDefault();nextTrainingSlide();}
+  if(event.key==='ArrowLeft' && state.slide>0){event.preventDefault();previousTrainingSlide();}
+});
+$('goQuiz').addEventListener('click',()=>show('assessment'));
+$('formsReviewed').addEventListener('change',async event=>{
+  const box=event.target, requested=box.checked;
+  box.disabled=true;
+  $('formsReviewStatus').textContent='Saving materials review…';
+  try{
+    const r=await eventToPortal('forms-reviewed',{reviewed:requested});
+    if(!r.saved)throw Error('Could not confirm that your review was saved.');
+    state.formsReviewed=requested;
+    save();renderForms();progress();
+    $('formsReviewStatus').textContent=requested?'Materials review saved. Continue to agreement when ready.':'Review unchecked and saved.';
+  }catch(err){
+    box.checked=state.formsReviewed;
+    $('formsReviewStatus').textContent='Could not save: '+err.message+'. Please try again.';
+  }finally{box.disabled=false;}
+});
+$('formsNext').addEventListener('click',()=>show('agreement'));
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.goto)));
+$('quizForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ if(state.passed||state.attempts>=3||state.awaitingRetry)return;
+ const selected=questions.map((_,i)=>document.querySelector('input[name="q'+i+'"]:checked'));
+ if(selected.some(a=>!a)){notice('quizFeedback','Answer all 20 questions.','error');return}
+ const button=$('submitQuiz');button.disabled=true;
+ try{
+  await progressQueue;
+  const result=await eventToPortal('assessment',{
+   answers:selected.map(x=>Number(x.value)),
+   submissionId:crypto.randomUUID()
+  });
+  if(!Number.isFinite(result.score)||typeof result.passed!=='boolean'||!Number.isFinite(result.attempts))throw Error('Server grading not confirmed.');
+  state.score=result.score;state.passed=result.passed;state.attempts=result.attempts;
+  state.lastAssessment={score:result.score,passed:result.passed};
+  state.awaitingRetry=!result.passed;
+  save();renderQuiz();progress();
+  notice('quizFeedback',result.passed?'Passed '+result.score+'/20. '+(result.notificationStatus==='sent'?'Kerri was notified. ':'Your progress was saved. Notification is pending. ')+'Continue to your teach-back.':'Score '+result.score+'/20. '+(result.criticalSafetyPassed===false?'Critical safety questions must also be correct. ':'')+(result.attempts>=3?'Contact leadership for review.':'Review the training before retrying.'),result.passed?'good':'error');
+ }catch(error){notice('quizFeedback',error.message,'error')}
+ finally{button.disabled=false}
+});
+$('afterQuiz').addEventListener('click',()=>show('teachback'));
+$('submitAgreement').addEventListener('click',async()=>{const choice=document.querySelector('input[name="scheduled"]:checked');if(!choice){notice('submitFeedback','Select whether your teach-back is scheduled.','error');return}if(!state.passed){notice('submitFeedback','Pass the knowledge assessment first.','error');return}if(choice.value==='no'){try{await eventToPortal('teachback-not-scheduled',{scheduled:false,assessmentPassed:true});state.scheduled=false;save();notice('submitFeedback',API_URL?'Your pending status was saved by the portal. Return when the appointment is confirmed.':'Progress saved on this device only. Return when your appointment is confirmed.','good')}catch(e){notice('submitFeedback',e.message,'error')}return}if(!$('research').checked){notice('submitFeedback','Please acknowledge the ethical research outreach responsibility.','error');return}const name=$('legalName').value.trim().replace(/\s+/g,' ');if(name.length<3||!name.includes(' ')){notice('submitFeedback','Enter your full first and last name as your signature.','error');return}if(!$('agree').checked){notice('submitFeedback','Read and accept the Facilitator Agreement before submitting.','error');return}const signed={version:AGREEMENT_VERSION,legalName:name,accepted:true,signedAt:new Date().toISOString()};const btn=$('submitAgreement');btn.disabled=true;try{const result=await eventToPortal('teachback-scheduled',{scheduled:true,assessmentPassed:true,researchAcknowledged:true,facilitatorAgreement:signed});if(!result.preview&&result.agreementSaved!==true)throw Error('The server did not verify that the signed agreement was stored.');state.signed=signed;state.scheduled=true;save();document.querySelector('[data-panel="agreement"]').hidden=true;document.querySelector('[data-panel="result"]').hidden=false;document.querySelectorAll('.step').forEach(b=>b.classList.remove('active'));$('resultText').textContent='Project Worth saved your signed agreement and practice report. Kerri notification: '+(result.notificationStatus==='sent'?'sent':'pending - please contact info@projectworthwi.org if needed')+'. Authorization follows your teach-back and review.';$('signedInfo').textContent='Signed: '+name+' · '+new Date(signed.signedAt).toLocaleString()+' · '+AGREEMENT_VERSION+(result.preview?' · Browser preview only':'');progress();$('course').scrollIntoView({block:'start',behavior:'smooth'})}catch(e){notice('submitFeedback',e.message,'error')}finally{btn.disabled=false}});
+$('integrationNotice').textContent=API_URL?'Portal endpoint configured. Final records require confirmation from the secure service.':'Preview mode: this file saves progress locally. Assessments, signatures, and confirmations are NOT submitted to Project Worth until a secure facilitator API is configured and verified.';
+// Previous browser progress could have counted review clicks without actually moving
+// the Google viewer. Reset only unfinished slide acknowledgments once, preserving
+// any already-passed assessment or signed agreement.
+if(!state.passed && state.slideNavigationVersion!==2){
+  state.maxViewed=0;
+  state.slide=0;
+}
+state.slideNavigationVersion=2;
+state.maxViewed=Math.max(0,Math.min(32,state.maxViewed||0));
+state.slide=Math.max(0,Math.min(31,state.slide||0));
+state=blank();progress();show('welcome');
+(async()=>{
+ const token=sessionStorage.getItem('pwInstituteIdToken');
+ if(!token){try{sessionStorage.setItem('pwInstitutePendingDestination',location.pathname+location.search+location.hash)}catch(_){}location.replace('institute-login.html?returnTo='+encodeURIComponent(location.pathname+location.search+location.hash));return}
+ try{
+  const res=await fetch(API_URL,{headers:{Authorization:'Bearer '+token},cache:'no-store'});
+  const data=await res.json();
+  if(!res.ok)throw Error(data.error||'Your facilitator record could not be loaded.');
+  const r=data.record||{};
+  state.started=r.started===true;
+  state.maxViewed=Math.max(0,Math.min(32,Number(r.maxViewed)||0));
+  state.slide=Math.max(0,Math.min(31,state.maxViewed));
+  state.passed=r.passed===true;
+  state.score=Number(r.score)||0;
+  state.attempts=Number(r.attempts)||0;
+  state.formsReviewed=r.formsReviewed===true;
+  renderReadinessChecks(r.readinessSteps);
+  state.practiceIncidentSubmitted=Boolean(r.practiceReportSubmittedAt);
+  state.signed=r.agreementAccepted===true?{legalName:r.agreementName,version:r.agreementVersion,signedAt:r.agreementSignedAt}:null;
+  state.scheduled=r.teachbackScheduled===true;
+  state.awaitingRetry=false;
+  renderSlideReview();
+  // Trust only the signed-in server's approved certificate; never browser-only progress.
+  const approvedCertificate=['approved','expired'].includes(data.certificate?.status) && ['issued','expired'].includes(data.certificate.certificate?.status)
+      ? data.certificate.certificate : null;
+  if(r.approvalStatus==='approved' && approvedCertificate && /^https:\/\//.test(approvedCertificate.url||'')){
+    verifiedCertificate={
+      url:approvedCertificate.url,id:approvedCertificate.id,
+      approver:data.certificate.approvedBy||'Project Worth',completedAt:approvedCertificate.completedAt,
+      validUntil:approvedCertificate.validUntil,
+      verificationUrl:approvedCertificate.verificationUrl,issuedAt:approvedCertificate.issuedAt,expired:data.certificate.status==='expired'
+    };
+    renderCertificate();
+  }
+  progress();
+  const targetTab=new URLSearchParams(window.location.search).get('tab');
+  show(['forms','certificate'].includes(targetTab)&&allowed(targetTab)?targetTab:'welcome');
+  notice('integrationNotice','Signed-in training progress verified with Project Worth.','good');
+ }catch(err){notice('integrationNotice','Secure learning record unavailable: '+err.message,'error')}
+})();
+</script>
+<script>renderAssessmentReview=function(){const el=document.getElementById('assessmentReview');el.hidden=true;el.replaceChildren();};</script>
+
+<script src="/practice-incident-upload.js?v=20261018-practice-pdf"></script>
+<script src="/facilitator-welcome-kit.js?v=20261018"></script>
+<script src="/facilitator-evaluation-learner.js?v=20261018-1"></script>
+<script src="/facilitator-renewal.js?v=20261018-2"></script>
+</body>
+</html>

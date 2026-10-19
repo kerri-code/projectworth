@@ -1,3 +1,25 @@
+/* pw-clean-referral-url-20261018
+   Keep public-facing page addresses tidy without changing campaign links.
+   This only removes the ChatGPT referral source parameter after navigation.
+*/
+(function cleanChatGPTReferralFromAddressBar() {
+  try {
+    var address = new URL(window.location.href);
+    var source = address.searchParams.get('utm_source');
+
+    if (source && source.toLowerCase() === 'chatgpt.com') {
+      address.searchParams.delete('utm_source');
+      window.history.replaceState(
+        window.history.state,
+        '',
+        address.pathname + address.search + address.hash
+      );
+    }
+  } catch (error) {
+    // URL cleanup must never interrupt the rest of the website.
+  }
+})();
+
 
     document.addEventListener('DOMContentLoaded', function () {
       function updateTabState() {

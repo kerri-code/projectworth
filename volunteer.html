@@ -1,0 +1,1601 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBPXRGKXBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-NBPXRGKXBJ');
+</script>
+<meta charset="utf-8"/>
+<meta
+  content="width=device-width, initial-scale=1.0"
+  name="viewport"
+/>
+<title>
+Volunteer With Us | Project Worth Wisconsin
+</title>
+<meta
+  name="description"
+  content="Volunteer with Project Worth and use your skills, experience, and passion to protect kids, strengthen systems, support survivors, and build safer communities."
+/>
+<meta
+  name="robots"
+  content="index, follow"
+/>
+<meta
+  name="author"
+  content="Project Worth"
+/>
+<link
+  href="style.css"
+  rel="stylesheet"
+/>
+<style>
+/* =========================================================
+   VOLUNTEER PAGE
+   Styled to match Awareness / What Is Grooming
+========================================================= */
+.page-volunteer {
+  background:#fffdf6;
+}
+/* =========================================================
+   BACKGROUND
+========================================================= */
+#volunteer {
+  position:relative;
+  overflow:hidden;
+}
+#volunteer::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(
+      circle at 10% 14%,
+      rgba(224,195,106,.13),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 92% 42%,
+      rgba(255,255,255,.30),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 50% 96%,
+      rgba(224,195,106,.08),
+      transparent 30%
+    );
+}
+.volunteer-watermark {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+}
+.volunteer-watermark img {
+  width:min(720px,62vw);
+  margin-top:clamp(18rem,30vw,28rem);
+  opacity:.05;
+  object-fit:contain;
+  transform:translateX(-12%);
+  filter:
+    grayscale(100%)
+    sepia(18%)
+    brightness(1.05);
+  mix-blend-mode:multiply;
+}
+#volunteer > *:not(.volunteer-watermark) {
+  position:relative;
+  z-index:1;
+}
+/* =========================================================
+   HERO
+========================================================= */
+.volunteer-hero {
+  text-align:center;
+}
+.volunteer-hero .eyebrow {
+  color:var(--gold-dark);
+  letter-spacing:.14em;
+  font-weight:900;
+  margin-bottom:.45rem;
+}
+.volunteer-hero h2 {
+  color:#ffffff;
+  font-size:clamp(2rem,4vw,3rem);
+  margin:0 0 .7rem;
+  line-height:1.05;
+  font-weight:900;
+}
+.volunteer-hero p {
+  color:#ffffff;
+  max-width:780px;
+  margin:0 auto;
+  line-height:1.6;
+  font-weight:650;
+}
+/* =========================================================
+   INTRO CARD
+========================================================= */
+.volunteer-intro {
+  width:min(1040px,calc(100% - 2rem));
+  margin:2rem auto 1.35rem;
+  padding:
+    clamp(1.4rem,2.8vw,2rem);
+  box-sizing:border-box;
+  position:relative;
+  overflow:hidden;
+  border:
+    1.5px solid
+    rgba(224,195,106,.56);
+  border-top:
+    6px solid
+    var(--gold-dark);
+  border-radius:34px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(224,195,106,.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf6 0%,
+      #ffffff 60%,
+      #fff9ea 100%
+    );
+  box-shadow:
+    0 18px 42px
+    rgba(15,35,63,.10);
+  text-align:center;
+}
+.volunteer-intro::after {
+  content:"★";
+  position:absolute;
+  right:1.15rem;
+  top:.7rem;
+  color:var(--gold);
+  opacity:.10;
+  font-size:5rem;
+  line-height:1;
+  pointer-events:none;
+}
+.volunteer-intro-inner {
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto;
+}
+.volunteer-intro-star {
+  color:var(--gold-dark);
+  font-size:1.5rem;
+  margin-bottom:.35rem;
+}
+.volunteer-intro-kicker {
+  color:var(--gold-dark);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.8rem;
+  font-weight:900;
+  margin-bottom:.35rem;
+}
+.volunteer-intro h3 {
+  color:var(--navy);
+  font-size:clamp(1.55rem,3vw,2.15rem);
+  line-height:1.15;
+  margin:0 0 .55rem;
+  font-weight:900;
+}
+.volunteer-intro p {
+  color:var(--navy);
+  margin:0 auto;
+  max-width:680px;
+  font-size:.96rem;
+  line-height:1.65;
+  font-weight:600;
+}
+/* =========================================================
+   BUTTONS
+========================================================= */
+.volunteer-actions {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:.65rem;
+  margin-top:1rem;
+}
+.volunteer-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.8rem 1.3rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:.92rem;
+  line-height:1.15;
+  font-weight:900;
+  transition:
+    transform .16s ease,
+    box-shadow .16s ease;
+}
+.volunteer-btn:hover,
+.volunteer-btn:focus {
+  transform:translateY(-1px);
+}
+/* SOFTER GOLD — NO SHINE */
+.volunteer-btn-gold {
+  background:#e0c36a;
+  color:var(--navy);
+  border:
+    1px solid
+    #d3b45d;
+  box-shadow:
+    0 7px 16px
+    rgba(15,35,63,.09);
+}
+.volunteer-btn-gold:hover,
+.volunteer-btn-gold:focus {
+  background:#d6b95f;
+}
+.volunteer-btn-navy {
+  background:var(--navy);
+  color:#ffffff;
+  border:
+    1px solid
+    var(--navy);
+  box-shadow:
+    0 7px 16px
+    rgba(15,35,63,.12);
+}
+/* =========================================================
+   ROLES HEADING
+========================================================= */
+.volunteer-roles-heading {
+  width:min(900px,calc(100% - 2rem));
+  margin:
+    clamp(2rem,4vw,2.8rem)
+    auto
+    1rem;
+  text-align:center;
+}
+.volunteer-roles-heading .eyebrow {
+  color:#c4a44e;
+  margin-bottom:.4rem;
+}
+.volunteer-roles-heading h3 {
+  color:var(--navy);
+  font-size:clamp(1.7rem,3.5vw,2.4rem);
+  line-height:1.12;
+  margin:0 0 .4rem;
+  font-weight:900;
+}
+.volunteer-roles-heading p {
+  color:var(--navy);
+  margin:0;
+  font-size:.94rem;
+  line-height:1.55;
+  font-weight:600;
+}
+.volunteer-tap-hint {
+  color:#b8963e;
+  text-align:center;
+  font-size:.83rem;
+  font-weight:850;
+  margin:.8rem auto;
+}
+/* =========================================================
+   TEAM LIST
+========================================================= */
+.volunteer-team-list {
+  width:min(1040px,calc(100% - 2rem));
+  margin:0 auto;
+  display:grid;
+  gap:.85rem;
+}
+/* =========================================================
+   TEAM ACCORDIONS
+========================================================= */
+.volunteer-team {
+  overflow:hidden;
+  border:
+    1.5px solid
+    rgba(224,195,106,.46);
+  border-radius:24px;
+  background:#fffdf6;
+  box-shadow:
+    0 12px 26px
+    rgba(15,35,63,.07);
+}
+.volunteer-team summary {
+  cursor:pointer;
+  list-style:none;
+  display:grid;
+  grid-template-columns:
+    auto
+    1fr
+    auto;
+  align-items:center;
+  gap:.9rem;
+  padding:1rem 1.05rem;
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf6,
+      #ffffff
+    );
+}
+.volunteer-team summary::-webkit-details-marker {
+  display:none;
+}
+.volunteer-team-icon {
+  width:2.8rem;
+  height:2.8rem;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  color:#ffffff;
+  background:var(--navy);
+  border:
+    1px solid
+    rgba(224,195,106,.35);
+  font-size:1.1rem;
+  line-height:1;
+  box-shadow:
+    0 7px 15px
+    rgba(15,35,63,.08);
+}
+.volunteer-team-heading h4 {
+  color:var(--navy);
+  font-size:1.08rem;
+  line-height:1.2;
+  margin:0 0 .12rem;
+  font-weight:900;
+}
+.volunteer-team-heading p {
+  color:var(--navy);
+  font-size:.84rem;
+  line-height:1.4;
+  margin:0;
+  font-weight:600;
+}
+.volunteer-team-toggle {
+  width:1.7rem;
+  height:1.7rem;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background:#e0c36a;
+  color:var(--navy);
+  font-size:1rem;
+  font-weight:900;
+  line-height:1;
+}
+.volunteer-team[open]
+.volunteer-team-toggle {
+  transform:rotate(45deg);
+}
+/* =========================================================
+   ROLE CARDS
+========================================================= */
+.volunteer-team-content {
+  display:grid;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+  gap:.75rem;
+  padding:
+    0
+    .9rem
+    .9rem;
+}
+.volunteer-role {
+  padding:.9rem .95rem;
+  border-radius:18px;
+  border:
+    1px solid
+    rgba(224,195,106,.40);
+  background:
+    rgba(255,255,255,.86);
+  box-shadow:
+    0 8px 18px
+    rgba(15,35,63,.05);
+}
+.volunteer-role h5 {
+  color:var(--navy);
+  font-size:.98rem;
+  line-height:1.25;
+  margin:0 0 .3rem;
+  font-weight:900;
+}
+.volunteer-role p {
+  color:var(--navy);
+  font-size:.84rem;
+  line-height:1.5;
+  margin:0;
+  font-weight:600;
+}
+.volunteer-role-tag {
+  display:inline-block;
+  margin-top:.5rem;
+  color:#b18f3b;
+  font-size:.69rem;
+  line-height:1.2;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+/* =========================================================
+   NOTES
+========================================================= */
+.volunteer-role-note {
+  grid-column:1 / -1;
+  padding:.8rem .95rem;
+  border-left:
+    4px solid
+    #d0ad52;
+  border-radius:14px;
+  background:#fff9e9;
+  color:var(--navy);
+  font-size:.82rem;
+  line-height:1.55;
+  font-weight:650;
+}
+.volunteer-role-note strong {
+  color:#aa8732;
+  font-weight:900;
+}
+.volunteer-scope-note {
+  grid-column:1 / -1;
+  padding:.72rem .9rem;
+  border-radius:14px;
+  text-align:center;
+  background:
+    rgba(15,35,63,.04);
+  color:var(--navy);
+  font-size:.79rem;
+  line-height:1.45;
+  font-weight:600;
+}
+/* =========================================================
+   DATA, TECHNOLOGY & SYSTEMS
+========================================================= */
+.volunteer-team-tech summary {
+  background:
+    radial-gradient(circle at 92% 18%, rgba(224,195,106,.13), transparent 26%),
+    linear-gradient(135deg,#fffdf6,#ffffff);
+}
+.volunteer-team-tech .volunteer-team-icon {
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size:.9rem;
+  font-weight:900;
+}
+.volunteer-tech-card {
+  grid-column:1 / -1;
+  position:relative;
+  overflow:hidden;
+  padding:1.15rem 1.2rem;
+  border-radius:20px;
+  border:1px solid rgba(224,195,106,.48);
+  border-left:5px solid #d0ad52;
+  background:
+    radial-gradient(circle at 94% 12%, rgba(224,195,106,.10), transparent 26%),
+    linear-gradient(135deg,#ffffff 0%,#fffaf0 100%);
+  box-shadow:0 9px 20px rgba(15,35,63,.06);
+}
+.volunteer-tech-card::after {
+  content:"{ }";
+  position:absolute;
+  right:1rem;
+  bottom:-.35rem;
+  color:var(--navy);
+  opacity:.045;
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size:4.8rem;
+  font-weight:900;
+  line-height:1;
+  pointer-events:none;
+}
+.volunteer-tech-card > * {
+  position:relative;
+  z-index:1;
+}
+.volunteer-tech-card h5 {
+  color:var(--navy);
+  font-size:1.1rem;
+  line-height:1.2;
+  margin:0 0 .5rem;
+  font-weight:900;
+}
+.volunteer-tech-card p {
+  color:var(--navy);
+  margin:0 0 .7rem;
+  font-size:.88rem;
+  line-height:1.58;
+  font-weight:600;
+}
+.volunteer-tech-card p:last-of-type {
+  margin-bottom:0;
+}
+.volunteer-tech-card strong {
+  color:#a9852e;
+  font-weight:900;
+}
+.volunteer-tech-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.42rem;
+  margin:.85rem 0;
+}
+.volunteer-tech-tags span {
+  display:inline-flex;
+  align-items:center;
+  padding:.38rem .62rem;
+  border-radius:999px;
+  background:rgba(15,35,63,.055);
+  border:1px solid rgba(224,195,106,.40);
+  color:var(--navy);
+  font-size:.7rem;
+  line-height:1;
+  font-weight:850;
+}
+.volunteer-tech-question {
+  margin-top:.9rem;
+  padding:.8rem .9rem;
+  border-radius:14px;
+  background:#fff9e9;
+  border-left:4px solid #d0ad52;
+}
+.volunteer-tech-question strong {
+  display:block;
+  margin-bottom:.25rem;
+  color:#aa8732;
+  font-size:.9rem;
+}
+.volunteer-tech-question p {
+  margin:0;
+  font-size:.82rem;
+  line-height:1.5;
+}
+/* =========================================================
+   APPLICATION PROCESS
+========================================================= */
+.volunteer-process {
+  width:min(1040px,calc(100% - 2rem));
+  margin:
+    clamp(2rem,4vw,2.8rem)
+    auto
+    1.5rem;
+  padding:
+    clamp(1.5rem,3vw,2.2rem);
+  box-sizing:border-box;
+  position:relative;
+  overflow:hidden;
+  border:
+    1px solid
+    rgba(224,195,106,.55);
+  border-top:
+    5px solid
+    #e0c36a;
+  border-radius:30px;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(224,195,106,.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #07172a 0%,
+      #0b2748 100%
+    );
+  box-shadow:
+    0 18px 42px
+    rgba(7,23,42,.18);
+}
+.volunteer-process::after {
+  content:"★";
+  position:absolute;
+  right:-.4rem;
+  top:-1rem;
+  color:#e0c36a;
+  opacity:.07;
+  font-size:8rem;
+  line-height:1;
+  pointer-events:none;
+}
+.volunteer-process-heading {
+  position:relative;
+  z-index:2;
+  max-width:700px;
+  margin:
+    0
+    auto
+    1.5rem;
+  text-align:center;
+}
+.volunteer-process-heading .eyebrow {
+  color:#e0c36a;
+  margin-bottom:.4rem;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.volunteer-process-heading h3 {
+  color:#ffffff;
+  margin:
+    0
+    0
+    .45rem;
+  font-size:
+    clamp(1.7rem,3.3vw,2.35rem);
+  line-height:1.1;
+  font-weight:900;
+}
+.volunteer-process-heading p {
+  color:
+    rgba(255,255,255,.84);
+  margin:0 auto;
+  font-size:.92rem;
+  line-height:1.5;
+  font-weight:600;
+}
+/* timeline */
+.volunteer-process-grid {
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:
+    repeat(6,minmax(0,1fr));
+  gap:.7rem;
+}
+/* connecting gold line */
+.volunteer-process-grid::before {
+  content:"";
+  position:absolute;
+  top:1.35rem;
+  left:7%;
+  right:7%;
+  height:2px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(224,195,106,.55) 8%,
+      rgba(224,195,106,.55) 92%,
+      transparent
+    );
+  z-index:0;
+}
+/* steps */
+.volunteer-process-step {
+  position:relative;
+  z-index:1;
+  min-width:0;
+  padding:
+    .8rem
+    .45rem
+    .7rem;
+  text-align:center;
+}
+.volunteer-process-number {
+  width:2.6rem;
+  height:2.6rem;
+  display:grid;
+  place-items:center;
+  margin:
+    0
+    auto
+    .65rem;
+  border-radius:50%;
+  background:#e0c36a;
+  color:#07172a;
+  border:
+    4px solid
+    #0a2341;
+  box-shadow:
+    0 0 0 1px
+    rgba(224,195,106,.5),
+    0 6px 14px
+    rgba(0,0,0,.18);
+  font-size:.83rem;
+  font-weight:950;
+}
+.volunteer-process-step h4 {
+  color:#ffffff;
+  margin:0;
+  font-size:.88rem;
+  line-height:1.25;
+  font-weight:900;
+}
+.volunteer-process .volunteer-actions {
+  position:relative;
+  z-index:2;
+  margin-top:1.5rem;
+}
+/* tablet */
+@media (max-width:900px) {
+  .volunteer-process-grid {
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+    gap:1rem .6rem;
+  }
+  .volunteer-process-grid::before {
+    display:none;
+  }
+}
+/* mobile */
+@media (max-width:620px) {
+  .volunteer-process {
+    padding:
+      1.4rem
+      1rem;
+  }
+  .volunteer-process-grid {
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+  .volunteer-process-step {
+    padding:.65rem .3rem;
+  }
+}
+/* =========================================================
+   OTHER SKILLS
+========================================================= */
+.volunteer-other-skills {
+  width:min(1040px,calc(100% - 2rem));
+  margin:1.2rem auto 2rem;
+  padding:
+    clamp(1.35rem,2.8vw,1.9rem);
+  box-sizing:border-box;
+  position:relative;
+  overflow:hidden;
+  border:
+    1.5px solid
+    rgba(224,195,106,.54);
+  border-radius:28px;
+  background:
+    radial-gradient(
+      circle at bottom right,
+      rgba(224,195,106,.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf6,
+      #ffffff
+    );
+  box-shadow:
+    0 14px 30px
+    rgba(15,35,63,.08);
+  text-align:center;
+}
+.volunteer-other-skills::after {
+  content:"★";
+  position:absolute;
+  right:1rem;
+  bottom:-.7rem;
+  color:#d5b65e;
+  opacity:.11;
+  font-size:5rem;
+  line-height:1;
+}
+.volunteer-other-skills-inner {
+  position:relative;
+  z-index:1;
+  max-width:680px;
+  margin:0 auto;
+}
+.volunteer-other-skills .eyebrow {
+  color:#ba9842;
+  margin-bottom:.4rem;
+}
+.volunteer-other-skills h3 {
+  color:var(--navy);
+  font-size:clamp(1.4rem,3vw,2rem);
+  line-height:1.15;
+  margin:0 0 .45rem;
+  font-weight:900;
+}
+.volunteer-other-skills p {
+  color:var(--navy);
+  max-width:620px;
+  margin:0 auto;
+  font-size:.9rem;
+  line-height:1.55;
+  font-weight:600;
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width:900px) {
+  .volunteer-process-grid {
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+  }
+}
+@media (max-width:760px) {
+  .volunteer-team-content {
+    grid-template-columns:1fr;
+  }
+}
+@media (max-width:620px) {
+  .volunteer-watermark img {
+    width:520px;
+    opacity:.04;
+    margin-top:22rem;
+    transform:translateX(-38%);
+  }
+  .volunteer-process-grid {
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+  .volunteer-actions {
+    flex-direction:column;
+  }
+  .volunteer-btn {
+    width:100%;
+    box-sizing:border-box;
+  }
+  .volunteer-team summary {
+    gap:.7rem;
+    padding:.9rem;
+  }
+  .volunteer-team-icon {
+    width:2.5rem;
+    height:2.5rem;
+  }
+}
+</style>
+
+<style id="pw-light-carrier-volunteer-styles">
+/* Optional learning pathway; scoped to this invitation only. */
+.page-volunteer .pw-light-carrier-invite {
+  max-width: 1100px;
+  margin: 1.3rem auto 2.2rem;
+  padding: clamp(1rem, 2.4vw, 1.45rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  border: 1px solid rgba(212,175,55,.48);
+  border-left: 5px solid #d4af37;
+  border-radius: 20px;
+  background: linear-gradient(110deg,#fffefa 0%,#fff8e8 100%);
+  box-shadow: 0 10px 24px rgba(15,49,88,.075);
+  color: #0f3158;
+}
+.page-volunteer .pw-light-carrier-invite__copy { flex: 1 1 370px; }
+.page-volunteer .pw-light-carrier-invite__eyebrow {
+  display: block;
+  margin-bottom: .3rem;
+  color: #9a7417;
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.page-volunteer .pw-light-carrier-invite h3 {
+  margin: 0 0 .35rem;
+  color: #0f3158;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.25;
+}
+.page-volunteer .pw-light-carrier-invite p {
+  margin: 0;
+  color: #17324f;
+  font-size: .93rem;
+  line-height: 1.55;
+}
+.page-volunteer .pw-light-carrier-invite__action {
+  display: flex;
+  flex: 0 1 265px;
+  flex-direction: column;
+  align-items: center;
+  gap: .45rem;
+  text-align: center;
+}
+.page-volunteer .pw-light-carrier-invite__action a { display: inline-block; width: 100%; }
+.page-volunteer .pw-light-carrier-invite__action small {
+  color: #526177;
+  font-size: .79rem;
+  line-height: 1.35;
+}
+@media (max-width: 650px) {
+  .page-volunteer .pw-light-carrier-invite { margin: 1rem .75rem 1.7rem; }
+  .page-volunteer .pw-light-carrier-invite__action { flex-basis: 100%; }
+}
+</style>
+</head>
+<body class="split-page page-volunteer">
+<!-- =======================================================
+     HEADER
+======================================================= -->
+<header>
+<div
+  aria-hidden="true"
+  class="header-scene"
+>
+<span class="trail-star med s1">★</span>
+<span class="trail-star small s2">★</span>
+<span class="trail-star med s3">★</span>
+<span class="trail-star tiny s4">★</span>
+<span class="trail-star med s5">★</span>
+<span class="trail-star tiny s6">★</span>
+<span class="trail-star small s7">★</span>
+<span class="trail-star tiny s8">★</span>
+<span class="trail-star tiny s8">★</span>
+<span class="trail-star small s9">★</span>
+<span class="trail-star tiny s10">★</span>
+<span class="trail-star small s11">★</span>
+</div>
+<div class="container nav">
+<a
+  class="brand"
+  href="index.html"
+>
+<img
+  alt="Project Worth Logo"
+  class="brand-logo"
+  src="PROJECT-WORTH-LOGO.png"
+/>
+<div class="brand-text">
+<strong>
+PROJECT WORTH
+</strong>
+<small>
+Change Starts Here.
+</small>
+</div>
+</a>
+<nav class="nav-links">
+<a href="index.html">
+Home
+</a>
+<a href="about.html">
+About Project Worth
+</a>
+<a href="awareness.html">
+What is Grooming?
+</a>
+<a href="advocacy.html">
+Advocacy
+</a>
+<a href="team.html">
+Our Team
+</a>
+<a href="the-spark.html">
+The Spark
+</a>
+<a href="media.html">
+Media & Impact
+</a>
+
+<a href="donate.html">
+Donate
+</a>
+<a href="light-the-way.html">
+Light the Way
+</a>
+</nav>
+</div>
+</header>
+<main>
+<section
+  class="site-bg-gold"
+  id="volunteer"
+>
+<div
+  aria-hidden="true"
+  class="volunteer-watermark"
+>
+<img
+  alt=""
+  src="PROJECT-WORTH-LOGO.png"
+/>
+</div>
+<!-- =======================================================
+     HERO
+======================================================= -->
+<div class="container">
+<div class="page-title-banner volunteer-hero">
+<div class="eyebrow">
+People. Purpose. Prevention.
+</div>
+<h2>
+Volunteer With Us
+</h2>
+<p>
+Project Worth is a Verb. Change Starts Here. With You.
+</p>
+</div>
+</div>
+<!-- =======================================================
+     INTRO
+======================================================= -->
+<div class="volunteer-intro">
+<div class="volunteer-intro-inner">
+<div class="volunteer-intro-star">
+★
+</div>
+<div class="volunteer-intro-kicker">
+100% Volunteer-Led
+</div>
+<h3>
+Ordinary People. Extraordinary Impact.
+</h3>
+<p>
+Project Worth was built by ordinary people who saw something that needed to change and decided to do something about it.
+</p>
+<div class="volunteer-actions">
+<a
+  class="volunteer-btn volunteer-btn-gold"
+  href="https://docs.google.com/forms/d/e/1FAIpQLSdmZU6R5lR4dfbcEtL4RQCWIURf8ZLrs0o520Z-qO6mY2IWoA/viewform?usp=header"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Apply to Volunteer →
+</a>
+<a
+  class="volunteer-btn volunteer-btn-navy"
+  href="#volunteer-roles"
+>
+Explore Roles ↓
+</a>
+</div>
+</div>
+</div>
+<!-- =======================================================
+     WAYS TO GET INVOLVED
+======================================================= -->
+<div
+  class="volunteer-roles-heading"
+  id="volunteer-roles"
+>
+<div class="eyebrow">
+Find Your Place
+</div>
+<h3>
+Ways to Get Involved
+</h3>
+<p>
+Different skills. One mission.
+Explore the teams helping move Project Worth forward.
+</p>
+</div>
+<div class="volunteer-tap-hint">
+Tap a team to explore ↓
+</div>
+<div class="volunteer-team-list">
+<!-- POLICY & RESEARCH -->
+<details class="volunteer-team">
+<summary>
+<div class="volunteer-team-icon">
+⚖
+</div>
+<div class="volunteer-team-heading">
+<h4>
+Policy & Research
+</h4>
+<p>
+Research what works and help strengthen policy.
+</p>
+</div>
+<div class="volunteer-team-toggle">
++
+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-role">
+<h5>
+Research & Policy Analyst
+</h5>
+<p>
+Compare laws, policies, and prevention models
+and help identify opportunities for stronger protection.
+</p>
+<span class="volunteer-role-tag">
+Research • Analysis
+</span>
+</div>
+<div class="volunteer-role">
+<h5>
+Policy & Legislative Advocate
+</h5>
+<p>
+Help turn research into action through
+policy education, legislative outreach, and advocacy.
+</p>
+<span class="volunteer-role-tag">
+Policy • Advocacy
+</span>
+</div>
+</div>
+</details>
+<!-- JUSTICE & LEGAL ADVOCACY -->
+<details class="volunteer-team">
+<summary>
+<div class="volunteer-team-icon">⚖</div>
+<div class="volunteer-team-heading">
+<h4>Justice &amp; Legal Advocacy</h4>
+<p>Strengthen accountability, access to justice, and protections for children and survivors.</p>
+</div>
+<div class="volunteer-team-toggle">+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-role">
+<h5>Justice Systems Advocate</h5>
+<p>Work with community partners to identify gaps in reporting, referrals, and access to justice, and help develop practical, survivor-informed improvements.</p>
+<span class="volunteer-role-tag">Justice • Systems</span>
+</div>
+<div class="volunteer-role">
+<h5>Legal Advocacy &amp; Resources Volunteer</h5>
+<p>Research publicly available laws and legal resources, develop accessible educational materials, and support advocacy for stronger child protection and survivor rights.</p>
+<span class="volunteer-role-tag">Legal Resources • Education</span>
+</div>
+<div class="volunteer-scope-note">
+Volunteer roles do not include legal advice or representation, investigations, individual case management, or collecting case-specific or trauma details.
+</div>
+</div>
+</details>
+<!-- DATA, TECHNOLOGY & SYSTEMS -->
+<details class="volunteer-team volunteer-team-tech">
+<summary>
+<div class="volunteer-team-icon">
+{ }
+</div>
+<div class="volunteer-team-heading">
+<h4>
+Data, Technology & Systems
+</h4>
+<p>
+Build better tools for the people protecting kids.
+</p>
+</div>
+<div class="volunteer-team-toggle">
++
+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-tech-card">
+<h5>
+Tell us what you geek out about.
+</h5>
+<p>
+As Project Worth grows, we want to work with systems to identify challenges and build practical solutions.
+Maybe software, data, automation, AI, better workflows, or something we haven’t thought of yet. We start with the problem, then find the right technology to help solve it.
+</p>
+<div class="volunteer-tech-tags" aria-label="Examples of technology interests">
+<span>Software</span>
+<span>Data</span>
+<span>Automation</span>
+<span>AI</span>
+<span>UX</span>
+<span>Cybersecurity</span>
+<span>Cloud</span>
+<span>Databases</span>
+<span>Systems Design</span>
+<span>Hardware</span>
+<span>Process Improvement</span>
+</div>
+<div class="volunteer-tech-question">
+<strong>
+What makes your brain light up?
+</strong>
+<p>
+No need to fit yourself into a job title. Tell us what you know, what you enjoy building, and what kinds of problems you cannot help trying to solve.
+</p>
+</div>
+<p style="margin-top:.85rem;">
+<strong>The goal:</strong> build practical tools that make people's jobs easier, strengthen the systems around children, and help protect more kids.
+</p>
+</div>
+</div>
+</details>
+<!-- COMMUNITY -->
+<details class="volunteer-team">
+<summary>
+<div class="volunteer-team-icon">
+✦
+</div>
+<div class="volunteer-team-heading">
+<h4>
+Community Outreach & Engagement
+</h4>
+<p>
+Build relationships and bring prevention into communities.
+</p>
+</div>
+<div class="volunteer-team-toggle">
++
+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-role">
+<h5>
+Community Engagement Ambassador
+</h5>
+<p>
+Connect Project Worth with schools, nonprofits,
+families, community groups, and local partners.
+</p>
+<span class="volunteer-role-tag">
+Outreach • Connection
+</span>
+</div>
+<div class="volunteer-role">
+<h5>
+Light the Way Events Coordinator
+</h5>
+<p>
+Help coordinate community events,
+presentations, awareness tables, and outreach.
+</p>
+<span class="volunteer-role-tag">
+Events • Community
+</span>
+</div>
+</div>
+</details>
+<!-- FAITH-BASED PREVENTION & SAFETY -->
+<details class="volunteer-team">
+<summary>
+<div class="volunteer-team-icon">
+⛪
+</div>
+<div class="volunteer-team-heading">
+<h4>
+Faith-Based Prevention &amp; Safety
+</h4>
+<p>
+Help churches and faith-based organizations create safer spaces for children.
+</p>
+</div>
+<div class="volunteer-team-toggle">
++
+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-role">
+<h5>
+Faith Safety Resource Volunteer
+</h5>
+<p>
+Research best practices and help create practical policies,
+checklists, guides, and resources for faith communities.
+</p>
+<span class="volunteer-role-tag">
+Research • Resources
+</span>
+</div>
+<div class="volunteer-role">
+<h5>
+Faith Community Liaison
+</h5>
+<p>
+Build relationships with churches, ministries, and faith-based
+nonprofits and connect them with Project Worth prevention resources.
+</p>
+<span class="volunteer-role-tag">
+Outreach • Connection
+</span>
+</div>
+<div class="volunteer-role-note">
+<br/>
+Faith-focused Light the Way training is available for churches and
+faith-based organizations, with additional preparation for volunteers
+who want to become Light the Way Facilitators.
+</div>
+</div>
+</details>
+<!-- MARKETING -->
+<details class="volunteer-team">
+<summary>
+<div class="volunteer-team-icon">
+✎
+</div>
+<div class="volunteer-team-heading">
+<h4>
+Marketing & Public Relations
+</h4>
+<p>
+Help people understand the mission and find the work.
+</p>
+</div>
+<div class="volunteer-team-toggle">
++
+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-role">
+<h5>
+Digital Media & Marketing Specialist
+</h5>
+<p>
+Create social content, graphics,
+campaigns, and digital resources.
+</p>
+<span class="volunteer-role-tag">
+Digital • Creative
+</span>
+</div>
+<div class="volunteer-role">
+<h5>
+Communications & Public Relations Specialist
+</h5>
+<p>
+Support public messaging,
+media outreach, newsletters, and communications.
+</p>
+<span class="volunteer-role-tag">
+Writing • Communications
+</span>
+</div>
+</div>
+</details>
+<!-- TRAINING -->
+<details class="volunteer-team">
+<summary>
+<div class="volunteer-team-icon">
+★
+</div>
+<div class="volunteer-team-heading">
+<h4>
+Training & Education
+</h4>
+<p>
+Build knowledge, strengthen prevention, and help others act.
+</p>
+</div>
+<div class="volunteer-team-toggle">
++
+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-role">
+<h5>
+County Champion
+</h5>
+<p>
+Be a local Project Worth connection,
+build relationships, and help grow prevention in your county.
+</p>
+<span class="volunteer-role-tag">
+Local Leadership
+</span>
+</div>
+<div class="volunteer-role">
+<h5>
+Light the Way Advocate
+</h5>
+<p>
+Complete Light the Way Foundations
+to grow your knowledge of grooming,
+disclosure, response, and prevention.
+</p>
+<span class="volunteer-role-tag">
+Learn • Advocate
+</span>
+</div>
+<div class="volunteer-role">
+<h5>
+Light the Way Facilitator
+</h5>
+<p>
+Complete additional facilitator preparation
+to deliver approved Project Worth training.
+</p>
+<span class="volunteer-role-tag">
+Facilitate • Educate
+</span>
+</div>
+<div class="volunteer-role-note">
+<strong>
+Light the Way Advocate:
+</strong>
+learn the Foundations and carry prevention forward.
+<br/>
+<strong>
+Light the Way Facilitator:
+</strong>
+complete additional preparation to train others.
+</div>
+</div>
+</details>
+<!-- SURVIVOR ADVOCACY -->
+<details class="volunteer-team">
+<summary>
+<div class="volunteer-team-icon">
+♡
+</div>
+<div class="volunteer-team-heading">
+<h4>
+Survivor Advocacy & Support
+</h4>
+<p>
+Help survivor experience inform support and systems change.
+</p>
+</div>
+<div class="volunteer-team-toggle">
++
+</div>
+</summary>
+<div class="volunteer-team-content">
+<div class="volunteer-role">
+<h5>
+Adult Survivor Advocate
+</h5>
+<p>
+Help survivors feel heard,
+connect with resources,
+and bring survivor-informed perspective into our work.
+</p>
+<span class="volunteer-role-tag">
+Survivor Voice • Connection
+</span>
+</div>
+<div class="volunteer-role">
+<h5>
+Child Safety Systems Advocate
+</h5>
+<p>
+Help identify barriers in child-serving
+and response systems and keep child safety at the center.
+</p>
+<span class="volunteer-role-tag">
+Systems • Child Safety
+</span>
+</div>
+<div class="volunteer-scope-note">
+Volunteer advocacy does not include therapy,
+crisis services, investigations, or legal advice.
+</div>
+</div>
+</details>
+</div>
+<!-- =======================================================
+     APPLICATION PROCESS
+======================================================= -->
+<section
+  class="volunteer-process"
+  id="application-process"
+>
+<div class="volunteer-process-heading">
+<div class="eyebrow">
+What to Expect
+</div>
+<h3>
+From Application to Action
+</h3>
+<p>
+Six simple steps. One shared commitment to protecting children.
+</p>
+</div>
+<div class="volunteer-process-grid">
+<div class="volunteer-process-step">
+<div class="volunteer-process-number">
+1
+</div>
+<h4>
+Apply
+</h4>
+</div>
+<div class="volunteer-process-step">
+<div class="volunteer-process-number">
+2
+</div>
+<h4>
+References
+</h4>
+</div>
+<div class="volunteer-process-step">
+<div class="volunteer-process-number">
+3
+</div>
+<h4>
+Background Check
+</h4>
+</div>
+<div class="volunteer-process-step">
+<div class="volunteer-process-number">
+4
+</div>
+<h4>
+Interview
+</h4>
+</div>
+<div class="volunteer-process-step">
+<div class="volunteer-process-number">
+5
+</div>
+<h4>
+Training
+</h4>
+</div>
+<div class="volunteer-process-step">
+<div class="volunteer-process-number">
+6
+</div>
+<h4>
+Join the Team
+</h4>
+</div>
+</div>
+<div class="volunteer-actions">
+<a
+  class="volunteer-btn volunteer-btn-gold"
+  href="https://docs.google.com/forms/d/e/1FAIpQLSdmZU6R5lR4dfbcEtL4RQCWIURf8ZLrs0o520Z-qO6mY2IWoA/viewform?usp=header"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Start Your Application →
+</a>
+</div>
+</section>
+<!-- =======================================================
+     OTHER SKILLS
+======================================================= -->
+<section class="volunteer-other-skills">
+<div class="volunteer-other-skills-inner">
+<div class="eyebrow">
+Your Skills Matter
+</div>
+<h3>
+Have a Skill or Passion We Didn't List?
+</h3>
+<p>
+We'd love to hear about it.
+Tell us what you're good at,
+what matters to you,
+and how you'd like to help.
+</p>
+<div class="volunteer-actions">
+<a
+  class="volunteer-btn volunteer-btn-gold"
+  href="https://docs.google.com/forms/d/e/1FAIpQLSdmZU6R5lR4dfbcEtL4RQCWIURf8ZLrs0o520Z-qO6mY2IWoA/viewform?usp=header"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Tell Us How You'd Like to Help →
+</a>
+</div>
+</div>
+</section>
+
+<!-- OPTIONAL LEARNING PATH: LIGHT CARRIER (student access by request) -->
+<aside class="pw-light-carrier-invite" aria-labelledby="pw-light-carrier-volunteer-title">
+  <div class="pw-light-carrier-invite__copy">
+    <span class="pw-light-carrier-invite__eyebrow">Another way to carry the light</span>
+    <h3 id="pw-light-carrier-volunteer-title">Not ready to volunteer? Become a Light Carrier.</h3>
+    <p>Learn about child protection through the seven Light the Way Foundations modules, at your own pace and without a volunteer commitment. Contact Project Worth to request a student-only login.</p>
+  </div>
+  <div class="pw-light-carrier-invite__action">
+    <a class="volunteer-btn volunteer-btn-gold" href="contact.html">Request Student Access &rarr;</a>
+    <small>In your message, mention &ldquo;Light Carrier student access.&rdquo; Our team will create your login.</small>
+  </div>
+</aside>
+</section>
+</main>
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+<div
+  class="footer-include-placeholder"
+  data-include="footer"
+>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

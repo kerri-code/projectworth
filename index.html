@@ -450,6 +450,101 @@
           margin-top: 0.25rem !important;
         }
       }
+
+      /* Light the Way Facilitator spotlight — matches the existing navy cards. */
+      .page-home .home-facilitator-spotlight {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(1rem, 3vw, 2.25rem);
+        margin-top: clamp(0.85rem, 1.35vw, 1.1rem);
+        padding: clamp(1.25rem, 2.6vw, 1.85rem);
+        border-radius: 26px;
+        border: 1px solid rgba(255, 210, 74, 0.52);
+        border-top: 4px solid var(--gold);
+        background:
+          radial-gradient(circle at top left, rgba(255, 210, 74, 0.18), transparent 30%),
+          linear-gradient(135deg, #07172a 0%, #081b33 58%, #091829 100%);
+        box-shadow:
+          0 18px 42px rgba(15, 49, 88, 0.18),
+          0 0 22px rgba(224, 195, 106, 0.14);
+        color: #ffffff;
+      }
+
+      .page-home .home-facilitator-copy {
+        min-width: 0;
+        flex: 1 1 auto;
+      }
+
+      .page-home .home-facilitator-spotlight .eyebrow {
+        margin: 0 0 0.45rem;
+        color: #ffffff !important;
+        font-size: 0.76rem;
+        line-height: 1.3;
+        letter-spacing: 0.14em;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .page-home .home-facilitator-spotlight h2 {
+        margin: 0 0 0.55rem;
+        color: var(--gold) !important;
+        font-size: clamp(1.35rem, 2.3vw, 1.95rem);
+        font-weight: 950;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+      }
+
+      .page-home .home-facilitator-spotlight p {
+        max-width: 780px;
+        margin: 0;
+        color: #ffffff !important;
+        font-size: clamp(0.93rem, 1.06vw, 1rem);
+        font-weight: 760;
+        line-height: 1.5;
+      }
+
+      .page-home .home-facilitator-action {
+        flex: 0 0 auto;
+      }
+
+      .page-home .home-facilitator-spotlight .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        padding: 0.7rem 1rem !important;
+        background: #ffffff !important;
+        color: var(--gold-dark) !important;
+        border: 1.5px solid var(--gold) !important;
+        border-radius: 999px !important;
+        box-shadow: 0 9px 18px rgba(15, 49, 88, 0.11) !important;
+        font-size: 0.88rem;
+        font-weight: 950;
+        text-align: center;
+        text-decoration: none;
+        white-space: normal;
+      }
+
+      .page-home .home-facilitator-spotlight .btn:hover,
+      .page-home .home-facilitator-spotlight .btn:focus-visible {
+        color: var(--navy) !important;
+        background: #fffaf4 !important;
+        border-color: var(--gold-dark) !important;
+      }
+
+      @media (max-width: 760px) {
+        .page-home .home-facilitator-spotlight {
+          flex-direction: column;
+          align-items: stretch;
+          border-radius: 24px;
+        }
+
+        .page-home .home-facilitator-action {
+          align-self: flex-start;
+        }
+      }
     </style>
   </head>
   <body class="split-page page-home">
@@ -494,10 +589,10 @@
           ><a href="about.html">About Project Worth</a
           ><a href="awareness.html">What is Grooming?</a
           ><a href="advocacy.html">Advocacy</a
-          ><a href="partners.html">Partners</a><a href="team.html">Our Team</a
+          ><a href="team.html">Our Team</a
           ><a href="the-spark.html">The Spark</a
           ><a href="media.html">Media &amp; Impact</a
-          ><a href="merch.html">Shop</a><a href="donate.html">Donate</a
+          ><a href="donate.html">Donate</a
           ><a href="light-the-way.html">Light the Way</a>
         </nav>
       </div>
@@ -584,10 +679,6 @@
                     Because Children Are Worth Protecting.
                   </p>
                   <div class="home-why-description">
-                    <p>
-                      Project Worth exists to bring light, accountability, and
-                      prevention into the places children depend on most.
-                    </p>
                   </div>
                 </div>
                 <div class="home-why-action-row">
@@ -600,10 +691,7 @@
                 </div>
                 <div class="callout-stat">
                   <p>
-                    Wisconsin is behind many states in child protection, with
-                    outdated systems and gaps that leave known risks untracked
-                    and unaddressed.
-                  </p>
+                    Project Worth brings together research, lived experience, community voices, and professionals to improve child protection systems for the people they are meant to serve.
                 </div>
               </div>
             </div>
@@ -627,16 +715,47 @@
           </div>
         </div>
       </section>
+
+      <section class="home-only home-movement-feature" aria-label="Project Worth movement">
+        <div class="container">
+          <div class="home-movement-verb-card">
+            <div class="home-movement-kicker">PROJECT WORTH IS A VERB.</div>
+            <p class="home-movement-statement">
+              Protect kids. Listen to survivors. Speak up. Act.
+            </p>
+            <a class="home-movement-invite" href="light-the-way.html">
+              There is a place for you in this movement. →
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="home-only home-quick-links-section" id="home-quick-links">
         <div class="container">
           <div class="home-square-link-grid">
+            <div class="home-square-link-card home-square-card-partners">
+              <img
+                alt="Project Worth Lantern"
+                class="home-square-card-watermark"
+                src="PROJECT-WORTH-LOGO.png"
+              />
+              <div class="eyebrow">Light the Way Wisconsin</div>
+              <h3>72 Counties. One Statewide Vision.</h3>
+              <p>
+                Starting in Kenosha County. Built to grow across Wisconsin,
+                and eventually nationwide.
+              </p>
+              <a class="btn btn-primary" href="light-the-way.html#pwWisconsinFeature"
+                >Explore Wisconsin</a
+              >
+            </div>
             <div
               class="home-square-link-card home-square-link-card-dark home-square-card-spark"
             >
               <span aria-hidden="true" class="home-square-card-star">★</span>
               <div class="eyebrow">From Pain to Purpose</div>
               <h3 class="home-dark-gold-title">Light Begins Here</h3>
-              <p class="home-card-spark-line">
+              <p class="home-card-spark-line" style="color: #ffffff !important;">
                 What started as one voice speaking up is now a mission to close
                 systemic gaps, inform policy, and ensure known risks lead to
                 action before harm continues.
@@ -644,59 +763,54 @@
               <div class="home-square-card-actions">
                 <a class="btn btn-secondary" href="the-spark.html"
                   >Read The Spark</a
-                ><a class="btn btn-primary" href="media.html"
-                  >Media &amp; Impact</a
                 >
               </div>
             </div>
-            <div class="home-square-link-card home-square-card-partners">
-              <img
-                alt="Project Worth Lantern"
-                class="home-square-card-watermark"
-                src="PROJECT-WORTH-LOGO.png"
-              />
-              <div class="eyebrow">Partners</div>
-              <h3>Together, we can protect more children.</h3>
-              <p>
-                Partnership helps bring prevention, accountability, and hope
-                into more communities.
-              </p>
-              <a class="btn btn-primary" href="partners.html"
-                >Partner With Project Worth</a
-              >
+            <div class="home-square-link-card home-square-card-merch">
+              <img alt="" class="home-square-card-watermark" src="PROJECT-WORTH-LOGO.png" />
+              <div class="eyebrow">Put Hope Into Action</div>
+              <h3>There Is a Place for You.</h3>
+              <p>Bring your skills, lived experience, and commitment to work that protects kids, changes systems, and empowers survivors.</p>
+              <a class="btn btn-primary" href="volunteer.html">Find Your Place</a>
             </div>
             <div
-              class="home-square-link-card home-square-link-card-dark home-square-card-lightway"
+              class="home-square-link-card home-square-link-card-dark home-square-card-institute"
             >
-              <span aria-hidden="true" class="home-square-card-star">★★</span>
-              <div class="eyebrow">Light the Way</div>
-              <h3 class="home-dark-gold-title home-lightway-gold-title">
-                See the lights guiding ★★
-              </h3>
-              <p class="home-card-lightway-line">
-                Survivor voices, advocate lights, partner lights, system gaps,
-                policy examples, and ways to get involved show where change is
-                needed.
+              <span aria-hidden="true" class="home-square-card-star">★</span>
+              <div class="eyebrow" style="color: #ffffff !important;">Training Institute</div>
+              <h3 class="home-dark-gold-title">From Research to Reform.</h3>
+              <p class="home-card-spark-line" style="color: #ffffff !important;">
+                Research, training, and practical tools to strengthen prevention and better protect Wisconsin children.
               </p>
-              <a class="btn btn-secondary" href="light-the-way.html"
-                >Light the Way</a
-              >
-            </div>
-            <div class="home-square-link-card home-square-card-merch">
-              <img
-                alt="Project Worth Lantern"
-                class="home-square-card-watermark"
-                src="PROJECT-WORTH-LOGO.png"
-              />
-              <div class="eyebrow">Merch Coming Soon</div>
-              <h3>Awareness You Can Carry</h3>
-              <p>
-                Project Worth items designed to spread hope, belonging, and the
-                message that every child is worth protecting.
-              </p>
-              <a class="btn btn-primary" href="merch.html">Shop</a>
+              <div class="home-square-card-actions">
+                <a class="btn btn-secondary" href="institute.html"
+                  >Explore the Institute</a
+                >
+              </div>
             </div>
           </div>
+          <!-- Featured facilitator opportunity — below the four quick-link cards. -->
+          <section
+            class="home-facilitator-spotlight"
+            aria-labelledby="home-facilitator-title"
+          >
+            <div class="home-facilitator-copy">
+              <div class="eyebrow">New Volunteer Opportunity · Facilitator Training</div>
+              <h2 id="home-facilitator-title">
+                Bring Light the Way to Your Workplace or Community.
+              </h2>
+              <p>
+                Become a Light the Way Facilitator. Learn to lead meaningful
+                prevention conversations and help create safer environments for
+                children in the places you already work, lead, and serve.
+              </p>
+            </div>
+            <div class="home-facilitator-action">
+              <a class="btn btn-secondary" href="volunteer.html">
+                Explore the Opportunity →
+              </a>
+            </div>
+          </section>
         </div>
       </section>
       <section class="star-section home-only site-bg-white" id="star">
@@ -2740,5 +2854,148 @@
         background: transparent !important;
       }
     </style>
+    <style id="pw-home-movement-feature">
+      .page-home .home-movement-feature {
+        position: relative !important;
+        z-index: 1 !important;
+        padding: clamp(0.7rem, 1.6vw, 1.05rem) 0 0.2rem !important;
+        background: transparent !important;
+      }
+
+      .page-home .home-movement-verb-card {
+        position: relative !important;
+        overflow: hidden !important;
+        max-width: 860px !important;
+        margin: 0 auto !important;
+        padding: 0.75rem 1.1rem 0.8rem !important;
+        text-align: center !important;
+        background:
+          radial-gradient(circle at bottom right, rgba(224, 195, 106, 0.18), transparent 34%),
+          linear-gradient(135deg, #f4f1ec 0%, #f7f5f1 72%, #f0e5c3 100%) !important;
+        border: 1px solid rgba(224, 195, 106, 0.38) !important;
+        border-left: 8px solid var(--gold) !important;
+        border-radius: 22px !important;
+        box-shadow: 0 12px 28px rgba(15, 49, 88, 0.09) !important;
+      }
+
+      .page-home .home-movement-verb-card::before,
+      .page-home .home-movement-verb-card::after {
+        position: absolute !important;
+        color: rgba(255, 255, 255, 0.78) !important;
+        line-height: 1 !important;
+        pointer-events: none !important;
+        font-family: inherit !important;
+      }
+
+      .page-home .home-movement-verb-card::before {
+        content: "★" !important;
+        top: -0.35rem !important;
+        right: 0.7rem !important;
+        font-size: 2.9rem !important;
+        opacity: 0.72 !important;
+      }
+
+      .page-home .home-movement-verb-card::after {
+        content: "★" !important;
+        left: 0.45rem !important;
+        bottom: -0.7rem !important;
+        font-size: 4.3rem !important;
+        opacity: 0.22 !important;
+      }
+
+      .page-home .home-movement-kicker {
+        position: relative !important;
+        z-index: 1 !important;
+        color: #b07d16 !important;
+        font-size: clamp(0.86rem, 1vw, 0.98rem) !important;
+        font-weight: 950 !important;
+        letter-spacing: 0.12em !important;
+        line-height: 1.15 !important;
+        margin: 0 0 0.28rem !important;
+        text-transform: uppercase !important;
+      }
+
+      .page-home .home-movement-statement {
+        position: relative !important;
+        z-index: 1 !important;
+        margin: 0 !important;
+        color: var(--navy) !important;
+        font-size: clamp(1rem, 1.28vw, 1.12rem) !important;
+        line-height: 1.28 !important;
+        font-weight: 900 !important;
+        letter-spacing: -0.01em !important;
+      }
+
+      .page-home .home-movement-invite {
+        position: relative !important;
+        z-index: 1 !important;
+        display: inline-block !important;
+        margin-top: 0.34rem !important;
+        color: #b07d16 !important;
+        font-size: clamp(0.9rem, 1.02vw, 0.98rem) !important;
+        font-weight: 950 !important;
+        text-decoration: none !important;
+      }
+
+      .page-home .home-movement-invite:hover,
+      .page-home .home-movement-invite:focus {
+        color: var(--navy) !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+      }
+
+      .page-home .home-square-link-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      }
+
+
+      @media (max-width: 1080px) {
+        .page-home .home-square-link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .page-home .home-square-link-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .page-home .home-movement-verb-card {
+          max-width: none !important;
+          padding: 0.72rem 0.9rem 0.76rem !important;
+          border-radius: 18px !important;
+        }
+
+        .page-home .home-movement-verb-card::before {
+          font-size: 2.3rem !important;
+          right: 0.5rem !important;
+        }
+
+        .page-home .home-movement-verb-card::after {
+          font-size: 3.5rem !important;
+          left: 0.35rem !important;
+        }
+      }
+    </style>
+    <style id="pw-movement-color-safeguard">
+      .page-home .home-movement-verb-card .home-movement-kicker,
+      .page-home .home-movement-verb-card .home-movement-invite {
+        color: #b07d16 !important;
+      }
+
+      .page-home .home-movement-verb-card .home-movement-statement {
+        color: var(--navy) !important;
+      }
+    </style>
+
+  
+    <style id="pw-institute-white-copy-final">
+      .page-home .home-square-card-institute .eyebrow,
+      .page-home .home-square-card-institute p,
+      .page-home .home-square-card-institute .home-card-spark-line {
+        color: #ffffff !important;
+      }
+    </style>
+
   </body>
 </html>

@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Project Worth · API Diagnostics</title><style>body{margin:0;background:#f7f4ed;color:#152b42;font:15px/1.5 system-ui}header{background:#10283c;color:white;padding:22px 5%}main{max-width:1050px;margin:25px auto;padding:0 20px}.card{background:white;border:1px solid #d3d9dd;border-radius:14px;padding:24px;margin:16px 0}h1{margin:0}button{padding:10px 17px;border:0;border-radius:8px;background:#153b58;color:white;font-weight:700;cursor:pointer;margin:4px}button:disabled{opacity:.5}textarea,input{width:100%;box-sizing:border-box;padding:10px;border:1px solid #adb9c2;border-radius:8px;font:inherit}label{display:block;font-weight:700;margin:12px 0}pre{overflow:auto;white-space:pre-wrap;word-break:break-word;background:#101c2c;color:#d6f3df;padding:15px;border-radius:8px;max-height:450px}.ok{color:#17633a}.bad{color:#ac3333}.muted{color:#596b79}summary{cursor:pointer;font-weight:700;padding:12px;background:#e8eff5;border-radius:8px}</style></head><body><header><small>PROJECT WORTH · SECURE SUPPORT</small><h1>API Debugger & Bug Reporter</h1><span>One link · One test · One shareable diagnostic report</span></header><main><section class="card"><h2>Sign-in & Session</h2><p id="auth">Checking existing Project Worth session…</p><button id="signin">Sign in to Project Worth</button><button id="check">Check session</button><p class="muted">This page reuses a valid sign-in from another tab. Passwords and tokens are never included in reports.</p></section><section class="card"><h2>Selected test</h2><p>Test ID: <strong id="testid"></strong></p><p id="instruction">Use Execute to test the protected API.</p><button id="execute">Execute AUTH-02 · My Permissions</button><button id="copyresult">Copy results</button><pre id="result">No tests executed.</pre></section><section class="card"><h2>Report a Bug</h2><p>Answers included in a support link are suggestions. Review before sharing.</p><label>User / email<input id="user" autocomplete="off"></label><label>Affected webpage<input id="webpage"></label><label>What were you trying to do?<textarea id="goal" rows="2"></textarea></label><label>What happened?<textarea id="actual" rows="2"></textarea></label><label>What did you expect?<textarea id="expected" rows="2"></textarea></label><label>Steps to reproduce<textarea id="steps" rows="2"></textarea></label><label>Optional screenshot or video<input id="attachment" type="file" accept="image/*,video/*"></label><button id="copyreport">Copy sanitized report</button><p id="reportstatus"></p></section><section class="card" id="api-catalog"><h2>Custom API Catalog</h2><p>Save API definitions in Project Worth DynamoDB. Add a new endpoint from a prepared link, then press Add API and Test. Admin permission required to save.</p><div id="catalog-status" role="status">Loading saved APIs…</div><details id="api-add" open><summary>+ Add API</summary><label>API group<input id="api-group" value="Custom"></label><label>Display name<input id="api-name" placeholder="My API test"></label><label>Method<select id="api-method"><option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option></select></label><label>Full HTTPS URL<input id="api-url" type="url" placeholder="https://example.com/api/status"></label><label>JSON body (optional)<textarea id="api-body" rows="3"></textarea></label><label>Expected JSON response (optional)<textarea id="api-expected" rows="3"></textarea></label><button id="api-add-button">Add API</button><p id="api-add-status"></p></details><h3>Saved endpoints</h3><div id="api-list"></div><h3>Test output: actual vs expected</h3><pre id="api-output">Choose Test for a saved API.</pre><button id="copy-api-output">Copy test report</button><p class="muted">The tester sends the Project Worth JWT only to the exact Project Worth API host. Other HTTPS endpoints are called without that token and may be blocked by browser CORS. Secrets are not stored in definitions.</p></section><section class="card"><h2>Diagnostic Console</h2><button id="copyconsole">Copy console</button><button id="clearconsole">Clear</button><pre id="console">Ready.</pre></section><p class="muted">Security: Project Worth permissions are enforced by the API, not this webpage. Attachments stay on your device unless you share them. Do not paste JWTs, passwords, or sensitive case information.</p></main><script src="/institute-tab-session.js"></script><script>(async()=>{'use strict';const $=id=>document.getElementById(id),api='https://t0pckriwia.execute-api.us-east-2.amazonaws.com';const params=new URLSearchParams(location.search.replace(/\?(?=(user|webpage|goal|actual|expected|steps|test)=)/g,'&'));for(const id of ['user','webpage','goal','actual','expected','steps'])if(params.has(id))$(id).value=params.get(id).slice(0,2500);const test=params.get('test')||'AUTH-02';$('testid').textContent=test;const logs=[];const log=(type,msg)=>{logs.push({time:new Date().toISOString(),type,message:String(msg).slice(0,600)});trace('log',{type,message:msg})};let last={status:'not-run'};async function session(){const s=await window.PWSession.getSession();$('auth').textContent=s?'Signed in: active JWT available in this browser profile':'No active Project Worth session';$('auth').className=s?'ok':'bad';return s}$('signin').onclick=()=>{try{sessionStorage.setItem('pwInstitutePendingDestination',location.pathname+location.search+location.hash)}catch(_){}location.assign(window.PWSession.loginUrl())};$('check').onclick=async()=>{const s=await session();log('AUTH',s?'Active session':'No active session')};$('execute').onclick=async()=>{const start=Date.now();$('result').textContent='Running…';const s=await session();if(!s){last={test,status:'blocked',reason:'not signed in'};$('result').textContent=JSON.stringify(last,null,2);log('ERROR','No active session');return}try{const r=await fetch(api+'/api/authorization-test/me',{headers:{Authorization:'Bearer '+s.id,Accept:'application/json'},cache:'no-store'});const body=await r.json().catch(()=>({error:'non-JSON response'}));const safe={groups:body.groups,globalPermissions:body.globalPermissions,departmentPermissions:body.departmentPermissions,error:body.error,message:body.message};last={test:'AUTH-02',httpStatus:r.status,status:r.ok?'pass':'fail',elapsedMs:Date.now()-start,response:safe};$('result').textContent=JSON.stringify(last,null,2);log(r.ok?'PASS':'FAIL','AUTH-02 HTTP '+r.status+' ('+last.elapsedMs+'ms)')}catch(e){last={test,status:'network-error',error:e.message};$('result').textContent=JSON.stringify(last,null,2);log('ERROR',e.message)}};function report(){return {createdAt:new Date().toISOString(),testId:test,reportedUser:$('user').value,affectedPage:$('webpage').value,goal:$('goal').value,actual:$('actual').value,expected:$('expected').value,steps:$('steps').value,attachmentNames:Array.from($('attachment').files).map(f=>f.name),result:last,console:logs,browser:navigator.userAgent}}async function copy(v){try{await navigator.clipboard.writeText(v);return true}catch(_){return false}}$('copyresult').onclick=()=>copy($('result').textContent);$('copyreport').onclick=async()=>{$('reportstatus').textContent=await copy(JSON.stringify(report(),null,2))?'Report copied. Attach screenshot/video separately when sharing.':'Copy unavailable. Select and copy the report manually.'};$('copyconsole').onclick=()=>copy($('console').textContent);$('clearconsole').onclick=()=>{logs.length=0;diagnosticEvents.length=0;$('console').textContent='Cleared.'};
+// API catalog: definitions are server-side, test execution runs in this browser.
+const catalogApi=api+'/api/debug/apis';let catalogRows=[];
+function readJSON(id,fallback){const v=$(id).value.trim();if(!v)return fallback;return JSON.parse(v)}
+async function catalogRequest(method,body){
+ const s=await session();if(!s)throw Error('Sign in before managing API definitions');
+ const r=await fetch(catalogApi,{method,cache:'no-store',headers:{Authorization:'Bearer '+s.id,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
+ const data=await r.json().catch(()=>({error:'Invalid response'}));if(!r.ok)throw Error(data.error||'HTTP '+r.status);return data;
+}
+function compare(expected,actual,path='root'){
+ const differences=[];
+ if(typeof expected!==typeof actual||expected===null||actual===null){
+  if(JSON.stringify(expected)!==JSON.stringify(actual))differences.push({path,expected,actual});return differences;
+ }
+ if(typeof expected==='object'){
+  for(const key of Object.keys(expected))differences.push(...compare(expected[key],actual?.[key],path+'.'+key));
+ }else if(expected!==actual)differences.push({path,expected,actual});
+ return differences;
+}
+async function testCatalogRow(x,output){
+ const display=output||$('api-output');
+ display.textContent='Executing '+x.method+' '+x.url+'…';
+ const start=Date.now();
+ try{
+  const url=new URL(x.url);if(url.protocol!=='https:')throw Error('HTTPS required');
+  const requestHeaders={'Accept':'application/json'};
+  const sessionInfo=await session();
+  if(url.origin===new URL(api).origin && sessionInfo)requestHeaders.Authorization='Bearer '+sessionInfo.id;
+  let body;
+  if(x.method!=='GET' && x.body!==null && x.body!==undefined){body=JSON.stringify(x.body);requestHeaders['Content-Type']='application/json'}
+  const response=await fetch(url.href,{method:x.method,headers:requestHeaders,body,cache:'no-store',credentials:'omit'});
+  const raw=await response.text();let actual;try{actual=JSON.parse(raw)}catch(_){actual=raw.slice(0,2500)}
+  const expected=x.expected||{};const differences=compare(expected,actual);
+  const outcome={apiId:x.id,name:x.name,url:x.url,method:x.method,httpStatus:response.status,elapsedMs:Date.now()-start,assessment:differences.length?'DIFF':'PASS',expected,actual,differences};
+  display.textContent=JSON.stringify(outcome,null,2);log(outcome.assessment,x.name+' HTTP '+response.status);
+ }catch(e){display.textContent=JSON.stringify({apiId:x.id,status:'INCONCLUSIVE',reason:e.message,possibleCause:'Network/CORS/authentication; cannot establish API correctness'},null,2);log('ERROR',x.name+': '+e.message)}
+}
+function renderCatalog(){
+ const list=$('api-list');list.replaceChildren();
+ for(const x of catalogRows){
+  const section=document.createElement('div');section.style.cssText='border:1px solid #cbd4dc;border-radius:9px;padding:12px;margin:9px 0';
+  const title=document.createElement('strong');title.textContent=x.method+'  '+x.group+' / '+x.name;
+  const url=document.createElement('div');url.className='muted';url.style.wordBreak='break-all';url.textContent=x.url;
+  const button=document.createElement('button');button.textContent='Test';
+  const output=document.createElement('pre');output.hidden=true;output.style.cssText='margin:10px 0 0;max-height:500px;overflow:auto;white-space:pre-wrap;word-break:break-word';
+  const copyButton=document.createElement('button');copyButton.textContent='Copy this result';copyButton.hidden=true;copyButton.onclick=()=>copy(output.textContent);
+  button.onclick=async()=>{output.hidden=false;copyButton.hidden=false;await testCatalogRow(x,output)};
+  section.append(title,url,button,output,copyButton);list.appendChild(section);
+ }
+ if(!catalogRows.length)list.textContent='No saved API definitions yet.';
+}
+async function refreshCatalog(){
+ try{const data=await catalogRequest('GET');catalogRows=data.apis||[];renderCatalog();$('catalog-status').textContent=catalogRows.length+' saved APIs'}catch(e){$('catalog-status').textContent='Catalog not available: '+e.message;log('CATALOG',e.message)}
+}
+$('api-add-button').onclick=async()=>{
+ try{
+  const url=$('api-url').value.trim();if(new URL(url).protocol!=='https:')throw Error('HTTPS required');
+  const def={group:$('api-group').value.trim()||'Custom',name:$('api-name').value.trim(),method:$('api-method').value,url,body:readJSON('api-body',null),expected:readJSON('api-expected',{})};
+  if(!def.name)throw Error('Enter an API name');
+  $('api-add-status').textContent='Saving…';const response=await catalogRequest('POST',def);
+  $('api-add-status').textContent='Saved '+response.api.name+'. Click Test below.';await refreshCatalog();
+ }catch(e){$('api-add-status').textContent='Not saved: '+e.message}
+};
+$('copy-api-output').onclick=()=>copy($('api-output').textContent);
+for(const [query,field] of [['group','api-group'],['name','api-name'],['method','api-method'],['url','api-url'],['body','api-body'],['expected','api-expected']]){
+ const value=params.get('api_'+query);
+ if(value!==null)$(field).value=value.slice(0,5000)
+}
+await refreshCatalog();
+
+// Diagnostic event capture: preserve action sequence and response evidence, but never credentials.
+const diagnosticEvents=[];
+const redact=(value)=>{const forbidden=/authorization|password|token|secret|cookie|credential|otp|mfacode|session/i;
+ const walk=(x,depth=0)=>{if(depth>7)return '[depth limit]';if(Array.isArray(x))return x.slice(0,100).map(v=>walk(v,depth+1));if(x&&typeof x==='object'){const z={};for(const [k,v] of Object.entries(x).slice(0,100))z[k]=forbidden.test(k)?'[REDACTED]':walk(v,depth+1);return z}return typeof x==='string'?x.slice(0,12000):x};
+ return walk(value)};
+function trace(kind,details){const entry={index:diagnosticEvents.length+1,time:new Date().toISOString(),kind,details:redact(details)};diagnosticEvents.push(entry);if(diagnosticEvents.length>400)diagnosticEvents.shift();$('console').textContent=JSON.stringify({events:diagnosticEvents},null,2)}
+document.addEventListener('click',event=>{const b=event.target.closest('button,a,summary');if(b)trace('click',{tag:b.tagName,id:b.id||null,text:b.textContent.slice(0,130),url:b.tagName==='A'?b.pathname:null})},true);
+document.addEventListener('change',event=>{const t=event.target;if(t.matches('input,select,textarea'))trace('field-changed',{id:t.id||null,type:t.type||null,filled:!!t.value,length:(t.value||'').length})},true);
+const originalFetch=window.fetch.bind(window);
+window.fetch=async function(input,init={}){
+ const url=typeof input==='string'?input:input.url,method=init.method||'GET';
+ const start=performance.now();trace('request',{method,url,body:init.body?redact((()=>{try{return JSON.parse(init.body)}catch(_){return '[non-json body]' }})()):null});
+ try{
+  const response=await originalFetch(input,init),snapshot=response.clone();
+  let body;try{body=await snapshot.json()}catch(_){body='[non-JSON response]'}
+  trace('response',{method,url,httpStatus:response.status,elapsedMs:Math.round(performance.now()-start),body});
+  return response;
+ }catch(error){trace('network-error',{method,url,error:error.message});throw error}
+};
+$('copyconsole').onclick=()=>copy(JSON.stringify({source:'Project Worth Debugger',capturedAt:new Date().toISOString(),url:location.origin+location.pathname,events:diagnosticEvents},null,2));
+window.addEventListener('error',e=>log('JS ERROR',e.message));window.addEventListener('unhandledrejection',e=>log('PROMISE ERROR',e.reason?.message||'Unhandled rejection'));if(params.has('test'))$('instruction').textContent='Prepared support test: '+test+'. Review the details, then press Execute.';await session();log('READY','Debugger initialized with test '+test)})();</script></body></html>

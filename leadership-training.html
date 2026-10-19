@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Project Worth Institute · Secure Training</title>
+<style>body{font-family:system-ui,Arial,sans-serif;background:#fffaf2;color:#0f3158;display:grid;place-items:center;min-height:90vh;text-align:center;padding:20px}p{max-width:36rem;line-height:1.6}a{color:#0f3158}</style></head>
+<body><main><h1>Project Worth Institute</h1><p id="loading" role="status">Checking your secure training access…</p></main><script src="/institute-tab-session.js"></script><script>
+(async function(){
+ var destination='leadership-training.html';
+ var login='institute-login.html';
+ var token=await window.PWSession.getToken();if(!token){try{sessionStorage.setItem('pwInstitutePendingDestination',location.pathname+location.search+location.hash)}catch(_){}location.replace(login+'?returnTo='+encodeURIComponent(location.pathname+location.search+location.hash));return;}
+ try{
+  var response=await fetch('https://t0pckriwia.execute-api.us-east-2.amazonaws.com/api/protected-content/'+encodeURIComponent(destination),{headers:{Authorization:'Bearer '+token,Accept:'text/html'},cache:'no-store'});
+  if(response.status===401){try{sessionStorage.setItem('pwInstitutePendingDestination',location.pathname+location.search+location.hash)}catch(_){}location.replace(login+'?returnTo='+encodeURIComponent(location.pathname+location.search+location.hash));return;}
+  if(!response.ok)throw Error(response.status===403?'This course is not assigned to your account. Contact Project Worth if you believe this is an error.':'Course materials are temporarily unavailable. Please try again.');
+  var html=await response.text();
+  if(!html.toLowerCase().includes('<html'))throw Error('The course page could not be verified.');
+  document.open();document.write(html);document.close();
+ }catch(error){
+  document.getElementById('loading').textContent=error.message;
+  var link=document.createElement('a');link.href='institute-portal.html';link.textContent='Return to the Institute Portal →';document.querySelector('main').appendChild(link);
+ }
+})();
+</script></body></html>
