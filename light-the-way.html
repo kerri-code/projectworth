@@ -1313,6 +1313,21 @@ body.page-light-the-way #ways-to-help .pw-feature-card-button:focus-visible{
 }
 </style>
 
+<style id="pw-network-three-pillars-layout-20261030">
+/* Layout only: retain the existing node, arrow, modal and brand colors. */
+#pwLightTheWayNetwork .pw-network-flow{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) !important;gap:.65rem !important;}
+#pwLightTheWayNetwork .pw-network-card{min-width:0;}
+#pwLightTheWayNetwork .pw-network-card .pw-network-node{width:100%;min-height:74px;}
+#pwLightTheWayNetwork .pw-network-card-caption{margin:.28rem 0 0;color:var(--navy);font-size:.79rem;line-height:1.3;font-weight:850;text-align:center;}
+#pwLightTheWayNetwork .pw-network-flow .pw-network-arrow{grid-column:auto !important;grid-row:auto !important;transform:none !important;}
+#pwNetworkModal .pw-network-flowchart{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;}
+#pwNetworkModal .pw-network-flow-step p{font-size:.81rem;line-height:1.5;}
+@media(max-width:720px){
+ #pwLightTheWayNetwork .pw-network-flow{grid-template-columns:1fr !important;gap:.3rem !important;}
+ #pwLightTheWayNetwork .pw-network-flow .pw-network-arrow{transform:rotate(90deg) !important;justify-self:center;}
+ #pwNetworkModal .pw-network-flowchart{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body class="page-light-the-way pw-polished-clean">
 <div aria-hidden="true" class="light-way-page-watermark">
@@ -1463,37 +1478,27 @@ body.page-light-the-way #ways-to-help .pw-feature-card-button:focus-visible{
 <section aria-label="How the Light the Way network grows" class="pw-network-model" id="pwLightTheWayNetwork">
 <div class="pw-network-kicker">Your Light Can Go Farther</div>
 <p class="pw-network-system-lights-note" style="margin:0 auto .55rem;color:#9d6d05;font-size:.83rem;line-height:1.3;font-weight:750;text-align:center;">We&rsquo;re looking for lights in the system.</p>
-<div aria-label="Project Worth to County Champions to Organizational Representatives to Light the Way Advocates to Community Impact" class="pw-network-flow">
-<div class="pw-network-node" data-description="Provides training, tools, resources, and support." tabindex="0">
-<strong>Project<br/>Worth</strong>
+<div aria-label="Protecting Kids, Changing Systems, and Empowering Survivors" class="pw-network-flow">
+<div class="pw-network-card">
+<div class="pw-network-node" data-description="Free professional training and community awareness help people protect children sooner." tabindex="0">
+<strong>Protecting<br/>Kids</strong>
+</div>
+<p class="pw-network-card-caption">Through Professional Training &amp; Community Awareness</p>
 </div>
 <div aria-hidden="true" class="pw-network-arrow">→</div>
-<div class="pw-network-node" data-description="Connect people and organizations across their county and help grow the local Light the Way network." tabindex="0">
-<strong>County<br/>Champions</strong>
+<div class="pw-network-card">
+<div class="pw-network-node" data-description="Name gaps in Wisconsin systems and advocate for stronger child protection." tabindex="0">
+<strong>Changing<br/>Systems</strong>
+</div>
+<p class="pw-network-card-caption">By unapologetically naming the gaps that leave Wisconsin children and survivors vulnerable</p>
 </div>
 <div aria-hidden="true" class="pw-network-arrow">→</div>
-<div class="pw-network-node" data-description="Receive Light the Way training and train the people in their organization." tabindex="0">
-<strong>Organizational<br/>Representatives</strong>
+<div class="pw-network-card">
+<div class="pw-network-node" data-description="Survivor voices help shape lasting reform on their own terms." tabindex="0">
+<strong>Empowering<br/>Survivors</strong>
 </div>
-<div aria-hidden="true" class="pw-network-arrow">→</div>
-<div class="pw-network-node" data-description="People trained by Organizational Representatives put what they learn into practice in their everyday roles and relationships." tabindex="0">
-<strong>Light the Way<br/>Advocates</strong>
+<p class="pw-network-card-caption">Turning lived experience into lasting change</p>
 </div>
-<div aria-hidden="true" class="pw-network-arrow">→</div>
-<div class="pw-network-node" data-description="Stronger prevention, response, and child protection where people live." tabindex="0">
-<strong>Community<br/>Impact</strong>
-</div>
-</div>
-<div aria-label="How each part of the model moves the work forward" class="pw-network-action-row">
-<span>Equip &amp; support</span>
-<span aria-hidden="true"></span>
-<span>Connect locally</span>
-<span aria-hidden="true"></span>
-<span>Train their people</span>
-<span aria-hidden="true"></span>
-<span>Put it into practice</span>
-<span aria-hidden="true"></span>
-<span>Strengthen protection</span>
 </div>
 <p class="pw-network-sphere">Change starts in your sphere of influence.</p>
 <div class="pw-network-actions">
@@ -5445,35 +5450,21 @@ document.addEventListener("keydown", function(event) {
 <span>How the model works</span>
 <h3>How Light the Way is helping make Wisconsin a national leader in child protection.</h3>
 </div>
-<div aria-label="How the Light the Way model flows" class="pw-network-flowchart">
+<div aria-label="Three ways Light the Way strengthens child protection" class="pw-network-flowchart">
 <article class="pw-network-flow-step">
-<span class="pw-network-flow-step-label">Project Worth</span>
-<h3>We equip.</h3>
-<p>Training, tools, policy guidance, and support.</p>
+<span class="pw-network-flow-step-label">1. Protecting Kids</span>
+<h3>Why is the training free?</h3>
+<p><strong>Because we want a movement and safer kids, not money.</strong> Project Worth is 100% volunteer led, and our largest expense is a $10 monthly Google Voice line. Our <a href="institute.html" style="text-decoration:underline;">Training &amp; Research Institute</a> equips professionals and communities to share free Light the Way training through a train the trainer model. Change starts within our spheres of influence.</p>
 </article>
-<div aria-hidden="true" class="pw-network-flow-arrow">→</div>
 <article class="pw-network-flow-step">
-<span class="pw-network-flow-step-label">County Champions</span>
-<h3>They connect.</h3>
-<p>Connect local people, organizations, and needs.</p>
+<span class="pw-network-flow-step-label">2. Changing Systems</span>
+<h3>Why look for the strongest protections?</h3>
+<p>We <strong>unapologetically name the gaps</strong> that leave Wisconsin children and survivors vulnerable, learn from the strongest protections across the country, and advocate to bring those standards home. How we protect children reflects how much we value them. They deserve no less.</p>
 </article>
-<div aria-hidden="true" class="pw-network-flow-arrow">→</div>
 <article class="pw-network-flow-step">
-<span class="pw-network-flow-step-label">Organizational Representatives</span>
-<h3>They train their people.</h3>
-<p>Train their people using Light the Way tools.</p>
-</article>
-<div aria-hidden="true" class="pw-network-flow-arrow">→</div>
-<article class="pw-network-flow-step">
-<span class="pw-network-flow-step-label">Light the Way Advocates</span>
-<h3>They put it into practice.</h3>
-<p>Put what they learn into practice.</p>
-</article>
-<div aria-hidden="true" class="pw-network-flow-arrow">→</div>
-<article class="pw-network-flow-step">
-<span class="pw-network-flow-step-label">Community Impact</span>
-<h3>Change grows.</h3>
-<p>Stronger child protection across the community.</p>
+<span class="pw-network-flow-step-label">3. Empowering Survivors</span>
+<h3>Why do their voices matter?</h3>
+<p>Survivors should never have to <strong>&ldquo;survive twice&rdquo;</strong>: once through harm and again through the systems meant to protect them. We want lived experience to shape survivor-centered protocols, learning from stronger approaches in states like Illinois. <strong>That story ends with us. Change for those who come next.</strong></p>
 </article>
 </div>
 <div class="pw-network-join">
