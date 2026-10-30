@@ -9441,3 +9441,29 @@ body.split-page .nav-links a.active-page {
 .footer-include-placeholder {
   min-height: 20rem;
 }
+
+/* Public navigation: keep Light the Way on a separate line and highlight active pages. */
+header .nav > nav.nav-links {
+  flex:1 1 0%;
+  min-width:0;
+  justify-content:flex-end;
+  column-gap:clamp(.5rem,1vw,1.2rem);
+  row-gap:.35rem;
+}
+header .nav > nav.nav-links > a[href="light-the-way.html"] {
+  flex:0 0 100%;
+  text-align:right;
+}
+header .nav > nav.nav-links > a.active-page {
+  color:var(--gold,#c89b2f) !important;
+}
+body.page-institute header .nav-links > a[href="light-the-way.html"] {
+  color:var(--white,#fff) !important;
+}
+body.page-institute header .nav-links > a[href="institute.html"] {
+  color:var(--gold,#c89b2f) !important;
+}
+@media(max-width:920px) {
+  header .nav > nav.nav-links {width:100%;justify-content:flex-start;}
+  header .nav > nav.nav-links > a[href="light-the-way.html"] {text-align:left;}
+}
