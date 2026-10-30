@@ -180,9 +180,7 @@ Media &amp; Impact
 
 
 
-<a href="donate.html">
-Donate
-</a>
+<a href="institute.html">Worth Institute</a>
 
 <a href="light-the-way.html">
 Light the Way
@@ -326,14 +324,14 @@ One Story. A Statewide Mission.
     position:relative;
     overflow:hidden;
 
-    aspect-ratio:1 / 1;
+    aspect-ratio:auto;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
 
-    min-height:0;
+    min-height:clamp(360px,35vw,450px);
   "
 >
 
@@ -388,7 +386,7 @@ One Story. A Statewide Mission.
       uppercase;
 
     font-size:
-      0.9rem;
+      0.84rem;
   "
 >
 ★ The Spark ★
@@ -407,10 +405,10 @@ One Story. A Statewide Mission.
       850;
 
     font-size:
-      clamp(1.02rem,1.35vw,1.32rem);
+      clamp(0.96rem,1.18vw,1.14rem);
 
     line-height:
-      1.72;
+      1.58;
 
     letter-spacing:
       -0.01em;
@@ -535,6 +533,7 @@ The Spark
   style="
     color:var(--gold-dark);
     font-weight:800;
+    font-size:clamp(1.4rem,1.9vw,1.8rem);
     margin-bottom:0.55em;
   "
 >
@@ -574,10 +573,10 @@ Run to the Roar
       750;
 
     font-size:
-      clamp(1.02rem,1.25vw,1.14rem);
+      clamp(0.96rem,1.12vw,1.04rem);
 
     line-height:
-      1.65;
+      1.55;
 
     margin:
       0 0 1rem;
@@ -2064,6 +2063,8 @@ and
 
   #story .spark-top-card,
   #story .run-roar-wide {
+
+    min-height:0 !important;
 
     aspect-ratio:
       auto !important;
