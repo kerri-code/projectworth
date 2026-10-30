@@ -1386,6 +1386,59 @@ body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-ch
   text-align:center !important;
 }
 </style>
+
+<style id="pw-movement-split-review-20261030">
+/* Scoped review layout. Existing map instances, lights, filters and form remain intact. */
+body.page-light-the-way #lights-map .pw-wisconsin-launch {display:none !important;}
+body.page-light-the-way #lights-map .pw-map-header-clean {max-width:100% !important; margin-bottom:1rem !important;}
+body.page-light-the-way #lights-map .pw-movement-split {display:grid !important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:1rem;margin-top:.4rem;}
+body.page-light-the-way #lights-map .pw-movement-map,
+body.page-light-the-way #lights-map .pw-movement-side {min-width:0;min-height:550px;border-radius:24px;border:1px solid rgba(200,155,47,.42);background:linear-gradient(160deg,#fffefa,#fff9eb);box-shadow:0 14px 30px rgba(15,49,88,.07);padding:1.05rem;}
+body.page-light-the-way #lights-map .pw-movement-map {display:flex;flex-direction:column;}
+body.page-light-the-way #lights-map .pw-movement-map-heading,
+body.page-light-the-way #lights-map .pw-movement-side-heading {min-height:78px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;margin:0 0 .75rem;}
+body.page-light-the-way #lights-map .pw-movement-map-heading h3,
+body.page-light-the-way #lights-map .pw-movement-side-heading h3 {font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.15;font-weight:900;color:#0f3158;margin:0;}
+body.page-light-the-way #lights-map .pw-movement-map-heading p,
+body.page-light-the-way #lights-map .pw-movement-side-heading p {font-size:.9rem;line-height:1.4;color:#59677a;margin:0;}
+body.page-light-the-way #lights-map #mapZoomWrap.real-map-wrap {flex:1;min-height:430px!important;height:auto!important;overflow:hidden!important;border-radius:17px!important;position:relative!important;margin:0!important;}
+body.page-light-the-way #lights-map #projectWorthLeafletMap {min-height:430px!important;height:100%!important;max-height:none!important;}
+body.page-light-the-way #lights-map #mapZoomWrap .map-filters-inside {position:absolute!important;top:.7rem!important;left:.7rem!important;right:auto!important;bottom:auto!important;z-index:1100!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:.25rem!important;max-width:160px!important;padding:.35rem!important;background:rgba(255,255,255,.94)!important;border:1px solid rgba(200,155,47,.22);border-radius:12px!important;box-shadow:0 5px 16px rgba(7,23,42,.12)!important;}
+body.page-light-the-way #lights-map #mapZoomWrap .map-filters-inside .map-filter {width:100%!important;min-width:0!important;max-width:none!important;padding:.37rem .45rem!important;font-size:.73rem!important;line-height:1.18!important;text-align:left!important;justify-content:flex-start!important;white-space:normal!important;margin:0!important;box-shadow:none!important;}
+body.page-light-the-way #lights-map .pw-movement-side {display:flex;flex-direction:column;justify-content:stretch;}
+body.page-light-the-way #lights-map .pw-movement-choices {display:flex;flex-direction:column;flex:1;min-height:0;}
+body.page-light-the-way #lights-map .pw-movement-choices[hidden],
+body.page-light-the-way #lights-map .pw-movement-selected[hidden] {display:none!important;}
+body.page-light-the-way #lights-map .pw-movement-paths {display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:.75rem;flex:1;}
+body.page-light-the-way #lights-map button.pw-movement-path {appearance:none;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;width:100%;gap:.48rem;padding:1.1rem 1.25rem;border:1px solid rgba(200,155,47,.32);border-left:5px solid #c89b2f;border-radius:17px;text-align:left;background:#ffffff;color:#0f3158;cursor:pointer;box-shadow:0 7px 20px rgba(15,49,88,.05);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;}
+body.page-light-the-way #lights-map button.pw-movement-path strong {font-size:1.03rem;line-height:1.25;font-weight:900;}
+body.page-light-the-way #lights-map button.pw-movement-path span {font-size:.91rem;line-height:1.45;font-weight:600;color:#394e67;}
+body.page-light-the-way #lights-map button.pw-movement-path:hover,
+body.page-light-the-way #lights-map button.pw-movement-path:focus-visible {border-color:#c89b2f;box-shadow:0 10px 24px rgba(15,49,88,.12);transform:translateY(-1px);outline:2px solid transparent;}
+body.page-light-the-way #lights-map .pw-movement-privacy {text-align:center;font-size:.76rem;font-weight:700;color:#66707e;margin:.75rem 0 0;}
+body.page-light-the-way #lights-map .pw-movement-selected {display:flex;flex-direction:column;flex:1;min-height:0;}
+body.page-light-the-way #lights-map .pw-movement-back {align-self:flex-start;border:0;background:transparent;color:#0f3158;text-decoration:underline;text-underline-offset:3px;font-size:.82rem;font-weight:800;cursor:pointer;margin:0 0 .5rem;padding:.5rem;}
+body.page-light-the-way #lights-map .pw-movement-selected #mapInfoCard.map-info-card {position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;inset:auto!important;transform:none!important;display:block;width:100%!important;min-width:0!important;max-width:none!important;max-height:510px!important;min-height:0!important;overflow:auto!important;margin:0!important;padding:1.2rem!important;border-radius:18px!important;box-shadow:none!important;z-index:auto!important;}
+body.page-light-the-way #lights-map .pw-movement-selected #mapInfoCard.map-info-card[style*="display: none"] {display:none!important;}
+body.page-light-the-way #lights-map #compactAddLightBox {display:none!important;}
+@media(max-width:980px){
+  body.page-light-the-way #lights-map .pw-movement-split {grid-template-columns:1fr!important;}
+  body.page-light-the-way #lights-map .pw-movement-map,
+  body.page-light-the-way #lights-map .pw-movement-side {min-height:0;}
+  body.page-light-the-way #lights-map #mapZoomWrap.real-map-wrap {min-height:410px!important;height:410px!important;}
+  body.page-light-the-way #lights-map .pw-movement-side {min-height:455px;}
+}
+@media(max-width:640px){
+  body.page-light-the-way #lights-map .pw-movement-map,
+  body.page-light-the-way #lights-map .pw-movement-side {padding:.8rem;}
+  body.page-light-the-way #lights-map #mapZoomWrap .map-filters-inside {left:.35rem!important;top:.35rem!important;right:.35rem!important;max-width:none!important;flex-direction:row!important;overflow-x:auto!important;gap:.2rem!important;white-space:nowrap!important;padding:.26rem!important;scrollbar-width:thin;}
+  body.page-light-the-way #lights-map #mapZoomWrap .map-filters-inside .map-filter {width:auto!important;min-width:max-content!important;flex:0 0 auto!important;font-size:.66rem!important;padding:.3rem .4rem!important;white-space:nowrap!important;}
+  body.page-light-the-way #lights-map #mapZoomWrap.real-map-wrap {height:410px!important;}
+  body.page-light-the-way #lights-map button.pw-movement-path {padding:1rem;}
+  body.page-light-the-way #lights-map .pw-movement-map-heading,
+  body.page-light-the-way #lights-map .pw-movement-side-heading {min-height:65px;}
+}
+</style>
 </head>
 <body class="page-light-the-way pw-polished-clean">
 <div aria-hidden="true" class="light-way-page-watermark">
@@ -1468,9 +1521,6 @@ body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-ch
 <div class="card light-way-intro-card pw-map-header-clean" style="margin:0 auto 1.35rem;">
 <div class="eyebrow">A Movement Made of Light</div>
 <h3>One light can spark change. Many lights can ignite a movement.</h3>
-<p>
-    Explore survivor voices, advocates, partners, system gaps, and strong policy examples. Each light brings a different piece of the picture.
-  </p>
 <p class="anchor-line">The path forward is built by many.</p>
 <button aria-controls="pwWisconsinFeature" aria-expanded="false" class="pw-wisconsin-launch" id="pwWisconsinLaunch" type="button">
 <span aria-hidden="true" class="pw-wisconsin-launch-star">✦</span>
@@ -1481,6 +1531,12 @@ body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-ch
 <span aria-hidden="true" class="pw-wisconsin-launch-arrow">→</span>
 </button>
 </div>
+<div class="pw-movement-split" id="pwMovementSplit">
+  <section class="pw-movement-map" aria-labelledby="pwMovementMapHeading">
+    <div class="pw-movement-map-heading">
+      <h3 id="pwMovementMapHeading">Light the Way Wisconsin</h3>
+      <p>Change literally starts here.</p>
+    </div>
 <div class="light-map-wrap real-map-wrap" id="mapZoomWrap">
 <div aria-label="Light categories" class="light-map-filters map-filters-inside">
 <button class="map-filter active" data-filter="all" type="button">
@@ -1514,6 +1570,32 @@ body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-ch
 <button aria-label="Zoom out" id="realMapZoomOut" type="button">−</button>
 <button aria-label="Reset map view" id="realMapReset" type="button">Home</button>
 </div>
+</div>
+  </section>
+  <aside class="pw-movement-side" aria-label="Add Your Light and selected county information">
+    <div id="pwMovementChoices" class="pw-movement-choices">
+      <div class="pw-movement-side-heading">
+        <h3>Add Your Light</h3>
+        <p>Different perspectives. Shared purpose. Lasting change.</p>
+      </div>
+      <div class="pw-movement-paths">
+        <button type="button" class="pw-movement-path" data-pw-path-role="Survivor Voice">
+          <strong>Survivors &amp; Families</strong>
+          <span>Share your perspective or connect with us privately, however you feel comfortable.</span>
+        </button>
+        <button type="button" class="pw-movement-path" data-pw-path-role="Mandated Reporter / Child-Serving Professional">
+          <strong>Professionals &amp; Advocates</strong>
+          <span>Share what you've learned, gaps you've encountered, and ideas for change.</span>
+        </button>
+        <button type="button" class="pw-movement-path" data-pw-path-role="Partner">
+          <strong>Partners &amp; Organizations</strong>
+          <span>Share what you're doing and how we can work together to protect children.</span>
+        </button>
+      </div>
+      <p class="pw-movement-privacy">Submissions are private and never published automatically.</p>
+    </div>
+    <div id="pwMovementSelected" class="pw-movement-selected" hidden>
+      <button class="pw-movement-back" id="pwMovementBack" type="button">← Back to Add Your Light</button>
 <div class="map-info-card map-info-card-welcome" id="mapInfoCard">
 <button aria-label="Close selected light" class="map-card-close" type="button">×</button>
 <p class="map-card-label">Select a Light</p>
@@ -1532,6 +1614,8 @@ body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-ch
 <span aria-hidden="true">＋</span> Add Your Light
 </a>
 </div>
+    </div>
+  </aside>
 </div>
 <section aria-label="How the Light the Way network grows" class="pw-network-model" id="pwLightTheWayNetwork">
 <div class="pw-network-kicker">Your Light Can Go Farther</div>
@@ -4907,8 +4991,7 @@ body.pw-wisconsin-mode .leaflet-interactive.pw-wisconsin-county,body.pw-wisconsi
         <h3>Kenosha County</h3>
         <div class="pw-card-text">
           <p><strong>Our hometown. Our starting point.</strong></p>
-          <p>Project Worth is gathering local information about grooming prevention and awareness, child safety practices, reporting, community strengths, and opportunities to improve.</p>
-          <p><strong>Kenosha is the county where our mission began.</strong></p>
+          <p>Explore community participation and local child protection efforts.</p>
         </div>
         <div class="pw-card-action-row">
           <button class="pw-community-open-button" data-pw-community-county="Kenosha County" type="button">View Kenosha County Map</button>
@@ -4920,9 +5003,7 @@ body.pw-wisconsin-mode .leaflet-interactive.pw-wisconsin-county,body.pw-wisconsi
         <p class="map-card-label">Light the Way Wisconsin</p>
         <h3>${safeName}</h3>
         <div class="pw-card-text">
-          <p><strong>Change starts in your sphere of influence.</strong></p>
-          <p>Project Worth’s Light the Way model began in Kenosha County and is built to grow across Wisconsin.</p>
-          <p>The people who live in a community know its relationships, strengths, and needs best. <strong>Light the Way Champions</strong> use those local connections to gather information, build trusted relationships, identify priorities, and help strengthen child protection where they live.</p>
+          <p>Explore local participation and ways to strengthen child protection in your community.</p>
         </div>
         <div class="pw-card-action-row">
           <button class="pw-community-open-button" data-pw-community-county="${safeName}" type="button">View ${safeName} Map</button>
@@ -5545,6 +5626,59 @@ document.addEventListener("keydown", function(event) {
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && modal && modal.classList.contains("is-open")) closeModal();
   });
+})();
+</script>
+
+<script id="pw-movement-split-behavior-20261030">
+(function () {
+  function start() {
+    const wrap = document.getElementById("pwMovementSplit");
+    const choices = document.getElementById("pwMovementChoices");
+    const selected = document.getElementById("pwMovementSelected");
+    const card = document.getElementById("mapInfoCard");
+    if (!wrap || !choices || !selected || !card) return;
+    function showDetails() { choices.hidden=true; selected.hidden=false; }
+    function showChoices() { choices.hidden=false; selected.hidden=true; }
+    document.addEventListener("pw:selected-light-card-shown", showDetails);
+    const back = document.getElementById("pwMovementBack");
+    if (back) back.addEventListener("click", function () {
+      if (window.PWMap && typeof window.PWMap.resetSelectedLight === "function") window.PWMap.resetSelectedLight();
+      showChoices();
+    });
+    if (window.MutationObserver) {
+      const observer = new MutationObserver(function () {
+        if (card.style.display === "none") showChoices();
+      });
+      observer.observe(card, { attributes:true, attributeFilter:["style"] });
+    }
+    wrap.querySelectorAll("[data-pw-path-role]").forEach(function(button) {
+      button.addEventListener("click", function (event) {
+        const role = button.getAttribute("data-pw-path-role");
+        const roles = document.querySelectorAll('#add-light-form input[name="light_role"]');
+        roles.forEach(function (input) { input.checked = input.value === role; });
+        const preference = document.getElementById("map-permission");
+        if (preference && !preference.value) preference.value = "No, keep private";
+        if (window.PWMap && typeof window.PWMap.openModal === "function") {
+          window.PWMap.openModal(event);
+        }
+      });
+    });
+    let attempts=0;
+    function focusWisconsin() {
+      const map=window.projectWorthMap || window.PWLeafletMap;
+      if (map && window.L && map.fitBounds && map.getContainer && map.getContainer()) {
+        if (map.__pwMovementInitialFocus) return;
+        map.__pwMovementInitialFocus=true;
+        map.invalidateSize(false);
+        map.fitBounds([[42.45,-92.95],[47.15,-86.75]],{padding:[18,18],animate:false});
+        return;
+      }
+      if (++attempts < 60) window.setTimeout(focusWisconsin,150);
+    }
+    window.setTimeout(focusWisconsin,300);
+  }
+  if (document.readyState==="loading") document.addEventListener("DOMContentLoaded",start);
+  else start();
 })();
 </script>
 </body>
