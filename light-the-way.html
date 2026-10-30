@@ -1328,6 +1328,50 @@ body.page-light-the-way #ways-to-help .pw-feature-card-button:focus-visible{
  #pwNetworkModal .pw-network-flowchart{grid-template-columns:1fr;}
 }
 </style>
+
+<style id="pw-ways-six-cards-aligned-20261030">
+/* Layout only. Preserve all existing Light the Way card colors, typography, borders and links. */
+body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid {
+  align-items:stretch !important;
+}
+body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(n) {
+  display:grid !important;
+  grid-template-rows:48px 1.2rem minmax(3.3rem,auto) minmax(4.8rem,1fr) minmax(3.4rem,auto);
+  align-content:stretch !important;
+  justify-items:center !important;
+  align-items:start !important;
+  row-gap:.55rem !important;
+  min-height:340px !important;
+  height:100% !important;
+  text-align:center !important;
+}
+body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(n) > .icon {
+  grid-row:1 !important;
+  margin:0 auto !important;
+}
+body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(n) > .eyebrow {
+  grid-row:2 !important;
+  align-self:center !important;
+  margin:0 !important;
+}
+body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(n) > h3 {
+  grid-row:3 !important;
+  align-self:center !important;
+  margin:0 !important;
+}
+body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(n) > p {
+  grid-row:4 !important;
+  align-self:start !important;
+  margin:0 auto !important;
+}
+body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(n) > a.btn {
+  grid-row:5 !important;
+  align-self:center !important;
+  justify-self:center !important;
+  margin-top:0 !important;
+  max-width:100% !important;
+}
+</style>
 </head>
 <body class="page-light-the-way pw-polished-clean">
 <div aria-hidden="true" class="light-way-page-watermark">
@@ -1655,7 +1699,6 @@ body.page-light-the-way #ways-to-help .pw-feature-card-button:focus-visible{
 </div>
 <div class="card">
 <div class="icon">🤝</div>
-<div class="eyebrow">Bring Project Worth to Your Community</div>
 <h3>Light the Way Training &amp; Speakers</h3>
 <p>Empowering everyday people to recognize grooming, take action, and protect children sooner.</p>
 <a class="btn btn-primary pw-feature-card-button" href="contact.html">Request a Speaker or Training</a>
