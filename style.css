@@ -9452,3 +9452,67 @@ body.page-institute header .nav-links a[href="light-the-way.html"] {
 body.page-institute header .nav-links a[href="institute.html"] {
   color:var(--gold,#c89b2f) !important;
 }
+
+
+/* PW-WAYS-NEWSLETTER-BUTTON-MATCH-20261030 */
+/* Match the approved footer newsletter CTA for the specified Light the Way links and submit control.
+   Keep existing destinations, form submit behavior, and all unrelated buttons unchanged. */
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(2) > a.btn[href="contact.html"],
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(3) > a.btn[href="volunteer.html"],
+html body.page-light-the-way.pw-polished-clean #contact-us #project-worth-contact-form button.contact-send-btn,
+html body.page-light-the-way.pw-polished-clean #contact-us .contact-volunteer-row > a.contact-volunteer-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-height: 52px !important;
+  padding: .7rem 1.2rem !important;
+  border-radius: 999px !important;
+  border: 2px solid #d6a928 !important;
+  background: #d6a928 !important;
+  color: #ffffff !important;
+  font-size: .94rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer !important;
+  transition: transform .2s ease, box-shadow .2s ease !important;
+}
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(2) > a.btn[href="contact.html"]::after,
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(3) > a.btn[href="volunteer.html"]::after,
+html body.page-light-the-way.pw-polished-clean #contact-us .contact-volunteer-row > a.contact-volunteer-btn::after {
+  content: none !important;
+  display: none !important;
+}
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(2) > a.btn[href="contact.html"]:hover,
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(3) > a.btn[href="volunteer.html"]:hover,
+html body.page-light-the-way.pw-polished-clean #contact-us #project-worth-contact-form button.contact-send-btn:hover,
+html body.page-light-the-way.pw-polished-clean #contact-us .contact-volunteer-row > a.contact-volunteer-btn:hover {
+  background: #d6a928 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(214,169,40,.25) !important;
+}
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(2) > a.btn[href="contact.html"]:focus-visible,
+html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(3) > a.btn[href="volunteer.html"]:focus-visible,
+html body.page-light-the-way.pw-polished-clean #contact-us #project-worth-contact-form button.contact-send-btn:focus-visible,
+html body.page-light-the-way.pw-polished-clean #contact-us .contact-volunteer-row > a.contact-volunteer-btn:focus-visible {
+  outline: 3px solid #0f3158 !important;
+  outline-offset: 3px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(2) > a.btn[href="contact.html"],
+  html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(3) > a.btn[href="volunteer.html"],
+  html body.page-light-the-way.pw-polished-clean #contact-us #project-worth-contact-form button.contact-send-btn,
+  html body.page-light-the-way.pw-polished-clean #contact-us .contact-volunteer-row > a.contact-volunteer-btn {
+    transition: none !important;
+  }
+}
