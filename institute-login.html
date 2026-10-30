@@ -48,6 +48,12 @@ body.page-institute-login{margin:0;font-family:Arial,Helvetica,sans-serif;color:
 .login-back{margin-top:14px}
 .login-panel-hidden{display:none!important}
 [hidden]{display:none!important}
+
+.login-ellie-welcome{display:flex;align-items:center;gap:14px;margin:20px auto 0;padding:14px 0 0;border-top:1px solid #e0c36a44;text-align:left}
+.login-ellie-welcome img{width:76px;height:76px;flex:none;object-fit:cover;object-position:center;border:2px solid var(--pw-gold);border-radius:16px;background:var(--pw-cream)}
+.login-ellie-welcome strong{display:block;color:var(--pw-gold);font-size:14px;line-height:1.4}
+.login-ellie-welcome span{display:block;color:#fffdf6de;font-size:13px;line-height:1.5;margin-top:3px}
+@media(max-width:380px){.login-ellie-welcome img{width:64px;height:64px}}
 </style>
 </head>
 <body class="page-institute-login">
@@ -126,6 +132,10 @@ body.page-institute-login{margin:0;font-family:Arial,Helvetica,sans-serif;color:
       <br><button id="backToLogin" type="button" class="login-link login-back" hidden>← Back to Login</button>
       <br><a href="institute.html">← Back to the Training &amp; Research Institute</a>
     </div>
+    <aside class="login-ellie-welcome" aria-label="Meet Ellie, Project Worth's Chief Hope Ambassador">
+      <img src="https://cdn.shopify.com/s/files/1/0796/9003/9379/files/project-worth-ellie-chief-hope-ambassador.png?v=1792438326" alt="Ellie, Project Worth's calico cat mascot in her Hope Ambassador bandana" loading="lazy" width="76" height="76">
+      <div><strong>Ellie · Chief Hope Ambassador</strong><span>Sometimes hope has four paws.</span></div>
+    </aside>
   </div>
 </main>
 <script src="/institute-tab-session.js"></script><script>
