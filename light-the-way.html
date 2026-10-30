@@ -5432,61 +5432,28 @@ document.addEventListener("keydown", function(event) {
 <button aria-label="Close Light the Way Network explanation" class="pw-network-modal-close" id="pwNetworkModalClose" type="button">×</button>
 <div class="pw-network-modal-head">
 <div class="pw-network-modal-kicker">Light the Way Network</div>
-<h2 id="pwNetworkModalTitle">Change moves through people we know and trust.</h2>
-<p>Project Worth can build the tools, training, and resources, but lasting change is strongest when people carry them into the places and relationships they already know.</p>
-</div>
-<div class="pw-network-popup-two-up">
-<div class="pw-network-invite">
-<strong>Light the Way is open to everyone who has a heart for kids.</strong>
-<span>Anyone with a heart for kids can be part of Light the Way.</span>
-</div>
-<div class="pw-network-wisconsin">
-<strong>Light the Way Wisconsin</strong>
-<span>72 counties. One statewide vision. Starting in Kenosha County.</span>
-<button id="pwNetworkWisconsin" type="button">Explore Light the Way Wisconsin →</button>
-</div>
-</div>
-<div class="pw-network-model-heading">
-<span>How the model works</span>
-<h3>How Light the Way is helping make Wisconsin a national leader in child protection.</h3>
+<h2 id="pwNetworkModalTitle">How It Works</h2>
+<p>Our work is 100% volunteer led. We want a movement, not money.</p>
 </div>
 <div aria-label="Three ways Light the Way strengthens child protection" class="pw-network-flowchart">
 <article class="pw-network-flow-step">
 <span class="pw-network-flow-step-label">1. Protecting Kids</span>
-<h3>Why is the training free?</h3>
-<p><strong>Because we want a movement and safer kids, not money.</strong> Project Worth is 100% volunteer led, and our largest expense is a $10 monthly Google Voice line. Our <a href="institute.html" style="text-decoration:underline;">Training &amp; Research Institute</a> equips professionals and communities to share free Light the Way training through a train the trainer model. Change starts within our spheres of influence.</p>
+<h3>Learn and share.</h3>
+<p>Professionals and community members learn to recognize concerns, respond appropriately, and share free training with others.</p>
 </article>
 <article class="pw-network-flow-step">
 <span class="pw-network-flow-step-label">2. Changing Systems</span>
-<h3>Why look for the strongest protections?</h3>
-<p>We <strong>unapologetically name the gaps</strong> that leave Wisconsin children and survivors vulnerable, learn from the strongest protections across the country, and advocate to bring those standards home. How we protect children reflects how much we value them. They deserve no less.</p>
+<h3>Find gaps and raise standards.</h3>
+<p>We examine where systems fall short, compare stronger policies, and advocate for practical reforms in Wisconsin.</p>
 </article>
 <article class="pw-network-flow-step">
 <span class="pw-network-flow-step-label">3. Empowering Survivors</span>
-<h3>Why do their voices matter?</h3>
-<p>Survivors should never have to <strong>&ldquo;survive twice&rdquo;</strong>: once through harm and again through the systems meant to protect them. We want lived experience to shape survivor-centered protocols, learning from stronger approaches in states like Illinois. <strong>That story ends with us. Change for those who come next.</strong></p>
+<h3>Listen and improve.</h3>
+<p>Survivors and families can share their perspectives on their terms to help improve how systems respond and protect.</p>
 </article>
 </div>
-<div class="pw-network-join">
-<h3>There is more than one way to carry the light.</h3>
-<div class="pw-network-join-grid">
-<div class="pw-network-join-item">
-<strong>Join the Movement</strong>
-<span>Learn, share, speak up, and invite others in.</span>
-</div>
-<div class="pw-network-join-item">
-<strong>Represent Your Organization</strong>
-<span>Bring Light the Way training into your organization.</span>
-</div>
-<div class="pw-network-join-item">
-<strong>Become a Light the Way County Champion</strong>
-<span>Connect people and strengthen your county network.</span>
-</div>
-</div>
-</div>
 <div class="pw-network-modal-actions">
-<button class="pw-network-everyone" id="pwNetworkWaysToHelp" type="button">See ways to get involved</button>
-<a class="pw-network-champion" href="https://docs.google.com/forms/d/e/1FAIpQLSfeKLYLiY7syobwhcUkW2RIJmNWPlANnXAp6pcDcWkifUrx1Q/viewform?usp=header" rel="noopener noreferrer" target="_blank">Become a Light the Way Champion</a>
+<a class="pw-network-everyone" id="pwNetworkWaysToHelp" href="volunteer.html">See ways to get involved</a>
 </div>
 </div>
 </div>
@@ -5499,7 +5466,6 @@ document.addEventListener("keydown", function(event) {
   const countyOpenButton = document.getElementById("pwCountyTrainingModelLearn");
   const wisconsinModelOpenButton = document.getElementById("pwWisconsinModelLearn");
   const closeButton = document.getElementById("pwNetworkModalClose");
-  const waysButton = document.getElementById("pwNetworkWaysToHelp");
   const wisconsinButton = document.getElementById("pwNetworkWisconsin");
   let lastFocused = null;
 
@@ -5520,14 +5486,6 @@ document.addEventListener("keydown", function(event) {
     if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
   }
 
-  function showWaysToHelp() {
-    closeModal();
-    window.setTimeout(function () {
-      const section = document.getElementById("ways-to-help");
-      if (section) section.scrollIntoView({ behavior:"smooth", block:"start" });
-    }, 120);
-  }
-
   if (openButton) openButton.addEventListener("click", openModal);
   if (countyOpenButton) countyOpenButton.addEventListener("click", openModal);
   if (wisconsinModelOpenButton) wisconsinModelOpenButton.addEventListener("click", openModal);
@@ -5540,7 +5498,6 @@ document.addEventListener("keydown", function(event) {
       }
     });
   }
-  if (waysButton) waysButton.addEventListener("click", showWaysToHelp);
 
   if (modal) {
     modal.addEventListener("click", function (event) {
