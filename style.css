@@ -9501,7 +9501,7 @@ html body.page-light-the-way.pw-polished-clean #contact-us .contact-volunteer-ro
   background-image: none !important;
   color: #ffffff !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(214,169,40,.25) !important;
+  box-shadow: none !important;
 }
 html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(2) > a.btn[href="contact.html"]:focus-visible,
 html body.page-light-the-way.pw-polished-clean #ways-to-help.ways-grid > .card:nth-child(3) > a.btn[href="volunteer.html"]:focus-visible,
