@@ -5657,7 +5657,7 @@ document.addEventListener("keydown", function(event) {
         const roles = document.querySelectorAll('#add-light-form input[name="light_role"]');
         roles.forEach(function (input) { input.checked = input.value === role; });
         const preference = document.getElementById("map-permission");
-        if (preference && !preference.value) preference.value = "No, keep private";
+        if (preference) preference.value = "No, keep private";
         if (window.PWMap && typeof window.PWMap.openModal === "function") {
           window.PWMap.openModal(event);
         }
